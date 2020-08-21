@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="0-SphereIICore" />
+    <Description value="SphereII's Core Class Mod ( Required )" />
+    <Author value="sphereii" />
+    <Version value="19.0.0.1482" />
+    <Website value="" />
+  </ModInfo>
+  <DMT Hash="a6fdd608291fb3a0aa025a47363c55ed">
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>
