@@ -1,6 +1,7 @@
 Key,English
 UI_Display_________________________________XML,BUFF_________________________XML
 BUFF_________________________XML,BUFF_________________________XML
+
 AmputationTrackerDesc,"Player Amputations {cvar($amputationCounter:00)}\n\n- +{cvar($amputationCounter:00)}% Longer to Pick Locks\n- +{cvar($amputationCounter:00)}% Longer Crafting Time\n-  -{cvar($amputationCounter:00)}% Slower Mobility"
 StimulantDesc,"You are under the effect of Stimulants. The more Stimulants you take the stronger the effect gets, with a max effect of 6 active Stimulants\n\nActive Stimulant Dosage - {cvar($stimulantCounter:0)}\n- Increased Thirst\n- Stops Fatigue drain\n- +{cvar($stimulantSpeedDisplay:00)}% Mobility\n- +{cvar($stimulantDosageDisplay:00)}% Scavenging Speed\n- +{cvar($stimulantDosageDisplay:00)}% Harvesting Amount\n- +{cvar($stimulantCounter:0)} Degrees\n- -{cvar($stimulantDownSideDisplay:0)}% Weapon Handling"
 StimulantWithdrawalDesc,"Looks like those Stimulants have a down side and your going through withdrawal. You can wait for it to pass or take some more stimulants\n\nWithdrawal Severity - Lv.{cvar($withdrawalStrength:0)}\n- Increased Fatigue drain\n- -{cvar($withdrawalSpeedDisplay:00)}% Mobility\n- -{cvar($withdrawalScavengingDisplay:00)}% Scavenging Speed\n- -{cvar($withdrawalShiver:00)} Degrees\n- -{cvar($withdrawalSpeedDisplay:0)}% Weapon Handling"
@@ -441,6 +442,8 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_Tallow,"Tallow"
+jz_QISateliteRadio,"Satellite Radio Parts"
 jz_resourceClothDesc,"Cloth is a staple for survival used for clothing, bandages and more. It can be harvested from many objects and crafted on the Armor Table with a Small Loom"
 jz_meleeWpnBladeT0BoneKnifeDesc,"This primitive makeshift weapon is also useful for gutting animals."
 jz_meleeWpnClubT1BaseballBatDesc,"This club was used in gladiatorial games of the past that were held in huge arenas.\nScrap to Wood"

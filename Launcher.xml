@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Servers>
+   <ServerGroup Name="True Survival" Logo="" Description="True Survival 19">
+    <Server Name="True Survival 19" Logo="">
+         <Description>True Survival 19</Description>
+		 <DownloadMode>Clone</DownloadMode>
+		<ReleaseNotes>https://community.7daystodie.com/topic/3966-true-survival/</ReleaseNotes>
+         <Downloads>
+            <Download>https://github.com/SpiderJZMOD/TrueSurvivalA19TestClient.git</Download>
+         </Downloads>
+      </Server>
+   </ServerGroup>
+</Servers>
