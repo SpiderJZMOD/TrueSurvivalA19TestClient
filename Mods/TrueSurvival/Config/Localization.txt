@@ -442,6 +442,9 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_meleeWpnSledgeT0StoneSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nScraps to Small Stone."
+jz_meleeWpnSledgeT1IronSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nRepair with a Forged Iron.\nScrap to Scrap Iron."
+jz_meleeWpnSledgeT3SteelSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nRepair with a Forged Steel.\nScrap to Scrap Steel."
 jz_Tallow,"Tallow"
 jz_QISateliteRadio,"Satellite Radio Parts"
 jz_resourceClothDesc,"Cloth is a staple for survival used for clothing, bandages and more. It can be harvested from many objects and crafted on the Armor Table with a Small Loom"
@@ -711,8 +714,8 @@ BasicGunPartsDesc,Simple parts that can be used to craft basic Firearms
 jz_BasicGunParts,Basic Gun Parts
 MilitaryGunPartsDesc,High grade parts that can be used to craft Advanced Firearms
 jz_MilitaryGunParts,Military Gun Parts
-oldRevolverDesc,"A old rusty Revolver thats barely able to shoot still. Theres no way to repair it but it can be used for parts"
-jz_OldRevolver,Old Revolver
+oldRevolverDesc,"A old rusty Handgun thats barely able to shoot still. Theres no way to repair it but it can be used for parts"
+jz_OldRevolver,"Old Handgun"
 oldRifleDesc,"A old rusty Hunting Rifle thats barely able to shoot still. Theres no way to repair it but it can be used for parts"
 jz_OldRifle,Old Hunting Rifle
 steakKnifeDesc,A Basic Steak Knife
@@ -784,7 +787,7 @@ jz_SteelFork,Fork
 jz_SteelDogBowl,Dog Bowl
 jz_SteelBracelet,Bracelet 
 jz_SteelHinge,Hinge
-jz_RubberJunkDesc,"Old junk. If you cant find a use for it you can scrap it for Scrap Steel."
+jz_RubberJunkDesc,"Old junk. If you cant find a use for it you can scrap it for Scrap Rubber."
 jz_RubberOldRainBoot,Old Rain Boot
 jz_RubberCondom,Condom
 jz_RubberBands,Rubber Bands
