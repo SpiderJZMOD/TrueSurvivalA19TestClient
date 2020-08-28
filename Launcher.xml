@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Servers>
-   <ServerGroup Name="True Survival" Logo="" Description="True Survival 19">
+   <ServerGroup Name="True Survival" Logo="" Description="True Survival 19\n\nIP-172.96.166.50\nPort.-18733\nPW-spider02">
     <Server Name="True Survival 19" Logo="">
          <Description>True Survival 19</Description>
 		 <DownloadMode>Clone</DownloadMode>
