@@ -47,6 +47,7 @@
 		<tip key="jz_loadingTipSteelKnuckles" />
 		<tip key="jz_loadingTipUnlockingRecipes" /> 
 		<tip key="jz_loadingTipWorkstations" />
+        <tip key="jz_loadingTipTSCrowbar" />
       
 	</tips>
     </set>

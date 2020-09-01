@@ -1,5 +1,6 @@
 Key,English
 BUFF_________________________XML,BUFF_________________________XML
+jz_BuffSmallWoundDesc,"You've gotten a [f21b10]Small wound[-]. Treat it with a [35bd00]Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 2 sec\n-1 Health every 25 sec\n-4% Mobility\n-1 Wellness every 2.5 min\n15% more Health Loss\nUntil Treated"
 jz_buffArmBrokenDesc,"Your arm is broken, limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A splint or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmCastDesc,"Your arm is in a cast, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmSplintedDesc,"Your arm is splinted, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
@@ -421,6 +422,8 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+
+resourceFertilizer,"Fertilizer"
 jz_Crowbar,"Crowbar"
 jz_CrowbarDesc,"A tool that can be used on world blocks to pick them up whole."
 jz_ProfessionPage,"Profession Page"
@@ -454,15 +457,6 @@ jz_FoodBrainShnitzel,"Brain Shnitzel"
 brainShnitzelDesc,"A great use of left over Protein turned into a lovely gravy. Yumm..."
 jz_VenomSack,"Venom Sack"
 venomSackDesc,"A plump Venom Sack full of venom from a venomous animal. Can be used to craft [35bd00]Anti-Venom[-]."
-
-
-
-
-
-
-
-
-
 jz_PoliceBaton,"Police Baton"
 jz_FoodGrubs,"Grubs"
 grubsDesc,"Plump wiggly Grubs not exactly delicious but should fill your belly for now\n\nSoldiers have become accustomed to these things and do not receive any negative effects from eating raw"
@@ -1003,10 +997,12 @@ jz_InkPen,Ink Pen
 jz_DriedTobaccoDesc
 jz_DriedTobacco,Dried Tobacco
 ScavengedPartsDesc,"Scavenged parts and supplies that can be used to repair vehicles."
-jz_ScavengedParts,Scavenged Parts
+resourceRepairKit,"Scavenged Parts"
+jz_ScavengedParts,"Repair Kit"
+jz_RepairKitDesc,"Basic items that can be used to repair common tools and weapons."
 steelPipeDesc,"A solid steel pipe used in many crafting recipes"
 jz_SteelPipe,Steel Pipe
-jz_SkillPaperDesc,"Collect Skill Paper by scraping unneeded schematics. Combine them with a Ink Pen to craft Blank Skill Books that are needed to research unknown schematics on the Research Desk."
+jz_SkillPaperDesc,"Collect Skill Paper by scraping unneeded schematics. Combine them with a Ink Pen and Book to craft Blank Skill Books that are needed to research unknown schematics on the Research Desk."
 jz_SkillPaper,Skill Paper
 bioMassDesc,Decomposing organic rubbish that can be used in farming."
 jz_BioMass,Compost
@@ -1154,7 +1150,7 @@ jz_medicalFirstAidBandageDesc,"A bandages coated in [00d537]Plant Salve[-] incre
 sanitizingBandageDesc,"A bandage soaked in alcohol that can be used to stop [f21b10]Bleeding[-], treat a [f21b10]Small Wound[-], a [f21b10]Wound[-] and a [f21b10]Severe Wound[-]\n\nUse the secondary action to treat another player."
 jz_medicalFirstAidKitDesc,"A first aid kit increase abrasion healing speed and can be used to stop [f21b10]Bleeding[-], treat a [f21b10]Small Wound[-] a [f21b10]Wound[-] and a [f21b10]Severe Wound[-].\nUse the secondary action to treat another player."
 jz_MedicalSanitizingBandage,Sanitizing Bandage
-redHotDesc,"A burning red hot pipe that can be used to cauterize a [f21b10]Bites[-] or [f21b10]Puncher Wound[-]. Its really gone hurt though"
+redHotDesc,"A burning red hot pipe that can be used to cauterize a [f21b10]Bite[-] or [f21b10]Puncher Wound[-]. Its really gone hurt though"
 jz_MedicalRedHotSteelPipe,Red Hot Pipe
 jz_MedicalRedHotPipe,Red Hot Pipe
 antiVenomDesc,"Anti venom used to treat venomous stings and bites"
@@ -1225,7 +1221,7 @@ jz_MeleePlankSpiked,Spiked Plank
 jz_MeleePlankSpikedDesc,"A strong 2x4 plank of wood with several nails in it. Good for bashing but cant be repaired.\n\nCreafting quality based off your Wooden Club Crafting skill."
 jz_MeleePlank,"Shaped 2x4"
 jz_MeleePlankDesc,"A shaped wooden 2x4 that could be used as a weapon but it can not be repaired"
-jz_ItemSchematicDesc,"Reading this recipe will teach you how to craft the item. If you know this recipe you can scrap it for Skill Paper."
+jz_ItemSchematicDesc,"Reading this recipe will teach you how to craft the item. If you know this recipe you can scrap it for Skill Paper.\n\nSkill Paper can be used on the Research Desk to reverse engineer unknown schematics"
 jz_SchematicTacticalAR,Tactical AR Crafting Guide
 jz_SchematicTacticalARDesc,"This book completely details how to assemble a Tactical AR from its parts. If you know this recipe you can scrap it for Skill Paper."
 jz_SchematicM60,M60 Crafting Guide
@@ -1285,7 +1281,7 @@ jz_SchematicHubcapMine,"Hubcap Mine Crafting Guide"
 jz_SchematicCandyTinMine,"Candy Tin Mine Crafting Guide"
 jz_SteelScissors,"Rusty Steel Scissors"
 jz_SteelWeight,"Steel Hand Weight"
-jz_SchematicAloeCream,"Aloe Cream Crafting Guide"
+jz_SchematicAloeCream,"Plant Salve Crafting Guide"
 jz_SchematicInsecticide,Ounce of Insecticide
 jz_SchematicFarmingWateringCan,Watering Can
 foodRottingFleshDesc,"Very high chance of food poisoning.\n\n Can be scraped for Compost." 
@@ -1298,7 +1294,7 @@ jz_CardioSkillDesc,"Gain experience by walking and bonus xp for running. Improve
 jz_ParkourSkillDesc,"Gain experience by jumping and landing. Improves your Jump Height and decrease Stamina used to Jump\n            [00eb3c] Current XP-{cvar($jz_ParkourXP:0000)}             Next Level-{cvar($jz_ParkourSkillNextLvTotal:0000)}[-]"
 jz_ActionSkillDesc,"Improve these skills by using or killing with the given skill item. You can also purchase these points to improve"
 jz_CraftingSkillsDesc,"Improve these skills by crafting the stated item"
-jz_ProfessionsDesc,"These are the Professions a Survivor could of had before the event. Use your starting Knowledge Points to purchase these or gather enough skill pages from loot to obtain them.
+jz_ProfessionsDesc,"These are the Professions a Survivor could of had before the event. Use your starting Knowledge Points to purchase these or gather enough skill pages from loot to obtain them."
 jz_PosTraitsDesc,"These are traits that can be purchased at the start of the game with Knowledge Points to affect the player in a positive way"
 jz_NegativeTraitsDesc,"These are traits that can be purchased at the start of the game with Knowledge Points to affect the player in a negative way. Purchasing these will refund more Knowledge Points"
 jz_SchematicsDesc,"You can track all unlockable schematics here"
@@ -1355,7 +1351,7 @@ jz_TraitAmateurMechanicDesc,"20% More Resources from harvesting Vehicles\nRecipe
 jz_TraitHunterDesc,"Can track Deer and Pigs on mini map"
 jz_TraitRunnerDesc,"20% Less Stamina used while Running\n10% Faster Run Speed"
 jz_TraitStoutDesc,"10% Less Stamina used w/Melee\n10% Faster Stamina recovery\n10% Less Stamina used while Encumbered"
-jz_TraitSleepyDesc,"20% Slower Fatigue refill\n[f21b10]REFUNDS 2 Knowledge Points[-]
+jz_TraitSleepyDesc,"20% Slower Fatigue refill\n[f21b10]REFUNDS 2 Knowledge Points[-]"
 jz_TraitClumsyDesc,"10% More Noise when Moving\n[f21b10]REFUNDS 2 Knowledge Points[-]"
 jz_TraitAllThumbsDesc,"10% Slower Crafting & Lock Picking\n[f21b10]REFUNDS 2 Knowledge Points[-]"
 jz_TraitWeakStomachDesc,"15% More chance to get food illnesses\n[f21b10]REFUNDS 3 Knowledge Points[-]"
@@ -1660,6 +1656,8 @@ jz_loadingTipStealth_title,"True Survival: Stealth and Sneaking"
 jz_loadingTipWhatIsItGoodFor,"You may loot or harvest an item and not know its importance. In your inventory select an item and then select RECIPES from the action menu.\nThis will display all recipes that can be made using this item and the required workstation."
 jz_loadingTipWhatIsItGoodFor_title,"True Survival: What is this good for?"
 
+jz_loadingTipTSCrowbar,"A Crowbar can be used to pick up world blocks many that players can not build like large beds, refidgerators, signs and more. If you use the Crowbar on a broken workstation you can use it to craft a working one. Once you have a Crowbar make sure to craft a mold for it on the Campfire before it breaks so you can craft a new on in the Forge." 
+jz_loadingTipTSCrowbar_title,"True Survival: Crowbar"
 [35bd00]Green[-]
 [f21b10]Red[-]
 [fff700]Yellow[-]
