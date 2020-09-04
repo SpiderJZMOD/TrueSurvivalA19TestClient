@@ -422,7 +422,8 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
-
+jz_DeadIsDeadResetItem,"Dead is Dead Reset Item"
+jz_DeadIsDeadResetItemDesc,"[f21b10]Warning!!!!Warning!!!!Warning!!!![-]\n\nUsing this item will reset your player to level one and erase all of your players progress. You will respawn as a new player and start from scratch like new. This can not be undone!\n[f21b10]Warning!!!!Warning!!!!Warning!!!![-]"
 resourceFertilizer,"Fertilizer"
 jz_Crowbar,"Crowbar"
 jz_CrowbarDesc,"A tool that can be used on world blocks to pick them up whole."
