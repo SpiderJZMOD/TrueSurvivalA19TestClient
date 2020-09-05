@@ -1,5 +1,6 @@
 Key,English
 BUFF_________________________XML,BUFF_________________________XML
+jz_buffInjuryConcussionDesc,"You have suffered a concussion and may experience dizziness and headaches. You will not be able to use the iron sights on ranged weapons until its healed\nUse painkillers to cure this.\n\nYour max health is lowered by {cvar(.ConcussionHealthBlockage:0.0)}."
 jz_BuffSmallWoundDesc,"You've gotten a [f21b10]Small wound[-]. Treat it with a [35bd00]Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 2 sec\n-1 Health every 25 sec\n-4% Mobility\n-1 Wellness every 2.5 min\n15% more Health Loss\nUntil Treated"
 jz_buffArmBrokenDesc,"Your arm is broken, limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A splint or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmCastDesc,"Your arm is in a cast, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
@@ -422,6 +423,9 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_smallEngineDesc,"A working engine for a small vehicle or generator.\n\nRepair with Scavenged Parts"
+jz_EmptyPropaneTank,"Propane Tank(Empty)"
+jz_EmptyPropaneTank,"A old empty propane tank that can be refilled for other uses in the Methane Producer"
 jz_DeadIsDeadResetItem,"Dead is Dead Reset Item"
 jz_DeadIsDeadResetItemDesc,"[f21b10]Warning!!!!Warning!!!!Warning!!!![-]\n\nUsing this item will reset your player to level one and erase all of your players progress. You will respawn as a new player and start from scratch like new. This can not be undone!\n[f21b10]Warning!!!!Warning!!!!Warning!!!![-]"
 resourceFertilizer,"Fertilizer"
@@ -1592,7 +1596,7 @@ jz_loadingTipEncumbrance,"Carrying too many items in your inventory will slow yo
 jz_loadingTipEncumbrance_title,"True Survival: Encumbrance"
 jz_loadingTipExtCharStats,"To access the character menu press [action:local:Inventory][action:permanent:Character], below your character’s name select the Extended Character Stats tab to see all your character’s total stats which include perks, buffs, equipped clothing, nutrition stats, armor and weapons."
 jz_loadingTipExtCharStats_title,"True Survival: Extended Character Stats"
-jz_loadingTipHarvestingResources,"Don't use your fist to harvest resources it will hurt you, instead use tools to gather resources.\nA tools material will determine what materials it can damage. Stone tools work well on wood and stone but will do little damage to iron or steel materials; Iron tools will work well on everything except Steel material; Steel tools work well on everything"
+jz_loadingTipHarvestingResources,"Don't use your fist to harvest resources it will hurt you, instead use Sticks and Branches early to gather Plant Fibers then use tools to harvest other resources.\nA tools material will determine what materials it can damage. Stone tools work well on wood and stone but will do little damage to iron or steel materials; Iron tools will work well on everything except Steel material; Steel tools work well on everything"
 jz_loadingTipHarvestingResources_title,"True Survival: Harvesting Resources"
 jz_loadingTipProperTools,"All player crafted building blocks are started with Frames and upgraded with the proper tool and materials.\nTo collect building supplies before you can craft them use a building tool to reclaim supplies from a corresponding block type.\nThe Mason Hammer uses Bricks or Cobblestone to upgrade Brick and Flagstone Frames. The Claw Hammer uses Planks to upgrade Wooden Frames\nThe Wrench uses Iron Sheet Metal to upgrade Scrap Iron Frames. The Welder uses Steel Sheet Metal to upgrade Steel Frames"
 jz_loadingTipProperTools_title,"True Survival: The Right Tool for the job"
@@ -1604,7 +1608,7 @@ jz_loadingTipWrenches,"Wrenches, ratchets and impact drivers are best at harvest
 jz_loadingTipWrenches_title,"True Survival: Wrenches"
 jz_loadingTipScrewdivers,"Screwdrivers are best at harvesting Electrical items. If you see a different animation then you can get special resources like Electric and Tech Parts that you would not get with a pickaxe."
 jz_loadingTipScrewdivers_title,"True Survival: Screwdrivers"
-jz_loadingTipTSDeath,"In True Survival death is not an escape and all effects will stay with the you after you have respawned.\nTrue Death happens when your Wellness reaches 0 and you will not be able to respawn with that character."
+jz_loadingTipTSDeath,"In True Survival death is not an escape and all effects will stay with the you after you have respawned.\nTrue Death happens when your Wellness reaches 0 and you will not be able to respawn with that character. If you want to restart early you can craft a Dead is Dead Reset Item using Broken Glass. Using it will restart your character as a new player wiping all progression"
 jz_loadingTipTSDeath_title,"True Survival: Dead is Dead"
 jz_loadingTipTSNutrition,"Your diet will affect your nutrition giving you important benefits or painful consequences. Your lowest level nutrition stat will determine your current diet.\nYou can view your nutrition stats in your Character Stat screen they are Protein, Essential Vitamins, Fiber and Carbohydrates."
 jz_loadingTipTSNutrition_title,"True Survival: Nutrition"
@@ -1635,7 +1639,7 @@ jz_loadingTipScrapping_title,"True Survival: Scrapping Items"
 jz_loadingTipSledgehammers,"Sledgehammers are great for breaking things but yield little or no harvest.\nFind the recipe to craft it in loot or collect enough Sledgehammers in loot and reverse engineer it on the Research Desk."
 jz_loadingTipSledgehammers_title,"True Survival: Sledgehammers"
 jz_loadingTipSteelKnuckles,"Steel Knuckles are the most devastating brawling weapon and can also be used to harvest meat from animals and remains.\nFind the recipe to craft it in loot or collect enough Steel Knuckles in loot and reverse engineer it on the Research Desk."
-jz_loadingTipSteelKnuckles_title,"True Survival: Steel knuckles"
+jz_loadingTipSteelKnuckles_title,"True Survival: Steel Knuckles"
 jz_loadingTipUnlockingRecipes,"If a recipe shows a lock item then you cannot craft it yet. Clicking on it will show how to unlock it.\nIf you find schematics you already know you can scrap them for Skill Paper and use them to research unknown schematics.\nIf you have trouble finding a schematic you can always collect enough of the item and reverse engineer it on the Research Desk.\nAll learnable recipes can be tracked in the Schematic section in your Skill Menu."
 jz_loadingTipUnlockingRecipes_title,"True Survival: Unlocking Recipes"
 jz_loadingTipWorkstations,"You can craft many basic items in your inventory but many recipes will require workstations and some even require specific tools.\nIf a recipe in your backpack shows a small icon then this will tell you which workstation it is crafted with.\nWorkstations include: Forge; Workbench; Chemistry; Campfire; Stonemill; Mortar and Pestle; Armor Table; Research Desk; Drying Rack; Fermentation Barrel; Methane Producer; Anvil; Cement Mixer and Steel Forge. "
@@ -1656,9 +1660,12 @@ jz_loadingTipStealth,"If you crouch down you are sneaking. Enemies will have a h
 jz_loadingTipStealth_title,"True Survival: Stealth and Sneaking"
 jz_loadingTipWhatIsItGoodFor,"You may loot or harvest an item and not know its importance. In your inventory select an item and then select RECIPES from the action menu.\nThis will display all recipes that can be made using this item and the required workstation."
 jz_loadingTipWhatIsItGoodFor_title,"True Survival: What is this good for?"
-
-jz_loadingTipTSCrowbar,"A Crowbar can be used to pick up world blocks many that players can not build like large beds, refidgerators, signs and more. If you use the Crowbar on a broken workstation you can use it to craft a working one. Once you have a Crowbar make sure to craft a mold for it on the Campfire before it breaks so you can craft a new on in the Forge." 
+jz_loadingTipTSCrowbar,"A Crowbar can be used to pick up world blocks, many that players can not build like large beds, refrigerators, signs and more. If you use the Crowbar on a broken workstation you can repair it and place a working one. Once you have a Crowbar make sure to craft a mold for it on the Campfire before it breaks so you can craft a new one in the Forge." 
 jz_loadingTipTSCrowbar_title,"True Survival: Crowbar"
+jz_loadingTipTSSpoiling,"Foods will spoil over time and turn into a spoiled version. These spoiled items can be scraped for Biomass that can be used in fertilizer. Prepared drinks will also spoil and revert to water over time. Placing spoiling items in a Cooler will slow their spoiling speed placing them in a refrigerator will slow down the spoiling even more." 
+jz_loadingTipTSSpoiling_title,"True Survival: Spoilage"
+jz_loadingTipTSCooking,"Raw food items can be scraped into Servings. There are 4 types of Serving  Fruit, Veggie, Protein, and Grain. These items can be used to cook many filling nutritious meals."
+jz_loadingTipTSCooking_title,"True Survival: Food Servings"
 [35bd00]Green[-]
 [f21b10]Red[-]
 [fff700]Yellow[-]
