@@ -20,6 +20,7 @@ jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will r
 jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed
 jz_buffEncumberedInvDesc,"Moving becomes harder when you are carrying too many items in your inventory. Carry less or wear clothes with more pockets or add more pockets to your clothes.\n\nThe number is the number of items that are encumbering you."
 BLOCK_________________________XML,BLOCK_________________________XML
+jz_PlantedOrange1,"Orange(Seed)"
 jz_QISatRadioStation,"Satellite Radio"
 jz_QISatRadioStationDesc,"A crudely crafted device capable of sending and receiving communications with satellites."
 jz_QIHospitalLabStation,"Tissue Testing Station"
@@ -423,6 +424,10 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_drinkJarEmptyDesc,"An empty glass jar can be used to make refreshing drinks or to craft other recipes.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
+jz_resourceDuctTapeDesc,"Duct tape is useful for making many things & according to Madmole MacDyver a must have resource for making the cooler stuff.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
+jz_ScrapSteel,"Scrap Steel"
+dirtFragment,"Dirt"
 jz_smallEngineDesc,"A working engine for a small vehicle or generator.\n\nRepair with Scavenged Parts"
 jz_EmptyPropaneTank,"Propane Tank(Empty)"
 jz_EmptyPropaneTank,"A old empty propane tank that can be refilled for other uses in the Methane Producer"
