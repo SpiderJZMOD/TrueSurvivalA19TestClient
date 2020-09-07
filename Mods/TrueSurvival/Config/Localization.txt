@@ -424,6 +424,7 @@ jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+resourceInsulator,"Insulator"
 jz_drinkJarEmptyDesc,"An empty glass jar can be used to make refreshing drinks or to craft other recipes.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
 jz_resourceDuctTapeDesc,"Duct tape is useful for making many things & according to Madmole MacDyver a must have resource for making the cooler stuff.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
 jz_ScrapSteel,"Scrap Steel"
@@ -1065,18 +1066,20 @@ jz_CanOpenerDesc,"A working Can Opener. If only you had some can food."
 jz_CanOpener,Can Opener
 jz_MoldDDesc,"A clay mold used to craft the given item."
 jz_MoldDart,Dart Mold
-jz_MoldLargeEngineBlock,Lg Engine Block Mold
-jz_MoldSmallEngineBlock,Sm Engine Block Mold
+jz_MoldLargeEngineBlock,Large Engine Block Mold
+jz_MoldSmallEngineBlock,Small Engine Block Mold
 jz_MoldAxeHead,Axe Head Mold
 jz_MoldBrassKnuckles,Brass Knuckle Mold
 jz_MoldShovelHead,Shovel Head Mold
-jz_MoldSledgeHead,Sledge Head Mold
-jz_MoldScrewdriverHead,Screwdriver Head Mold
-jz_MoldWrench,Wrench Mold
-jz_MoldHammerHead,Hammer Head Mold
-jz_MoldLargeKnifeBlade,Lg Knife Blade Mold
-jz_MoldSmallKnifeBlade,Sm Knife Blade Mold
-jz_MoldPickAxeHead,Pickaxe Head Mold
+jz_MoldSledgeHead,"Iron Sledge Head Mold"
+jz_MoldScrewdriverHead,"Screwdriver Head Mold"
+jz_MoldWrench,"Wrench Mold"
+jz_FoodBread,"Bread"
+jz_MoldHammerHead,"Claw Hammer Head Mold"
+jz_MoldLargeKnifeBlade,"Machete Blade Mold"
+jz_MoldSmallKnifeBlade,"Hunting Knife Blade Mold"
+jz_MoldSteelPickAxeHead,"Mold Steel Pickaxe Head"
+jz_MoldIronPickAxeHead,"Mold Iron Pickaxe Head"
 jz_MoldCrowbar,Crowbar Mold
 fanBeltDesc,"A old fan belt from a some kind of engine."
 jz_FanBelt,Fan Belt
@@ -1618,7 +1621,7 @@ jz_loadingTipTSNutrition,"Your diet will affect your nutrition giving you import
 jz_loadingTipTSNutrition_title,"True Survival: Nutrition"
 jz_loadingTipTSRecovery,"During your day your Fatigue will slowly increase limiting your max Stamina. Resting on furniture or sleeping on beds will lower your Fatigue.\nSleeping on Beds will also recover health. The more comfortable the Bed or furniture the faster you will recover but you can’t get any rest if zombies are around."
 jz_loadingTipTSRecovery_title,"True Survival: A Good Night's Sleep"
-jz_loadingTipTSFarming,"All seed recipes can be found in loot. Seeds can be planted on soil or in Farmplots. All player planted crops can be trampled by non players. Planted Seeds can be fertilized using the Watering Can and Fertilizer increasing the harvest amount and decreasing the grow time. Crops can also get Infested with insects and/or Dry out, these conditions can be dealt with using the Watering Can and Ounces or Dirty Water or Insecticide."
+jz_loadingTipTSFarming,"All seed recipes can be found in loot. Seeds can be planted on soil or in Farmplots. All player planted crops can be trampled by non players. Planted Seeds can be fertilized using the Watering Can and Fertilizer increasing the harvest amount and decreasing the grow time. Crops can also get Infested with insects and/or Dry Out, these conditions can be dealt with using the Watering Can and Ounces or Dirty Water or Insecticide."
 jz_loadingTipTSFarming_title,"True Survival: Farming"
 jz_loadingTipTSZVirus,"The only way to catch the Z-Virus is to be bitten by an Infected. In order for an Infected to bite you they must first Grab you. Your chance to be grabbed is based on your current  Health, Stamina, Fatigue and Diet. Once grabbed you can delay a bite from an Infected by a melee strike to their head. If bitten you will catch the Infection.\nAt 100% infected your Wellness will drop to 0 and you will be Dead is Dead."
 jz_loadingTipTSZVirus_title,"True Survival: The Z-Virus"
