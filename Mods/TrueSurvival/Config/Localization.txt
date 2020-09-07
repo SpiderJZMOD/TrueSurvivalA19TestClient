@@ -814,7 +814,6 @@ jz_SchematicCraftedRevolverDesc,"This book details how to assemble a Makeshift R
 jz_FoodSchematicDesc,"An battered old Cook Book. Looks like only one recipe is still readable. If you know this recipe you can scrap it for Skill Paper."
 jz_SchematicBrainShnitzel,Brain Schnitzel Recipe
 jz_SchematicCarrotCake,Carrot Cake Recipe
-jz_SchematicApplePie,Apple Pie Recipe
 jz_SchematicHealthyMeals,Health Meals Recipe
 jz_SchematicWellnessJuice,Wellness Juice Recipe
 jz_SchematicGrainAlcohol,Grain Alcohol Recipe
