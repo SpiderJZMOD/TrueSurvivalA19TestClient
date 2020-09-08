@@ -1,5 +1,6 @@
 Key,English
 BUFF_________________________XML,BUFF_________________________XML
+jz_BuffSevereWoundDesc,"You've gotten a [f21b10]Sever Wound[-]. Treat it with [35bd00]Sanitized Bandage[-] and be sure to change it when it gets dirty.\n\n-2 Stamina every 1 sec\n-1 Health every 15 sec\n-12% Mobility\n-1 Wellness every 1.5 min\n25% more Health Loss\nUntil Treated"
 jz_buffInjuryConcussionDesc,"You have suffered a concussion and may experience dizziness and headaches. You will not be able to use the iron sights on ranged weapons until its healed\nUse painkillers to cure this.\n\nYour max health is lowered by {cvar(.ConcussionHealthBlockage:0.0)}."
 jz_BuffSmallWoundDesc,"You've gotten a [f21b10]Small wound[-]. Treat it with a [35bd00]Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 2 sec\n-1 Health every 25 sec\n-4% Mobility\n-1 Wellness every 2.5 min\n15% more Health Loss\nUntil Treated"
 jz_buffArmBrokenDesc,"Your arm is broken, limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A splint or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
@@ -20,7 +21,7 @@ jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will r
 jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed
 jz_buffEncumberedInvDesc,"Moving becomes harder when you are carrying too many items in your inventory. Carry less or wear clothes with more pockets or add more pockets to your clothes.\n\nThe number is the number of items that are encumbering you."
 BLOCK_________________________XML,BLOCK_________________________XML
-jz_PlantedOrange1,"Orange(Seed)"
+jz_ZombieLoot,"Zombie Corpse"
 jz_QISatRadioStation,"Satellite Radio"
 jz_QISatRadioStationDesc,"A crudely crafted device capable of sending and receiving communications with satellites."
 jz_QIHospitalLabStation,"Tissue Testing Station"
@@ -336,7 +337,6 @@ jz_PlantedBlueberry1InfestedDesc,"Blueberry Sprout(Infested)"
 jz_PlantedBlueberry1DryDesc,"Blueberry Sprout(Dry)"
 jz_PlantedBlueberry2InfestedDesc,"Blueberry(Infested)"
 jz_PlantedBlueberry2DryDesc,"Blueberry(Dry)"
-
 jz_PlantedBlueberryFertilized1,"Fertilized Blueberry(Seed)"
 jz_PlantedBlueberryFertilized1InfestedDesc,"Fertilized Blueberry Sprout(Infested)"
 jz_PlantedBlueberryFertilized1DryDesc,"Fertilized Blueberry Sprout(Dry)"
@@ -344,7 +344,6 @@ jz_PlantedBlueberryFertilized2,"Fertilized Blueberry(Growing)"
 jz_PlantedBlueberryFertilized2InfestedDesc,"Fertilized Blueberry(Infested)"
 jz_PlantedBlueberryFertilized2DryDesc,"Fertilized Blueberry(Dry)"
 jz_PlantedBlueberryFertilized3HarvestPlayerDesc,"Fertilized Blueberry(Grown)"
-
 jz_PlantedCarrot1,"Carrot(Seed)"
 jz_PlantedCarrot1InfestedDesc,"Carrot Sprout(Infested)"
 jz_PlantedCarrot1DryDesc,"Carrot Sprout(Dry)"
@@ -414,6 +413,13 @@ jz_PlantedEggPlant2InfestedDesc,"Eggplant(Infested)"
 jz_PlantedEggPlant2DryDesc,"Eggplant(Dry)"
 jz_PlantedEggPlant3HarvestDesc,"Eggplant(Grown)"
 jz_PlantedEggPlant3HarvestPlayerDesc,"Eggplant(Grown)"
+jz_PlantedEggPlantFertilized1,"Fertilized EggPlant(Seed)"
+jz_PlantedEggPlantFertilized1InfestedDesc,"Fertilized EggPlant Sprout(Infested)"
+jz_PlantedEggPlantFertilized1DryDesc,"Fertilized EggPlant Sprout(Dry)"
+jz_PlantedEggPlantFertilized2,"Fertilized EggPlant(Growing)"
+jz_PlantedEggPlantFertilized2InfestedDesc,"Fertilized EggPlant(Infested)"
+jz_PlantedEggPlantFertilized2DryDesc,"Fertilized EggPlant(Dry)"
+jz_PlantedEggPlant3FertilizedHarvestPlayerDesc,"Fertilized EggPlant(Grown)"
 jz_PlantedLeek1,"Leek(Seed)"
 jz_PlantedLeek1InfestedDesc,"Leek Sprout(Infested)"
 jz_PlantedLeek1DryDesc,"Leek Sprout(Dry)"
@@ -422,6 +428,21 @@ jz_PlantedLeek2InfestedDesc,"Leek(Infested)"
 jz_PlantedLeek2DryDesc,"Leek(Dry)"
 jz_PlantedLeek3HarvestDesc,"Leek(Grown)"
 jz_PlantedLeek3HarvestPlayerDesc,"Leek(Grown)"
+jz_PlantedOrange1,"Orange(Seed)"
+jz_PlantedOrangeBare,"Orange(Bare)"
+jz_PlantedOrange1DryDesc,"Orange Sprout(Dry)"
+jz_PlantedOrange2,"Orange Sapling(Growing)"
+jz_PlantedOrange2DryDesc,"Orange Sapling(Dry)"
+jz_PlantedOrange3,"Orange(Growing)"
+jz_PlantedOrange3DryDesc,"Orange(Dry)"
+jz_PlantedOrange4Desc,"Orange(Grown)"
+jz_PlantedFertilizedOrange1,"Fertilized Orange(Seed)"
+jz_PlantedFertilizedOrange1DryDesc,"Fertilized Orange Sprout(Dry)"
+jz_PlantedFertilizedOrange2,"Fertilized Orange Sapling(Growing)"
+jz_PlantedFertilizedOrange2DryDesc,"Fertilized Orange Sapling(Dry)"
+jz_PlantedFertilizedOrange3,"Fertilized Orange(Growing)"
+jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
+jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
 resourceInsulator,"Insulator"
@@ -768,9 +789,9 @@ BasicGunPartsDesc,Simple parts that can be used to craft basic Firearms
 jz_BasicGunParts,Basic Gun Parts
 MilitaryGunPartsDesc,High grade parts that can be used to craft Advanced Firearms
 jz_MilitaryGunParts,Military Gun Parts
-oldRevolverDesc,"A old rusty Handgun thats barely able to shoot still. Theres no way to repair it but it can be used for parts"
+oldRevolverDesc,"A old rusty Handgun thats barely able to shoot still. It's so damaged it can only use basic 9MM ammo. Theres no way to repair it but it can be used for parts"
 jz_OldRevolver,"Old Handgun"
-oldRifleDesc,"A old rusty Hunting Rifle thats barely able to shoot still. Theres no way to repair it but it can be used for parts"
+oldRifleDesc,"A old rusty Hunting Rifle thats barely able to shoot still. It's so damaged it can only use basic 762MM ammo.Theres no way to repair it but it can be used for parts"
 jz_OldRifle,Old Hunting Rifle
 steakKnifeDesc,A Basic Steak Knife
 jz_SteakKnife,Steak Knife
