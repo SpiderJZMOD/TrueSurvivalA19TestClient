@@ -21,6 +21,8 @@ jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will r
 jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed
 jz_buffEncumberedInvDesc,"Moving becomes harder when you are carrying too many items in your inventory. Carry less or wear clothes with more pockets or add more pockets to your clothes.\n\nThe number is the number of items that are encumbering you."
 BLOCK_________________________XML,BLOCK_________________________XML
+jz_BuffBurnWoundDesc,"You have received a [f21b10]Burn Wound[-]. Use [35bd00]Plant Salve[-] to help heal it or it could get worse"
+jz_trapSpikesIronDmg0Dec,"Iron Pipes sharpened and bolted together.\n\nRepair with Iron Pipes using a Wrench"
 jz_ZombieLoot,"Zombie Corpse"
 jz_QISatRadioStation,"Satellite Radio"
 jz_QISatRadioStationDesc,"A crudely crafted device capable of sending and receiving communications with satellites."
