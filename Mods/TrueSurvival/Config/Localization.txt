@@ -1,7 +1,19 @@
 Key,English
 BUFF_________________________XML,BUFF_________________________XML
+jz_BuffThrobbingPainDesc,"OOww! That hurts take some [35bd00]Painkillers[-] to relieve the pain\n-1 Stamina every 5 sec\n+10 Core Temp"
+jz_BuffGangreneWoundDesc,"Your wound has become [f21b10]Gangrene[-]. The only option you have is to cut off the dead tissue, this will leave you permanently scared. Use a bladed weapon to cute away the [f21b10]Gangrene[-] tissue. You will then have to treat and care for the remaining wound\n\n-4 Stamina every 1 sec\n-1 Health every 10 sec\n-12% Mobility\n-1 Wellness every 1 min\n30% more Health Loss\nUntil Treated"
+jz_BuffTendingSixDesc,"Your [f21b10]Sever Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 2 sec\n-3% Mobility\n5% more Health Loss"
+jz_BuffDirtyBandageThreeDesc,"Your [f21b10]Sever Wounds[-] bandage is dirty and starting to smell. Change it with another [35bd00]Sanitizing Bandage[-] soon or it could get worse.\n\n-2 Stamina every 1 sec\n-9% Mobility\n19% more Health Loss\nUntil Treated"
+jz_BuffTendingFiveDesc,"Your [f21b10]Sever Wound[-] is bandaged and healing. Make sure to change it when it gets dirty so it does not get worse.\n\n-1 Stamina every 1 sec\n-6% Mobility\n12% more Health Loss"
+jz_BuffTendingFourDesc,"Your [f21b10]Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 4 sec\n-2% Mobility\n5% more Health Loss"
+jz_BuffDirtyBandageTwoDesc,"Your [f21b10]Wounds[-] bandage is dirty and starting to smell. Change it with another [35bd00]First Aid Bandage[-] soon or it could get worse\n\n-1 Stamina every 1 sec\n-6% Mobility\n15% more Health Loss\nUntil Treated"
+jz_BuffTendingThreeDesc,"Your [f21b10]Wound[-] is bandaged and healing. Make sure to change it with another [35bd00]First Aid Bandage[-] when it gets dirty so it does not get worse.\n\n-1 Stamina every 2 sec\n-4% Mobility\n10% more Health Loss"
+jz_BuffWoundDesc,"You've gotten a [f21b10]Wound[-]. Treat it with a [35bd00]First Aid Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 1 sec\n-1 Health every 20 sec\n-8% Mobility\n-1 Wellness every 2 min\n20% more Health Loss\nUntil Treated"
+jz_BuffTendingTwoDesc,"Your [f21b10]Small Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 8 sec\n-1% Mobility\n4% more Health Loss"
+jz_BuffDirtyBandageOneDesc,"Your [f21b10]Small Wounds[-] bandage is dirty and starting to smell. Change it with another [35bd00]Bandage[-] soon or it could get worse\n\n-1 Stamina every 3 sec\n-3% Mobility\n10% more Health Loss\nUntil Treated"
+jz_BuffTendingOneDesc,"Your [f21b10]Small Wound[-] is bandaged and healing. Make sure to change it with another [35bd00]Bandage[-] when it gets dirty so it does not get worse.\n\n-1 Stamina every 4 sec\n-2% Mobility\n7% more Health Loss"
 jz_BuffSevereWoundDesc,"You've gotten a [f21b10]Sever Wound[-]. Treat it with [35bd00]Sanitized Bandage[-] and be sure to change it when it gets dirty.\n\n-2 Stamina every 1 sec\n-1 Health every 15 sec\n-12% Mobility\n-1 Wellness every 1.5 min\n25% more Health Loss\nUntil Treated"
-jz_buffInjuryConcussionDesc,"You have suffered a concussion and may experience dizziness and headaches. You will not be able to use the iron sights on ranged weapons until its healed\nUse painkillers to cure this.\n\nYour max health is lowered by {cvar(.ConcussionHealthBlockage:0.0)}."
+jz_buffInjuryConcussionDesc,"You have suffered a [f21b10]Concussion[-] and may experience dizziness and headaches. You will not be able to use the iron sights on ranged weapons until its healed\nUse [35bd00]Painkillers[-] to cure this.\n\nYour max health is lowered by {cvar(.ConcussionHealthBlockage:0.0)}."
 jz_BuffSmallWoundDesc,"You've gotten a [f21b10]Small wound[-]. Treat it with a [35bd00]Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 2 sec\n-1 Health every 25 sec\n-4% Mobility\n-1 Wellness every 2.5 min\n15% more Health Loss\nUntil Treated"
 jz_buffArmBrokenDesc,"Your arm is broken, limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A splint or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmCastDesc,"Your arm is in a cast, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
@@ -137,7 +149,7 @@ jz_FermentationBarrelDesc,"A simple workstation used to ferment beer and mead."
 jz_MethaneProducer,Methane Producer
 jz_MethaneProducerDesc,"A homemade system for capturing methane from rotting material. Can refill old propane tanks to use as bombs."
 jz_ArmorTable,Armor Table
-armorTableDesc,"A workstation for crafting all types of clothing and armor."
+armorTableDesc,"A workstation for crafting all types of clothing and armor.\n\nCrafted on the Workbench"
 jz_MethaneTankBomb,Methane Bomb
 jz_MethaneTankBombDesc,"A old propane tank filled with methane. Place on the ground and shoot to cause a large explosion that does no damage to blocks."
 plantedCropsGroupDesc,Plant these seeds on soil or a Farm Plot to grow crops to harvest. Protect your crops from zombie and animals or they can be trampled and destroyed. Use the Watering Can to add Fertilizer to the planted seed to increase crop yield. The Watering Can can also be used to treat Insect Infestations with Insecticide and to water dry plants with Ounces of Dirty Water
@@ -447,6 +459,7 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+drugPainkillersDesc,"Painkillers help you shrug off stunning blows and relieve [35bd00]Throbbing Pain[-]. They will also lower your Wellness by 1 and make you thirsty" 
 resourceInsulator,"Insulator"
 jz_drinkJarEmptyDesc,"An empty glass jar can be used to make refreshing drinks or to craft other recipes.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
 jz_resourceDuctTapeDesc,"Duct tape is useful for making many things & according to Madmole MacDyver a must have resource for making the cooler stuff.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
@@ -1229,7 +1242,7 @@ jz_QIGoodWalkieTalkieDesc,"A commercial Walkie Talkie, doesn't have very much ra
 jz_QIGoodWalkieTalkie,"Walkie Talkie"
 jz_CBatterie,"C Battery"
 jz_CBatterieDesc,"A C type battery used to power many things"
-jz_drugVitaminsDesc,"Vitamins do not cure illnesses instead they supply you with a boost of daily vitamins to maintain your diet and increase your wellness."
+jz_drugVitaminsDesc,"Vitamins do not cure illnesses instead they supply you with a boost of vitamins to maintain your diet and increase your Wellness by 1. While active they make you Fatigue slower and better resist [fff700]Dysentery[-]"
 jz_GallonOfDirtyRiverWater,Gallon of Dirty River Water
 jz_GallonOfDirtyRiverWaterDesc,A gallon of water collected from a unclean source
 jz_OldMilkJug,Old Milk Jug
