@@ -141,9 +141,9 @@ ResearchDeskDesc,"A workstation used to reverse engineer unknown crafting schema
 jz_SteelForge,Steel Forge
 blastFurnaceDesc,"A large forge capable of temperatures high enough to smelt Steel and create advanced glass"
 jz_MortarAndPestle,Mortar & Pestle
-MortarAndPestle1Desc,"A small stone workstation used to grind chemicals and medical items. Can also be used as a tool in the Chemistry Station"
+MortarAndPestle1Desc,"A small stone workstation that can be placed and used to grind chemicals and medical items. It can also be used as a tool in the Chemistry Station"
 jz_Anvil,Anvil
-jz_AnvilDesc,"A basic workstation used for beating metal into shape. Can also be used as a tool in the Forge and Steel Forge"
+jz_AnvilDesc,"A basic workstation that can be placed and used for beating metal into shape. It can also be used as a tool in the Armor Table, Forge and Steel Forge"
 jz_FermentationBarrel,Fermentation Barrel
 jz_FermentationBarrelDesc,"A simple workstation used to ferment beer and mead."
 jz_MethaneProducer,Methane Producer
@@ -459,6 +459,26 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+
+jz_FoodPorkBelly,"Pork Belly"
+meleeWpnKnucklesT1IronKnuckles,"Brass Knuckles"
+jz_SchematicIronArrows,"Iron Arrow Crafting Guide"
+jz_SchematicShotgunShell,"Shotgun Shell Crafting Guide"
+jz_Schematic762MM,"762MM Crafting Guide"
+jz_Schematic44MM,"44MM Crafting Guide"
+jz_Schematic9MM,"9MM Crafting Guide"
+jz_SchematicGlue,"Glue Crafting Guide"
+jz_SchematicSteelShaping,"Steel Shaping Guide"
+jz_SchematicIronShaping,"Iron Shaping Guide"
+jz_SchematicNutAndBolt,"Nut and Bolt Crafting Guide"
+jz_SchematicNails,"Nails Crafting Guide"
+jz_SchematicMethaneProducer,"Methane Producer Crafting Guide"
+jz_SchematicSteelForge,"Steel Forge Crafting Guide"
+jz_SchematicSteelSafe,"Steel Safe Crafting Guide"
+jz_SchematicWoodenChest,"Wooden Chest Crafting Guide"
+jz_SchematicSteelDoors,"Steel Doors Crafting Guide"
+jz_SchematicIronDoors,"Iron Doors Crafting Guide"
+jz_SchematicWoodenDoors,"Wooden Doors Crafting Guide"
 drugPainkillersDesc,"Painkillers help you shrug off stunning blows and relieve [35bd00]Throbbing Pain[-]. They will also lower your Wellness by 1 and make you thirsty" 
 resourceInsulator,"Insulator"
 jz_drinkJarEmptyDesc,"An empty glass jar can be used to make refreshing drinks or to craft other recipes.\n\nThe secretes to its reproduction have been lost to the dead and it can only be found scavenging"
