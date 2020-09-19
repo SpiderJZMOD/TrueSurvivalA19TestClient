@@ -628,9 +628,9 @@ jz_MechanicProfessionDesc,"All the knowledge needed to become a Mechanic.\n20% F
 jz_ProfessionDoctorBook,The Doctor Profession
 jz_DoctorProfessionDesc,"All the knowledge needed to become a Doctor.\n20% Faster Medical Crafting\nRecipes-[35bd00]Plant Salve[-], [35bd00]First Aid Bandage[-], Stimulant, [35bd00]Suture Kit[-], [35bd00]AntiVenom[-], [35bd00]Painkillers[-], Steroids, [35bd00]Antibiotics[-]"
 jz_ProfessionFarmerBook,The Farmer Profession
-jz_BouncerProfessionDesc,"All the knowledge needed to become a Farmer.\n20% Faster Seed Crafting\nRecipes- All Plantable seeds"
+jz_FarmerProfessionDesc,"All the knowledge needed to become a Farmer.\n20% Faster Seed Crafting\nRecipes- All Plantable seeds"
 jz_ProfessionChemistBook,The Chemist Profession
-jz_ChemistProfessionDesc,"All the knowledge needed to become a Chemist.\n20% Faster Chemistry Crafting\nRecipes- Mega Crush, Stimulant, Acid, Oil Shale, GunPowder, Purification Tablets"
+jz_ChemistProfessionDesc,"All the knowledge needed to become a Chemist.\n20% Faster Chemistry Crafting\nRecipes- Mega Crush, Stimulant, Acid, GunPowder, Purification Tablets"
 jz_ProfessionSoldier,Soldier Profession
 jz_ProfessionSoldierKitDesc,"All the knowledge needed to become a Soldier\nStart with a Old Rifle and ammo\n10% Faster Reload & better Aim w/M60 & AK47\nRecipes- Grubs, Weapon Repair Kit, Blunderbuss, Blunderbuss Ammo, AK47, Pipe Bomb, Cooking Pot Mine"
 jz_ProfessionDoctor,Doctor Profession
