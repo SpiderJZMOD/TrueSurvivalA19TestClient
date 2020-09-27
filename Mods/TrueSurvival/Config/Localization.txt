@@ -25,15 +25,15 @@ StimulantDesc,"You are under the effect of Stimulants. The more Stimulants you t
 StimulantWithdrawalDesc,"Looks like those Stimulants have a down side and your going through withdrawal. You can wait for it to pass or take some more stimulants\n\nWithdrawal Severity - Lv.{cvar($withdrawalStrength:0)}\n- Increased Fatigue drain\n- -{cvar($withdrawalSpeedDisplay:00)}% Mobility\n- -{cvar($withdrawalScavengingDisplay:00)}% Scavenging Speed\n- -{cvar($withdrawalShiver:00)} Degrees\n- -{cvar($withdrawalSpeedDisplay:0)}% Weapon Handling"
 jz_BuffInfection01GetBetterDesc,"You have a treated Z-Virus infection. Continue medication until infection is cleared up.\nGetting bite by zombies will make an infection worse."
 jz_BuffInfection01UntreatedDesc,"You have the Z-Virus infection.\nIt will get worse until treated by antibiotics.\nGetting bite by zombies will make the infection worse. If the Infection reaches 100% you will die and not be able to respawn."
-jz_BuffInfection02GetBetterDesc,"You have a treated serious infection. Continue medication and keep an eye on the wound.\nGetting hit by zombies or animals will make an infection worse.\n\nStamina Regeneration -12.5%
-jz_BuffInfection02UntreatedDesc,"You have a serious Z-Virus infection. If left untreated it could lead to full infection which can cause permanent player death. Take antibiotics as soon as possible.\nGetting bite by zombies will make the infection worse.\n\nStamina Regeneration -25%
-jz_BuffInfection03GetBetterDesc,"You have a treated life threatening Z-Virus infection. Continue Medication and avoid bites from the infected. If the Infection reaches 100% you will die and not be able to respawn.\n\nStamina Regeneration -17%
-jz_BuffInfection03UntreatedDesc,"You have a life threatening Z-Virus infection. Take antibiotics immediately.\n\nStamina Regeneration -35%\nAll Attributes -1
-jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will reduce the Z-Virus infection that you may be suffering. You can stack antibiotic medicines to increase duration.
-jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed
+jz_BuffInfection02GetBetterDesc,"You have a treated serious infection. Continue medication and keep an eye on the wound.\nGetting hit by zombies or animals will make an infection worse.\n\nStamina Regeneration -12.5%"
+jz_BuffInfection02UntreatedDesc,"You have a serious Z-Virus infection. If left untreated it could lead to full infection which can cause permanent player death. Take antibiotics as soon as possible.\nGetting bite by zombies will make the infection worse.\n\nStamina Regeneration -25%"
+jz_BuffInfection03GetBetterDesc,"You have a treated life threatening Z-Virus infection. Continue Medication and avoid bites from the infected. If the Infection reaches 100% you will die and not be able to respawn.\n\nStamina Regeneration -17%"
+jz_BuffInfection03UntreatedDesc,"You have a life threatening Z-Virus infection. Take antibiotics immediately.\n\nStamina Regeneration -35%\nAll Attributes -1"
+jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will reduce the Z-Virus infection that you may be suffering. You can stack antibiotic medicines to increase duration."
+jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed"
 jz_buffEncumberedInvDesc,"Moving becomes harder when you are carrying too many items in your inventory. Carry less or wear clothes with more pockets or add more pockets to your clothes.\n\nThe number is the number of items that are encumbering you."
 BLOCK_________________________XML,BLOCK_________________________XML
-jz_BuffBurnWoundDesc,"You have received a [f21b10]Burn Wound[-]. Use [35bd00]Plant Salve[-] to help heal it or it could get worse"
+jz_BuffBurnWoundDesc,"You have received a [f21b10]Burn Wound[-]. Use [35bd00]Plant Salve[-] to help heal it or it could get worse\n\n-4 Stamina per 5 seconds\n-1 HP every 30 seconds\nUntil Treated"
 jz_trapSpikesIronDmg0Dec,"Iron Pipes sharpened and bolted together.\n\nRepair with Iron Pipes using a Wrench"
 jz_ZombieLoot,"Zombie Corpse"
 jz_QISatRadioStation,"Satellite Radio"
@@ -1329,7 +1329,7 @@ jz_SchematicLockPick,Lock Pick Crafting Guide
 jz_SchematicGunOil,Gun Oil Crafting Guide
 jz_SchematicPoliceBaton,Police Baton Crafting Guide
 medicalAloeCream,Plant Salve
-medicalAloeCreamDesc,"[1c40b]Plant Salve[-] can be used to increase abrasion healing speed and treat [f21b10]Burn[-] and [f21b10]Cauterized Wounds[-]. Apply to a [00d537]Bandage[-] to craft [00d537]First Aid Bandages[-].\nUse the secondary action to treat another player."
+medicalAloeCreamDesc,"[35bd00]Plant Salve[-] can be used to increase abrasion healing speed and treat [f21b10]Burn Wounds[-] and [f21b10]Cauterized Wounds[-]. Apply to a [35bd00]Bandage[-] to craft [35bd00]First Aid Bandages[-].\n\nUse the secondary action to treat another player."
 bucketEmptyDesc,A old metal bucket with too many holes to be useful
 medicalBloodDrawKit,Blood Draw Kit
 jz_SchematicTShirtZU,"ZU T-Shirt Pattern"
