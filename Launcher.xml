@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Servers>
-   <ServerGroup Name="True Survival" Logo="" Description="True Survival 19\n\nIP-172.96.166.50\nPort.-18733\nPW-spider02">
+   <ServerGroup Name="True Survival" Logo="" Description="True Survival 19\n\nIP-172.96.166.50\nPort.-18733\nPW-spider05">
         <Server Name="True Survival 19" Logo="">
             <Description>True Survival 19
             Single/Coop test build. Not usable for creating Servers
@@ -8,7 +8,7 @@
             Official True Survival Test Server
             IP - 172.96.166.50
             Port. - 18733
-            PW - spider02
+            PW - spider05
             </Description>
             <DownloadMode>Clone</DownloadMode>
             <Address>172.96.166.50</Address>                    
