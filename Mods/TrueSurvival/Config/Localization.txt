@@ -1,6 +1,7 @@
 Key,English
 BUFF_________________________XML,BUFF_________________________XML
-jz_BuffThrobbingPainDesc,"OOww! That hurts take some [35bd00]Painkillers[-] to relieve the pain\n-1 Stamina every 5 sec\n+10 Core Temp"
+jz_BuffGashDeac,"You have a large [f21b10]Gash[-]. You will need to use a [35bd00]Suture Kit[-] to stitch it closed or it could get worse.\n\n-8% Mobility\n-1HP per 20sec"
+jz_BuffThrobbingPainDesc,"OOww! That hurts take some [35bd00]Painkillers[-] to relieve the pain\n\n-1 Stamina every 5 sec\n+10 Core Temp"
 jz_BuffGangreneWoundDesc,"Your wound has become [f21b10]Gangrene[-]. The only option you have is to cut off the dead tissue, this will leave you permanently scared. Use a bladed weapon to cute away the [f21b10]Gangrene[-] tissue. You will then have to treat and care for the remaining wound\n\n-4 Stamina every 1 sec\n-1 Health every 10 sec\n-12% Mobility\n-1 Wellness every 1 min\n30% more Health Loss\nUntil Treated"
 jz_BuffTendingSixDesc,"Your [f21b10]Sever Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 2 sec\n-3% Mobility\n5% more Health Loss"
 jz_BuffDirtyBandageThreeDesc,"Your [f21b10]Sever Wounds[-] bandage is dirty and starting to smell. Change it with another [35bd00]Sanitizing Bandage[-] soon or it could get worse.\n\n-2 Stamina every 1 sec\n-9% Mobility\n19% more Health Loss\nUntil Treated"
@@ -15,9 +16,9 @@ jz_BuffTendingOneDesc,"Your [f21b10]Small Wound[-] is bandaged and healing. Make
 jz_BuffSevereWoundDesc,"You've gotten a [f21b10]Sever Wound[-]. Treat it with [35bd00]Sanitized Bandage[-] and be sure to change it when it gets dirty.\n\n-2 Stamina every 1 sec\n-1 Health every 15 sec\n-12% Mobility\n-1 Wellness every 1.5 min\n25% more Health Loss\nUntil Treated"
 jz_buffInjuryConcussionDesc,"You have suffered a [f21b10]Concussion[-] and may experience dizziness and headaches. You will not be able to use the iron sights on ranged weapons until its healed\nUse [35bd00]Painkillers[-] to cure this.\n\nYour max health is lowered by {cvar(.ConcussionHealthBlockage:0.0)}."
 jz_BuffSmallWoundDesc,"You've gotten a [f21b10]Small wound[-]. Treat it with a [35bd00]Bandage[-] and be sure to change it when it gets dirty.\n\n-1 Stamina every 2 sec\n-1 Health every 25 sec\n-4% Mobility\n-1 Wellness every 2.5 min\n15% more Health Loss\nUntil Treated"
-jz_buffArmBrokenDesc,"Your arm is broken, limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A splint or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
+jz_buffArmBrokenDesc,"You have gotten a [f21b10]Broken Arm[-], limiting use to one handed weapons and tools and slowing your weapon handling, reload speed and swing speeds. A [35bd00]Splint[-] or cast will speed up healing.\nRanged or power attacks will delay healing or even hurt you.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmCastDesc,"Your arm is in a cast, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
-jz_buffArmSplintedDesc,"Your arm is splinted, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
+jz_buffArmSplintedDesc,"You arm is splinted, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffArmSprainedDesc,"Your arm is sprained, limiting use to one handed weapons and tools and slowing your weapon handling, reload and swing speeds. This will take some time to heal.\nRanged or power attacks will delay healing or even hurt you. Further critical hits may result in a broken arm.\n\nYour max health is lowered by {cvar(.ArmHurtHealthBlockage:0.0)}."
 jz_buffNewbieCoatDesc,"All your status effects last through death. This coat temporarily protects you from the heat and the cold and you are also protected from the full penalty of death until level 20.\nWhile your Coat is active there is no XP penalty on death but you will still lose Wellness up to a max of 10 at level 21.\n\nThis protection will decrease and disappear completely so think ahead."
 AmputationTrackerDesc,"Player Amputations {cvar($amputationCounter:00)}\n\n- +{cvar($amputationCounter:00)}% Longer to Pick Locks\n- +{cvar($amputationCounter:00)}% Longer Crafting Time\n-  -{cvar($amputationCounter:00)}% Slower Mobility"
@@ -459,6 +460,9 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_SpoiledDrink,"Spoiled Drink"
+jz_SpoiledDrinkDesc,"A crafted drink that has spoiled. Click Open to separate the Dirty Water from the Jar."
+jz_SchematicFertilizer,"Fertilizer Crafting Guide"
 jz_TissueExtractorSpearDesc,"By attaching the Tissue Extractor to a spear it should give you a better reach for collecting samples. This item will only work at night during a bloodmoon and only until you collect all your samples for the quest.\n\n\n[fff700]Quest item, do not lose![-]"
 jz_FoodPorkBelly,"Pork Belly"
 meleeWpnKnucklesT1IronKnuckles,"Brass Knuckles"
@@ -570,8 +574,7 @@ foodSteakAndPotatoSchematic,Venison and Potato Meal Recipe
 foodSteakAndPotato,Venison And Potato
 apparelCigarDesc,"Look intimidating and get a better deal from traders.\nAlso acts as an apatite suppressant and slows stamina regain"
 jz_QIBugOutBag,Bug Out Bag
-jz_QIBugOutBagDesc,"A pre packed bag for when shit hits the fan and you have to flee in a hurry.\n\n\n[fff700]Quest item, do not lose![-]""
-jz_QIBugOutBagLoot,"Bug Out Bag"
+jz_QIBugOutBagDesc,"A pre packed bag for when shit hits the fan and you have to flee in a hurry.\n\n\n[fff700]Quest item, do not lose![-]"
 jz_foodHoneyDesc,"Honey is one of mother nature's miracles. It gives you some energy, tastes great, and can be used to craft [35bd00]First Aid Bandage[-]."
 jz_PartsOldRifleReceiver,Old Rifle Receiver
 jz_PartsOldRifleStock,Old Rifle Stock

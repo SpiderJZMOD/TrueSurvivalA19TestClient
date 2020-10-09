@@ -6783,7 +6783,8 @@ needed?
 	<effect_group name="meleeHandAnimalSnake" tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
-		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+        <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffSnakeBite"/>
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" 
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
 			weights=".07,.07,.05,.29,.36,.11"/>
 	</effect_group>
@@ -14257,7 +14258,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="68"/>
     <property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -14296,7 +14297,7 @@ perkNightStalkerSilentNight
 	<property name="UnlockedBy" value="drinkJarGoldenRodTeaSchematic"/>
     <property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -14341,7 +14342,7 @@ perkNightStalkerSilentNight
 	<property name="UnlockedBy" value="drinkJarRedTeaSchematic"/>
     <property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -14462,7 +14463,7 @@ perkNightStalkerSilentNight
 	<property name="SellableToTrader" value="false"/>
     <property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -18308,7 +18309,7 @@ perkNightStalkerSilentNight
 	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="MresourceFertilizer"/>
-    <property name="UnlockedBy" value="jz_SchematicFertilizer,jz_Farmer"/>
+    <property name="UnlockedBy" value="jz_SchematicFertilizer"/>
 	<property name="Stacknumber" value="250"/> <!-- STK resource -->
 	<property name="FuelValue" value="0"/>
 	<property name="Weight" value="0"/>
@@ -25628,7 +25629,7 @@ perkNightStalkerSilentNight
 	<property name="DisplayType" value="TSWaWeFrVe"/>
 	<property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -25666,7 +25667,7 @@ perkNightStalkerSilentNight
     <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
 	<property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -25701,7 +25702,7 @@ perkNightStalkerSilentNight
     <property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
 	<property name="Spoilable" value="true" />
     <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="drinkJarEmpty" />
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
     <property name="TickPerLoss" value="250" />
     <property name="SpoilageMax" value="1000" />
     <property name="SpoilagePerTick" value="1" />
@@ -32188,6 +32189,16 @@ perkNightStalkerSilentNight
 	<property class="Action0">
 		<property name="Create_item" value="medicalBandage,candle,drugPainkillers,jz_FoodMRESmall,jz_DrinkCleanOuncesOfWater,jz_QIDeadWalkieTalkie,jz_OldKnife"/>
 		<property name="Create_item_count" value="1,1,1,1,32,1"/>
+	</property>
+</item>
+
+<item name="jz_SpoiledDrink">
+	<property name="Extends" value="jz_ProfessionSoldier"/>
+	<property name="CustomIcon" value="drinkJarBoiledWater"/>
+    <property name="DescriptionKey" value="jz_SpoiledDrinkDesc"/>
+	<property class="Action0">
+		<property name="Create_item" value="drinkJarEmpty,jz_DrinkDirtyOuncesOfWater"/>
+		<property name="Create_item_count" value="1,16"/>
 	</property>
 </item>
 

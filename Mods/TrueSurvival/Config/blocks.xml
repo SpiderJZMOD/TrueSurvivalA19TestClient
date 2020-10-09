@@ -15868,8 +15868,11 @@ NOT the TextureNumber.
 
 <block name="forestFlower">
 	<property name="Extends" value="treeGrassMaster" param1="CustomIcon"/>
+    <property name="Material" value="Mplants"/>
+    <property name="Weight" value="2"/>
 	<property name="Class" value="Tallgrass"/>
 	<property name="Texture" value="567"/>
+    <drop event="Harvest" name="resourceYuccaFibers" count="0" prob="1" tag="allHarvest"/>
     <drop event="Harvest" name="forestFlower" count="1" tag="allHarvest"/>
 </block>
 
@@ -40408,6 +40411,7 @@ ore block visualisation end -->
 
 <block name="scrapIronFrameBlockV">
 	<property name="Extends" value="scrapIronFrameMaster"/>
+    <property name="CustomIcon" value="scrapIronFrameBlock"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="SortOrder2" value="0050"/> <!-- SortShape -->
 	<property name="Group" value="Building,advBuilding"/>
@@ -40417,6 +40421,7 @@ ore block visualisation end -->
 
 <block name="rebarFrameBlockV">
 	<property name="Extends" value="rebarFrameMaster"/>
+    <property name="CustomIcon" value="rebarFrameBlock"/>
 	<property name="SortOrder2" value="0050"/> <!-- SortShape -->
 	<property name="CreativeMode" value="Player"/>
     <property name="CanPickup" value="true" param1="rebarFrameBlockVariantHelper"/>

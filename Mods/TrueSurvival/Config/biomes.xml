@@ -504,6 +504,7 @@ If you do not declare them, the decorations of the main biome are used.
 			<decoration type="block" blockname="treeMountainPine41m" prob="0.012" rotatemax="7"/>
 			<decoration type="block" blockname="plantedChrysanthemum3Harvest" prob="0.001"/>
 			<decoration type="block" blockname="treeTallGrassDiagonal" prob=".4"/>
+            <decoration type="block" blockname="forestFlower" prob=".009"/>
 			<decoration type="block" blockname="treeOakLrg01" prob="0.003" rotatemax="7"/>
 			<decoration type="block" blockname="treeOakMed01" prob="0.003" rotatemax="7"/>
 			<decoration type="block" blockname="treeOakMed02" prob="0.003" rotatemax="7"/>
