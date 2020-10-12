@@ -1633,6 +1633,7 @@ Mesh files no longer used:
 	<property name="RepairTools" value="jz_CantRepair"/>
 	<property name="SoundDestroy" value="wooddestroy1"/>
     <property name="DegradationBreaksAfter" value="true"/>
+    <property name="DescriptionKey" value="jz_meleeWpnClubT0WoodenClubDesc"/> 
 	<property name="RepairExpMultiplier" value="5.5"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="EconomicBundleSize" value="1"/>
@@ -9024,7 +9025,7 @@ add knockdown resist to armor
 	<property name="HoldType" value="45"/>
 	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-	<property name="DescriptionKey" value="armorLeatherGroupDesc"/>
+	<property name="DescriptionKey" value="jz_armorLeatherGroupDesc"/>
 	<property name="Group" value="Clothing"/>
 	<property name="RepairExpMultiplier" value="10.8"/>
 	<property name="EconomicValue" value="250"/>

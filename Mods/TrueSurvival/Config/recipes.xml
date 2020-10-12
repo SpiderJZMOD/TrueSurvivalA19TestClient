@@ -193,8 +193,10 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="forge" count="1" craft_time="60" craft_exp_gain="300">
 	<ingredient name="resourceRockSmall" count="100"/>
 	<ingredient name="resourceClayLump" count="100"/>
-	<ingredient name="toolBellows" count="1"/>
-	<ingredient name="resourceMetalPipe" count="3"/>
+	<ingredient name="jz_Plank" count="2"/>
+	<ingredient name="resourceMetalPipe" count="5"/>
+    <ingredient name="resourceLeather" count="20"/>
+    <ingredient name="resourceDuctTape" count="5"/>
     <ingredient name="cntCollapsedForge" count="1"/>
 </recipe>
 

@@ -7656,13 +7656,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<effect_group>
 			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="jz_BuffGrab"/>
 
-			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
-			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
-			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
-			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
-			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.5,0" duration="0,4">
-				<requirement name="!EntityTagCompare" tags="player"/>
-			</passive_effect>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.5,0" duration="0,4"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" fade="1" effect_name="Blur"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
@@ -8254,7 +8249,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<display_value value="$scratchCounter"/><display_value_key value="{00}"/>
 		<effect_group name="Ticker, Remover">
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
+			<!--<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>-->
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
                 <requirement name="NotHasBuff" buff="jz_BuffUsingHands"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
@@ -8262,8 +8257,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="40">
 				<requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="40"/></triggered_effect>
             
-            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundSystem">
-				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="0"/></triggered_effect>
+            <!--<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundSystem">
+				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="0"/></triggered_effect>-->
 		</effect_group>
           
         <effect_group name="Bruised Fader Activation">
