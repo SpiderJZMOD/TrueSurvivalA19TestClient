@@ -302,10 +302,14 @@
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>
 			<passive_effect name="MaxRange" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>
-            <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>	
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_ArcherySkillTag"/>
+            <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>	           
             <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ArcherySkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_ArcherySkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.3" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,50" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_ArcherySkillTag"/>
             <requirement name="ProgressionLevel" progression_name="jz_ArcherySkill" operation="LT" value="100"/>
@@ -337,10 +341,14 @@
 		<effect_group>
             <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_CrossbowSkillTag"/>
             <passive_effect name="WeaponHandling" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_CrossbowSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_CrossbowSkillTag"/>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_CrossbowSkillTag"/>	
             <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_CrossbowSkillTag"/>
  		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_CrossbowSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.35" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,55" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_CrossbowSkillTag"/>
             <requirement name="ProgressionLevel" progression_name="jz_CrossbowSkill" operation="LT" value="100"/>
@@ -374,8 +382,11 @@
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_HangunSkillTag"/>
             <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.05,.1,.15,.2,.25" level="0,20,40,60,80,100" tags="jz_HangunSkillTag"/>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_HangunSkillTag"/>			
-            <passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_HangunSkillTag"/>
-		
+        </effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_HangunSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.30" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,60" level="0,100" tags="arm,leg"/>
         </effect_group>
         <effect_group>
 			<requirement name="ItemHasTags" tags="jz_HangunSkillTag"/>
@@ -423,8 +434,12 @@
         	<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_ShotgunSkillTag"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_ShotgunSkillTag"/>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_ShotgunSkillTag"/>	
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_ShotgunSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_ShotgunSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.40" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,80" level="0,100" tags="arm,leg"/>
+        </effect_group>
         <effect_group>
 			<requirement name="HoldingItemHasTags" tags="jz_ShotgunSkillTag"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned01Shotgun">
@@ -478,8 +493,12 @@
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_RifleSkillTag"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value="0,.1,.2,.3,.4,.5,.6" level="0,10,20,40,60,80,100" tags="jz_RifleSkillTag"/>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_RifleSkillTag"/>	
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_RifleSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_RifleSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.45" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,70" level="0,100" tags="arm,leg"/>
+        </effect_group>
         <effect_group>
 			<requirement name="ItemHasTags" tags="jz_RifleSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_RifleSkill" operation="GTE" value="51"/>
@@ -519,10 +538,14 @@
 			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value="0,-.01,-.02-.03" level="0,30,60,90" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
-             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
+            <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_MachineGunSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_MachineGunSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.40" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,70" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_MachineGunSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_MachineGunSkill" operation="LT" value="100"/>
@@ -551,7 +574,6 @@
     <!--JunkTurretSkill-->
 	<perk name="jz_JunkBotsSkill" parent="jz_FirearmAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="JunkTurret Skill" desc_key="jz_JunkBotsSkillDesc" icon="ui_game_symbol_electric_turret">
 		<effect_group>
-          	<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_JunkBotsSkillTag"/>
             <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.125,.25,.375,.5" level="0,20,40,60,80" tags="turretMelee"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2" level="0,80,100" tags="jz_JunkBotsSkillTag"/>
 			<passive_effect name="MagazineSize" operation="base_add" level="0,5" value="10,50" tags="perkTurrets">
@@ -562,6 +584,11 @@
 			<passive_effect name="JunkTurretActiveCount" operation="base_add" level="100" value="1"/>
 			<passive_effect name="JunkTurretActiveRange" operation="base_set" value="10,14,15,16,17,18" level="0,20,40,60,80,100"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="turretRanged"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.20" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,50" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_JunkBotsSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_JunkBotsSkill" operation="LT" value="100"/>
@@ -594,8 +621,12 @@
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ExposivesSkillTag"/>
 			<passive_effect name="WeaponHandling" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_ExposivesSkillTag"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3,.35" level="0,30,60,80,100" tags="jz_ExposivesSkillTag"/>
-            <passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.2,.3,.45" level="0,20,40,60,80,100"  tags="jz_ExposivesSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.30" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,80" level="0,100" tags="arm,leg"/>
+        </effect_group>
 	    <effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
@@ -630,8 +661,12 @@
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BrawlerSkillTag"/>
 		</effect_group>
         <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_BrawlerSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.30" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,20" level="0,100" tags="arm,leg"/>
+        </effect_group>
+        <effect_group>
 			<requirement name="ItemHasTags" tags="jz_BrawlerSkillTag"/>
-				<passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.15,.2" level="0,30,60,85,100"  tags="head"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="zombie,animal" buff="buffInjuryStunned01">
 					<requirement name="ProgressionLevel" progression_name="jz_BrawlerSkill" operation="GTE" value="40"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
@@ -685,13 +720,16 @@
 		<effect_group>
             <passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BluntSkillTag"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BluntSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BluntSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_BluntSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_BluntSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.4,.8,1.2,1.6,2" level="0,20,40,60,80,100" tags="jz_BluntSkillTag">
-				<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/>
-			</passive_effect>
+				<requirement name="CVarCompare" cvar="_stunned" operation="Equals" value="1" target="other"/></passive_effect>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_BrawlerSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.30" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,40" level="0,100" tags="arm,leg"/>
+        </effect_group>
         <effect_group>
 			<requirement name="ItemHasTags" tags="jz_BluntSkillTag"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".PummelPeteCombo" operation="add" value="1">
@@ -759,9 +797,13 @@
 	<perk name="jz_SledgeSkill" parent="jz_MeleeAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Sledge Weapon Skill" desc_key="jz_SledgeSkillDesc" icon="ui_game_symbol_sledge">
 		<effect_group>
             <passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_SledgeSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_SledgeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_SledgeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_SledgeSkillTag"/>
+        </effect_group>
+         <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_SledgeSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.50" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,50" level="0,100" tags="arm,leg"/>
         </effect_group>
         <effect_group>
 			<requirement name="ItemHasTags" tags="jz_SledgeSkillTag"/>
@@ -830,10 +872,14 @@
 		<effect_group>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BladeSkillTag"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BladeSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BladeSkillTag"/>
         	<passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_BladeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_BladeSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_BladeSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.25" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,80" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_BladeSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_BladeSkill" operation="LT" value="100"/>
@@ -863,11 +909,15 @@
 	<perk name="jz_SpearSkill" parent="jz_MeleeAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Spear Skill" desc_key="jz_SpearSkillDesc" icon="ui_game_symbol_spear">
 		<effect_group>
         	<passive_effect name="MaxRange" operation="perc_add" value="0,.05,.1,.15,.20" level="0,25,50,75,100" tags="jz_SpearSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_SpearSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_SpearSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_SpearSkillTag"/>
             <passive_effect name="ProjectileVelocity" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_SpearSkillTag"/>
 		</effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_SpearSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.40" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,30" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_SpearSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_SpearSkill" operation="LT" value="100"/>
@@ -897,13 +947,16 @@
 		<effect_group>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_PickaxeSkillTag"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_PickaxeSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.15,.2" level="0,25,50,75,100" tags="jz_PickaxeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.3,.6,.9,1.2,1.5" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
             <passive_effect name="HarvestCount" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
             <passive_effect name="PlayerExpGain" operation="perc_add" value="0,-.1,-.2,-.3,-.4" level="0,25,50,75,100" tags="Harvesting">
-				<requirement name="HoldingItemHasTags" tags="jz_PickaxeSkillTag"/>
-			</passive_effect>
+				<requirement name="HoldingItemHasTags" tags="jz_PickaxeSkillTag"/> </passive_effect>
+        </effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_PickaxeSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.20" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,20" level="0,100" tags="arm,leg"/>
         </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_PickaxeSkillTag"/>
@@ -933,13 +986,16 @@
 		<effect_group>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_AxeSkillTag"/>
 			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_AxeSkillTag"/>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.15,.2" level="0,25,50,75,100" tags="jz_AxeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.3,.6,.9,1.2,1.5" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
             <passive_effect name="HarvestCount" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
             <passive_effect name="PlayerExpGain" operation="perc_add" value="0,-.1,-.2,-.3,-.4" level="0,25,50,75,100" tags="Harvesting">
-				<requirement name="HoldingItemHasTags" tags="jz_AxeSkillTag"/>
-			</passive_effect>
+				<requirement name="HoldingItemHasTags" tags="jz_AxeSkillTag"/> </passive_effect>
+        </effect_group>
+        <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_AxeSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.20" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,60" level="0,100" tags="arm,leg"/>
         </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_AxeSkillTag"/>
@@ -966,9 +1022,11 @@
 	</perk>
     <!--ChainsawSkill-->
 	<perk name="jz_ChainsawSkill" parent="jz_ToolAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Chainsaw Skill" desc_key="jz_ChainsawSkillDesc" icon="meleeToolAxeT3Chainsaw">
-		<effect_group>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.15,.2" level="0,25,50,75,100" tags="jz_ChainsawSkillTag"/>
-		</effect_group>
+		 <effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_ChainsawSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.30" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,80" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_ChainsawSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_ChainsawSkill" operation="LT" value="100"/>
@@ -995,8 +1053,10 @@
     <!--AugerSkill-->
 	<perk name="jz_AugerSkill" parent="jz_ToolAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Auger Skill" desc_key="jz_AugerSkillDesc" icon="meleeToolPickT3Auger">
 		<effect_group>
-			<passive_effect name="DismemberChance" operation="base_add" value="0,.05,.1,.15,.2" level="0,25,50,75,100" tags="jz_AugerSkillTag"/>
-		</effect_group>
+            <requirement name="HoldingItemHasTags" tags="jz_AugerSkillTag"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,.20" level="0,100" tags="head"/>
+                <passive_effect name="DismemberChance" operation="base_add" value="0,30" level="0,100" tags="arm,leg"/>
+        </effect_group>
 		<effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_AugerSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_AugerSkill" operation="LT" value="100"/>
@@ -4318,7 +4378,7 @@
 	
 	<perk name="SP_ConcreteSledgeSchematic" parent="jz_ToolSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Concrete Sledge" desc_key="SP_ConcreteSledgeSchematicDesc" icon="ui_game_symbol_ConcreteSledge">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_ConcreteSledge"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_ConcreteSledge,jz_MoldSledgeHead,jz_SledgeHead"/>
 			<effect_description level="1" desc_key="SP_ConcreteSledgeSchematicDesc" long_desc_key="SP_ConcreteSledgeSchematicDesc"/>
 		</effect_group>
 	</perk>	
@@ -4470,12 +4530,12 @@
 		</effect_group>
 	</perk>
     
-    <perk name="SP_MethaneProducerSchematic" parent="jz_WorkstationSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Methane Producer" desc_key="SP_MethaneProducerSchematicDesc" icon="jz_MethaneProducer">
+    <perk name="SP_MethaneProducerSchematic" parent="jz_WorkstationSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Methane Producer and Bomb" desc_key="SP_MethaneProducerSchematicDesc" icon="jz_MethaneProducer">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_MethaneProducer"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_MethaneProducer,jz_MethaneTankBomb,jz_EmptyPropaneTank"/>
 			<effect_description level="1" desc_key="SP_MethaneProducerSchematicDesc" long_desc_key="SP_MethaneProducerSchematicDesc"/>
 		</effect_group>
-	</perk>
+	</perk> 
     
     <perk name="SP_SteelForgeSchematic" parent="jz_WorkstationSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Steel Forge" desc_key="SP_SteelForgeSchematicDesc" icon="ui_game_symbol_blastFurnace">
 		<effect_group>
@@ -5291,7 +5351,6 @@
 			<passive_effect name="SecretStash" operation="base_add" level="2,4,6,8,10,12,14,16,18,20" value="100,200,300,400,500,600,700,800,900,1000"/>
 		</effect_group>
 	</perk>
-    
 <!-- The Fireman Almanac (Books) -->
 	<perk name="perkFiremansAlmanacHeat" parent="skillFiremansAlmanac" max_level="1" base_skill_point_cost="0" desc_key="perkFiremansAlmanacHeatDesc" long_desc_key="perkFiremansAlmanacHeatLongDesc">
 		<effect_group>

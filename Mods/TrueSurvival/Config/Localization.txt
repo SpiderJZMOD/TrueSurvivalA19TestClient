@@ -34,6 +34,8 @@ jz_BuffInfectionCureDisplayDesc,"You have taken antibiotic medicine which will r
 jz_BuffFatiguedDesc,"Your getting fatigued. Rest on a bed or furniture to raise your Fatigue Level back to full. Resting on Beds will also heal you.\n\n- +10% Health Loss\n- -5% Mobility Speed"
 jz_buffEncumberedInvDesc,"Moving becomes harder when you are carrying too many items in your inventory. Carry less or wear clothes with more pockets or add more pockets to your clothes.\n\nThe number is the number of items that are encumbering you."
 BLOCK_________________________XML,BLOCK_________________________XML
+jz_refrigeratorGroupDesc,"A modern refrigerator, its seen better days but will still do a good job of stopping perishable goods from spoiling when used for storage."
+jz_cntCoolerClosedDesc,"A well insulated Cooler that can be used to store and slow the spoiling of perishable goods."
 jz_BuffBurnWoundDesc,"You have received a [f21b10]Burn Wound[-]. Use [35bd00]Plant Salve[-] to help heal it or it could get worse\n\n-4 Stamina per 5 seconds\n-1 HP every 30 seconds\nUntil Treated"
 jz_trapSpikesIronDmg0Dec,"Iron Pipes sharpened and bolted together.\n\nRepair with Iron Pipes using a Wrench"
 jz_ZombieLoot,"Zombie Corpse"
@@ -460,6 +462,13 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_PartsAutoShotgunReceiver,"Auto Shotgun Receiver"
+jz_PartsAutoShotgunStock,"Auto Shotgun Stock"
+jz_PartsAutoShotgunBarrel,"Auto Shotgun Barrel"
+jz_PartsMarksmanRifleBarrel,"Marksman Rifle Barrel"
+jz_PartsMarksmanRifleStock,"Marksman Rifle Stock"
+jz_PartsMarksmanRifleReceiver,"Marksman Rifle Receiver"
+jz_resourceClayLumpDesc,"Clay Soil or Loam is a key resource for forging and farming and can be harvested from the top soil of nearly every biome. It is also used in creating Molds for use in forges."
 jz_meleeWpnClubT0WoodenClubDesc,"A makeshift club good for breaking knees and skulls.\n\nScrap to Sticks"
 jz_armorLeatherGroupDesc,"Light armor will encumber you a little and provides some protection against damage.\nIt will not protect you from the weather.\n\nRepair with a Leather.\nScrap to Leather"
 jz_SpoiledDrink,"Spoiled Drink"

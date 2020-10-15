@@ -120,7 +120,6 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
         <passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>
 		<passive_effect name="DamageModifier" operation="base_set" value="1" tags="head,perkMiner69r" match_all_tags="true"/>
-		<passive_effect name="DismemberChance" operation="base_set" value=".05"  tags="perkMiner69r"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps,Basics"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -402,6 +401,7 @@ Mesh files no longer used:
 	<property name="Extends" value="meleeToolAxeT1IronFireaxe"/>
 	<property name="Meshfile" value="#Other/Items?Weapons/Melee/Axe/steelAxePrefab.prefab"/>
 	<property name="EconomicValue" value="700"/>
+    <property name="RepairTools" value="resourceForgedSteel"/>
 	<property name="UnlockedBy" value="jz_SchematicSteelFireaxe"/>
 	<property name="Material" value="MmeleeToolAllSteel"/> <property name="Weight" value="6"/>
 
@@ -1246,17 +1246,15 @@ Mesh files no longer used:
         
 	</property>
 
-	<effect_group name="meleeWpnBladeT0BoneKnife">
-          
-        <!--JZMOD TESTING 
-        
+	<effect_group name="meleeWpnBladeT0BoneKnife"> 
+ <!--JZMOD TESTING        
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>    
+            
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="25"/>
-         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_TraderJoeRep" level="-1"/>
+         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="9"/> 
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="9"/> 
-     
-        -->
-		
+        -->	
         <passive_effect name="EntityDamage" operation="base_set" value="4.1" tags="perkDeepCuts,knife"/> <!-- meleeWpnBladeT0BoneKnife -->
 		<passive_effect name="BlockDamage" operation="base_set" value="4" tags="perkDeepCuts"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfBlows"/>
@@ -1273,7 +1271,7 @@ Mesh files no longer used:
 		<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeepCuts"/> <!-- tier bonus -->
         
-        <passive_effect name="DismemberChance" operation="base_set" value="0"/>
+         <passive_effect name="DismemberChance" operation="base_set" value="0" tags="head"/>
 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="wood"/>
@@ -3279,6 +3277,7 @@ needed?
 
 <item name="meleeWpnKnucklesT3SteelKnuckles">
 	<property name="Extends" value="meleeWpnKnucklesT1IronKnuckles"/>
+    <property name="RepairTools" value="resourceForgedSteel"/>
     <property name="EconomicValue" value="700"/>
 	<property name="Material" value="MmeleeWpnKnucklesParts"/>
 	<property name="Meshfile" value="#Other/Items?Weapons/Melee/Knuckles/knucklesSpikedRight_Prefab.prefab"/>
@@ -6862,6 +6861,14 @@ needed?
 	<property name="EconomicValue" value="9"/>
     <property name="UnlockedBy" value="jz_Schematic9MM"/>
 	<property name="Group" value="Ammo/Weapons"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,1,1"/>
+	</property>
 	<effect_group name="ammo9mmBulletBall" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="32" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="7" tags="perkGunslinger"/>
@@ -6877,6 +6884,14 @@ needed?
 	<property name="EconomicValue" value="14"/>
 	<property name="DescriptionKey" value="ammoHPGroupDesc"/>
 	<property name="UnlockedBy" value="bookPistolPeteHPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="2,1,1"/>
+	</property>
 	<effect_group name="ammo9mmBulletHP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="41.6" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="3" tags="perkGunslinger"/>
@@ -6895,6 +6910,14 @@ needed?
 	<property name="EconomicValue" value="14"/>
 	<property name="DescriptionKey" value="ammoAPGroupDesc"/>
 	<property name="UnlockedBy" value="bookPistolPeteAPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,2,1"/>
+	</property>
 	<effect_group name="ammo9mmBulletAP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="32" tags="perkGunslinger,9mmGun"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="8" tags="perkGunslinger"/>
@@ -6911,6 +6934,14 @@ needed?
 	<property name="Extends" value="ammo9mmBulletBall"/>
 	<property name="EconomicValue" value="10"/>
     <property name="UnlockedBy" value="jz_Schematic44MM"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,3,1"/>
+	</property>
 	<effect_group name="ammo44MagnumBulletBall" tiered="false">
 		<!-- To split up the revolver and DVulture I'm providing base_set that the specific perk passives can latch on to -->
 		<passive_effect name="EntityDamage" operation="base_set" value="70" tags="perkGunslinger,revolver"/>
@@ -6929,6 +6960,14 @@ needed?
 	<property name="EconomicValue" value="15"/>
 	<property name="DescriptionKey" value="ammoHPGroupDesc"/>
 	<property name="UnlockedBy" value="bookEnforcerHPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="2,3,1"/>
+	</property>
 	<effect_group name="ammo44MagnumBulletHP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="91" tags="perkGunslinger,revolver"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="6" tags="perkGunslinger"/>
@@ -6947,6 +6986,14 @@ needed?
 	<property name="EconomicValue" value="15"/>
 	<property name="DescriptionKey" value="ammoAPGroupDesc"/>
 	<property name="UnlockedBy" value="bookEnforcerAPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,5,1"/>
+	</property>
 	<effect_group name="ammo44MagnumBulletAP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="70" tags="perkGunslinger,revolver"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="14" tags="perkGunslinger"/>
@@ -6963,6 +7010,14 @@ needed?
 	<property name="Stacknumber" value="150"/> <!-- STK ammo low -->
     <property name="UnlockedBy" value="jz_Schematic762MM"/>
 	<property name="EconomicValue" value="11"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,3,1"/>
+	</property>
 	<effect_group name="ammo762mmBulletBall" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="50" tags="perkDeadEye,perkMachineGunner"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="8" tags="perkDeadEye,perkMachineGunner"/>
@@ -6978,6 +7033,14 @@ needed?
 	<property name="EconomicValue" value="16"/>
 	<property name="DescriptionKey" value="ammoHPGroupDesc"/>
 	<property name="UnlockedBy" value="bookSniperHPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="2,3,1"/>
+	</property>
 	<effect_group name="ammo762mmBulletHP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="65" tags="perkDeadEye,perkMachineGunner"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="4" tags="perkDeadEye,perkMachineGunner"/>
@@ -6994,6 +7057,14 @@ needed?
 	<property name="EconomicValue" value="16"/>
 	<property name="DescriptionKey" value="ammoAPGroupDesc"/>
 	<property name="UnlockedBy" value="bookSniperAPAmmo"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceBulletCasing"/>
+		<property name="Create_item_count" value="1,5,1"/>
+	</property>
 	<effect_group name="ammo762mmBulletAP" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="50" tags="perkDeadEye,perkMachineGunner"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="9" tags="perkDeadEye,perkMachineGunner"/>
@@ -7016,6 +7087,14 @@ needed?
 	<property name="Stacknumber" value="150"/> <!-- STK ammo low -->
 	<property name="EconomicValue" value="11"/>
 	<property name="Group" value="Ammo/Weapons"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBuckshot,resourceGunPowder,resourcePaper"/>
+		<property name="Create_item_count" value="1,2,1"/>
+	</property>
 	<effect_group name="ammoShotgunShell" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="11.2" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="5.4" tags="perkBoomstick"/>
@@ -7047,6 +7126,14 @@ needed?
 	<property name="EconomicValue" value="20"/>
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="UnlockedBy" value="bookShotgunMessiahSlugs"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceBulletTip,resourceGunPowder,resourceScrapPolymers"/>
+		<property name="Create_item_count" value="3,3,1"/>
+	</property>
 	<effect_group name="ammoShotgunSlug" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="96" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkBoomstick"/>
@@ -7079,6 +7166,14 @@ needed?
 	<property name="EconomicValue" value="20"/>
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="UnlockedBy" value="bookShotgunMessiahBreachingSlugs"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceForgedSteel,resourceClayLump,resourceGunPowder,resourceScrapPolymers"/>
+		<property name="Create_item_count" value="4,2,4,1"/>
+	</property>
 	<effect_group name="ammoShotgunBreachingSlug" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="96" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="80" tags="perkBoomstick"/>
@@ -7108,6 +7203,14 @@ needed?
 	<property name="Stacknumber" value="150"/> <!-- STK ammo low -->
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="EconomicValue" value="5"/>
+    <property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="craft_click_craft"/>
+		<property name="Create_item" value="resourceRockSmall,resourceGunPowder,resourcePaper"/>
+		<property name="Create_item_count" value="1,1,1"/>
+	</property>
 	<effect_group name="ammoBlunderbuss" tiered="false">
 		<passive_effect name="EntityDamage" operation="base_set" value="9.6" tags="perkBoomstick"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="1.6" tags="perkBoomstick"/>
@@ -12703,7 +12806,7 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-2"/><display_value name="foodHealthAmount" value="-2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
         
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="35"/><display_value name="dDysenteryRisk" value=".35"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="65"/><display_value name="dDysenteryRisk" value=".65"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
@@ -18219,6 +18322,7 @@ perkNightStalkerSilentNight
     <property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value=".5"/>
+    <property name="DescriptionKey" value="jz_resourceClayLumpDesc"/>
 </item>
 
 <item name="dirtFragment">
@@ -22886,8 +22990,8 @@ perkNightStalkerSilentNight
 <item name="jz_OldRevolver"> 
 	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,magazine,firingMode,selfLoading,9mmGun,jz_HangunSkillTag"/>
 	<property name="DisplayType" value="rangedGun"/>
-	<property name="HoldType" value="1"/>
-	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
+	<property name="HoldType" value="44"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Magnums/magnumPrefab.prefab"/>
 	<property name="Material" value="Mmetal"/> 
 	<property name="Weight" value="15"/>
 	<property name="RepairTools" value="jz_CantRepair"/>
@@ -22895,15 +22999,14 @@ perkNightStalkerSilentNight
 	<property name="SoundJammed" value="weapon_jam"/>
 	<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
 	<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
-	<property name="Sound_Sight_In" value="pistol_sight_in"/>
-	<property name="Sound_Sight_Out" value="pistol_sight_out"/>
+	<property name="Sound_Sight_In" value="revolver_sight_in"/>
+	<property name="Sound_Sight_Out" value="revolver_sight_out"/>
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="LightValue" value=".45"/>
 	<property name="EconomicValue" value="0"/>
 	<property name="ShowQuality" value="true"/>
 	<property name="DescriptionKey" value="oldRevolverDesc" />
     <property name="CustomIcon" value="OldRevolver" />
-
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
 		<property name="Magazine_items" value="ammo9mmBulletBall"/>
@@ -22911,18 +23014,19 @@ perkNightStalkerSilentNight
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
 		<property name="Sound_empty" value="dryfire"/>
-		<property name="Sound_reload" value="pistol_reload"/>
-		<property name="AutoReload" value="true"/>
-		<property name="Particles_muzzle_fire" value="gunfire_pistol"/>
-		<property name="Particles_muzzle_fire_fpv" value="gunfire_pistol_fpv"/>
+		<property name="Sound_reload" value="44magnum_reload"/>
+		<property name="Particles_muzzle_fire" value="gunfire_magnum"/>
+		<property name="Particles_muzzle_fire_fpv" value="gunfire_magnum_fpv"/>
+		<property name="ScopeOffset" value="-.00062,.1408,.02"/>
+		<property name="SideOffset" value="0,0,0"/>
+		<property name="BarrelOffset" value="0,0,0"/>
 		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
 	</property>
 	<property class="Action1">
 		<property name="Class" value="Zoom"/>
 		<property name="Zoom_max_out" value="55"/>
 		<property name="Zoom_max_in" value="55"/>
-		<property name="ScopeCameraOffset" value="0,.0008,0"/>
-        <requirement name="NotHasBuff" buff="buffInjuryConcussion" />
+		<requirement name="NotHasBuff" buff="buffInjuryConcussion" />
 	</property>
 
 	<effect_group name="gunHandgunT1Pistol">
@@ -24717,7 +24821,7 @@ perkNightStalkerSilentNight
 		<passive_effect name="EntityDamage" operation="base_set" value="5"/> 
 		<passive_effect name="BlockDamage" operation="base_set" value="38.5"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.8" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="500" />
 		<passive_effect name="DegradationPerUse" operation="base_set" value="1" />
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
@@ -28226,7 +28330,7 @@ perkNightStalkerSilentNight
 	<property name="Material" value="MresourceClayLump" />
 	<property name="DescriptionKey" value="jz_MoldDDesc" />
 	<property name="Stacknumber" value="1" />
-    <property name="CustomIcon" value="ui_game_symbol_jz_MoldCrowbar" />
+    <property name="CustomIcon" value="CrowbarMold" />
     <property name="Group" value="Science" />
 </item>
 
@@ -28792,9 +28896,11 @@ perkNightStalkerSilentNight
 
 <item name="jz_EmptyPropaneTank">
 	<property name="Extends" value="jz_MasterItem" />
-	<property name="Stacknumber" value="6" />
+    <property name="Material" value="Mmetal" />
+    <property name="Weight" value="20" />
 	<property name="DescriptionKey" value="jz_EmptyPropaneTankDesc" />
 	<property name="CustomIcon" value="tankbomb" />
+    <property name="UnlockedBy" value="jz_SchematicMethaneProducer"/>
 </item>
 
 <item name="jz_Nitroglycerin">
@@ -28934,6 +29040,27 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="5" />
 	<property name="CustomIcon" value="ui_game_symbol_moldyFruit" />
     <property name="DescriptionKey" value="jz_MoldyFruitDesc" />
+ 	<property name="DisplayType" value="TSFoWaStHeWeDy"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_eating"/>
+        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="4"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="10"/><display_value name="$waterAmountAdd" value="-10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="8"/><display_value name="TSStaminaLoss" value="-8"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-2"/><display_value name="foodHealthAmount" value="-2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+        
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="65"/><display_value name="dDysenteryRisk" value=".65"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
+	</effect_group>
 </item>
 
 <item name="jz_MoldyVeggies">
@@ -28941,6 +29068,27 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="5" />
 	<property name="CustomIcon" value="ui_game_symbol_moldyVeggies" />
     <property name="DescriptionKey" value="jz_MoldyVeggiesDesc" />
+    <property name="DisplayType" value="TSFoWaStHeWeDy"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_eating"/>
+        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="4"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="10"/><display_value name="$waterAmountAdd" value="-10"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="8"/><display_value name="TSStaminaLoss" value="-8"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-2"/><display_value name="foodHealthAmount" value="-2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+        
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="65"/><display_value name="dDysenteryRisk" value=".65"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
+	</effect_group>
 </item>
 
 <item name="jz_Charcoal">

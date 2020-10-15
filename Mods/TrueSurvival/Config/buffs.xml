@@ -2775,7 +2775,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffLegSprained" name_key="buffLegSprainedName" description_key="buffLegSprainedDesc" tooltip_key="buffLegSprainedTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,128,0">
+	<buff name="buffLegSprained" name_key="buffLegSprainedName" remove_on_death="false" description_key="buffLegSprainedDesc" tooltip_key="buffLegSprainedTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,128,0">
 		<damage_type value="sprain"/>
 		<stack_type value="replace"/>
 		<duration value="0"/>
@@ -2836,7 +2836,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffLegBroken" name_key="buffLegBrokenName" description_key="buffLegBrokenDesc" tooltip_key="buffLegBrokenTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,0,0">
+	<buff name="buffLegBroken" name_key="buffLegBrokenName" remove_on_death="false" description_key="buffLegBrokenDesc" tooltip_key="buffLegBrokenTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,0,0">
 		<!-- Note: sprinting with a broken leg could randomly rangdoll the player -->
 		<damage_type value="break"/>
 		<stack_type value="replace"/>
@@ -2903,7 +2903,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffLegSplinted" name_key="buffLegSplintedName" description_key="buffLegSplintedDesc" icon="ui_game_symbol_splint">
+	<buff name="buffLegSplinted" name_key="buffLegSplintedName" remove_on_death="false" description_key="buffLegSplintedDesc" icon="ui_game_symbol_splint">
 		<damage_type value="sprain"/>
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
@@ -2965,7 +2965,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffLegCast" name_key="buffLegCastName" description_key="buffLegCastDesc" icon="ui_game_symbol_splint">
+	<buff name="buffLegCast" name_key="buffLegCastName" remove_on_death="false" description_key="buffLegCastDesc" icon="ui_game_symbol_splint">
 		<damage_type value="sprain"/>
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
@@ -3067,7 +3067,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffArmSprained" name_key="buffArmSprainedName" description_key="jz_buffArmSprainedDesc" tooltip_key="buffArmSprainedTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,128,0">
+	<buff name="buffArmSprained" name_key="buffArmSprainedName" remove_on_death="false" description_key="jz_buffArmSprainedDesc" tooltip_key="buffArmSprainedTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,128,0">
 		<damage_type value="sprain"/>
 		<stack_type value="replace"/>
 		<duration value="0"/>
@@ -3127,7 +3127,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffArmBroken" name_key="buffArmBrokenName" description_key="jz_buffArmBrokenDesc" tooltip_key="buffArmBrokenTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,0,0">
+	<buff name="buffArmBroken" name_key="buffArmBrokenName" remove_on_death="false" description_key="jz_buffArmBrokenDesc" tooltip_key="buffArmBrokenTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,0,0">
 		<damage_type value="break"/>
 		<stack_type value="replace"/>
 		<duration value="0"/>
@@ -3194,7 +3194,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffArmSplinted" name_key="buffArmSplintedName" description_key="jz_buffArmSplintedDesc" tooltip_key="buffArmSplintedTooltip" icon="ui_game_symbol_splinted_arm">
+	<buff name="buffArmSplinted" name_key="buffArmSplintedName" remove_on_death="false" description_key="jz_buffArmSplintedDesc" tooltip_key="buffArmSplintedTooltip" icon="ui_game_symbol_splinted_arm">
 		<damage_type value="sprain"/>
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>
@@ -3255,7 +3255,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffArmCast" name_key="buffArmCastName" description_key="jz_buffArmCastDesc" icon="ui_game_symbol_splinted_arm">
+	<buff name="buffArmCast" name_key="buffArmCastName" remove_on_death="false" description_key="jz_buffArmCastDesc" icon="ui_game_symbol_splinted_arm">
 		<damage_type value="sprain"/>
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>

@@ -20047,7 +20047,8 @@ NOT the TextureNumber.
 	<property name="Model" value="#Entities/LootContainers?coolerPrefab.prefab"/>
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="45"/>
-     <property name="Tags" value="jz_CrowBarTag"/>                 
+    <property name="DescriptionKey" value="jz_cntCoolerClosedDesc"/>
+    <property name="Tags" value="jz_CrowBarTag"/>                 
     <!--JZMOD CROWBAR-->
 	<drop event="Destroy" name="cntCoolerClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                  
 </block>
@@ -21463,7 +21464,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>  
     <!--JZMOD CROWBAR-->		
 	<drop event="Destroy" name="cntNightstandClosed" count="0" prob="1" tool_category="ToolCrowbar"/> 
-    <drop event="Destroy" name="cntPillCaseClosed" count="0" prob="1" tool_category="ToolCrowbar"/>
+    <drop event="Destroy" name="cntPillCaseClosed" count="1" prob="1" tool_category="ToolCrowbar"/>
 </block>
 
 <block name="cntPillCaseEmpty">
@@ -21480,7 +21481,7 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>  
     <!--JZMOD CROWBAR-->		
 	<drop event="Destroy" name="cntNightstandClosed" count="0" prob="1" tool_category="ToolCrowbar"/> 
-    <drop event="Destroy" name="cntPillCaseClosed" count="0" prob="1" tool_category="ToolCrowbar"/>                                       
+    <drop event="Destroy" name="cntPillCaseClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                       
 </block>
 
 <block name="cntPillCaseRandomLootHelper">
@@ -22110,6 +22111,7 @@ NOT the TextureNumber.
 	<property name="MultiBlockDim" value="2,1,1"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag" />
     <!--JZMOD CROWBAR-->		
 	<drop event="Destroy" name="cntWoodDesk01Closed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                  
 </block>
@@ -22156,6 +22158,7 @@ NOT the TextureNumber.
 	<property name="MultiBlockDim" value="2,1,1"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag" />
     <!--JZMOD CROWBAR-->		
 	<drop event="Destroy" name="cntMetalDesk02Closed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                  
 </block>
@@ -23722,7 +23725,7 @@ NOT the TextureNumber.
 	<property name="MultiBlockDim" value="1,2,1"/>
 	<property name="OnlySimpleRotations" value="true"/>
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntLockersShortOpen" count="0" prob="1" tool_category="ToolCrowbar"/>
+	<drop event="Destroy" name="cntLockersShortClosed" count="0" prob="1" tool_category="ToolCrowbar"/>
 	<drop event="Destroy" name="cntLockersTallClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                     
 </block>
 
@@ -29291,6 +29294,9 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
 	<property name="FilterTags" value="fdecor,fother,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag"/>             
+    <!-- JZMOD CROWBAR-->
+	<drop event="Destroy" name="endTable" count="1" tool_category="ToolCrowbar" />   
 </block>
 
 <block name="endTableLamp">
@@ -29303,6 +29309,9 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Lighting/end_table_lightPrefab"/>-->
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
+    <property name="Tags" value="jz_CrowBarTag"/>             
+    <!-- JZMOD CROWBAR-->
+	<drop event="Destroy" name="endTableLamp" count="1" tool_category="ToolCrowbar" />    
 </block>
 
 <block name="signExitLight">
@@ -30073,7 +30082,7 @@ NOT the TextureNumber.
 <block name="electricwirerelay">
 	<property name="CreativeMode" value="Player"/>
 	<property name="Class" value="Powered"/>
-	<property name="UnlockedBy" value="perkAdvancedEngineering,generatorbankSchematic"/>
+	<property name="UnlockedBy" value="generatorbankSchematic"/>
 	<property name="Material" value="Mmetal_weak"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -30102,7 +30111,7 @@ NOT the TextureNumber.
 <block name="switch">
 	<property name="CreativeMode" value="Player"/>
 	<property name="Class" value="Switch"/>
-	<property name="UnlockedBy" value="perkAdvancedEngineering,switchSchematic"/>
+	<property name="UnlockedBy" value="switchSchematic"/>
 	<property name="Material" value="Mmetal_weak"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -30162,7 +30171,7 @@ NOT the TextureNumber.
 <block name="pressureplateLong">
 	<property name="Class" value="PressurePlate"/>
 	<property name="DisplayType" value="blockElectricalHardenedMulti"/>
-	<property name="UnlockedBy" value="perkAdvancedEngineering,pressureplateSchematic"/>
+	<property name="UnlockedBy" value="pressureplateSchematic"/>
 	<property name="Material" value="Mmetal_hard"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Mesh" value="models"/>
@@ -30256,7 +30265,7 @@ NOT the TextureNumber.
 <block name="electrictimerrelay">
 	<property name="CreativeMode" value="Player"/>
 	<property name="Class" value="TimerRelay"/>
-	<property name="UnlockedBy" value="perkAdvancedEngineering,electrictimerrelaySchematic"/>
+	<property name="UnlockedBy" value="electrictimerrelaySchematic"/>
 	<property name="Material" value="Mmetal_weak"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -31636,7 +31645,7 @@ NOT the TextureNumber.
 <block name="garageDoorMetal_v1Powered">
 	<property name="Class" value="PoweredDoor"/>
 	<property name="CustomIcon" value="garageDoorMetal_v1"/>
-	<property name="UnlockedBy" value="perkAdvancedEngineering,poweredDoorsSchematic"/>
+	<property name="UnlockedBy" value="poweredDoorsSchematic"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Material" value="MmetalGarageDoor3x2x2"/><property name="MaxDamage" value="10000"/>
 	<property name="PassThroughDamage" value="true"/>
@@ -34385,7 +34394,7 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="woodFenceRailingTrellisSheetBlockVariantHelperDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true"/>
-	<property name="PlaceAltBlockValue" value="whitePicketFenceSheet,woodFenceSheet,woodFenceFarmSheet,woodRailing,woodRailingCNR,woodRailing3d,railingFloatLeft,railingFloatRight,woodTrellisDiamond,woodTrellisSquare,woodFenceFarmSheetBroken1,woodFenceFarmSheetBroken2,woodRailing3dBroke,woodFenceSheetBent1,woodFenceSheetBent2,woodFenceSheetBent3,woodFenceSheetBent4"/>
+	<property name="PlaceAltBlockValue" value="whitePicketFenceSheet,woodFenceSheet,woodFenceFarmSheet,woodRailing,woodRailingCNR,woodRailing3d,railingFloatLeft,railingFloatRight,woodFenceFarmSheetBroken1,woodFenceFarmSheetBroken2,woodRailing3dBroke,woodFenceSheetBent1,woodFenceSheetBent2,woodFenceSheetBent3,woodFenceSheetBent4"/>
 </block>
 
 <block name="metalFenceRailingTrellisSheetBlockVariantHelper">
@@ -35489,11 +35498,12 @@ ore block visualisation end -->
 	<property name="Model" value="#@modfolder:Resources/JZGasTank.unity3d?GasTankPrefab" />			
 	<property name="Class" value="CarExplodeLoot"/>
     <property name="MaxDamage" value="3"/>
-	<property name="LootList" value="320"/>
+	<property name="LootList" value="3"/>
 	<property name="ItemTypeIcon" value="explosion"/>
 	<property name="Collide" value="sight,movement,melee,bullet,arrow,rocket"/>
 	<property name="Material" value="MFuelBarrelPolymer"/>
 	<property name="Place" value="TowardsPlacerInverted"/>
+    <property name="UnlockedBy" value="jz_SchematicMethaneProducer"/>
 	<property name="Path" value="solid"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property class="Explosion">
@@ -40686,7 +40696,7 @@ ore block visualisation end -->
 
       <property class="AdvancedZombieFeatures">
         <property name="Logging" value="false"/>
-        <property name="HeadshotOnly" value="true" />        <!-- Only way to kill them is through head shots -->
+        <property name="HeadshotOnly" value="false" />        <!-- Only way to kill them is through head shots -->
         <property name="RandomSize" value="false" />        <!-- Give them random sizes for more variety -->
         <property name="RandomWalk" value="true" />        <!-- Give them random walks. -->
       </property>

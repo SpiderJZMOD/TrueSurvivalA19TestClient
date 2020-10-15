@@ -1230,84 +1230,84 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 <material id="MMachineGunParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunMGT1AK47Parts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MBowCrossbowParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunBowT1WoodenBowParts"/>
+	<property name="forge_category" value="metal"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MRifleParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunRifleT1HuntingRifleParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MHandGunParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunHandgunT1PistolParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MShotgunParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunShotgunT1DoubleBarrelParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MRocketLauncherParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunExplosivesT3RocketLauncherParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnBatonParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnBatonT2StunBatonParts"/>
+	<property name="forge_category" value="metal"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnKnucklesParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnKnucklesT3SteelKnucklesParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnBladeParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnBladeT3MacheteParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnSpearParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnSpearT3SteelSpearParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnClubParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnClubT3SteelClubParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MmeleeWpnSledgeParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeWpnSledgeT3SteelSledgehammerParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
@@ -1335,21 +1335,21 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 <material id="MarmorSteelSet">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="armorSteelSetParts"/>
+	<property name="forge_category" value="steel"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MMotorToolParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="meleeToolChainsawParts"/>
+	<property name="forge_category" value="metal"/>
 	<property name="Experience" value="6"/>
 </material>
 
 <material id="MJunkTurretParts">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
-	<property name="forge_category" value="gunBotRoboticsParts"/>
+	<property name="forge_category" value="resourceMechanicalParts"/>
 	<property name="Experience" value="6"/>
 </material>
 
