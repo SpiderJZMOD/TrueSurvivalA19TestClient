@@ -8600,8 +8600,12 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundWellness"/>
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundHealthLoss"/>
             
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThree"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFour"/>
@@ -8706,7 +8710,16 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundWellness"/>
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
             
-           <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>		
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThree"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFour"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>		
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFive"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThree"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingSix"/>	
