@@ -5222,7 +5222,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".1"/>
 			<!--<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="0.05"/>
 			<passive_effect name="HealthChangeOT" operation="base_subtract" value=".00416"/> 20 p h,   does not work-->
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".055"/> <!-- 90 p h -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".0917"/> <!-- 90 p h -->
 
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Player$Hungry" play_in_head="true"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="Player$Hungry" play_in_head="true">
@@ -7277,7 +7277,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     <buff name="jz_BuffGash" remove_on_death="false" name_key="Nasty Gash" tooltip_key="Thats going to need Stitches" description_key="jz_BuffGashDeac" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
 		<update_rate value="25"/>
-		<duration value="3600"/>
+		<duration value="3600"/><!-- 3600 -->
 		<effect_group>
             <passive_effect name="Mobility" operation="perc_subtract" value="0.08"/>
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInjuryBleedingTwo"/>
@@ -8304,7 +8304,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<effect_group name="Wound Stage Activation">
 			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="20"/>
 			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="29"/>
-                <triggered_effect trigger="onSelfBuffStack" action="AddBuff" fireOneBuff="true" buff="buffLegSprainedCHTrigger,buffArmSprainedCHTrigger" weights="50,50">
+                <triggered_effect trigger="onSelfBuffStack" action="AddBuff" fireOneBuff="true" buff="buffLegSprainedCHTrigger,buffArmSprainedCHTrigger" weights="80,80">
 					<requirement name="NotHasBuff" buff="jz_BuffWound"/>
 					<requirement name="NotHasBuff" buff="jz_BuffTendingThree"/>
 					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageTwo"/>

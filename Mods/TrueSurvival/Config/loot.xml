@@ -2678,28 +2678,30 @@ The overall plan for loot distribution:
 	<item name="meleeWpnSledgeT1IronSledgehammerSchematic" prob="4" />
     <item name="jz_SchematicIronPickaxe" prob="4" />
 	<item name="jz_SchematicIronFireaxe" prob="4" />
-	<item name="jz_SchematicIronShovel" prob="6" />
-	<item name="jz_SchematicClawHammer" prob="6" />
-	<item name="meleeToolSalvageT1WrenchSchematic" prob="4" />
+	<item name="jz_SchematicIronShovel" prob="5" />
+	<item name="jz_SchematicClawHammer" prob="5" />
+	<item name="meleeToolSalvageT1WrenchSchematic" prob="5" />
 	<item name="medicalPlasterCastSchematic" prob="4" />
 	<item name="armorIronSetSchematic" prob="4" />
 	<item name="cementMixerSchematic" prob="4" />
 	<item name="chemistryStationSchematic" prob="4" />
 	<item name="jz_SchematicMethaneProducer" prob="4" />
-    <item name="jz_SchematicMiniBike" prob="4" />
+    <item name="jz_SchematicMiniBike" prob="5" />
 	<item name="jz_SchematicMotorcycle" prob="4" />
-	<item name="jz_SchematicMasonHammer" prob="6" />
+	<item name="jz_SchematicMasonHammer" prob="4" />
 	<item name="jz_SchematicGunPowder" prob="4" />
 	<item name="jz_SchematicIronSheetMetal" prob="4" />
     <item name="jz_SchematicNutAndBolt" prob="4" />
 	<item name="jz_SchematicScrewdriver" prob="4" />
-	<item name="jz_SchematicLargeEngine" prob="4" />
-    <item name="jz_SchematicIronDoors" prob="4" />
+	<item name="jz_SchematicIronDoors" prob="4" />
     <item name="jz_SchematicSteelSafe" prob="4" />
     <item name="jz_SchematicNails" prob="4" />
-    <item name="jz_SchematicIronShaping" prob="6" />
-    <item name="jz_Schematic44MM" prob="6" />
-    <item name="jz_Schematic762MM" prob="6" />
+    <item name="jz_SchematicIronShaping" prob="4" />
+    <item name="jz_Schematic44MM" prob="4" />
+    <item name="jz_Schematic762MM" prob="4" />
+    <item name="jz_SchematicSmallEngine" prob="4" />
+    <item name="jz_SchematicSteelArrows" prob="4" />
+    <item name="jz_SchematicDrawBridge" prob="4" />
 </lootgroup>
 
 <lootgroup name="T3Schematics" >
@@ -2711,13 +2713,13 @@ The overall plan for loot distribution:
 	<item name="meleeToolPickT3AugerSchematic" prob="4" />
 	<item name="meleeToolAxeT3ChainsawSchematic" prob="4" />
 	<item name="armorMilitarySetSchematic" prob="4" />
-	<item name="armorSteelSetSchematic" prob="4" />
+	<item name="armorSteelSetSchematic" prob="3" />
 	<item name="meleeToolRepairT3NailgunSchematic" prob="4" />
 	<item name="jz_Schematic4x4Truck" prob="4" />
-	<item name="jz_SchematicGyroCopter" prob="4" />
+	<item name="jz_SchematicGyroCopter" prob="3" />
 	<item name="ammoGasCanSchematic" prob="4" />
 	<item name="resourceOilSchematic" prob="4" />
-	<item name="drugHerbalAntibioticsSchematic" prob="4" />
+	<item name="drugHerbalAntibioticsSchematic" prob="3" />
 	<item name="jz_SchematicSteelSheetMetal" prob="4" />
 	<item name="jz_SchematicConcreteMix" prob="4" />
 	<item name="jz_SchematicConcreteSledge" prob="4" />
@@ -2726,8 +2728,9 @@ The overall plan for loot distribution:
     <item name="jz_SchematicSteelDoors" prob="4" />
     <item name="jz_SchematicSteelSafe" prob="4" />
     <item name="jz_SchematicSteelForge" prob="4" />
-    <item name="jz_SchematicSteelShaping" prob="4" />
+    <item name="jz_SchematicSteelShaping" prob="3" />
     <item name="jz_SchematicGlue" prob="4" />
+    <item name="jz_SchematicLargeEngine" prob="4" />
 </lootgroup>
 
 <lootgroup name="PerkBooks">

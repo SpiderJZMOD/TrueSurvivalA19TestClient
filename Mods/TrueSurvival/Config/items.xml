@@ -1247,13 +1247,16 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeWpnBladeT0BoneKnife"> 
- <!--JZMOD TESTING        
+          
+         
+ <!--JZMOD TESTING       
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffWoundSystem"/> 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>    
-            
+         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="95"/> 
+         <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="95"/> 
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="25"/>
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="9"/> 
-         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="9"/> 
+       
         -->	
         <passive_effect name="EntityDamage" operation="base_set" value="4.1" tags="perkDeepCuts,knife"/> <!-- meleeWpnBladeT0BoneKnife -->
 		<passive_effect name="BlockDamage" operation="base_set" value="4" tags="perkDeepCuts"/>
@@ -1364,8 +1367,7 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeWpnBladeT1HuntingKnife">
-        
-		<passive_effect name="EntityDamage" operation="base_set" value="6.1" tags="perkDeepCuts,knife"/> <!-- meleeWpnBladeT1HuntingKnife -->
+        <passive_effect name="EntityDamage" operation="base_set" value="6.1" tags="perkDeepCuts,knife"/> <!-- meleeWpnBladeT1HuntingKnife -->
 		<passive_effect name="BlockDamage" operation="base_set" value="5.3" tags="perkDeepCuts"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="120" tags="perkDeepCuts,perkFlurryOfBlows"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="8.2" tags="primary"/>
@@ -1392,6 +1394,7 @@ Mesh files no longer used:
 		<!-- <passive_effect name="DamageModifier" operation="perc_add" value="0" tags="organic"/> affects organic block harvesting based on block.material.damage_category, not animal corpse harvesting -->
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest"/>
 		<!--<passive_effect name="BlockDamage" operation="perc_add" value="6" tags="blockButcher"/>-->
+        
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="base_add" value="6" tags="secondary"/>
@@ -8623,6 +8626,7 @@ add knockdown resist to armor
 	<property name="EconomicValue" value="34"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="DisplayType" value="ammoDart"/>
+    <property name="UnlockedBy" value="dartTrapSchematic"/>
 	<property class="Action1">
 		<property name="Velocity" value="55"/>
 		<property name="Gravity" value="-4"/>
@@ -14693,6 +14697,7 @@ perkNightStalkerSilentNight
 	</effect_group>
 		-->
 	<property name="Group" value="Chemicals,CFChemicals"/>
+    <property name="UnlockedBy" value="jz_SchematicGrainAlcohol"/>
 </item>
 
 <item name="drinkJarGrandpasMoonshine">
@@ -17203,8 +17208,11 @@ perkNightStalkerSilentNight
 	<property name="CreativeMode" value="Player"/>
 	<property name="CustomIcon" value="foodChiliDog"/>
 	<property name="Unlocks" value="foodChiliDog"/>
+	<property class="Action0">
+		<requirement name="ProgressionLevel" progression_name="SP_ChiliDogSchematic" operation="LT" value="1"/>                
+	</property>                                                      
 	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodChiliDog" operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_ChiliDogSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>
@@ -17243,8 +17251,11 @@ perkNightStalkerSilentNight
 	<property name="CreativeMode" value="Player"/>
 	<property name="CustomIcon" value="foodFishTacos"/>
 	<property name="Unlocks" value="foodFishTacos"/>
+	<property class="Action0">
+		<requirement name="ProgressionLevel" progression_name="SP_FishTacosSchematic" operation="LT" value="1"/>                
+	</property>                                                      
 	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodFishTacos" operation="set" value="1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_FishTacosSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>
@@ -18042,6 +18053,7 @@ perkNightStalkerSilentNight
 	<property name="RepairTime" value=".5"/>
 	<property name="RepairAmount" value="270"/>
 	<property name="Group" value="Resources"/>
+    <property name="UnlockedBy" value="jz_SchematicIronShaping"/>
 </item>
 
 <item name="resourceMetalPipe">
@@ -18054,6 +18066,7 @@ perkNightStalkerSilentNight
 	<property name="Group" value="Resources"/>
 	<property name="RepairTime" value="1"/>
 	<property name="RepairAmount" value="800"/>
+    <property name="UnlockedBy" value="jz_SchematicIronShaping"/>
 </item>
 
 <item name="resourceForgedSteel">
@@ -18067,6 +18080,7 @@ perkNightStalkerSilentNight
 	<property name="CraftingIngredientTime" value="15"/>
 	<property name="RepairTime" value="1"/>
 	<property name="RepairAmount" value="400"/>
+    <property name="UnlockedBy" value="jz_SchematicSteelShaping"/>
 </item>
 
 <item name="resourceScrapPolymers"> <!-- scrap material -->
@@ -18350,6 +18364,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicBundleSize" value="100"/>
 	<property name="Group" value="Resources,Basics"/>
 	<property name="CraftingIngredientTime" value=".25"/>
+    <property name="UnlockedBy" value="jz_SchematicCobblestone"/>
 </item>
 
 <item name="resourceCement">
@@ -18361,6 +18376,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="25"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
+    <property name="UnlockedBy" value="jz_SchematicConcreteMix"/>
 </item>
 
 <item name="resourceConcreteMix">
@@ -18373,6 +18389,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="125"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
+    <property name="UnlockedBy" value="jz_SchematicConcreteMix"/>
 </item>
 
 <item name="resourceCloth"> <!-- scrap material -->
@@ -18449,6 +18466,7 @@ perkNightStalkerSilentNight
     <property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value="2"/>
+    <property name="Unlocks" value="jz_Electrician"/>
 	<!-- <property name="RepairTime" value="2"/>
 	<property name="RepairAmount" value="400"/> -->
 </item>
@@ -18481,6 +18499,7 @@ perkNightStalkerSilentNight
     <property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
 	<property name="CraftingIngredientTime" value="2"/>
+    <property name="Unlocks" value="jz_Mechanic"/>
 	<!-- <property name="RepairTime" value="2"/>
 	<property name="RepairAmount" value="400"/> -->
 </item>
@@ -18521,6 +18540,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="12"/>
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Ammo/Weapons"/>
+    <property name="UnlockedBy" value="jz_SchematicIronArrows"/>
 </item>
 
 <item name="resourceArrowHeadSteelAP">
@@ -18532,6 +18552,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="40"/>
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Ammo/Weapons"/>
+    <property name="UnlockedBy" value="jz_SchematicSteelArrows"/>
 </item>
 
 <item name="resourceCoal">
@@ -18568,6 +18589,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+    <property name="UnlockedBy" value="jz_SchematicGunPowder"/>
 </item>
 
 <item name="resourceBuckshot">
@@ -18579,6 +18601,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Ammo/Weapons"/>
+    <property name="UnlockedBy" value="jz_SchematicShotgunShell"/>
 </item>
 
 <item name="resourceBulletCasing">
@@ -18591,6 +18614,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Ammo/Weapons"/>
+   <!-- <property name="UnlockedBy" value="jz_SchematicShotgunShell"/>-->
 </item>
 
 <item name="resourceBulletTip">
@@ -18602,6 +18626,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Group" value="Ammo/Weapons"/>
+   <!-- <property name="UnlockedBy" value="jz_SchematicShotgunShell"/>-->
 </item>
 
 <item name="resourceNail">
@@ -18615,6 +18640,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicBundleSize" value="10"/>
 	<property name="Tags" value="ammo,ranged,attStrength,perkMiner69r"/>
 	<property name="Group" value="Resources,Ammo/Weapons"/>
+    <property name="UnlockedBy" value="jz_SchematicNails"/>
 	<property class="Action1">
 		<property name="Class" value="Projectile"/>
 		<property name="Explosion.ParticleIndex" value="0"/>
@@ -19024,6 +19050,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="500"/> <!-- STK resource -->
 	<property name="EconomicValue" value="20"/>
 	<property name="Group" value="Resources,Chemicals,CFChemicals"/>
+    <property name="UnlockedBy" value="jz_SchematicGlue"/>
 </item>
 
 <item name="resourceDuctTape">
@@ -19086,7 +19113,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="15"/>
 	<property name="EconomicValue" value="250"/>
 	<property name="Group" value="Tools/Traps,Chemicals"/>
-    <property name="ItemTypeIcon" value="campfire"/>
+    <property name="ItemTypeIcon" value="ui_game_symbol_chemistryStationIcon"/>
 </item>
 
 <item name="toolBellows">
@@ -28276,7 +28303,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="200" />
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
-     <property name="DescriptionKey" value="jz_PartSmallEngineBlockDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSmallEngine"/>
 </item>
 
 <item name="jz_PartLargeEngineBlock">
@@ -28286,7 +28313,8 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="200" />
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
-     <property name="DescriptionKey" value="jz_PartLargeEngineBlockDesc" />
+    <property name="DescriptionKey" value="jz_PartLargeEngineBlockDesc" />
+    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
 </item>
 
 <item name="jz_PartSmallExhaust">
@@ -28296,7 +28324,8 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="200" />
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
-     <property name="DescriptionKey" value="jz_PartSmallExhaustDesc" />
+    <property name="DescriptionKey" value="jz_PartSmallExhaustDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSmallEngine"/>
 </item>
 
 <item name="jz_PartLargeExhaust">
@@ -28307,6 +28336,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
     <property name="DescriptionKey" value="jz_PartLargeExhaustDesc" />
+    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
 </item>
 
 <item name="jz_Alternator">
@@ -28341,6 +28371,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_pickaxeHeadMold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
 </item>
 
 <item name="jz_MoldSteelPickAxeHead">
@@ -28350,6 +28381,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_pickaxeHeadMold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="jz_SchematicSteelPickaxe"/>
 </item>
 
 <item name="jz_MoldSmallKnifeBlade">
@@ -28379,6 +28411,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_hammerHeadMold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="jz_SchematicClawHammer"/>
 </item>
 
 <item name="jz_MoldWrench">
@@ -28388,6 +28421,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_scrapWrenchMold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="meleeToolSalvageT1WrenchSchematic"/>
 </item>
 
 <item name="jz_MoldScrewdriverHead">
@@ -28397,6 +28431,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_screwdriverHeadMold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="jz_SchematicScrewdriver"/>
 </item>
 
 <item name="jz_MoldSledgeHead">
@@ -28414,7 +28449,7 @@ perkNightStalkerSilentNight
 	<property name="Material" value="MresourceClayLump" />
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="ui_game_symbol_shovelMold" />
-    <property name="UnlockedBy" value="jz_SchematicSteelShovel"/>
+    <property name="UnlockedBy" value="jz_SchematicIronShovel"/>
     <property name="Group" value="Science" />
     <property name="DescriptionKey" value="jz_MoldDDesc" />
 </item>
@@ -28436,6 +28471,7 @@ perkNightStalkerSilentNight
     <property name="CustomIcon" value="ui_game_symbol_axeHeadMold" />
     <property name="Group" value="Science" />
     <property name="DescriptionKey" value="jz_MoldDDesc" />
+    <property name="UnlockedBy" value="jz_SchematicIronFireaxe"/>
 </item>
 
 <item name="jz_MoldSmallEngineBlock">
@@ -28445,6 +28481,7 @@ perkNightStalkerSilentNight
     <property name="CustomIcon" value="LgEnginemold" />
     <property name="Group" value="Science" />
     <property name="DescriptionKey" value="jz_MoldDDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSmallEngine"/>
 </item>
 
 <item name="jz_MoldLargeEngineBlock">
@@ -28454,6 +28491,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
     <property name="CustomIcon" value="LgEnginemold" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="jz_SchematicLargeEngine"/>
 </item>
 
 <item name="jz_MoldDart">
@@ -28464,6 +28502,7 @@ perkNightStalkerSilentNight
     <property name="CustomIcon" value="ui_game_symbol_jz_MoldDart" />
 	<property name="DescriptionKey" value="jz_MoldDDesc" />
     <property name="Group" value="Science" />
+    <property name="UnlockedBy" value="dartTrapSchematic"/>
 </item>
 <!--JZMOD OTHER-->
 <item name="jz_MinibikeSeat">
@@ -28496,7 +28535,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="50" />
 	<property name="DescriptionKey" value="jz_StillDesc" />
     <property name="CustomIcon" value="jz_Still" />
-    <property name="ItemTypeIcon" value="chemistryStationIcon"/>
+    <property name="ItemTypeIcon" value="ui_game_symbol_chemistryStationIcon"/>
 </item>
 
 <item name="jz_Tallow">
@@ -28513,7 +28552,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="20" />
 	<property name="DescriptionKey" value="jz_LabEquipmentDesc" />
     <property name="CustomIcon" value="cntMedicalPileMedium" />
-    <property name="ItemTypeIcon" value="chemistryStationIcon"/>
+    <property name="ItemTypeIcon" value="ui_game_symbol_chemistryStationIcon"/>
     <property name="EconomicValue" value="1000"/>
     <property name="SellableToTrader" value="true"/>
 </item>
@@ -28733,6 +28772,7 @@ perkNightStalkerSilentNight
 	<property name="Group" value="Resources" />
 	<property name="DescriptionKey" value="steelPipeDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_shortMetalPipe" />
+    <property name="UnlockedBy" value="jz_SchematicSteelShaping"/>
 </item>
 
 <item name="jz_ScavengedParts">
@@ -28946,6 +28986,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_IronPickaxeHeadDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_ironPickaxeHead" />
+    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
 </item>
 
 <item name="jz_IronFireaxeHead">
@@ -28954,6 +28995,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_IronFireaxeHeadDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_ironFireaxeHead" />
+    <property name="UnlockedBy" value="jz_SchematicIronFireaxe"/>
 </item>
 
 <item name="jz_IronShovelHead">
@@ -28962,6 +29004,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_IronShovelHeadDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_ironShovelHead" />
+    <property name="UnlockedBy" value="jz_SchematicIronShovel"/>
 </item>
 
 <item name="jz_SteelPickaxeHead">
@@ -28970,6 +29013,7 @@ perkNightStalkerSilentNight
 	<property name="Material" value="Msteel" />
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_SteelPickaxeHeadDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSteelPickaxe"/>
 </item>
 
 <item name="jz_SteelFireaxeHead">
@@ -28978,6 +29022,7 @@ perkNightStalkerSilentNight
 	<property name="Material" value="Msteel" />
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_SteelFireaxeHeadDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSteelFireaxe"/>
 </item>
 
 <item name="jz_SteelShovelHead">
@@ -28986,6 +29031,7 @@ perkNightStalkerSilentNight
 	<property name="Material" value="Msteel" />
 	<property name="Weight" value="100" />
 	<property name="DescriptionKey" value="jz_SteelShovelHeadDesc" />
+    <property name="UnlockedBy" value="jz_SchematicSteelShovel"/>
 </item>
 
 <item name="jz_HammerHead">
@@ -28994,6 +29040,7 @@ perkNightStalkerSilentNight
 	<property name="Weight" value="10" />
 	<property name="DescriptionKey" value="jz_HammerHeadDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_hammerHead" />
+    <property name="UnlockedBy" value="jz_SchematicClawHammer"/>
 </item>
 
 <item name="jz_Wheat">
@@ -31075,7 +31122,7 @@ perkNightStalkerSilentNight
 	<property name="CreativeMode" value="Player"/>
     <property name="Weight" value="1"/>
 	<property name="CustomIcon" value="cntChest01"/>
-	<property name="Unlocks" value="cntSecureStorageChest"/>
+	<property name="Unlocks" value="cntStorageGenericSigned"/>
     <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
 	<property class="Action0">
 	<requirement name="ProgressionLevel" progression_name="SP_WoodenChestSchematic" operation="LT" value="1"/>
@@ -31290,6 +31337,70 @@ perkNightStalkerSilentNight
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_AmmoIronArrowSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicSteelArrows">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="5"/>
+	<property name="CustomIcon" value="ammoArrowSteelAP"/>
+	<property name="Unlocks" value="ammoArrowSteelAP"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_AmmoSteelArrowSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_AmmoSteelArrowSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicSmallEngine">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="4"/>
+	<property name="CustomIcon" value="smallEngine"/>
+	<property name="Unlocks" value="smallEngine"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_SmallEngineSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_SmallEngineSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicDrawBridge">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="4"/>
+	<property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
+	<property name="Unlocks" value="metalReinforcedWoodDrawBridge"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_DrawBridgeSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_DrawBridgeSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicBulletproofGlass">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="5"/>
+	<property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
+	<property name="Unlocks" value="metalReinforcedWoodDrawBridge"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_BulletproofGlassSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_BulletproofGlassSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>
@@ -32039,6 +32150,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="Insecticide"/>
 	<property name="DescriptionKey" value="jz_InsecticideDesc"/>
     <property name="Group" value="Resources,Chemicals,CFChemicals"/>
+    <property name="UnlockedBy" value="jz_SchematicInsecticide"/>
 </item>
 
 <item name="jz_FarmingWateringCan">
@@ -32053,6 +32165,7 @@ perkNightStalkerSilentNight
 	<property name="EconomicValue" value="0"/>
 	<property name="DescriptionKey" value="jz_FarmingWateringCanDesc" />
 	<property name="ShowQuality" value="false"/>
+    <property name="UnlockedBy" value="jz_SchematicFarmingWateringCan"/>
 	<property class="Action0">
 		<property name="Class" value="Repair"/>
 		<property name="Delay" value=".5"/>
@@ -32458,7 +32571,6 @@ perkNightStalkerSilentNight
 	<property name="SellableToTrader" value="false"/>
     <property name="DescriptionKey" value="jz_TissueExtractorSpearDesc"/>
 	<property name="SellableToTrader" value="false"/>
-	<property name="IsSticky" value="false"/>
 	<property name="ShowQuality" value="false"/>
 	<property name="Group" value="Ammo/Weapons,Basics"/>
 	<property class="Action0">

@@ -462,6 +462,17 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+jz_SchematicSmallEngine,"Small Engine Crafting Guide"
+
+
+
+jz_PartsDesertVultureGrip,"Desert Vulture Grip"
+jz_PartsDesertVultureBarrel,"Desert Vulture Barrel"
+jz_PartsDesertVultureFrame,"Desert Vulture Frame"
+jz_SchematicIronSpikes,"Iron Spikes Crafting Guide"
+jz_SchematicBearStew,"Bear Stew Crafting Guide"
+jz_SchematicWheatSeed,"Wheat Seed Crafting Guide"
+jz_SchematicOrangeSeed,"Orange Seed Crafting Guide"
 jz_PartsAutoShotgunReceiver,"Auto Shotgun Receiver"
 jz_PartsAutoShotgunStock,"Auto Shotgun Stock"
 jz_PartsAutoShotgunBarrel,"Auto Shotgun Barrel"
@@ -474,6 +485,7 @@ jz_armorLeatherGroupDesc,"Light armor will encumber you a little and provides so
 jz_SpoiledDrink,"Spoiled Drink"
 jz_SpoiledDrinkDesc,"A crafted drink that has spoiled. Click Open to separate the Dirty Water from the Jar."
 jz_SchematicFertilizer,"Fertilizer Crafting Guide"
+jz_TissueExtractorSpear,"Tissue Extractor Spear"
 jz_TissueExtractorSpearDesc,"By attaching the Tissue Extractor to a spear it should give you a better reach for collecting samples. This item will only work at night during a bloodmoon and only until you collect all your samples for the quest.\n\n\n[fff700]Quest item, do not lose![-]"
 jz_FoodPorkBelly,"Pork Belly"
 meleeWpnKnucklesT1IronKnuckles,"Brass Knuckles"
@@ -1109,7 +1121,7 @@ jz_PartsAugerBit,Auger Bit
 jz_BulletPressDesc,"A machine that allows the manual assembling of ammunition."
 jz_BulletPress,Bullet Press
 jz_LabEquipmentDesc,"All the Equipment needed for complex chemical manufacturing."
-jz_LabEquipment,LabEquipment
+jz_LabEquipment,"Lab Equipment"
 jz_StillDesc,"A Copper Pot Still used to refine liquors."
 jz_Still,Copper Still
 jz_SmallLoomDesc,"A small loom capable of creating cloth fabric from raw cotton."
