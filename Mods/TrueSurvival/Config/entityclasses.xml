@@ -2829,7 +2829,7 @@
 <entity_class name="animalTemplateHostile">
 	<property name="Tags" value="entity,animal,hostile"/>
 	<property name="HideInSpawnMenu" value="true"/>
-	<property name="Mesh" value="#Entities/Zombies?Zombies/zombieDogPrefab.prefab"/>
+	<property name="Mesh" value=""/>
 	<property name="ModelType" value="Standard"/>
 	<property name="Prefab" value="NPC"/>
 	<property name="Class" value="EntityEnemyAnimal"/>

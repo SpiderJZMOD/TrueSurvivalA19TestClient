@@ -1,10 +1,10 @@
 IP - 172.96.166.50
 Port. - 18733
-PW - spider05
+PW - spider06
 
 
 
-Installation-
+Installation- 19.2
 1)Copy the Mods Folder and paste it into your games main directory.
 2)Copy the 4 files in the 7DaysToDie_Data\Managed Folder and paste and replace them into your games same location (Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed)
 2)Copy the Prefab files in the Data/Prefabs Folder and paste and replace them into your games same location (Steam\steamapps\common\7 Days To Die\Data\Prefabs)
