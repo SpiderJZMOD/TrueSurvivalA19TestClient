@@ -11,7 +11,7 @@ Installation- 19.2
 3)Start Game with EAC off
 4)Log into the True Survival Server or start Single Player Game
 
-Required Game Settings
+Required SP/Coop Game Settings
 -RWG Maps only
 -World Size = 8192x8192 (or bigger)
 -Difficulty = Adventurer 
