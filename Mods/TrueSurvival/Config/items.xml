@@ -312,6 +312,7 @@ Mesh files no longer used:
 	<property name="SoundDestroy" value="wooddestroy1"/>
 	<property name="UnlockedBy" value="jz_SchematicIronFireaxe"/>
 	<property name="ShowQuality" value="true"/>
+    <property name="DescriptionKey" value="jz_meleeToolAxeT1IronFireaxeDesc"/> 
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
 		<property name="Sphere" value=".15"/>
@@ -542,6 +543,7 @@ Mesh files no longer used:
 	<property name="EconomicValue" value="700"/>
 	<property name="Material" value="MmeleeToolAllSteel"/> <property name="Weight" value="6"/>
 	<property name="UnlockedBy" value="jz_SchematicSteelPickaxe"/>
+    <property name="DescriptionKey" value="jz_meleeToolPickT2SteelPickaxeDesc"/> 
 	<property class="Action0">
 		<property name="GrazeStart" value=".5"/>
 		<property name="GrazeEnd" value=".6"/>
@@ -1012,7 +1014,7 @@ Mesh files no longer used:
 		<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkSalvageOperations"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkSalvageOperations"/>
 
-		<passive_effect name="ModSlots" operation="base_set" value="2"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 
@@ -11902,21 +11904,8 @@ perkNightStalkerSilentNight
 	</property>
 
 	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="add" value="22.85"><!-- 8 minutes -->
-			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="LT" value="3"/>
-		</triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="add" value="18.28"><!-- 80% -->
-			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="3"/>
-		</triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="add" value="13.71"><!-- 60% -->
-			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="4"/>
-		</triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$BloodDrawKitCounter" operation="add" value="9.14"><!-- 40% -->
-			<requirement name="ProgressionLevel" progression_name="perkPhysician" operation="Equals" value="5"/>
-		</triggered_effect>
-
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBloodDrawKitMain"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-4"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$fatigueTicker" operation="add" value="5"/>	
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-10"/>
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 	</effect_group>
 </item>
@@ -15115,10 +15104,10 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="meleeWpnSpearT1IronSpear"/>
 	<property name="Unlocks" value="meleeWpnSpearT1IronSpear"/>
 	<property class="Action0">
-		<requirement name="ProgressionLevel" progression_name="SP_SpearSteelSchematic" operation="LT" value="1"/>
+		<requirement name="ProgressionLevel" progression_name="SP_SpearIronSchematic" operation="LT" value="1"/>
 	</property>
 	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_SpearSteelSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_SpearIronSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>
@@ -18963,7 +18952,7 @@ perkNightStalkerSilentNight
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="MresourceScrapLeadLarge"/>
 	<property name="Stacknumber" value="1"/>
-	<property name="Weight" value="160"/>
+	<property name="Weight" value="200"/>
 	<property name="EconomicValue" value="500"/>
 	<property name="Group" value="Resources,Chemicals"/>
 	<property name="DegradationBreaksAfter" value="false"/>
@@ -24719,7 +24708,8 @@ perkNightStalkerSilentNight
 				
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="ToolCrowbar"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="0" tags="allHarvest"/>
-		<passive_effect name="HarvestCount" operation="base_set" value="0" tags="oreWoodHarvest"/>	
+		<passive_effect name="HarvestCount" operation="base_set" value="0" tags="oreWoodHarvest"/>
+        <passive_effect name="HarvestCount" operation="base_set" value="0" tags="salvageHarvest"/>        
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -31401,6 +31391,38 @@ perkNightStalkerSilentNight
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_BulletproofGlassSchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicCarBattery">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="5"/>
+	<property name="CustomIcon" value="carBattery"/>
+	<property name="Unlocks" value="carBattery"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_CarBatterySchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_CarBatterySchematic" level="-1"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
+<item name="jz_SchematicSolarbank">
+	<property name="Extends" value="schematicMaster"/>
+	<property name="CreativeMode" value="Player"/>
+    <property name="Weight" value="6"/>
+	<property name="CustomIcon" value="solarbank"/>
+	<property name="Unlocks" value="solarbank"/>
+    <property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
+	<property class="Action0">
+	<requirement name="ProgressionLevel" progression_name="SP_SolarbankSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_SolarbankSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>

@@ -2042,22 +2042,24 @@ The overall plan for loot distribution:
 </lootgroup>
 
 <lootgroup name="schematicsElectrical">
-    <item name="generatorbankSchematic" prob="6.25" />
-	<item name="pressureplateSchematic" prob="6.25" />
-	<item name="poweredDoorsSchematic" prob="6.25" />
-	<item name="bladeTrapSchematic" prob="6.25" />
-	<item name="dartTrapSchematic" prob="6.25" />
-	<item name="shotgunTurretSchematic" prob="6.25" />
-	<item name="autoTurretSchematic" prob="6.25" />
-	<item name="electricfencepostSchematic" prob="6.25" />
-	<item name="motionsensorSchematic" prob="6.25" />
-	<item name="speakerSchematic" prob="6.25" />
-	<item name="spotlightPlayerSchematic" prob="6.25" />
-	<item name="switchSchematic" prob="6.25" />
-	<item name="batterybankSchematic" prob="6.25" />
-	<item name="electrictimerrelaySchematic" prob="6.25" />
-	<item name="jz_SchematicWirerelay" prob="6.25" />
-	<item name="jz_SchematicCeilingLight" prob="6.25" />
+    <item name="generatorbankSchematic" prob="5.55" />
+	<item name="pressureplateSchematic" prob="5.55" />
+	<item name="poweredDoorsSchematic" prob="5.55" />
+	<item name="bladeTrapSchematic" prob="5.55" />
+	<item name="dartTrapSchematic" prob="5.55" />
+	<item name="shotgunTurretSchematic" prob="5.55" />
+	<item name="autoTurretSchematic" prob="5.55" />
+	<item name="electricfencepostSchematic" prob="5.55" />
+	<item name="motionsensorSchematic" prob="5.55" />
+	<item name="speakerSchematic" prob="5.55" />
+	<item name="spotlightPlayerSchematic" prob="5.55" />
+	<item name="switchSchematic" prob="5.55" />
+	<item name="batterybankSchematic" prob="5.55" />
+	<item name="electrictimerrelaySchematic" prob="5.55" />
+	<item name="jz_SchematicWirerelay" prob="5.55" />
+	<item name="jz_SchematicCeilingLight" prob="5.55" />
+    <item name="jz_SchematicCarBattery" prob="5.55" />
+    <item name="jz_SchematicSolarbank" prob="5.55" />
 </lootgroup>
 
 <lootgroup name="electricalDevices">
@@ -2705,32 +2707,34 @@ The overall plan for loot distribution:
 </lootgroup>
 
 <lootgroup name="T3Schematics" >
-	<item name="meleeWpnSledgeT3SteelSledgehammerSchematic" prob="4" />
-	<item name="meleeWpnBladeT3MacheteSchematic" prob="4" />
-	<item name="jz_SchematicSteelPickaxe" prob="4" />
-	<item name="jz_SchematicSteelFireaxe" prob="4" />
-	<item name="jz_SchematicSteelShovel" prob="4" />
-	<item name="meleeToolPickT3AugerSchematic" prob="4" />
-	<item name="meleeToolAxeT3ChainsawSchematic" prob="4" />
-	<item name="armorMilitarySetSchematic" prob="4" />
-	<item name="armorSteelSetSchematic" prob="3" />
-	<item name="meleeToolRepairT3NailgunSchematic" prob="4" />
-	<item name="jz_Schematic4x4Truck" prob="4" />
-	<item name="jz_SchematicGyroCopter" prob="3" />
-	<item name="ammoGasCanSchematic" prob="4" />
-	<item name="resourceOilSchematic" prob="4" />
-	<item name="drugHerbalAntibioticsSchematic" prob="3" />
-	<item name="jz_SchematicSteelSheetMetal" prob="4" />
-	<item name="jz_SchematicConcreteMix" prob="4" />
-	<item name="jz_SchematicConcreteSledge" prob="4" />
-	<item name="jz_SchematicLockPick" prob="4" />
-	<item name="jz_SchematicWelder" prob="4" />
+	<item name="meleeWpnSledgeT3SteelSledgehammerSchematic" prob="3.5" />
+	<item name="meleeWpnBladeT3MacheteSchematic" prob="3.5" />
+	<item name="jz_SchematicSteelPickaxe" prob="3.5" />
+	<item name="jz_SchematicSteelFireaxe" prob="3.5" />
+	<item name="jz_SchematicSteelShovel" prob="3.5" />
+	<item name="meleeToolPickT3AugerSchematic" prob="3.5" />
+	<item name="meleeToolAxeT3ChainsawSchematic" prob="3.5" />
+	<item name="armorMilitarySetSchematic" prob="3.5" />
+	<item name="armorSteelSetSchematic" prob="3.5" />
+	<item name="meleeToolRepairT3NailgunSchematic" prob="3.5" />
+	<item name="jz_Schematic4x4Truck" prob="3.5" />
+	<item name="jz_SchematicGyroCopter" prob="3.5" />
+	<item name="ammoGasCanSchematic" prob="3.5" />
+	<item name="resourceOilSchematic" prob="3.5" />
+	<item name="drugHerbalAntibioticsSchematic" prob="3.5" />
+	<item name="jz_SchematicSteelSheetMetal" prob="3.5" />
+	<item name="jz_SchematicConcreteMix" prob="3.5" />
+	<item name="jz_SchematicConcreteSledge" prob="3.5" />
+	<item name="jz_SchematicLockPick" prob="3.5" />
+	<item name="jz_SchematicWelder" prob="3.5" />
     <item name="jz_SchematicSteelDoors" prob="4" />
     <item name="jz_SchematicSteelSafe" prob="4" />
     <item name="jz_SchematicSteelForge" prob="4" />
-    <item name="jz_SchematicSteelShaping" prob="3" />
-    <item name="jz_SchematicGlue" prob="4" />
-    <item name="jz_SchematicLargeEngine" prob="4" />
+    <item name="jz_SchematicSteelShaping" prob="4" />
+    <item name="jz_SchematicGlue" prob="3.5" />
+    <item name="jz_SchematicLargeEngine" prob="3.5" />
+     <item name="jz_SchematicCarBattery" prob="3.5" />
+    <item name="jz_SchematicSolarbank" prob="3.5" />
 </lootgroup>
 
 <lootgroup name="PerkBooks">
@@ -4684,7 +4688,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 </lootcontainer>
 
 <!-- cntBuriedLootStashChest, treasure_taylor etc -->
-<lootcontainer id="61" count="1" size="8,9" destroy_on_close="true" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="QLTemplateT1">
+<lootcontainer id="61" count="3,6" size="8,9" destroy_on_close="true" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="QLTemplateT1">
 	<item group="groupModAllScaled" prob="10"/>
 	<item group="groupAmmoRegular" prob="10"/>
 	<item group="survivalStash"  prob="15" />
@@ -4694,7 +4698,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item group="rareMedicine"  prob="10" />
 	<item group="treasureAmmo" prob="10"/>
 	<item name="oldCash" count="50,250" prob="5" />
-     <item group="professionPageChance" prob="10" />
+    <item group="professionPageChance" prob="10" />
 	<item group="skillBookChance" prob="5" />
 </lootcontainer>
 
@@ -5124,12 +5128,14 @@ treasureTemplate
 	<item group="groupAmmoAdvanced" prob="25"/>
 	<item group="groupAmmoSmall" prob="10"/>
 </lootcontainer>
+
 <lootcontainer id="109" count="2,3" size="6,2" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="QLTemplateT1" destroy_on_close="true">
 	<item group="groupAmmoRegular" prob="40"/>
 	<item group="groupAmmoAdvancedGunslinger" prob="25"/>
 	<item group="groupAmmoAdvanced" prob="25"/>
 	<item group="groupAmmoSmall" prob="10"/>
 </lootcontainer>
+
 <lootcontainer id="110" count="3,5" size="6,3" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="QLTemplateT1" destroy_on_close="true">
 	<item group="groupAmmoRegular" prob="40"/>
 	<item group="groupAmmoAdvancedGunslinger" prob="25"/>
@@ -5143,11 +5149,13 @@ treasureTemplate
 	<item group="cannedfood" prob="50"/>
 	<item group="rottenFood" prob="10"/>
 </lootcontainer>
+
 <lootcontainer id="112" count="2" size="6,2" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="QLTemplateT1" destroy_on_close="true">
 	<item group="drinks" prob="40"/>
 	<item group="cannedfood" prob="50"/>
 	<item group="rottenFood" prob="10"/>
 </lootcontainer>
+
 <lootcontainer id="113" count="3,4" size="6,3" sound_open="UseActions/open_garbage" sound_close="silencefiller" loot_quality_template="QLTemplateT1" destroy_on_close="true">
 	<item group="drinks" prob="40"/>
 	<item group="cannedfood" prob="50"/>

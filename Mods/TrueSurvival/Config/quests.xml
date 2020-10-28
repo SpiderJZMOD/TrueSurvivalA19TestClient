@@ -101,7 +101,6 @@
 		<reward type="Quest" id="jzquest_SteelShovelCraftingLv1" />
 		<reward type="Quest" id="jzquest_ChainsawCraftingLv1" />
 		<reward type="Quest" id="jzquest_AugerCraftingLv1" />
-		<reward type="Quest" id="jzquest_SolarCellCraftingLv1" />
 		<reward type="Quest" id="jzquest_CarBatteryCraftingLv1" />
 		<reward type="Quest" id="jzquest_BoneKnifeCraftingLv1" />
 		<reward type="Quest" id="jzquest_HuntingKnifeCraftingLv1" />
@@ -140,6 +139,7 @@
 		<reward type="Quest" id="jzquest_CompoundBowCraftingLv1" />
 		<reward type="Quest" id="jzquest_IronCrossbowCraftingLv1" />
 		<reward type="Quest" id="jzquest_CompoundCrossbowCraftingLv1" />
+        <reward type="Quest" id="jzquest_JunkSledgeTurretCraftingLv1" />	
 		<reward type="Quest" id="jzquest_JunkTurretCraftingLv1" />		
 		<reward type="Quest" id="jzquest_ClothJacketCraftingLv1" />
 		<reward type="Quest" id="jzquest_ClothGlovesCraftingLv1" />
@@ -1478,88 +1478,6 @@
 		</objective>
 		<reward type="Skill" id="jz_AugerCrafting" value="1" />	
 	</quest>
-
-<!--SolarCellCrafting-->
-	<quest id="jzquest_SolarCellCraftingLv1">
-		<property name="name_key" value="jzquest_SolarCellCrafting" />
-		<property name="subtitle_key" value="jzquest_SolarCellCrafting" />
-		<property name="description_key" value="jzquest_Lv1Crafting_description" />
-		<property name="icon" value="solarCell" />
-		<property name="category_key" value="quest" />
-		<property name="difficulty" value="veryeasy"/>
-		<property name="shareable" value="false" />
-		<objective type="Craft">
-			<property name="phase" value="1" />
-			<property name="item" value="solarCell" />
-			<property name="count" value="5" />
-		</objective>
-		<reward type="Skill" id="jz_SolarCellCrafting" value="1" />
-		<reward type="Quest" id="jzquest_SolarCellCraftingLv2" />
-    </quest>
-	<quest id="jzquest_SolarCellCraftingLv2">
-		<property name="name_key" value="jzquest_SolarCellCrafting" />
-		<property name="subtitle_key" value="jzquest_SolarCellCrafting" />
-		<property name="description_key" value="jzquest_Lv2Crafting_description" />
-		<property name="icon" value="solarCell" />
-		<property name="category_key" value="quest" />
-		<property name="difficulty" value="veryeasy"/>
-		<property name="shareable" value="false" />
-		<objective type="Craft">
-			<property name="phase" value="1" />
-			<property name="item" value="solarCell" />
-			<property name="count" value="10" />
-		</objective>
-		<reward type="Skill" id="jz_SolarCellCrafting" value="1" />
-		<reward type="Quest" id="jzquest_SolarCellCraftingLv3" />
-    </quest>
-	<quest id="jzquest_SolarCellCraftingLv3">
-		<property name="name_key" value="jzquest_SolarCellCrafting" />
-		<property name="subtitle_key" value="jzquest_SolarCellCrafting" />
-		<property name="description_key" value="jzquest_Lv3Crafting_description" />
-		<property name="icon" value="solarCell" />
-		<property name="category_key" value="quest" />
-		<property name="difficulty" value="veryeasy"/>
-		<property name="shareable" value="false" />
-		<objective type="Craft">
-			<property name="phase" value="1" />
-			<property name="item" value="solarCell" />
-			<property name="count" value="15" />
-		</objective>
-		<reward type="Skill" id="jz_SolarCellCrafting" value="1" />
-		<reward type="Quest" id="jzquest_SolarCellCraftingLv4" />
-    </quest>
-	<quest id="jzquest_SolarCellCraftingLv4">
-		<property name="name_key" value="jzquest_SolarCellCrafting" />
-		<property name="subtitle_key" value="jzquest_SolarCellCrafting" />
-		<property name="description_key" value="jzquest_Lv4Crafting_description" />
-		<property name="icon" value="solarCell" />
-		<property name="category_key" value="quest" />
-		<property name="difficulty" value="veryeasy"/>
-		<property name="shareable" value="false" />
-		<objective type="Craft">
-			<property name="phase" value="1" />
-			<property name="item" value="solarCell" />
-			<property name="count" value="20" />
-		</objective>
-		<reward type="Skill" id="jz_SolarCellCrafting" value="1" />
-		<reward type="Quest" id="jzquest_SolarCellCraftingLv5Pt1" />
-    </quest>
-	<quest id="jzquest_SolarCellCraftingLv5Pt1">
-		<property name="name_key" value="jzquest_SolarCellCrafting" />
-		<property name="subtitle_key" value="jzquest_SolarCellCrafting" />
-		<property name="description_key" value="jzquest_Lv5Crafting_description" />
-		<property name="icon" value="solarCell" />
-		<property name="category_key" value="quest" />
-		<property name="difficulty" value="veryeasy"/>
-		<property name="shareable" value="false" />
-		<objective type="Craft">
-			<property name="phase" value="1" />
-			<property name="item" value="solarCell" />
-			<property name="count" value="25" />
-		</objective>
-		<reward type="Skill" id="jz_SolarCellCrafting" value="1" />		
-	</quest>
-	
 <!--CarBatteryCrafting -->
 	<quest id="jzquest_CarBatteryCraftingLv1">
 		<property name="name_key" value="jzquest_CarBatteryCrafting" />
@@ -4630,7 +4548,88 @@
 		<reward type="Skill" id="jz_CompoundCrossbowCrafting" value="1" />		
 	</quest>
 		
-<!--JunkTurretCrafting -->
+<!--JunkSledgeTurretCrafting -->
+	<quest id="jzquest_JunkSledgeTurretCraftingLv1">
+		<property name="name_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="subtitle_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="description_key" value="jzquest_Lv1Crafting_description" />
+		<property name="icon" value="gunBotT1JunkSledge" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+		<objective type="Craft">
+			<property name="phase" value="1" />
+			<property name="item" value="gunBotT1JunkSledge" />
+			<property name="count" value="5" /><!--25-->
+		</objective>
+		<reward type="Skill" id="jz_JunkSledgeTurretCrafting" value="1" />
+		<reward type="Quest" id="jzquest_JunkSledgeTurretCraftingLv2" />
+    </quest>
+	<quest id="jzquest_JunkSledgeTurretCraftingLv2">
+		<property name="name_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="subtitle_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="description_key" value="jzquest_Lv2Crafting_description" />
+		<property name="icon" value="gunBotT1JunkSledge" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+		<objective type="Craft">
+			<property name="phase" value="1" />
+			<property name="item" value="gunBotT1JunkSledge" />
+			<property name="count" value="5" /><!--50-->
+		</objective>
+		<reward type="Skill" id="jz_JunkSledgeTurretCrafting" value="1" />
+		<reward type="Quest" id="jzquest_JunkSledgeTurretCraftingLv3" />
+    </quest>
+	<quest id="jzquest_JunkSledgeTurretCraftingLv3">
+		<property name="name_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="subtitle_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="description_key" value="jzquest_Lv3Crafting_description" />
+		<property name="icon" value="gunBotT1JunkSledge" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+		<objective type="Craft">
+			<property name="phase" value="1" />
+			<property name="item" value="gunBotT1JunkSledge" />
+			<property name="count" value="5" /><!--100-->
+		</objective>
+		<reward type="Skill" id="jz_JunkSledgeTurretCrafting" value="1" />
+		<reward type="Quest" id="jzquest_JunkSledgeTurretCraftingLv4" />
+    </quest>
+	<quest id="jzquest_JunkSledgeTurretCraftingLv4">
+		<property name="name_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="subtitle_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="description_key" value="jzquest_Lv4Crafting_description" />
+		<property name="icon" value="gunBotT1JunkSledge" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+		<objective type="Craft">
+			<property name="phase" value="1" />
+			<property name="item" value="gunBotT1JunkSledge" />
+			<property name="count" value="5" /><!--200-->
+		</objective>
+		<reward type="Skill" id="jz_JunkSledgeTurretCrafting" value="1" />
+		<reward type="Quest" id="jzquest_JunkSledgeTurretCraftingLv5" />
+    </quest>
+	<quest id="jzquest_JunkSledgeTurretCraftingLv5">
+		<property name="name_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="subtitle_key" value="jzquest_SledgeJunkTurretCrafting" />
+		<property name="description_key" value="jzquest_Lv5Crafting_description" />
+		<property name="icon" value="gunBotT1JunkSledge" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+		<objective type="Craft">
+			<property name="phase" value="1" />
+			<property name="item" value="gunBotT1JunkSledge" />
+			<property name="count" value="5" /><!--250-->
+		</objective>
+		<reward type="Skill" id="jz_JunkSledgeTurretCrafting" value="1" />
+	</quest>
+    
+    <!--JunkTurretCrafting -->
 	<quest id="jzquest_JunkTurretCraftingLv1">
 		<property name="name_key" value="jzquest_JunkTurretCrafting" />
 		<property name="subtitle_key" value="jzquest_JunkTurretCrafting" />
@@ -4693,9 +4692,9 @@
 			<property name="count" value="5" /><!--200-->
 		</objective>
 		<reward type="Skill" id="jz_JunkTurretCrafting" value="1" />
-		<reward type="Quest" id="jzquest_JunkTurretCraftingLv5Pt1" />
+		<reward type="Quest" id="jzquest_JunkTurretCraftingLv5" />
     </quest>
-	<quest id="jzquest_JunkTurretCraftingLv5Pt1">
+	<quest id="jzquest_JunkTurretCraftingLv5">
 		<property name="name_key" value="jzquest_JunkTurretCrafting" />
 		<property name="subtitle_key" value="jzquest_JunkTurretCrafting" />
 		<property name="description_key" value="jzquest_Lv5Crafting_description" />

@@ -1496,19 +1496,6 @@
 			<effect_description level="5" desc_key="jz_SteelArmorCraftingRank5Desc" long_desc_key="jz_SteelArmorCraftingRank5LongDesc"/>
 		</effect_group>
 	</perk>
-	<!-- SolarCellCrafting-->
-	<perk name="jz_SolarCellCrafting" parent="jz_PoweredCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Solar Cell Crafting" desc_key="jz_CraftingDesc" icon="solarbank">
-		<effect_group>
-			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,5" tags="jz_SolarCellCraftingTag"/>
-		</effect_group>
-		<effect_group>
-			<effect_description level="1" desc_key="jz_SolarCellCraftingRank1Desc" long_desc_key="jz_CraftingDesc"/>
-			<effect_description level="2" desc_key="jz_SolarCellCraftingRank2Desc" long_desc_key="jz_CraftingDesc"/>
-			<effect_description level="3" desc_key="jz_SolarCellCraftingRank3Desc" long_desc_key="jz_CraftingDesc"/>
-			<effect_description level="4" desc_key="jz_SolarCellCraftingRank4Desc" long_desc_key="jz_CraftingDesc"/>
-			<effect_description level="5" desc_key="jz_SolarCellCraftingRank5Desc" long_desc_key="jz_CraftingDesc"/>
-		</effect_group>
-	</perk>
 	<!-- CarBatteryCrafting-->
 	<perk name="jz_CarBatteryCrafting" parent="jz_PoweredCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Car Battery Crafting" desc_key="jz_CraftingDesc" icon="carBattery">
 		<effect_group>
@@ -1743,7 +1730,20 @@
 			<effect_description level="5" desc_key="jz_RocketLauncherCraftingRank5Desc" long_desc_key="jz_CraftingDesc"/>
 		</effect_group>
 	</perk>
-	<!-- JunkTurretCrafting-->
+	<!-- JunkTurretSledgeCrafting-->
+	<perk name="jz_JunkSledgeTurretCrafting" parent="jz_FirearmCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Junk Sledge Turret Crafting" desc_key="jz_CraftingDesc" icon="gunBotT1JunkSledge">
+		<effect_group>
+			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,5" tags="jz_JunkSledgeTurretCraftingTag"/>
+		</effect_group>
+		<effect_group>
+			<effect_description level="1" desc_key="jz_JunkTurretCraftingRank1Desc" long_desc_key="jz_CraftingDesc"/>
+			<effect_description level="2" desc_key="jz_JunkTurretCraftingRank2Desc" long_desc_key="jz_CraftingDesc"/>
+			<effect_description level="3" desc_key="jz_JunkTurretCraftingRank3Desc" long_desc_key="jz_CraftingDesc"/>
+			<effect_description level="4" desc_key="jz_JunkTurretCraftingRank4Desc" long_desc_key="jz_CraftingDesc"/>
+			<effect_description level="5" desc_key="jz_JunkTurretCraftingRank5Desc" long_desc_key="jz_CraftingDesc"/>
+		</effect_group>
+	</perk>
+    <!-- JunkTurretCrafting-->
 	<perk name="jz_JunkTurretCrafting" parent="jz_FirearmCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Junk Turret Crafting" desc_key="jz_CraftingDesc" icon="gunBotT2JunkTurret">
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,5" tags="jz_JunkTurretCraftingTag"/>
@@ -3170,6 +3170,13 @@
 		</effect_group>
 	</perk>
 	
+    <perk name="SP_CarBatterySchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Car Battery" desc_key="carBatteryDesc" icon="carBattery">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="carBattery"/>
+			<effect_description level="1" desc_key="carBatteryDesc" long_desc_key="carBatteryDesc"/>
+		</effect_group>
+	</perk>
+    
 	<perk name="SP_BicycleHandlebarsSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Handlebars" desc_key="vehicleBicycleHandlebarsDesc" icon="vehicleBicycleHandlebars">
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="vehicleBicycleHandlebars"/>
@@ -4609,6 +4616,13 @@
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_MethaneProducer,jz_MethaneTankBomb,jz_EmptyPropaneTank"/>
 			<effect_description level="1" desc_key="SP_MethaneProducerSchematicDesc" long_desc_key="SP_MethaneProducerSchematicDesc"/>
+		</effect_group>
+	</perk> 
+    
+    <perk name="SP_SolarbankSchematic" parent="jz_WorkstationSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Solarbank" desc_key="SP_SolarbankSchematicDesc" icon="solarbank">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="solarbank"/>
+			<effect_description level="1" desc_key="SP_SolarbankSchematicDesc" long_desc_key="SP_SolarbankSchematicDesc"/>
 		</effect_group>
 	</perk> 
     

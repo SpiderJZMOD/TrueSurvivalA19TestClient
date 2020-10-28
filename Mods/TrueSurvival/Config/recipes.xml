@@ -229,6 +229,10 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5" />
 </recipe>
 
+<recipe name="jz_FermentationBarrel" count="1" craft_time="60" craft_exp_gain="25" >
+	<ingredient name="wineBarrel" count="1" />
+</recipe>
+
 <recipe name="cementMixer" count="1" craft_time="60" craft_exp_gain="25" tags="jz_ElectricianTag">
 	<ingredient name="smallEngine" count="1"/>
 	<ingredient name="resourceMechanicalParts" count="10"/>
@@ -782,58 +786,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
     <ingredient name="resourceDuctTape" count="1"/>
 </recipe>
 
-<recipe name="resourceGunPowder" count="1" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo9mmBulletBall" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="1" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo9mmBulletHP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="2" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo9mmBulletAP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="3" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo44MagnumBulletBall" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="3" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo44MagnumBulletHP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="5" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo44MagnumBulletAP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="3" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo762mmBulletBall" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="3" craft_time="1" craft_exp_gain="0"  >
-	<ingredient name="ammo762mmBulletHP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="5" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammo762mmBulletAP" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="1" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammoBlunderbuss" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="2" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammoShotgunShell" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="3" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammoShotgunSlug" count="1"/>
-</recipe>
-
-<recipe name="resourceGunPowder" count="4" craft_time="1" craft_exp_gain="0" >
-	<ingredient name="ammoShotgunBreachingSlug" count="1"/>
-</recipe>
-
 <!-- Campfire Crafted ******************************************************************************************************************************************************* -->
 <recipe name="drugHerbalAntibiotics" count="1" craft_area="campfire" craft_tool="jz_MortarAndPestle" craft_time="4" craft_exp_gain="20" tags="learnable">
 	<ingredient name="foodCropMushrooms" count="3"/>
@@ -1294,6 +1246,16 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
+<recipe name="jz_MethaneProducer" count="1" craft_area="workbench" craft_time="30" craft_exp_gain="25" tags="learnable,jz_WorkBenchTag" >
+	<ingredient name="jz_Plank" count="20"/>
+	<ingredient name="resourceMetalPipe" count="10" />
+	<ingredient name="resourceDuctTape" count="5" />
+	<ingredient name="resourceMechanicalParts" count="3" />
+    <ingredient name="wineBarrel" count="1" />
+    <ingredient name="resourceNail" count="10" />
+	<ingredient name="jz_EmptyPropaneTank" count="1" />
+</recipe>
+
 <recipe name="woodHatch1_v1" count="1" craft_area="workbench" craft_tool="meleeToolRepairT1ClawHammer" craft_time="5" craft_exp_gain="5" tags="learnable,jz_WorkBenchTag" >
 	<ingredient name="jz_Plank" count="10"/>
 	<ingredient name="resourceSpring" count="2" />
@@ -1723,171 +1685,171 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
     <ingredient name="resourceMetalPipe" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPistolGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPistolGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT1Pistol" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPistolFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPistolFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT1Pistol" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPistolBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPistolBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT1Pistol" count="1"/>
 </recipe>
 	
-<recipe name="jz_Parts44MagnumCylinder" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_Parts44MagnumCylinder" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT2Magnum44" count="1"/>
 </recipe>
 
-<recipe name="jz_Parts44MagnumFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_Parts44MagnumFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT2Magnum44" count="1"/>
 </recipe>
 
-<recipe name="jz_Parts44MagnumGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_Parts44MagnumGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT2Magnum44" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDesertVultureGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDesertVultureGrip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3DesertVulture" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDesertVultureFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDesertVultureFrame" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3DesertVulture" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDesertVultureBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDesertVultureBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3DesertVulture" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDoubleBarrelBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDoubleBarrelBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT1DoubleBarrel" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDoubleBarrelStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDoubleBarrelStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT1DoubleBarrel" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsDoubleBarrelReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsDoubleBarrelReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT1DoubleBarrel" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPumpShotgunBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPumpShotgunBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT2PumpShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPumpShotgunReciver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPumpShotgunReciver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT2PumpShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsPumpShotgunStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsPumpShotgunStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT2PumpShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAutoShotgunBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAutoShotgunBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT3AutoShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAutoShotgunReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAutoShotgunReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT3AutoShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAutoShotgunStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAutoShotgunStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunShotgunT3AutoShotgun" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsSMG5Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSMG5Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3SMG5" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsSMG5Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSMG5Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3SMG5" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsSMG5Grip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSMG5Grip" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunHandgunT3SMG5" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAK47Stock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAK47Stock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT1AK47" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAK47Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAK47Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT1AK47" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsAK47Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsAK47Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT1AK47" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsHuntingRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsHuntingRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT1HuntingRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsHuntingRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsHuntingRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT1HuntingRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsHuntingRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsHuntingRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT1HuntingRifle" count="1"/>
 </recipe>
 	
-<recipe name="jz_PartsSniperRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSniperRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT3SniperRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsSniperRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSniperRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT3SniperRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsSniperRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsSniperRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT3SniperRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsMarksmanRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsMarksmanRifleBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT2MarksmanRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsMarksmanRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsMarksmanRifleStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT2MarksmanRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsMarksmanRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsMarksmanRifleReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunRifleT2MarksmanRifle" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsM60Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsM60Barrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT3M60" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsM60Stock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsM60Stock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT3M60" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsM60Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsM60Receiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT3M60" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsARBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsARBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT2TacticalAR" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsARReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsARReceiver" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT2TacticalAR" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsARStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsARStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunMGT2TacticalAR" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsRocketLauncherBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsRocketLauncherBarrel" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunExplosivesT3RocketLauncher" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsRocketLauncherStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsRocketLauncherStock" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunExplosivesT3RocketLauncher" count="1"/>
 </recipe>
 
-<recipe name="jz_PartsRocketLauncherParts" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="jz_PartsRocketLauncherParts" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="jz_WorkBenchTag">
 	<ingredient name="gunExplosivesT3RocketLauncher" count="1"/>
 </recipe>
 
@@ -1905,14 +1867,22 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_MilitaryGunParts" count="1"/>
 </recipe>
 
-<recipe name="gunMGT3M60" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="learnable,jz_M60CraftingTag,jz_WorkBenchTag">
+<recipe name="gunMGT3M60" count="1" craft_area="workbench" craft_tool="jz_GunTools" craft_time="4" craft_exp_gain="25" tags="learnable,jz_WorkBenchTag">
 	<ingredient name="jz_PartsM60Barrel" count="1"/>
 	<ingredient name="jz_PartsM60Stock" count="1"/>
 	<ingredient name="jz_PartsM60Receiver" count="1"/>
 	<ingredient name="jz_MilitaryGunParts" count="1"/>
 </recipe>
 
-<recipe name="gunBotT2JunkTurret" count="1" craft_area="workbench" tags="learnable,jz_JunkTurretCraftingTag,jz_WorkBenchTag">
+<recipe name="gunBotT1JunkSledge" count="1" craft_area="workbench" craft_tool="jz_Screwdriver" craft_time="30" craft_exp_gain="30" tags="learnable,jz_JunkSledgeTurretCraftingTag,jz_WorkBenchTag">
+	<ingredient name="gunBotRoboticsParts" count="4"/>
+	<ingredient name="resourceForgedIron" count="40"/>
+	<ingredient name="resourceDuctTape" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="10"/>
+	<ingredient name="resourceSpring" count="10"/>
+</recipe>
+
+<recipe name="gunBotT2JunkTurret" count="1" craft_area="workbench" craft_tool="jz_Screwdriver" craft_time="30" craft_exp_gain="30" tags="learnable,jz_JunkTurretCraftingTag,jz_WorkBenchTag">
 	<ingredient name="gunBotRoboticsParts" count="4"/>
 	<ingredient name="resourceForgedIron" count="40"/>
 	<ingredient name="resourceDuctTape" count="10"/>
@@ -2978,7 +2948,32 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_Stick" count="20"/>
 	<ingredient name="jz_FiberRope" count="1"/>
 </recipe>
+
+<recipe name="solarbank" count="1" craft_area="workbench" craft_tool="jz_Screwdriver" craft_time="30" craft_exp_gain="50" tags="learnable,jz_WorkBenchTag">
+    <ingredient name="resourceForgedIron" count="10"/>
+	<ingredient name="resourceElectricParts" count="10"/>
+    <ingredient name="resourceElectronicParts" count="5"/>
+	<ingredient name="jz_ScrapWire" count="10"/>
+    <ingredient name="jz_SteelPipe" count="20"/>
+	<ingredient name="jz_NutAndBolt" count="25"/>
+</recipe>
+
+<recipe name="solarbank" count="1" craft_area="workbench" craft_tool="jz_Screwdriver" craft_time="30" craft_exp_gain="50" tags="learnable,jz_WorkBenchTag">
+    <ingredient name="resourceForgedIron" count="20"/>
+	<ingredient name="resourceElectricParts" count="1"/>
+    <ingredient name="resourceElectronicParts" count="20"/>
+	<ingredient name="jz_ScrapWire" count="1"/>
+    <ingredient name="jz_SteelPipe" count="20"/>
+	<ingredient name="jz_NutAndBolt" count="1"/>
+    <ingredient name="cntCollapsedSolarbank" count="1"/>
+</recipe>
 <!-- Chemistry Station Crafted ******************************************************************************************************************************************************* -->
+<recipe name="carBattery" count="1" craft_area="chemistryStation" tags="learnable,jz_ChemistTag,jz_CarBatteryCraftingTag">
+	<ingredient name="resourceScrapLead" count="200"/>
+	<ingredient name="resourceAcid" count="5"/>
+	<ingredient name="resourceScrapPolymers" count="20"/>
+</recipe>
+
 <recipe name="jz_Insecticide" count="10" craft_area="chemistryStation" craft_tool="toolBeaker" craft_time="4" craft_exp_gain="5" tags="learnable,jz_ChemistTag" >
 	<ingredient name="resourceCropChrysanthemumPlant" count="1"/>
     <ingredient name="resourceCropSnowberryPlant" count="1"/>
@@ -4222,7 +4217,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="foodPumpkinBread" count="10"/>
     <ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
-
 <recipe name="foodGumboStewSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="foodGumboStew" count="10"/>
     <ingredient name="jz_BlankSkillBook" count="1"/>
@@ -4427,6 +4421,36 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
+<recipe name="jz_SchematicCandyTinMine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="mineCandyTin" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicCookingPotMine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="mineCookingPot" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicHubcapMine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="mineHubcap" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicAirFilterMine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="mineAirFilter" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicScrapPlateMine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="rScrapIronPlateMine" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicIronSpikes" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="trapSpikesIronDmg0" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
 <recipe name="meleeWpnSpearT1IronSpearSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="meleeWpnSpearT1IronSpear" count="2"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
@@ -4444,6 +4468,11 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="meleeWpnKnucklesT3SteelKnucklesSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="meleeWpnKnucklesT3SteelKnuckles" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="gunBotT1JunkSledgeSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="gunBotT1JunkSledge" count="2"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
@@ -4495,6 +4524,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
+<recipe name="gunHandgunT3DesertVultureSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_PartsDesertVultureBarrel" count="2"/>
+	<ingredient name="jz_PartsDesertVultureFrame" count="2"/>
+	<ingredient name="jz_PartsDesertVultureGrip" count="2"/>
+	<ingredient name="jz_BasicGunParts" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
 <recipe name="gunShotgunT1DoubleBarrelSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="jz_PartsDoubleBarrelReceiver" count="2"/>
 	<ingredient name="jz_PartsDoubleBarrelStock" count="2"/>
@@ -4511,6 +4548,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
+<recipe name="gunShotgunT3AutoShotgunSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_PartsAutoShotgunBarrel" count="2"/>
+	<ingredient name="jz_PartsAutoShotgunReceiver" count="2"/>
+	<ingredient name="jz_PartsAutoShotgunStock" count="2"/>
+	<ingredient name="jz_MilitaryGunParts" count="4"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
 <recipe name="gunHandgunT3SMG5Schematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="jz_PartsSMG5Barrel" count="2"/>
 	<ingredient name="jz_PartsSMG5Receiver" count="2"/>
@@ -4523,6 +4568,14 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_PartsAK47Stock" count="2"/>
 	<ingredient name="jz_PartsAK47Receiver" count="2"/>
 	<ingredient name="jz_PartsAK47Barrel" count="2"/>
+	<ingredient name="jz_MilitaryGunParts" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="gunMGT3M60Schematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_PartsM60Barrel" count="2"/>
+	<ingredient name="jz_PartsM60Stock" count="2"/>
+	<ingredient name="jz_PartsM60Receiver" count="2"/>
 	<ingredient name="jz_MilitaryGunParts" count="2"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
@@ -4543,6 +4596,22 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
+<recipe name="gunRifleT2MarksmanRifleSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_PartsMarksmanRifleBarrel" count="2"/>
+	<ingredient name="jz_PartsMarksmanRifleStock" count="2"/>
+	<ingredient name="jz_PartsMarksmanRifleReceiver" count="2"/>
+	<ingredient name="jz_MilitaryGunParts" count="4"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="gunMGT2TacticalARSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_PartsARBarrel" count="2"/>
+	<ingredient name="jz_PartsARReceiver" count="2"/>
+	<ingredient name="jz_PartsARStock" count="2"/>
+	<ingredient name="jz_MilitaryGunParts" count="4"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
 <recipe name="gunExplosivesT3RocketLauncherSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="jz_PartsRocketLauncherBarrel" count="2"/>
 	<ingredient name="jz_PartsRocketLauncherStock" count="2"/>
@@ -4552,6 +4621,11 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="gunBotT2JunkTurretSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="gunBotT2JunkTurret" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="gunBotT1JunkSledgeSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="gunBotT2JunkTurret" count="2"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
@@ -4591,6 +4665,11 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
+<recipe name="jz_SchematicMethaneProducer" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_MethaneProducer" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
 <recipe name="cementMixerSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="cementMixer" count="2"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
@@ -4611,8 +4690,23 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
-<recipe name="vehicleBicycleChassisSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleBicycleChassis" count="3"/>
+<recipe name="jz_SchematicAloeCream" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="medicalAloeCream" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicWeaponRepairKit" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_WeaponRepairKit" count="6"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicScrewdriver" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="jz_Screwdriver" count="2"/>
+	<ingredient name="jz_BlankSkillBook" count="1"/>
+</recipe>
+
+<recipe name="jz_SchematicBicycle" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="vehicleBicyclePlaceable" count="3"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
@@ -4621,38 +4715,23 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
-<recipe name="vehicleMinibikeChassisSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleMinibikeChassis" count="3"/>
+<recipe name="jz_SchematicMiniBike" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="vehicleMinibikePlaceable" count="3"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
-<recipe name="vehicleMotorcycleChassisSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleMotorcycleChassis" count="3"/>
+<recipe name="jz_SchematicMotorcycle" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="vehicleMotorcyclePlaceable" count="3"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
-<recipe name="vehicleMotorcycleHandlebarsSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleMotorcycleHandlebars" count="3"/>
+<recipe name="jz_Schematic4x4Truck" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="vehicle4x4TruckPlaceable" count="3"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
-<recipe name="vehicle4x4TruckChassisSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicle4x4TruckChassis" count="3"/>
-	<ingredient name="jz_BlankSkillBook" count="1"/>
-</recipe>
-
-<recipe name="vehicle4x4TruckAccessoriesSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicle4x4TruckAccessories" count="3"/>
-	<ingredient name="jz_BlankSkillBook" count="1"/>
-</recipe>
-
-<recipe name="vehicleGyroCopterChassisSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleGyroCopterChassis" count="3"/>
-	<ingredient name="jz_BlankSkillBook" count="1"/>
-</recipe>
-
-<recipe name="vehicleGyroCopterAccessoriesSchematic" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="vehicleGyroCopterAccessories" count="3"/>
+<recipe name="jz_SchematicGyroCopter" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="vehicleGyrocopterPlaceable" count="3"/>
 	<ingredient name="jz_BlankSkillBook" count="1"/>
 </recipe>
 
@@ -4800,6 +4879,46 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="jz_SchematicFertilizer" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="resourceFertilizer" count="10" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_Schematic9MM" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammo9mmBulletBall" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicShotgunShell" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammoShotgunShell" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_Schematic44MM" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammo44MagnumBulletBall" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_Schematic762MM" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammo762mmBulletBall" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicIronArrows" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammoArrowIron" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicSteelArrows" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="ammoArrowSteelAP" count="50" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicSmallEngine" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="smallEngine" count="2" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicDrawBridge" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="metalReinforcedWoodDrawBridge" count="2" />
 	<ingredient name="jz_BlankSkillBook" count="1" />
 </recipe>
 

@@ -824,6 +824,7 @@ group desc for stuff like metal siding
     <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="jz_Stick" count="5" prob="1" tag="ToolClawHammer" />
 	<drop event="Harvest" name="jz_Plank" count="1" prob="1" tag="ToolClawHammer" />
+    <drop event="Destroy" name="resourceNail" count="1,2" prob="1" tool_category="ToolClawHammer" />
     <drop event="Destroy" name="jz_Stick" count="5,15" prob="1" tool_category="ToolClawHammer" />
 	<drop event="Destroy" name="jz_Plank" count="1,2" prob="1" tool_category="ToolClawHammer" />                               
 </block>
@@ -6800,7 +6801,7 @@ group desc for stuff like metal siding
 	<property name="Shape" value="New"/>
 	<property name="Model" value="Arch"/> <property name="Place" value="TowardsPlacerInverted"/>
 	<property name="SortOrder2" value="0500"/> <!-- SortShape -->
-	<property class="UpgradeBlock"> <property name="ToBlock" value="cobblestoneArch"/> </property>
+	<property class="UpgradeBlock"> <property name="ToBlock" value="rWoodMetalArch"/> </property>
 	<property name="DowngradeBlock" value="woodArch"/>
 </block>
 
@@ -19271,7 +19272,7 @@ NOT the TextureNumber.
 
 <block name="cntCabinetBottomFiller">
 	<property name="Shape" value="New"/>
-    <property name="Tags" value="jz_WoodBuilding,jz_IronBuilding,jz_CrowBarTag"/>                                                                          
+    <property name="Tags" value="jz_WoodBuilding,jz_IronBuilding"/>                                                                          
 	<property name="Path" value="solid"/>
 	<property name="Model" value="counter"/> <property name="Place" value="TowardsPlacerInverted"/>
 	<property name="IsDecoration" value="true"/>
@@ -19299,9 +19300,7 @@ NOT the TextureNumber.
 	<drop event="Harvest" name="jz_Plank" count="2" prob="1" tag="ToolClawHammer"/>
 	<drop event="Destroy" name="jz_Plank" count="1,2" prob="0.3" tool_category="ToolClawHammer"/>
 	<drop event="Harvest" name="resourceNail" count="1" prob="1" tag="ToolClawHammer"/>
-	<drop event="Destroy" name="resourceNail" count="1,2" prob="0.3" tool_category="ToolClawHammer"/>	
-	<!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomFiller" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                         
+	<drop event="Destroy" name="resourceNail" count="1,2" prob="0.3" tool_category="ToolClawHammer"/>		                                                                   
 </block>
 
 <block name="cntCabinetBottomRandomLootHelper"> <!-- red -->
@@ -19314,10 +19313,7 @@ NOT the TextureNumber.
 	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="DescriptionKey" value="cntCabinetOldBottomLootHelperDesc"/>
 	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
-	<property name="DisplayInfo" value="Name"/>
-    <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomFiller" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="cntCabinetBottomRandomLootHelper" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                      
+	<property name="DisplayInfo" value="Name"/>                                                                    
 </block>
 
 <block name="cntCabinetBottom">
@@ -19326,8 +19322,8 @@ NOT the TextureNumber.
 	<property name="CustomIcon" value="cntCabinetBottomFiller"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag,jz_WoodBuilding,jz_IronBuilding"/>  
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomRandomLootHelper" count="0" prob="1" tool_category="ToolCrowbar"/>
 	<drop event="Destroy" name="cntCabinetBottom" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                           
 </block>
 
@@ -19337,9 +19333,9 @@ NOT the TextureNumber.
 	<property name="Model" value="cabinet_ajar"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag,jz_WoodBuilding,jz_IronBuilding"/>  
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomRandomLootHelper" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="cntCabinetBottomOpen" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
+	<drop event="Destroy" name="cntCabinetBottom" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
 </block>
 
 <block name="cntWallOven">
@@ -19418,9 +19414,7 @@ NOT the TextureNumber.
 	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="ImposterExchange" value="imposterDontBlockCupboard" param1="108"/>
 	<property name="DescriptionKey" value="cntCupboardCabinetOldTopLootHelperDesc"/>
-	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
-    <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomFiller" count="0" prob="1" tool_category="ToolCrowbar"/>                                                                                        
+	<property name="FilterTags" value="floot,ffurniture,fdesign"/>                                                                                    
 </block>
 
 <block name="cntCupboardCabinetRedTopOpen">
@@ -19429,8 +19423,9 @@ NOT the TextureNumber.
 	<property name="Model" value="cupboard_ajar"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag,jz_WoodBuilding,jz_IronBuilding"/> 
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCupboardCabinetRedTopOpen" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
+	<drop event="Destroy" name="cntCupboardCabinetRedTopClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
 </block>
 
 <block name="cntCupboardCabinetRedTopClosed">
@@ -19439,6 +19434,7 @@ NOT the TextureNumber.
 	<property name="CustomIcon" value="cntCupboardCabinetRedTopLootHelper"/>
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
+    <property name="Tags" value="jz_CrowBarTag,jz_WoodBuilding,jz_IronBuilding"/> 
     <!--JZMOD CROWBAR-->
 	<drop event="Destroy" name="cntCupboardCabinetRedTopClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                                   
 </block>
@@ -19449,7 +19445,7 @@ NOT the TextureNumber.
 	<property name="Model" value="cupboard_corner"/>
     <!--JZMOD CROWBAR-->
 	<drop event="Destroy" name="cntCupboardCabinetRedTopClosed" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="cntCupboardCornerCNRRed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
+	<drop event="Destroy" name="cntCupboardCabinetFullRedTopClosed" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                       
 </block>
 
 <block name="cntCupboardCabinetFullRedTopClosed">
@@ -19467,7 +19463,6 @@ NOT the TextureNumber.
 	<property name="Texture" value="79"/>
     <!--JZMOD CROWBAR-->
 	<drop event="Destroy" name="cntCabinetBottomOpen" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="cntCabinetBottomBrokenDoor" count="1" prob="1" tool_category="ToolCrowbar"/>
 </block>
 
 <block name="cntCabinetOldBottomLootHelper">
@@ -19478,9 +19473,7 @@ NOT the TextureNumber.
 	<property name="Class" value="Loot"/>
 	<property name="LootList" value="17"/>
 	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
-	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
-     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomFiller" count="0" prob="1" tool_category="ToolCrowbar"/>                                                                                   
+	<property name="FilterTags" value="floot,ffurniture,fdesign"/>                                                                              
 </block>
 
 <block name="cntCabinetOldBottomOpen">
@@ -19490,7 +19483,7 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetOldBottomOpen" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                 
+	<drop event="Destroy" name="cntCabinetOldBottom" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                 
 </block>
 
 <block name="cntCabinetOldBottom">
@@ -19513,9 +19506,7 @@ NOT the TextureNumber.
 	<!-- rev 27018 --> <property name="UseGlobalUV" value="Local"/>
 	<property name="ImposterExchange" value="imposterBlock" param1="43"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
-	<drop event="Fall" count="0" prob="0"/>
-    <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetOldCNRRoundFiller" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                               
+	<drop event="Fall" count="0" prob="0"/>                                                                                             
 </block>
 
 <block name="cntCabinetOldSink">
@@ -19561,10 +19552,7 @@ NOT the TextureNumber.
 	<property name="LootList" value="17"/>
 	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="ImposterExchange" value="imposterDontBlockCupboard" param1="43"/>
-	<property name="FilterTags" value="floot,ffurniture,fdesign"/>
-    <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCabinetBottomFiller" count="0" prob="1" tool_category="ToolCrowbar"/>	
-	<drop event="Destroy" name="cntCupboardCabinetOldTopLootHelper" count="1" prob="1" tool_category="ToolCrowbar"/>	                                                                                        
+	<property name="FilterTags" value="floot,ffurniture,fdesign"/>                                                                                
 </block>
 
 <block name="cntCupboardCabinetOldTopOpen">
@@ -19574,8 +19562,7 @@ NOT the TextureNumber.
 	<property name="FilterTags" value="floot,ffurniture"/>
 	<property name="CreativeMode" value="Player"/>
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCupboardCabinetOldTopLootHelper" count="0" prob="1" tool_category="ToolCrowbar"/>	
-	<drop event="Destroy" name="cntCupboardCabinetOldTopOpen" count="1" prob="1" tool_category="ToolCrowbar"/>	                                                                                               
+	<drop event="Destroy" name="cntCupboardCabinetOldTopClosed" count="1" prob="1" tool_category="ToolCrowbar"/>	                                                                                               
 </block>
 
 <block name="cntCupboardCabinetOldTopClosed">
@@ -19585,7 +19572,6 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="furnitureGroupDesc"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
     <!--JZMOD CROWBAR-->
-	<drop event="Destroy" name="cntCupboardCabinetOldTopLootHelper" count="0" prob="1" tool_category="ToolCrowbar"/>	
 	<drop event="Destroy" name="cntCupboardCabinetOldTopClosed" count="1" prob="1" tool_category="ToolCrowbar"/>	                                                                                               
 </block>
 
@@ -21585,9 +21571,6 @@ NOT the TextureNumber.
 	<property name="Group" value="Building,advBuilding"/>
 	<property name="EconomicValue" value="300"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
-    <property name="Tags" value="jz_CrowBarTag"/>
-    <!--JZMOD CROWBAR-->		
-	<drop event="Destroy" name="cntWallSafe" count="1" prob="1" tool_category="ToolCrowbar"/>
 </block>
 
 <block name="cntWallSafeInsecure">
@@ -21634,9 +21617,6 @@ NOT the TextureNumber.
 	<property name="ImposterExchange" value="imposterCTREighth" param1="18"/>
 	<property name="IsTerrainDecoration" value="true"/>
 	<property name="DowngradeBlock" value="cntDeskSafeInsecure"/>
-    <!--JZMOD CROWBAR-->	
-    <drop event="Destroy" name="cntWallSafe" count="0" prob="1" tool_category="ToolCrowbar"/>	
-	<drop event="Destroy" name="cntDeskSafe" count="1" prob="1" tool_category="ToolCrowbar"/>
 </block>
 
 <block name="cntDeskSafeInsecure">
@@ -21676,9 +21656,6 @@ NOT the TextureNumber.
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="EconomicValue" value="690"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
-    <property name="Tags" value="jz_CrowBarTag"/>
-    <!--JZMOD CROWBAR-->		
-	<drop event="Destroy" name="cntGunSafe" count="1" prob="1" tool_category="ToolCrowbar"/>
 </block>
 
 <block name="cntGunSafeInsecure">
@@ -29957,9 +29934,11 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
     <!--JZMOD SCREWDRIVER-->
-    <drop event="Harvest" name="resourceElectricParts" count="2,3" tag="ToolScrewdriver"/>
-	<drop event="Harvest" name="resourceElectricParts" count="1,2" prob="0.5" tag="ToolScrewdriver"/>
+    <drop event="Harvest" name="resourceElectricParts" count="2,5" tag="ToolScrewdriver"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="ToolScrewdriver"/>
+    <drop event="Harvest" name="solarCell" count="1,6" tag="ToolScrewdriver"/>
+    <!--JZMOD WRENCH-->
+    <drop event="Harvest" name="solarCell" count="1,6" tag="ToolWrench"/>
 <!-- JZMOD CROWBAR-->
 	<drop event="Destroy" name="solarbank" count="1" tool_category="ToolCrowbar" />     
 </block>
@@ -29992,10 +29971,12 @@ NOT the TextureNumber.
 	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
     <!--JZMOD SCREWDRIVER-->
-    <drop event="Harvest" name="resourceElectricParts" count="2,3" tag="ToolScrewdriver"/>
-	<drop event="Harvest" name="resourceElectricParts" count="1,2" prob="0.5" tag="ToolScrewdriver"/>
+    <drop event="Harvest" name="resourceElectricParts" count="2,5" tag="ToolScrewdriver"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="ToolScrewdriver"/>
-<!-- JZMOD CROWBAR-->
+    <drop event="Harvest" name="solarCell" count="1,6" tag="ToolScrewdriver"/>
+    <!--JZMOD WRENCH-->
+    <drop event="Harvest" name="solarCell" count="1,6" tag="ToolWrench"/>
+    <!-- JZMOD CROWBAR-->
 	<drop event="Destroy" name="cntCollapsedSolarbank" count="1" tool_category="ToolCrowbar" />                                  
 </block>
 
@@ -30041,7 +30022,7 @@ NOT the TextureNumber.
     <drop event="Harvest" name="resourceElectricParts" count="2,3" tag="ToolScrewdriver"/>
 	<drop event="Harvest" name="resourceElectricParts" count="1,2" prob="0.5" tag="ToolScrewdriver"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="1,2" tag="ToolScrewdriver"/>
-<!-- JZMOD CROWBAR-->
+    <!-- JZMOD CROWBAR-->
 	<drop event="Destroy" name="batterybank" count="1" tool_category="ToolCrowbar" />                                                             
 </block>
 
@@ -38084,7 +38065,7 @@ ore block visualisation end -->
 <block name="jz_PlantedAloeFertilized2Dry">
 	<property name="Extends" value="jz_PlantedAloe2Dry" />
 	<property class="UpgradeBlock">
-		<property name="ToBlock" value="jz_PlantedChrysanthemumFertilized3HarvestPlayer"/>
+		<property name="ToBlock" value="jz_PlantedAloeFertilized3HarvestPlayer"/>
 	</property>
 </block>
 

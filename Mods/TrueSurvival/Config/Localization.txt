@@ -463,9 +463,8 @@ jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
 jz_SchematicSmallEngine,"Small Engine Crafting Guide"
-
-
-
+jz_meleeToolPickT2SteelPickaxeDesc,"The Steel Pickaxe is the best at breaking any hard surface including steel.\n\nRepair with a Forged Steel."
+jz_meleeToolAxeT1IronFireaxeDesc,"The Iron Fireaxe is good for harvesting wood and breaking wooden objects.\n\nRepair with a Sharpening Stone"
 jz_PartsDesertVultureGrip,"Desert Vulture Grip"
 jz_PartsDesertVultureBarrel,"Desert Vulture Barrel"
 jz_PartsDesertVultureFrame,"Desert Vulture Frame"
@@ -1609,7 +1608,7 @@ jzquest_BoneKnifeCrafting,"zMelee-Bone Knife Crafting"
 jzquest_HuntingKnifeCrafting,"zMelee-Hunting Knife Crafting"
 jzquest_MacheteCrafting,"zMelee-Machete Crafting"
 jzquest_WoodenClubCrafting,"zMelee-Wooden Club Crafting"
-jzquest_IronClubCrafting,"zMelee-Iron Club Crafting"
+jzquest_IronClubCrafting,"zMelee-Steel Club Crafting"
 jzquest_StunBatonCrafting,"zMelee-Stun Baton Crafting"
 jzquest_StoneSpearCrafting,"zMelee-Stone Spear Crafting"
 jzquest_IronSpearCrafting,"zMelee-Iron Spear Crafting"
@@ -1642,6 +1641,7 @@ jzquest_WoodenBowCrafting,"zFirearm-Wooden Bow Crafting"
 jzquest_CompoundBowCrafting,"zFirearm-Compound Bow Crafting"
 jzquest_IronCrossbowCrafting,"zFirearm-Iron Crossbow Crafting"
 jzquest_CompoundCrossbowCrafting,"zFirearm-Compound Crossbow Crafting"
+jzquest_SledgeJunkTurretCrafting,"zFirearm-Junk Sledge Turret Crafting"
 jzquest_JunkTurretCrafting,"zFirearm-Junk Turret Crafting"
 jzquest_ClothJacketCrafting,"zArmor-Cloth Jacket Crafting"
 jzquest_ClothHatCrafting,"zArmor-Cloth Hat Crafting"
