@@ -837,6 +837,7 @@ group desc for stuff like metal siding
 	<property name="LightOpacity" value="0"/>
 	<property name="Model" value="cube"/>
 	<property name="Mesh" value="cutout"/>
+    <property name="DescriptionKey" value="jz_WoodFrameGroupDesc"/>
 	<property name="Frame"/>
 	<property name="Texture" value="381"/>
 	<property name="UseGlobalUV" value="Local"/>
@@ -851,7 +852,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="woodMaster"/>
 		<property name="Item" value="jz_Plank"/>
-		<property name="ItemCount" value="5"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_wood"/>
@@ -911,7 +912,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="rWoodMaster"/>
 		<property name="Item" value="jz_Plank"/>
-		<property name="ItemCount" value="5"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="PassThroughDamage" value="true"/>
@@ -932,7 +933,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="rWoodMetalMaster"/>
 		<property name="Item" value="resourceScrapIron"/>
-		<property name="ItemCount" value="20"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="FilterTags" value="fbuilding,fwood"/>
@@ -964,7 +965,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="scrapIronMaster"/>
 		<property name="Item" value="jz_IronSheetMetal"/>
-		<property name="ItemCount" value="10"/>
+		<property name="ItemCount" value="25"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="FilterTags" value="fbuilding,fwood"/>
@@ -986,9 +987,9 @@ group desc for stuff like metal siding
 </block>
 
 <block name="scrapIronFrameMaster">
-     <property name="Tags" value="jz_IronBuilding"/>
+    <property name="Tags" value="jz_IronBuilding"/>
 	<property name="Group" value="Building,advBuilding"/>
-	<property name="DescriptionKey" value="scrapFrameGroupDesc"/>
+	<property name="DescriptionKey" value="jz_ScrapFrameGroupDesc"/>
 	<property name="Material" value="Mmetal_frame"/>
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
@@ -1006,7 +1007,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="scrapIronMaster"/>
 		<property name="Item" value="jz_IronSheetMetal"/>
-		<property name="ItemCount" value="20"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
@@ -1063,7 +1064,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="rScrapIronMaster"/>
 		<property name="Item" value="jz_IronSheetMetal"/>
-		<property name="ItemCount" value="40"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
@@ -1089,7 +1090,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="resourceConcreteMix"/>
-		<property name="ItemCount" value="10"/>
+		<property name="ItemCount" value="15"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
@@ -1111,8 +1112,8 @@ group desc for stuff like metal siding
 
 <block name="rebarFrameMaster">
 	<property name="Group" value="Building,advBuilding"/>
-	<property name="DescriptionKey" value="rebarFrameGroupDesc"/>
-     <property name="Tags" value="jz_ConcreteBuilding,jz_IronBuilding"/>                                                               
+	<property name="DescriptionKey" value="jz_RebarFrameGroupDesc"/>
+    <property name="Tags" value="jz_ConcreteBuilding,jz_IronBuilding"/>                                                               
 	<property name="Material" value="Mmetal_rebar"/>
 	<property name="Shape" value="New"/>
 	<property name="LightOpacity" value="0"/>
@@ -1129,7 +1130,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="pouredRConcreteMaster"/>
 		<property name="Item" value="resourceConcreteMix"/>
-		<property name="ItemCount" value="20"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
@@ -1270,7 +1271,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="jz_SteelSheetMetal"/>
-		<property name="ItemCount" value="10"/>
+		<property name="ItemCount" value="20"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
@@ -1461,7 +1462,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="resourceConcreteMix"/>
-		<property name="ItemCount" value="10"/>
+		<property name="ItemCount" value="15"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
@@ -1498,7 +1499,7 @@ group desc for stuff like metal siding
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="scrapIronMaster"/>
 		<property name="Item" value="jz_IronSheetMetal"/>
-		<property name="ItemCount" value="20"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
@@ -34338,7 +34339,7 @@ NOT the TextureNumber.
 	<property name="Extends" value="rebarFrameBlock"/>
 	<property name="CustomIcon" value="rebarFrameBlock"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="jz_RebarFrameGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true"/>
     <property name="UnlockedBy" value="jz_ConcreteBuildingSkill"/>
@@ -34349,7 +34350,7 @@ NOT the TextureNumber.
 	<property name="Extends" value="scrapIronFrameBlock"/>
 	<property name="CustomIcon" value="scrapIronFrameBlock"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="jz_ScrapFrameGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true"/>
     <property name="UnlockedBy" value="jz_IronBuildingSkill"/>
@@ -34360,7 +34361,7 @@ NOT the TextureNumber.
 	<property name="Extends" value="woodFrameBlock"/>
 	<property name="CustomIcon" value="woodFrameBlock"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="jz_WoodFrameGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true"/>
 	<property name="PlaceAltBlockValue" value="woodFrameBlockV,woodFrameRamp,woodRampIncline,woodRampInclineFiller,woodFrameArch,woodFrameCNRFull,woodFrameCNRInside,woodFrameCNRRampFiller,woodFrameGableInvertedHalf,woodFrameGableInvertedQuarter,woodFrameGableInvertedSteep,woodFrameGableQuarter,woodPlate,woodCTRPlate,woodPole,woodCTRpole,woodFrameHalf,woodFrameQuarterCNR,woodFrameQuarterCNR3Way,woodFrameQuarterSCtr,woodFrameQuarterTeeSCtr,woodPillar100,woodQuarter,woodCTRQuarter,decoWoodCTRQuarterSquareTop,woodPillar50,decoWoodPillar50SquareTop,woodPillar50CNR,woodPillar50CNRPlate,woodSupport,woodStairs25,woodFrameStairs50,woodStairsFilledRailingLeft,woodStairsFilledRailingRight,woodFrameStairs25CornerCNR,woodWedgeTip,woodFrameWedge,woodFrameWedgeCNRInsideBottom,woodFrameWedgeCNRInsideSteepBase,woodFrameWedgeCNRInsideSteepTop,woodFrameWedgeCNRInsideTop,woodFrameWedgeCNRSteepBase,woodFrameWedgeCNRSteepTop,woodFrameWedgeIncline,woodFrameWedgeStairs,woodFrameWedgeTipCNRFullBottom,woodFrameWedgeTipCNRFullTop,woodFrameWedgeTipStairs,woodArrowBlock,woodArrowSlitHalf,woodBars,woodBarsCentered"/>
@@ -35639,7 +35640,7 @@ ore block visualisation end -->
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="flagstoneMaster"/>
 		<property name="Item" value="resourceCobblestones"/>
-		<property name="ItemCount" value="4"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_wood"/>
@@ -35704,7 +35705,7 @@ ore block visualisation end -->
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="jz_SteelSheetMetal"/>
-		<property name="ItemCount" value="20"/>
+		<property name="ItemCount" value="10"/>
 		<property name="UpgradeHitCount" value="4"/>
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
@@ -36081,7 +36082,7 @@ ore block visualisation end -->
 	<property name="Extends" value="jz_FlagstoneFrameBlock"/>
 	<property name="CustomIcon" value="flagstoneBlock"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="jz_FlagstoneFrameBlock"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true" />
     <property name="UnlockedBy" value="jz_StoneBuildingSkill"/>
@@ -36389,7 +36390,7 @@ ore block visualisation end -->
 	<property name="Extends" value="jz_BrickFrameMaster"/>
 	<property name="CustomIcon" value="ui_game_symbol_brickFrame"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="BrickFrameGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true" />
     <property name="UnlockedBy" value="jz_StoneBuildingSkill"/>
@@ -36717,7 +36718,7 @@ ore block visualisation end -->
 	<property name="Extends" value="jz_SteelFrameMaster"/>
 	<property name="CustomIcon" value="scrapIronFrameBlock"/>
 	<property name="CreativeMode" value="Player"/>
-	<property name="DescriptionKey" value="blockVariantHelperGroupDesc"/>
+	<property name="DescriptionKey" value="SteelBlockGroupDesc"/>
 	<property name="ItemTypeIcon" value="all_blocks"/>
 	<property name="SelectAlternates" value="true" />
     <property name="UnlockedBy" value="jz_SteelBuildingSkill"/>

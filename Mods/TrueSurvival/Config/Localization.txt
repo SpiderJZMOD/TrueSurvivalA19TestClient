@@ -167,6 +167,9 @@ jz_StorageSack,"Storage Sack"
 jz_StorageSackDesc,"A basic storage container with no lock"
 jz_LogLarge,Large Log
 jz_LogSmall,Small Log
+jz_RebarFrameGroupDesc,"Upgrade these Frames with Cement Mix using a Concrete Sledge"
+jz_ScrapFrameGroupDesc,"Upgrade these Frames with Iron Sheet Metal using a Wrench"
+jz_WoodFrameGroupDesc,"Upgrade these Frames with Planks using a Claw Hammer"
 jz_FlagstoneFrameBlock,Flagstone Frame
 FlagstoneFrameGroupDesc,"Upgrade these Frames with Cobblestone using a Mason Hammer"
 BrickFrameGroupDesc,"Upgrade these Frames with Bricks using a Mason Hammer"
@@ -177,7 +180,7 @@ jz_BrickFrameVariantHelper,"Brick Frame Variants"
 jz_SteelFrameBlock,Steel Frame
 jz_SteelFrameVariantHelper,"Steel Frame Variants"
 jz_IronSheetMetal,"Iron Sheet Metal"
-jz_IronSheetMetalDesc"Thin Sheets of Scrap Iron used to upgrade Scrap Metal Frames"
+jz_IronSheetMetalDesc"Thin Sheets of Iron used to upgrade Scrap Metal Frames"
 jz_GoreBlockHumanBones,"Decaying Body"
 jz_GoreBlockHumanBones2,"Decaying Body"
 jz_GoreBlockHumanBones3,"Decaying Body"
@@ -1293,7 +1296,7 @@ jz_GallonOfDirtyRiverWaterDesc,A gallon of water collected from a unclean source
 jz_OldMilkJug,Old Milk Jug
 jz_OldMilkJugDesc,A old empty milk jug that can be used to collect a gallon of water from a source
 jz_FarmingWateringCan,Watering Can
-jz_FarmingWateringCanDesc,A Watering Can used in farming. Can use fertilizer on planted seeds to increase yield, ounces of dirty water to water cultivated plants and Insecticide to remove insect infestations."
+jz_FarmingWateringCanDesc,"A Watering Can used in farming. Can use fertilizer on planted seeds to increase yield, ounces of dirty water to water cultivated plants and Insecticide to remove insect infestations."
 jz_Insecticide,Insecticide
 jz_InsecticideDesc,Farming Insecticide used on cultivated plants that are having insect infestations
 jz_QIMilitarySecurityCardA,Military Security Card
@@ -1464,7 +1467,7 @@ jz_WoodBuildingSkillRank1LongDesc,"Teaches you how to craft all of the Wood Fram
 jz_WoodBuildingSkillRank2Desc,"Tool"
 jz_WoodBuildingSkillRank2LongDesc,"Teaches you how to craft a Claw Hammer"
 jz_WoodBuildingSkillRank3Desc,"Supplies"
-jz_WoodBuildingSkillRank3LongDesc,"Teaches you how to craft Planks"
+jz_WoodBuildingSkillRank3LongDesc,"Teaches you how to craft Planks and Nails"
 jz_StoneBuildingSkillDesc,"Gain xp by using the Mason Hammer to upgrade Flagstone and Brick Frames. Gather materials by using the Mason Hammer to break down Flagstone and Brick Blocks\n            [00eb3c]Current XP-{cvar($jz_StoneBuildingXP:000)}                  Next Level-{cvar($jz_StoneBuildingNextLvTotal:000)}[-]"
 jz_StoneBuildingSkillRank1Desc,"Shapes"
 jz_StoneBuildingSkillRank1LongDesc,"Teaches you how to craft all of the Flagstone and Brick Frame shapes"
@@ -1480,7 +1483,7 @@ jz_IronBuildingSkillRank1LongDesc,"Teaches you how to craft all of the Scrap Iro
 jz_IronBuildingSkillRank2Desc,"Tool"
 jz_IronBuildingSkillRank2LongDesc,"Teaches you how to craft a Wrench"
 jz_IronBuildingSkillRank3Desc,"Supplies"
-jz_IronBuildingSkillRank3LongDesc,"Teaches you how to craft Iron Sheet Metal"
+jz_IronBuildingSkillRank3LongDesc,"Teaches you how to craft Iron Sheet Metal and Nuts and Bolts"
 jz_ConcreteBuildingSkillDesc,"Gain xp by using the Concrete Sledge to upgrade Concrete Frames\nGather materials by using the Concrete Sledge to break down Concrete Blocks\n            [00eb3c]Current XP-{cvar($jz_ConcreteBuildingXP:000)}                  Next Level-{cvar($jz_ConcreteBuildingNextLvTotal:000)}[-]"
 jz_ConcreteBuildingSkillRank1Desc,"Shapes"
 jz_ConcreteBuildingSkillRank1LongDesc,"Teaches you how to craft all of the Rebar Frame shapes"

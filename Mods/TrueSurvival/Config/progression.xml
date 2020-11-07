@@ -4416,9 +4416,9 @@
 		</effect_group>
 	</perk>
 	
-	<perk name="SP_CeilingLightSchematic" parent="jz_PoweredSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Ceiling Light" desc_key="SP_CeilingLightSchematicDesc" icon="ceilingLight01">
+	<perk name="SP_CeilingLightSchematic" parent="jz_PoweredSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Ceiling Lights" desc_key="SP_CeilingLightSchematicDesc" icon="ceilingLight01">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ceilingLight01_player"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ceilingLight01_player,industrialLight01_player,industrialLight02_player"/>
 			<effect_description level="1" desc_key="SP_CeilingLightSchematicDesc" long_desc_key="SP_CeilingLightSchematicDesc"/>
 		</effect_group>
 	</perk>

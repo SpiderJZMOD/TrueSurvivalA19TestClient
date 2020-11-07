@@ -965,7 +965,7 @@ Mesh files no longer used:
 <!-- * * * * * * * * * * Wrench / special harvesting, not a repair tool (perkSalvageOperations) * * * * * * * * * * -->
 
 <item name="meleeToolSalvageT1Wrench">
-	<property name="Tags" value="blunt,melee,grunting,light,tool,longShaft,attPerception,perkSalvageOperations,canHaveCosmetic,jz_IronBuildingTag"/>
+	<property name="Tags" value="melee,light,tool,longShaft,attPerception,perkSalvageOperations,canHaveCosmetic,jz_IronBuildingTag"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="29"/>
 	<property name="Meshfile" value="#Other/Items?Tools/wrenchPrefab.prefab"/>
@@ -1027,15 +1027,10 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
-        <passive_effect name="DamageModifier" operation="perc_add" value="100" tags="ToolWrench"/>
+        <passive_effect name="DamageModifier" operation="perc_add" value="20" tags="jz_IronBuilding"/>
 
         <passive_effect name="HarvestCount" operation="base_set" value="1" tags="ToolWrench"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
-	</effect_group>
-	<effect_group name="Power Attack">
-		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="31.1" tags="secondary"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -5638,7 +5633,7 @@ needed?
 		<property name="SupportHarvesting" value="true"/>
 		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
 		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
-         <requirement name="NotHasBuff" buff="buffArmSprained"/>
+        <requirement name="NotHasBuff" buff="buffArmSprained"/>
         <requirement name="NotHasBuff" buff="buffArmBroken"/>
 		<requirement name="NotHasBuff" buff="buffArmSplinted"/>
 		<requirement name="NotHasBuff" buff="buffArmCast"/>   
@@ -14829,6 +14824,7 @@ perkNightStalkerSilentNight
 	<property name="Meshfile" value="#Other/Items?Crafting/Metal/IronBucket.fbx"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="Mmetal"/>
+    <property name="Weight" value="5"/>
 	<property name="Stacknumber" value="1"/>
 	<property name="EconomicValue" value="84"/>
 	<!-- JZMOD Remove

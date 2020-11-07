@@ -9872,7 +9872,6 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPainScreen"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPainScreenRestart"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPain"/>
-                
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWound"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundWellness"/>
@@ -9887,7 +9886,15 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection03Untreated"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection03GetBetter"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfection04"/>
-                              
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmBroken"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmSplinted"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmCast"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffArmSprained"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSprained"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegBroken"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSplinted"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegCast"/>
+                                            
                 <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffNewbieCoat"  />
         </effect_group>
 	</buff>

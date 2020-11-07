@@ -2227,6 +2227,64 @@ The overall plan for loot distribution:
 	<item name="resourceRawDiamond" count="1,3" prob="0.1"/> <!-- 1500 -->
 </lootgroup>
 
+<lootgroup name="T1ModBook" >
+	<item name="modGunScopeSmallSchematic" prob="5.88" />
+	<item name="modArmorHelmetLightSchematic" prob="5.88" />
+	<item name="modArmorInsulatedLinerSchematic" prob="5.88" />
+	<item name="modArmorCoolingMeshSchematic" prob="5.88" />
+	<item name="modArmorImprovedFittingsSchematic" prob="5.88" />
+	<item name="modArmorStoragePocketSchematic" prob="5.88" />
+	<item name="modMeleeTemperedBladeSchematic" prob="5.88" />
+	<item name="modMeleeSerratedBladeSchematic" prob="5.88" />
+	<item name="modMeleeClubBarbedWireSchematic" prob="5.88" />
+	<item name="modMeleeClubMetalSpikesSchematic" prob="5.88" />
+	<item name="modMeleeWeightedHeadSchematic" prob="5.88" />
+	<item name="modMeleeStructuralBraceSchematic" prob="5.88" />
+	<item name="modMeleeErgonomicGripSchematic" prob="5.88" />
+	<item name="modMeleeGraveDiggerSchematic" prob="5.88" />
+	<item name="modMeleeWoodSplitterSchematic" prob="5.88" />
+	<item name="modGunBowArrowRestSchematic" prob="5.9" />
+	<item name="modGunBowPolymerStringSchematic" prob="5.9" />
+</lootgroup>
+
+<lootgroup name="T2ModBook" >
+	<item name="modArmorBandolierSchematic" prob="5" />
+	<item name="modArmorPlatingBasicSchematic" prob="5" />
+	<item name="modArmorDoubleStoragePocketSchematic" prob="5" />
+	<item name="modArmorMuffledConnectorsSchematic" prob="5" />
+	<item name="modGunBarrelExtenderSchematic" prob="5" />
+	<item name="modGunMuzzleBrakeSchematic" prob="5" />
+	<item name="modGunFlashlightSchematic" prob="5" />
+	<item name="modGunScopeMediumSchematic" prob="5" />
+	<item name="modGunReflexSightSchematic" prob="5" />
+	<item name="modGunTriggerGroupSemiSchematic" prob="5" />
+	<item name="modGunBipodSchematic" prob="5" />
+	<item name="modGunForegripSchematic" prob="5" />
+	<item name="modGunRetractingStockSchematic" prob="5" />
+	<item name="modGunDuckbillSchematic" prob="5" />
+	<item name="modGunChokeSchematic" prob="5" />
+	<item name="modGunMagazineExtenderSchematic" prob="5" />
+	<item name="modShotgunSawedOffBarrelSchematic" prob="5" />
+	<item name="modGunCrippleEmSchematic" prob="5" />
+	<item name="modFuelTankSmallSchematic" prob="5" />
+	<item name="modFuelTankLargeSchematic" prob="5" />
+</lootgroup>
+
+<lootgroup name="T3ModBook" >
+	<item name="modGunScopeLargeSchematic" prob="8.33" />
+	<item name="modGunLaserSightSchematic" prob="8.33" />
+	<item name="modGunTriggerGroupBurst3Schematic" prob="8.33" />
+	<item name="modGunSoundSuppressorSilencerSchematic" prob="8.33" />
+	<item name="modGunTriggerGroupAutomaticSchematic" prob="8.33" />
+	<item name="modArmorPlatingReinforcedSchematic" prob="8.33" />
+	<item name="modArmorTripleStoragePocketSchematic" prob="8.33" />
+	<item name="modArmorAdvancedMuffledConnectorsSchematic" prob="8.33" />
+	<item name="modArmorCustomizedFittingsSchematic" prob="8.33" />
+	<item name="modMeleeBunkerBusterSchematic" prob="8.33" />
+	<item name="modMeleeIronBreakerSchematic" prob="8.35" />
+	<item name="modArmorImpactBracingSchematic" prob="8.35" />
+</lootgroup>
+
 <lootgroup name="workstations">
 	<item name="forge" prob="10"/> 
 	<item name="workbench" prob="10"/> 
@@ -2280,8 +2338,109 @@ The overall plan for loot distribution:
 	<item name="resourceSpring" count="1,4" prob="4"/>
 	<item name="resourceRepairKit" prob="4"/>
 </lootgroup>
-
+    
 <lootgroup name="workbenchSchematics">
+	<item name="bookFiremansAlmanacEquipment" prob="0.99" />
+    <item name="jz_SchematicMethaneProducer" prob="0.99" />
+    <item name="jz_SchematicIronSpikes" prob="0.99" />
+    <item name="gunBotT2JunkTurretSchematic" prob="0.99" />
+    <item name="bookTechJunkie3APAmmo" prob="0.99" />
+	<item name="bookTechJunkie4Shells" prob="0.99" />
+    <item name="jz_SchematicPlank" prob="0.99" />
+    <item name="jz_SchematicWoodenDoors" prob="0.99" />
+    <item name="jz_SchematicWoodenChest" prob="0.99" />
+    <item name="jz_Schematic9MM" prob="0.99" />
+    <item name="jz_SchematicShotgunShell" prob="0.99" />
+    <item name="jz_SchematicIronDoors" prob="0.99" />
+    <item name="jz_SchematicSteelSafe" prob="0.99" />
+    <item name="jz_SchematicCeilingLight" prob="0.99" />
+    <item name="jz_Schematic44MM" prob="0.99" />
+    <item name="jz_Schematic762MM" prob="0.99" />
+    <item name="jz_SchematicSmallEngine" prob="0.99" />
+    <item name="jz_SchematicSteelArrows" prob="0.99" />
+    <item name="jz_SchematicDrawBridge" prob="0.99" />
+    <item name="jz_SchematicWelder" prob="0.99" />
+    <item name="jz_SchematicSteelDoors" prob="0.99" />
+    <item name="jz_SchematicSteelSafe" prob="0.99" />
+    <item name="jz_SchematicSteelForge" prob="0.99" />
+    <item name="jz_SchematicLargeEngine" prob="0.99" />
+    <item name="jz_SchematicSolarbank" prob="0.99" />
+    <item name="batterybankSchematic" prob="0.99" />
+    <item name="bookPistolPeteAPAmmo" prob="0.99" />
+	<item name="bookPistolPeteHPAmmo" prob="0.99" />
+    <item name="bookEnforcerAPAmmo" prob="0.99" />
+	<item name="bookEnforcerHPAmmo" prob="0.99" />
+    <item name="bookSniperAPAmmo" prob="0.99" />
+	<item name="bookSniperHPAmmo" prob="0.99" />
+    <item name="jz_SchematicBlunderbuss" prob="0.99" />
+    <item name="bookShotgunMessiahBreachingSlugs" prob="0.99" />
+	<item name="bookShotgunMessiahSlugs" prob="0.99" />
+	<item name="bookRangersFlamingArrows" prob="0.99" />
+	<item name="bookRangersAPAmmo" prob="0.99" />
+	<item name="bookRangersExplodingBolts" prob="0.99" />
+	<item name="jz_SchematicIronArrows" prob="0.99" />
+    <item name="gunExplosivesT3RocketLauncherSchematic" prob="0.99" />
+    <item name="autoTurretSchematic" prob="0.99" />
+	<item name="bladeTrapSchematic" prob="0.99" />
+    <item name="dartTrapSchematic" prob="0.99" />
+    <item name="cementMixerSchematic" prob="0.99" />
+	<item name="chemistryStationSchematic" prob="0.99" />
+	<item name="pressureplateSchematic" prob="0.99" />
+	<item name="poweredDoorsSchematic" prob="0.99" />
+	<item name="shotgunTurretSchematic" prob="0.99" />
+	<item name="electricfencepostSchematic" prob="0.99" />
+	<item name="motionsensorSchematic" prob="0.99" />
+	<item name="speakerSchematic" prob="0.99" />
+	<item name="spotlightPlayerSchematic" prob="0.99" />
+	<item name="switchSchematic" prob="0.99" />
+	<item name="electrictimerrelaySchematic" prob="0.99" />
+	<item name="jz_SchematicWirerelay" prob="0.99" />
+    <item name="generatorbankSchematic" prob="0.99" />
+    <item name="jz_SchematicCarBattery" prob="0.99" />
+    <item name="jz_SchematicWeaponRepairKit" prob="0.99" />
+    <item name="gunHandgunT1PistolSchematic" prob="0.99" />
+	<item name="gunShotgunT1DoubleBarrelSchematic" prob="0.99" />
+	<item name="gunRifleT1HuntingRifleSchematic" prob="0.99" />
+    <item name="gunHandgunT2Magnum44Schematic" prob="0.99" />
+    <item name="gunHandgunT3DesertVultureSchematic" prob="0.99" />
+	<item name="gunShotgunT2PumpShotgunSchematic" prob="0.99" />
+	<item name="gunHandgunT3SMG5Schematic" prob="0.99" />
+	<item name="gunMGT1AK47Schematic" prob="0.99" />
+    <item name="gunMGT3M60Schematic" prob="0.99" />
+	<item name="gunMGT2TacticalARSchematic" prob="0.99" />
+    <item name="gunShotgunT3AutoShotgunSchematic" prob="0.99" />
+    <item name="gunRifleT2MarksmanRifleSchematic" prob="0.99" />
+    <item name="gunRifleT3SniperRifleSchematic" prob="0.99" />
+    <item name="gunBotT1JunkSledgeSchematic" prob="0.99" />
+    <item name="gunBowT1WoodenBowSchematic" prob="0.99" />
+	<item name="gunBowT1IronCrossbowSchematic" prob="0.99" />
+    <item name="gunBowT3CompoundBowSchematic" prob="0.99" />
+	<item name="gunBowT3CompoundCrossbowSchematic" prob="0.99" />
+	<item name="gunExplosivesT3RocketLauncherSchematic" prob="0.99" />
+    <item name="jz_SchematicLockPick" prob="0.99" />
+    <item name="meleeToolPickT3AugerSchematic" prob="0.99" />
+	<item name="meleeToolAxeT3ChainsawSchematic" prob="0.99" />
+    <item name="meleeWpnKnucklesT3SteelKnucklesSchematic" prob="0.99" />
+    <item name="meleeWpnBatonT2StunBatonSchematic" prob="0.99" />
+    <item group="T1ModBook" prob="0.99" />
+    <item group="T2ModBook" prob="0.99" />
+    <item group="T3ModBook" prob="0.99" />
+    <item name="jz_SchematicCandyTinMine" prob="0.99" />
+	<item name="jz_SchematicCookingPotMine" prob="0.99" />
+    <item name="jz_SchematicHubcapMine" prob="0.99" />
+	<item name="jz_SchematicAirFilterMine" prob="0.99" />
+   	<item name="spotlightPlayerSchematic" prob="0.99" />
+    <item name="thrownDynamiteSchematic" prob="0.99" />
+	<item name="thrownGrenadeSchematic" prob="0.99" />
+	<item name="thrownGrenadeContactSchematic" prob="0.99" />
+    <item name="jz_SchematicMiniBike" prob="0.99" />
+	<item name="jz_SchematicMotorcycle" prob="0.99" />
+    <item name="jz_Schematic4x4Truck" prob="0.99" />
+	<item name="jz_SchematicGyroCopter" prob="0.99" />
+	<item name="jz_SchematicBicycle" prob="0.99" />
+    <item name="toolForgeCrucibleSchematic" prob="0.99" />
+    <item name="jz_SchematicCraftedRevolver" prob="0.99" />
+	<item name="jz_SchematicCraftedRifle" prob="0.99" />	
 </lootgroup> 
 
 <lootgroup name="workbenchTools">
@@ -2293,7 +2452,7 @@ The overall plan for loot distribution:
 	<item name="meleeToolSalvageT1Wrench" prob="11"/>
 	<item name="jz_GunTools" prob="11"/>
 	<item name="toolAndDieSet" prob="11"/>
-	<item name="jz_HandSaw" prob="11"/>
+	<item name="jz_HandSaw" prob="11"/>  
 </lootgroup> 
                                                 
 <lootgroup name="forgeMolds" >
@@ -2338,9 +2497,22 @@ The overall plan for loot distribution:
 	<item group="forgeMolds" prob="20" />
 	<item group="forgeHeads" prob="20" />               
 </lootgroup>
-
+   
 <lootgroup name="forgeSchematics" >
-    <item name="jz_SchematicBricks"/>
+    <item name="jz_SchematicBricks" prob="7.14" />
+    <item name="meleeToolSalvageT1WrenchSchematic" prob="7.14" />
+    <item name="meleeWpnKnucklesT1IronKnucklesSchematic" prob="7.14" />
+    <item name="jz_SchematicIronArrows" prob="7.14" />
+    <item name="jz_SchematicConcreteMix" prob="7.14" />
+    <item name="jz_SchematicNails" prob="7.14" />
+    <item name="jz_SchematicIronShaping" prob="7.14" />
+    <item name="toolAnvilSchematic" prob="7.14" />
+    <item name="jz_SchematicIronPickaxe" prob="7.14" />
+	<item name="jz_SchematicIronFireaxe" prob="7.14" />
+	<item name="jz_SchematicIronShovel" prob="7.14" />
+	<item name="jz_SchematicClawHammer" prob="7.14" />
+	<item name="meleeWpnBladeT1HuntingKnifeSchematic" prob="7.14" />
+    <item name="jz_SchematicNutAndBolt" prob="7.14" />
 </lootgroup>
 
 <lootgroup name="forgeTools" >
@@ -2397,6 +2569,8 @@ The overall plan for loot distribution:
 </lootgroup>
 
 <lootgroup name="cementMixerSchematics" >
+    <item name="jz_SchematicConcreteMix" prob="50" />
+    <item name="cementMixerSchematic" prob="50" />
 </lootgroup>         
                                         
 <lootgroup name="chemistryStationLoot" >
@@ -2421,6 +2595,16 @@ The overall plan for loot distribution:
 </lootgroup>
 
 <lootgroup name="chemistrySchematics" count="1">
+    <item name="jz_SchematicCarBattery" prob="10" />
+    <item name="jz_SchematicInsecticide" prob="10" />
+    <item name="ammoGasCanSchematic" prob="10" />
+	<item name="resourceOilSchematic" prob="10" />
+    <item name="jz_SchematicGrainAlcohol" prob="10" />
+    <item name="jz_SchematicGlue" prob="10" />
+    <item name="medicalPlasterCastSchematic" prob="10" />
+    <item name="jz_SchematicGunPowder" prob="10" />
+    <item name="jz_SchematicWellnessJuice" prob="10" />
+    <item name="chemistryStationSchematic" prob="10" />
 </lootgroup>
 
 <lootgroup name="chemistryTools" >
@@ -2587,64 +2771,6 @@ The overall plan for loot distribution:
 	<item group="T1FarmingBooks" prob="40" />
 	<item group="T2FarmingBooks" prob="35" />
 	<item group="T3FarmingBooks" prob="25" />
-</lootgroup>
-
-<lootgroup name="T1ModBook" >
-	<item name="modGunScopeSmallSchematic" prob="5.88" />
-	<item name="modArmorHelmetLightSchematic" prob="5.88" />
-	<item name="modArmorInsulatedLinerSchematic" prob="5.88" />
-	<item name="modArmorCoolingMeshSchematic" prob="5.88" />
-	<item name="modArmorImprovedFittingsSchematic" prob="5.88" />
-	<item name="modArmorStoragePocketSchematic" prob="5.88" />
-	<item name="modMeleeTemperedBladeSchematic" prob="5.88" />
-	<item name="modMeleeSerratedBladeSchematic" prob="5.88" />
-	<item name="modMeleeClubBarbedWireSchematic" prob="5.88" />
-	<item name="modMeleeClubMetalSpikesSchematic" prob="5.88" />
-	<item name="modMeleeWeightedHeadSchematic" prob="5.88" />
-	<item name="modMeleeStructuralBraceSchematic" prob="5.88" />
-	<item name="modMeleeErgonomicGripSchematic" prob="5.88" />
-	<item name="modMeleeGraveDiggerSchematic" prob="5.88" />
-	<item name="modMeleeWoodSplitterSchematic" prob="5.88" />
-	<item name="modGunBowArrowRestSchematic" prob="5.9" />
-	<item name="modGunBowPolymerStringSchematic" prob="5.9" />
-</lootgroup>
-
-<lootgroup name="T2ModBook" >
-	<item name="modArmorBandolierSchematic" prob="5" />
-	<item name="modArmorPlatingBasicSchematic" prob="5" />
-	<item name="modArmorDoubleStoragePocketSchematic" prob="5" />
-	<item name="modArmorMuffledConnectorsSchematic" prob="5" />
-	<item name="modGunBarrelExtenderSchematic" prob="5" />
-	<item name="modGunMuzzleBrakeSchematic" prob="5" />
-	<item name="modGunFlashlightSchematic" prob="5" />
-	<item name="modGunScopeMediumSchematic" prob="5" />
-	<item name="modGunReflexSightSchematic" prob="5" />
-	<item name="modGunTriggerGroupSemiSchematic" prob="5" />
-	<item name="modGunBipodSchematic" prob="5" />
-	<item name="modGunForegripSchematic" prob="5" />
-	<item name="modGunRetractingStockSchematic" prob="5" />
-	<item name="modGunDuckbillSchematic" prob="5" />
-	<item name="modGunChokeSchematic" prob="5" />
-	<item name="modGunMagazineExtenderSchematic" prob="5" />
-	<item name="modShotgunSawedOffBarrelSchematic" prob="5" />
-	<item name="modGunCrippleEmSchematic" prob="5" />
-	<item name="modFuelTankSmallSchematic" prob="5" />
-	<item name="modFuelTankLargeSchematic" prob="5" />
-</lootgroup>
-
-<lootgroup name="T3ModBook" >
-	<item name="modGunScopeLargeSchematic" prob="8.33" />
-	<item name="modGunLaserSightSchematic" prob="8.33" />
-	<item name="modGunTriggerGroupBurst3Schematic" prob="8.33" />
-	<item name="modGunSoundSuppressorSilencerSchematic" prob="8.33" />
-	<item name="modGunTriggerGroupAutomaticSchematic" prob="8.33" />
-	<item name="modArmorPlatingReinforcedSchematic" prob="8.33" />
-	<item name="modArmorTripleStoragePocketSchematic" prob="8.33" />
-	<item name="modArmorAdvancedMuffledConnectorsSchematic" prob="8.33" />
-	<item name="modArmorCustomizedFittingsSchematic" prob="8.33" />
-	<item name="modMeleeBunkerBusterSchematic" prob="8.33" />
-	<item name="modMeleeIronBreakerSchematic" prob="8.35" />
-	<item name="modArmorImpactBracingSchematic" prob="8.35" />
 </lootgroup>
 
 <lootgroup name="schematicsVehicle" >
@@ -3974,10 +4100,10 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 </lootgroup>
 
 <lootgroup name="WorkingVehiclePlaceable" >
-	<item name="vehicleMinibikePlaceable" count="35" />
-	<item name="vehicleBicyclePlaceable" count="50" />
-	<item name="vehicleMotorcyclePlaceable" count="10" />
-	<item name="vehicle4x4TruckPlaceable" count="5" />
+	<item name="vehicleMinibikePlaceable" prob="35" />
+	<item name="vehicleBicyclePlaceable" prob="50" />
+	<item name="vehicleMotorcyclePlaceable" prob="10" />
+	<item name="vehicle4x4TruckPlaceable" prob="5" />
 </lootgroup>
 <!--
 	<item group="groupModAllT3" loot_prob_template="QuestT3Prob"/>
@@ -4224,9 +4350,9 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 <lootcontainer id="19" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="QLTemplateT1">
 	<item group="automotive+tools+junk" prob="30" />
 	<item group="sportingGoods" prob="19" />
-    <item group="WorkingVehiclePlaceable" prob="1" />
     <item group="dryfood" prob="25" />
 	<item group="rottenFood" prob="25" />
+    <item group="WorkingVehiclePlaceable" prob="1" />
 </lootcontainer>
 
 <!-- frozen or refrigerator food, spoiled food -->
