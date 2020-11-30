@@ -852,6 +852,8 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 				<requirement name="StatComparePercCurrentToMax" stat="health" operation="GT" value="0.05"/></triggered_effect>	
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffLimpB">
 				<requirement name="StatComparePercCurrentToMax" stat="health" operation="GT" value="0.05"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffLimpNotice">
+				<requirement name="StatComparePercCurrentToMax" stat="health" operation="GT" value="0.05"/></triggered_effect>	
 		</effect_group>
         <!-- JZMOD NATURAL HEALING ACTIVATION-->
         <effect_group name="Natural Activation">
