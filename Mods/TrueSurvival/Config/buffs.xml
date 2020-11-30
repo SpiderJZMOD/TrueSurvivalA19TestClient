@@ -844,6 +844,8 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 		<effect_group name="Limp Activation">
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffLimp">	
 				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="0.05"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffLimpNotice">	
+				<requirement name="StatComparePercCurrentToMax" stat="health" operation="LTE" value="0.05"/></triggered_effect>
 		</effect_group>
 		<effect_group name="Limp Deactivation">
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffLimp">
@@ -867,7 +869,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffFatigued">
 				<requirement name="CVarCompare" cvar="$fatigueTicker" operation="LTE" value="59"/></triggered_effect>	
         </effect_group> 
-         <!-- JZMOD FATIGUED ACTIVATION-->
+         <!-- JZMOD FATIGUED ACTIVATION
         <effect_group name="Stuffed Activation/Deactivation">
             <requirement name="StatCompare" target="self" stat="food" operation="gte" value="99"/>
                 <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffFoodStuffed"/>
@@ -875,7 +877,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
         <effect_group name="Stuffed Activation/Deactivation">         
             <requirement name="StatCompare" target="self" stat="food" operation="lte" value="98"/>
                 <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffFoodStuffed"/>                
-        </effect_group>
+        </effect_group>-->
 	</buff>
 
 	<buff name="buffStatusCheck02" hidden="true" remove_on_death="false">
@@ -1058,35 +1060,56 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 	<buff name="buffJournalUnlocks" hidden="true" remove_on_death="false">
 		<stack_type value="ignore"/>
 		<duration value="500"/>
-		<update_rate value="20"/>
+		<update_rate value="10"/>
 		<effect_group name="staggered unlock for journal tips to avoid blocking at game start">
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$journalUnlockTimer" operation="add" value="1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$journalUnlockTimer" operation="set" value="0"/>
 
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="survivalTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="6"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="firstAidTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="7"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="infectionTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="8"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="waterTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="9"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="foodPoisoningTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="10"/> </triggered_effect>
-
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="meleeWeaponStatsTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="11"/> </triggered_effect>
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="6"/> </triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="rangedWeaponStatsTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="12"/> </triggered_effect>
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="7"/> </triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="armorStatsTip">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="13"/> </triggered_effect>
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="8"/> </triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="stealthTip">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="9"/> </triggered_effect>
+		    <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="TrueSurvivalNutritionTip">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="10"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSCooking">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="11"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSFarming">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="12"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSSpoiling">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="13"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSCrowbar">
 				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="14"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="criticalHitsTip">
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipWhatIsItGoodFor">
 				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="15"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipWorkstations">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="16"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipUnlockingRecipes">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="17"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipScrapping">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="18"/> </triggered_effect> 
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSWater">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="19"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSZVirus">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="20"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSRecovery">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="21"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipTSDeath">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="22"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipProperTools">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="23"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipCraftingBetterQL">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="24"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipBaseUpgrading">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="25"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="AddJournalEntry" journal="jz_loadingTipEncumbrance">
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="26"/> </triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffJournalUnlocks">
-				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="16"/> </triggered_effect>
+				<requirement name="CVarCompare" cvar="$journalUnlockTimer" operation="Equals" value="27"/> </triggered_effect>
 		</effect_group>
 	</buff>
 
@@ -1169,8 +1192,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$MetabolismResist" operation="set" value="15">
 				<requirement name="ProgressionLevel" progression_name="jz_TraitWeakStomach" operation="Equals" value="1"/>
           		<requirement name="ProgressionLevel" progression_name="jz_TraitIronGut" operation="Equals" value="0"/></triggered_effect>
-
-			<!-- perkSlowMetabolism : breath hold duration update -->
+           	<!-- perkSlowMetabolism : breath hold duration update -->
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="set" value="-12"/>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="multiply" value="@$MetabolismResist"/>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$DrowningTimerMax" operation="add" value="30"/>
@@ -7151,6 +7173,12 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<duration value="540"/>
 	</buff>
  <!-- JZMOD LOW HP LIMP -->
+ 
+    <buff name="jz_BuffLimpNotice" hidden="false" remove_on_death="true" name_key="Limping" description_key="You are very injured and limping. Heal up to stop the limp" icon="ui_game_symbol_limp" >
+		<stack_type value="ignore"/>
+		<duration value="0"/>
+	</buff>
+    
 	<buff name="jz_BuffLimp" hidden="true" remove_on_death="false">
 		<stack_type value="ignore"/>
 		<duration value="0.5"/>
@@ -7274,7 +7302,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
        </effect_group>
     </buff>
     <!-- JZMOD GASH -->
-    <buff name="jz_BuffGash" remove_on_death="false" name_key="Nasty Gash" tooltip_key="Thats going to need Stitches" description_key="jz_BuffGashDeac" icon="ui_game_symbol_gash">
+    <buff name="jz_BuffGash" remove_on_death="false" name_key="Nasty Gash" tooltip_key="Thats going to need Stitches" description_key="jz_BuffGashDesc" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
 		<update_rate value="25"/>
 		<duration value="3600"/><!-- 3600 -->
@@ -7291,7 +7319,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
       	</effect_group>
 	</buff>
     
-    <buff name="jz_BuffGashStitchedUp" remove_on_death="false" name_key="Gash Stitched Up" tooltip_key="What a Scar" description_key="Should leave a nice scar but its going to need bandaging if you don't want it to get worse.\n-4% Mobility\n-2 Wellness if not treated" icon="stichedGash">
+    <buff name="jz_BuffGashStitchedUp" remove_on_death="false" name_key="Gash Closed Up" tooltip_key="What a Scar" description_key="jz_BuffGashStitchedUpDesc" icon="stichedGash">
 		<stack_type value="ignore"/>
 		<duration value="900"/>
 		<effect_group>
@@ -7301,7 +7329,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     	</effect_group>
 	</buff>
     
-    <buff name="jz_BuffGashBandaged" remove_on_death="false" name_key="Bandaged Gash" tooltip_key="Feels Better" description_key="Your Gash is bandaged up and healing. It will need to be changed when it gets dirty\n-2% Mobility" icon="BandagedGash">
+    <buff name="jz_BuffGashBandaged" remove_on_death="false" name_key="Bandaged Gash" tooltip_key="Feels Better" description_key="jz_BuffGashBandagedDesc" icon="BandagedGash">
 		<stack_type value="ignore"/>
         <duration value="1800">
             <requirement name="ProgressionLevel" progression_name="HealingBonus" operation="Equals" value="0"/></duration>
@@ -7323,7 +7351,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
     <!-- JZMOD PUNCTURED -->
-    <buff name="jz_BuffPunctured" remove_on_death="false" name_key="Puncture Wound" tooltip_key="Ah! A Hole!" description_key="You have a deep Puncture Wound. Your going to need to sanitize and pack the hole with a bandage\n-10% Mobility\n-1HP per 20sec\n-1 Wellness" icon="ui_game_symbol_puncture">
+    <buff name="jz_BuffPunctured" remove_on_death="false" name_key="Puncture Wound" tooltip_key="Ah! A Hole!" description_key="jz_BuffPuncturedDesc" icon="ui_game_symbol_puncture">
 		<stack_type value="ignore"/>
 		<update_rate value="20"/>
 		<duration value="0"/>
@@ -8143,7 +8171,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffParasiteBiteDirtyBandangeB"/>
         </effect_group>
 	</buff>
-    
+    <!-- JZMOD SUTURE-->
     <buff name="jz_BuffSuture" hidden="true" remove_on_death="false">
 		<stack_type value="ignore"/>
 		<duration value="1.5"/>
@@ -8163,6 +8191,12 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<stack_type value="ignore"/>
 		<duration value="1.5"/>
         <effect_group>
+            <!-- GASH -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGashStitchedUp">
+                <requirement name="HasBuff" buff="jz_BuffGash"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffBurnWound">
+                <requirement name="HasBuff" buff="jz_BuffGash"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGash"/>
             <!-- ANIMAL BITE -->
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffAnimalBiteCauterized">
                 <requirement name="HasBuff" buff="jz_BuffAnimalBite"/></triggered_effect>
@@ -9737,7 +9771,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffAtTraderJoes" hidden="true" remove_on_death="true">
 		<update_rate value="1"/>
-		<duration value="300"/><!-- 300 -->
+		<duration value="180"/><!-- 300 -->
 	</buff>
     
     <buff name="jz_BuffTraderJenPing" hidden="true" remove_on_death="true">
@@ -9750,7 +9784,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffAtTraderJens" hidden="true" remove_on_death="true">
 		<update_rate value="1"/>
-		<duration value="300"/><!-- 300 -->
+		<duration value="180"/><!-- 300 -->
 	</buff>
     
      <buff name="jz_BuffTraderBobPing" hidden="true" remove_on_death="true">
@@ -9763,7 +9797,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffAtTraderBobs" hidden="true" remove_on_death="true">
 		<update_rate value="1"/>
-		<duration value="300"/><!-- 300 -->
+		<duration value="180"/><!-- 300 -->
 	</buff>
     
      <buff name="jz_BuffTraderRektPing" hidden="true" remove_on_death="true">
@@ -9776,7 +9810,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffAtTraderRekts" hidden="true" remove_on_death="true">
 		<update_rate value="1"/>
-		<duration value="300"/><!-- 300 -->
+		<duration value="180"/><!-- 300 -->
 	</buff>
     
      <buff name="jz_BuffTraderHughPing" hidden="true" remove_on_death="true">
@@ -9789,7 +9823,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffAtTraderHughs" hidden="true" remove_on_death="true">
 		<update_rate value="1"/>
-		<duration value="300"/><!-- 300 -->
+		<duration value="180"/><!-- 300 -->
 	</buff>
     
      <buff name="jz_BuffTissueExtractorUsed" hidden="true" remove_on_death="true">

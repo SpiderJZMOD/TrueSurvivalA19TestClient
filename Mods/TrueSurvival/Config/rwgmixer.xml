@@ -80,6 +80,7 @@
 	</prefab_rule>
 	
 	<prefab_rule name="prefabList">
+        <prefab name="lodge_01" />
         <prefab name="JZSZ_school_k6_01"/>
         <prefab name="bombshelter_01"/>
 		<prefab name="bombshelter_md_01"/>
@@ -147,7 +148,7 @@
 		<prefab name="ranger_station_05" />
 		<prefab name="ranger_station_06" />
 		<prefab name="ranger_station_07" />
-		<prefab name="lodge_01" />
+		
 		<prefab name="survivor_site_01" />
 		<prefab name="survivor_site_02" />
 		<prefab name="survivor_site_03" />
@@ -1357,6 +1358,7 @@
 			<property name="biomemap4.ID" value="5" />
 			<property name="biomemap4.Range" value="0,0.1" />
 		</module>
+      
 		<output module="Biome Mapper Node18926" />
     </biome_generator>
   </biome_generators>

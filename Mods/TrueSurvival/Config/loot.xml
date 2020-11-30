@@ -2806,15 +2806,15 @@ The overall plan for loot distribution:
 	<item name="meleeWpnSledgeT1IronSledgehammerSchematic" prob="4" />
     <item name="jz_SchematicIronPickaxe" prob="4" />
 	<item name="jz_SchematicIronFireaxe" prob="4" />
-	<item name="jz_SchematicIronShovel" prob="5" />
-	<item name="jz_SchematicClawHammer" prob="5" />
-	<item name="meleeToolSalvageT1WrenchSchematic" prob="5" />
+	<item name="jz_SchematicIronShovel" prob="4" />
+	<item name="jz_SchematicClawHammer" prob="4" />
+	<item name="meleeToolSalvageT1WrenchSchematic" prob="4" />
 	<item name="medicalPlasterCastSchematic" prob="4" />
 	<item name="armorIronSetSchematic" prob="4" />
 	<item name="cementMixerSchematic" prob="4" />
 	<item name="chemistryStationSchematic" prob="4" />
 	<item name="jz_SchematicMethaneProducer" prob="4" />
-    <item name="jz_SchematicMiniBike" prob="5" />
+    <item name="jz_SchematicMiniBike" prob="4" />
 	<item name="jz_SchematicMotorcycle" prob="4" />
 	<item name="jz_SchematicMasonHammer" prob="4" />
 	<item name="jz_SchematicGunPowder" prob="4" />
@@ -2830,6 +2830,7 @@ The overall plan for loot distribution:
     <item name="jz_SchematicSmallEngine" prob="4" />
     <item name="jz_SchematicSteelArrows" prob="4" />
     <item name="jz_SchematicDrawBridge" prob="4" />
+    <item name="garageDoorHousePlayer" prob="4" />
 </lootgroup>
 
 <lootgroup name="T3Schematics" >
@@ -4305,7 +4306,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 </lootcontainer>
 
 <!-- misc storage, cardboard boxes-->
-<lootcontainer id="15" count="0,2" size="6,3" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="QLTemplateT1">
+<lootcontainer id="15" count="0,2" size="6,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="QLTemplateT1">
 	<item group="junk" prob="20" />
 	<item group="groupAmmoRegular" prob="10" />
 	<item group="skillBookChance" prob="5"/>
@@ -5599,7 +5600,7 @@ treasureTemplate
 </lootcontainer>
 
 <!-- wineBarrel -->
-<lootcontainer id="143" count="1,2" size="8,9" sound_open="UseActions/open_cooler" sound_close="UseActions/close_chest" loot_quality_template="QLTemplateT1">
+<lootcontainer id="143" count="1,2" size="8,6" sound_open="UseActions/open_cooler" sound_close="UseActions/close_chest" loot_quality_template="QLTemplateT1">
 	<item name="jz_DrinkDirtyOuncesOfWater" count="5,128"/>
 </lootcontainer>
 
@@ -5887,9 +5888,20 @@ treasureTemplate
 	<item group="T1BookList" prob="3" />
 	<item group="skillBookChance" prob="2" />
 </lootcontainer>
-<!-- FREE-->
-<lootcontainer id="320" count="0" size="1,1" destroy_on_close="true" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="QLTemplateT1">
-    <item name="jz_FoodOrange" count="3,6" prob="100" />
+<!-- Helicopters-->
+<lootcontainer id="320" count="0,3" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="QLTemplateT1">
+    <item group="automotive+tools+junk" prob="5" />
+	<item group="weaponsMilitaryParts" count="1,2" prob="15" />
+	<item group="groupAmmoAdvanced" count="1,2" prob="15" />
+	<item group="groupArmorMilitary" count="1,2" prob="15" />
+	<item group="groupAmmoSmall" count="1,3" prob="10" />
+    <item group="WorkingVehiclePlaceable" prob="1" />
+    <item name="vehicleGyroCopterChassis" prob="1" />
+    <item name="vehicleGyroCopterAccessories" prob="1" /> 
+	<item group="professionPageChance" prob="3" />
+	<item group="T3BookList" prob="15" />
+	<item group="T3WeaponBooks" prob="15" />
+    <item group="skillBookChance"  prob="4" />
 </lootcontainer>
 <!--Police Vehicles-->
 <lootcontainer id="321" count="0,3" size="7,4" sound_open="UseActions/open_vehicle" sound_close="UseActions/close_vehicle" open_time="4" loot_quality_template="QLTemplateT1">

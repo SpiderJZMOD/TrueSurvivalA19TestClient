@@ -593,7 +593,7 @@ All the perk tags:
 		</item_display_info>
 
 		<item_display_info display_type="medicalPainkillers" display_group="groupConsumables">
-			<display_entry name="dInstantHealth" title_key="statShowInstantHealth"/>
+			<display_entry name="$jz_WellnessLv" title_key="Wellness"/>
 			<display_entry name="dHealthLoss" title_key="statHealthLoss" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="dStunResist" title_key="statStunResist" display_type="Percent" />
 			<display_entry name="dStopsConcussion" title_key="statStopsConcussion" display_type="Percent"/>

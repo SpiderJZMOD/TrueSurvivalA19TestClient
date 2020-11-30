@@ -504,7 +504,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="medicalFirstAidBandage" count="1" craft_exp_gain="10" craft_time="10" tags="jz_DoctorTag">
 	<ingredient name="medicalBandage" count="1"/>
-	<ingredient name="foodHoney" count="1"/>
+	<ingredient name="jz_HoneyComb" count="4"/>
 </recipe>
 
 <recipe name="jz_MedicalSanitizingBandage" count="1" craft_time="10" craft_exp_gain="15" tags="jz_DoctorTag">
@@ -666,8 +666,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="foodHoney" count="1" craft_time="5" craft_exp_gain="5">
-	<ingredient name="drinkJarEmpty" count="1" />
-	<ingredient name="jz_HoneyComb" count="3" />
+	<ingredient name="jz_HoneyComb" count="4" />
 </recipe>
 
 <recipe name="jz_FoodSalmonSandwich" count="1" craft_time="5" craft_exp_gain="5" tags="jz_ChefTag">
@@ -809,7 +808,9 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="drinkCanMegaCrush" count="1" craft_area="campfire" craft_tool="toolCookingPot" craft_time="4" craft_exp_gain="25" tags="learnable">
-	<ingredient name="resourceCropCoffeeBeans" count="1"/>
+	<ingredient name="jz_HoneyComb" count="2"/>
+    <ingredient name="resourceCropSnowberryPlant" count="1"/>
+    <ingredient name="resourceCropCoffeeBeans" count="2"/>
 	<ingredient name="jz_DrinkCleanOuncesOfWater" count="16"/>
 	<ingredient name="drinkJarEmpty" count="1"/>
 </recipe>
@@ -838,6 +839,10 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="jz_DrinkDirtyOuncesOfWater" count="16" craft_area="campfire" craft_tool="toolCookingPot" craft_time="10" craft_exp_gain="0" >
 	<ingredient name="resourceSnowBall" count="5"/>
+</recipe>
+
+<recipe name="jz_DrinkCleanOuncesOfWater" count="8" craft_area="campfire" craft_tool="drinkCanEmpty" craft_time="10" craft_exp_gain="0" >
+	<ingredient name="jz_DrinkDirtyOuncesOfWater" count="8"/>
 </recipe>
 
 <recipe name="jz_DrinkCleanOuncesOfWater" count="16" craft_area="campfire" craft_tool="toolCookingPot" craft_time="10" craft_exp_gain="0" >
@@ -1251,7 +1256,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceMetalPipe" count="10" />
 	<ingredient name="resourceDuctTape" count="5" />
 	<ingredient name="resourceMechanicalParts" count="3" />
-    <ingredient name="wineBarrel" count="1" />
+    <ingredient name="cntBarrelPlasticSingle00" count="1" />
     <ingredient name="resourceNail" count="10" />
 	<ingredient name="jz_EmptyPropaneTank" count="1" />
 </recipe>
@@ -3025,7 +3030,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="resourceGlue" count="2" craft_area="chemistryStation" craft_tool="toolBeaker" craft_time="4" craft_exp_gain="10" tags="learnable,jz_ChemistTag" >
-	<ingredient name="jz_Hoof" count="7"/>
+	<ingredient name="jz_Hoof" count="1"/>
 	<ingredient name="jz_BoneMeal" count="1"/>
 	<ingredient name="jz_DrinkCleanOuncesOfWater" count="8"/>
 </recipe>
@@ -3161,7 +3166,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="jz_DrinkMead" count="6" craft_area="jz_FermentationBarrel" craft_time="900" craft_exp_gain="0" tags="learnable">
-	<ingredient name="foodHoney" count="2" />
+	<ingredient name="jz_HoneyComb" count="8" />
 	<ingredient name="drinkJarRiverWater" count="128" />
 </recipe>
 <!-- Armor Table Crafted ******************************************************************************************************************************************************* -->
@@ -3364,42 +3369,42 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceCloth" count="20"/>
 </recipe>
 
-<recipe name="apparelFlannelShirt" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelFlannelShirt" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="20"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelSweatshirt" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelSweatshirt" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="25"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelPressboyCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelPressboyCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="25"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelBallCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelBallCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="25"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelSkullCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelSkullCap" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="10"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelDenimPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelDenimPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="25"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelDenimShortsPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelDenimShortsPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="20"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
 
-<recipe name="apparelGothPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="30" craft_exp_gain="5" tags="learnable" >
+<recipe name="apparelGothPants" count="1" craft_area="jz_ArmorTable" craft_tool="jz_SewingNeedle" craft_time="4" craft_exp_gain="5" tags="learnable" >
 	<ingredient name="resourceCloth" count="20"/>
 	<ingredient name="resourceSewingKit" count="1"/>
 </recipe>
@@ -4944,7 +4949,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="jz_SchematicWoodenChest" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
-	<ingredient name="cntSecureStorageChest" count="3" />
+	<ingredient name="cntStorageGenericSigned" count="3" />
 	<ingredient name="jz_BlankSkillBook" count="1" />
 </recipe>
 
@@ -4955,6 +4960,12 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 
 <recipe name="jz_SchematicSteelForge" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
 	<ingredient name="jz_SteelForge" count="2" />
+	<ingredient name="jz_BlankSkillBook" count="1" />
+</recipe>
+
+<recipe name="jz_SchematicDoors" count="1" craft_area="jz_ResearchDesk" craft_time="300" craft_exp_gain="100" >
+	<ingredient name="garageDoorMetal_v1" count="2" />
+    <ingredient name="garageDoorHousePlayer" count="2" />
 	<ingredient name="jz_BlankSkillBook" count="1" />
 </recipe>
 <!-- QISatRadio Crafted ******************************************************************************************************************************************************* -->

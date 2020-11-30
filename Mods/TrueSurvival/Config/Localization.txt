@@ -1,6 +1,15 @@
 Key,English
+[35bd00]Green[-]
+[f21b10]Red[-]
+[fff700]Yellow[-]
 BUFF_________________________XML,BUFF_________________________XML
-jz_BuffGashDeac,"You have a large [f21b10]Gash[-]. You will need to use a [35bd00]Suture Kit[-] to stitch it closed or it could get worse.\n\n-8% Mobility\n-1HP per 20sec"
+jz_BuffGashDesc,"You have a large [f21b10]Gash[-]. You will need to use a [35bd00]Suture Kit[-] to stitch it closed or a [35bd00]Hot Pipe[-] to cauterize it closed. If not treated it could get worse.\n\n-8% Mobility\n-1HP per 20sec"
+jz_BuffGashStitchedUpDesc,"Should leave a nice scar but its going to need at lest a [35bd00]Bandage[-] if you don't want it to get worse.\n-4% Mobility\n-2 Wellness if not treated"
+jz_BuffGashBandagedDesc,"Your Gash is bandaged up and healing. It will need to be changed when it gets dirty\n-2% Mobility"
+jz_BuffGashDirtyBandagedDesc,"Your bandage has gotten dirty and needs changed with at lest another [35bd00]Bandage[-]. If you don't tend to it soon it will get worse\n-3% Mobility\n-1 Wellness if not treated"
+jz_BuffPuncturedDesc,"You have a deep [f21b10]Puncture Wound[-]. Your going to need a [35bd00]Sanitize Bandage[-] to clean and pack the hole\n-10% Mobility\n-1HP per 20sec\n-1 Wellness"
+
+
 jz_BuffThrobbingPainDesc,"OOww! That hurts take some [35bd00]Painkillers[-] to relieve the pain\n\n-1 Stamina every 5 sec\n+10 Core Temp"
 jz_BuffGangreneWoundDesc,"Your wound has become [f21b10]Gangrene[-]. The only option you have is to cut off the dead tissue, this will leave you permanently scared. Use a bladed weapon to cute away the [f21b10]Gangrene[-] tissue. You will then have to treat and care for the remaining wound\n\n-4 Stamina every 1 sec\n-1 Health every 10 sec\n-12% Mobility\n-1 Wellness every 1 min\n30% more Health Loss\nUntil Treated"
 jz_BuffTendingSixDesc,"Your [f21b10]Sever Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 2 sec\n-3% Mobility\n5% more Health Loss"
@@ -465,6 +474,14 @@ jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
 
 ITEM_________________________XML,ITEM_________________________XML
+
+
+jz_EmptyGun,"Empty Gun"
+jz_SchematicDrawBridge,"Draw Bridge Crafting Guide"
+jz_SchematicBulletproofGlass,"Bulletproof Glass Crafting Guide"
+jz_SchematicCarBattery,"Car Battery Crafting Guide"
+jz_SchematicSolarbank,"Solar Bank Crafting Guide"
+jz_SchematicDoors,"Large Door Crafting Guide"
 jz_SchematicSmallEngine,"Small Engine Crafting Guide"
 jz_meleeToolPickT2SteelPickaxeDesc,"The Steel Pickaxe is the best at breaking any hard surface including steel.\n\nRepair with a Forged Steel."
 jz_meleeToolAxeT1IronFireaxeDesc,"The Iron Fireaxe is good for harvesting wood and breaking wooden objects.\n\nRepair with a Sharpening Stone"
@@ -504,7 +521,7 @@ jz_SchematicNails,"Nails Crafting Guide"
 jz_SchematicMethaneProducer,"Methane Producer Crafting Guide"
 jz_SchematicSteelForge,"Steel Forge Crafting Guide"
 jz_SchematicSteelSafe,"Steel Safe Crafting Guide"
-jz_SchematicWoodenChest,"Wooden Chest Crafting Guide"
+jz_SchematicWoodenChest,"Storage Box Crafting Guide"
 jz_SchematicSteelDoors,"Steel Doors Crafting Guide"
 jz_SchematicIronDoors,"Iron Doors Crafting Guide"
 jz_SchematicWoodenDoors,"Wooden Doors Crafting Guide"
@@ -579,13 +596,14 @@ jz_QIMutatedFungusReportDesc,"A scientifically detailed report on the Fungus Sam
 jz_QIMutatedTissueSample2,"Mutated Tissue Sample"
 jz_QIMutatedTissueSample2Desc,"A nasty clump of flesh from a mutated creature. It smells terrible and is still slightly throbbing.\n\n\n[fff700]Quest item, do not lose![-]"
 resourceDoorKnob,"Key Lock"
+resourceDoorKnobDesc,"A working key locking mechanism. Can be used to craft secure Doors and Storage containers.
 resourceElectronicParts,"Tech Parts"
 jz_meleeWpnSledgeT0StoneSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nScraps to Small Stone."
 jz_meleeWpnSledgeT1IronSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nRepair with a Forged Iron.\nScrap to Scrap Iron."
 jz_meleeWpnSledgeT3SteelSledgehammerDesc,"The sledgehammer is one of the best weapons for cracking skulls.\n\nRepair with a Forged Steel.\nScrap to Scrap Steel."
 jz_Tallow,"Tallow"
 jz_QISateliteRadio,"Satellite Radio Parts"
-jz_QISateliteRadioDesc,"Satellite receiver and transmitter parts for communication devices.\n\n\n[fff700]Quest item, do not lose![-]""
+jz_QISateliteRadioDesc,"Satellite receiver and transmitter parts for communication devices.\n\n\n[fff700]Quest item, do not lose![-]"
 jz_resourceClothDesc,"Cloth is a staple for survival used for clothing, [35bd00]Bandages[-] and more. It can be harvested from many objects and crafted on the Armor Table with a Small Loom"
 jz_meleeWpnBladeT0BoneKnifeDesc,"This primitive makeshift weapon is also useful for gutting animals."
 jz_meleeWpnClubT1BaseballBatDesc,"This club was used in gladiatorial games of the past that were held in huge arenas.\nScrap to Wood"
@@ -600,6 +618,7 @@ foodSteakAndPotato,Venison And Potato
 apparelCigarDesc,"Look intimidating and get a better deal from traders.\nAlso acts as an apatite suppressant and slows stamina regain"
 jz_QIBugOutBag,Bug Out Bag
 jz_QIBugOutBagDesc,"A pre packed bag for when shit hits the fan and you have to flee in a hurry.\n\n\n[fff700]Quest item, do not lose![-]"
+foodHoney,"A Serving of Honey"
 jz_foodHoneyDesc,"Honey is one of mother nature's miracles. It gives you some energy, tastes great, and can be used to craft [35bd00]First Aid Bandage[-]."
 jz_PartsOldRifleReceiver,Old Rifle Receiver
 jz_PartsOldRifleStock,Old Rifle Stock
@@ -998,8 +1017,8 @@ jz_IronWeight,Weights
 jz_IronPaperClips,Paper Clips
 jz_IronSoldier,Toy Soldier
 jz_IronScissors,Scissors
-jz_HoneyCombDesc,"A fresh section of honeycomb dripping with honey."
-jz_HoneyComb,Honeycomb
+jz_HoneyCombDesc,"A small piece of honeycomb dripping with honey."
+jz_HoneyComb,"Ounce of Honey"
 jz_PaperBookDesc,"An old ragged book with unreadable pages."
 jz_PaperBook,Old Book
 plankDesc,"A cut plank of wood."
@@ -1426,14 +1445,14 @@ jz_ChefDesc,"All the knowledge needed to become a Chef.\n20% Faster Cooking\nRec
 jz_BurglarDesc,"All the knowledge needed to become a Burglar.\n10% Faster Movement & Less Noise while Crouching\n20% Faster Looting & Pinpoint Treasure location\nRecipes- Lock Picks"
 jz_CarpenterDesc,"All the knowledge needed to become a Carpenter.\n20% Faster Crafting on the Workbench and Table-saw\nRecipes- All Wooden Frame Shapes, Planks"
 jz_MasonDesc,"All the knowledge needed to become a Mason.\n20% Faster Crafting on the Cement mixer\nRecipes- All Brick and Flagstone Frame Shapes, Bricks, Cobblestone"
-jz_SoldierDesc,"Soldier\n\n- 10% Faster Reload & better Aim w/M60 & AK47\n- 100% Resistance to Food Poisoning from Grubs\n- Recipes- Grubs, Weapon Repair Kit, Blunderbuss, Blunderbuss Ammo, AK47, Pipe Bomb, Cooking Pot Mine"
-jz_FitnessInstructorDesc,"Fitness Instructor\n\n- 10% Faster Movement\n- 5% Less Stamina used while running\n- Recipes- Golden Rod Tea, Red Tea, Mega Crush, Wellness Juice, Vitamins"
-jz_ElectricianDesc,"Electrician\n\n- 10% Faster Electrical Crafting\n- Recipes- Generator Bank, Pressure Plate, Battery Bank, Ceiling Light, Timer Relay, Wire Relay, Motion Sensor, Speaker, Switch, Electric Fencepost, Spotlight, Stun Baton"
-jz_MetalWorkerDesc,"Metal Worker\n\n- 10% Faster Crafting on the Forge\n- Recipes- All Scrap Iron Frame Shapes, Sheet Metal"
-jz_MechanicDesc,"Mechanic\n\n- 20% Faster Vehicle Crafting\n- Recipes- Small Engine, Large Engine, All Vehicles"
-jz_DoctorDesc,"Doctor\n\n- 20% Faster Medical Crafting\n- Recipes- Aloe Cream, Suture Kit, Painkillers, Steroids, Antibiotics"
-jz_FarmerDesc,"Farmer\n\n- 20% Faster Seed Crafting\n- Recipes- All farm crop seeds, Insecticide, Fertilizer, Watering Can, Farm Plots"
-jz_ChemistDesc,"Chemist\n\n- 20% Faster Chemistry Crafting\n- Recipes- Mega Crush, Stimulant, Acid, Oil Shale, GunPowder, Purification Tablets, Steroids"
+jz_SoldierDesc,"All the knowledge needed to become a Soldier\n10% Faster Reload & better Aim w/M60 & AK47\n100% Resistance to Food Poisoning from Grubs\nRecipes- Grubs, Weapon Repair Kit, Blunderbuss, Blunderbuss Ammo, AK47, Pipe Bomb, Cooking Pot Mine"
+jz_FitnessInstructorDesc,"All the knowledge needed to become a Fitness Instructor\n10% Faster Movement\n5% Less Stamina used while running\nRecipes- Golden Rod Tea, Red Tea, Mega Crush, Wellness Juice, Vitamins"
+jz_ElectricianDesc,"All the knowledge needed to become a Electrician\n10% Faster Electrical Crafting\nRecipes- Generator Bank, Pressure Plate, Battery Bank, Ceiling Light, Timer Relay, Wire Relay, Motion Sensor, Speaker, Switch, Electric Fencepost, Spotlight, Stun Baton"
+jz_MetalWorkerDesc,"All the knowledge needed to become a Metal Worker\n10% Faster Crafting on the Forge\nRecipes- All Scrap Iron Frame Shapes, Sheet Metal"
+jz_MechanicDesc,"All the knowledge needed to become a Mechanic\n20% Faster Vehicle Crafting\nRecipes- Small Engine, Large Engine, All Vehicles"
+jz_DoctorDesc,"All the knowledge needed to become a Doctor\n20% Faster Medical Crafting\nRecipes- Aloe Cream, Suture Kit, Painkillers, Steroids, Antibiotics"
+jz_FarmerDesc,"All the knowledge needed to become a Farmer\n20% Faster Seed Crafting\nRecipes- All farm crop seeds, Insecticide, Fertilizer, Watering Can, Farm Plots"
+jz_ChemistDesc,"All the knowledge needed to become a Chemist\n20% Faster Chemistry Crafting\nRecipes- Mega Crush, Stimulant, Acid, Oil Shale, GunPowder, Purification Tablets, Steroids"
 jz_TraitFastDriverDesc,"10% Higher max speed while driving all vehicles"
 jz_TraitWakefulDesc,"20% Faster Fatigue recovery"
 jz_TraitGracefulDesc,"10% less noise while moving"
@@ -1761,8 +1780,16 @@ jz_loadingTipTSCrowbar,"A Crowbar can be used to pick up world blocks, many that
 jz_loadingTipTSCrowbar_title,"True Survival: Crowbar"
 jz_loadingTipTSSpoiling,"Foods will spoil over time and turn into a spoiled version. These spoiled items can be scraped for Biomass that can be used in fertilizer. Prepared drinks will also spoil and revert to water over time. Placing spoiling items in a Cooler will slow their spoiling speed placing them in a refrigerator will slow down the spoiling even more." 
 jz_loadingTipTSSpoiling_title,"True Survival: Spoilage"
-jz_loadingTipTSCooking,"Raw food items can be scraped into Servings. There are 4 types of Serving  Fruit, Veggie, Protein, and Grain. These items can be used to cook many filling nutritious meals."
+jz_loadingTipTSCooking,"Raw food items can be scraped into Servings. Depending on the food type it may take more than 1 item in the stack to scrap it. Some canned foods can be scrapped to their respective food servings. There are 4 types of Serving  Fruit, Veggie, Protein, and Grain. These items can be used to cook many filling nutritious meals."
 jz_loadingTipTSCooking_title,"True Survival: Food Servings"
+
+JOURNAL_______________________________TIPS,JOURNAL_______________________________TIPS
+TrueSurvivalNutritionTip_title,"True Survival: Nutrition"
+TrueSurvivalNutritionTip,"Staying healthy is key to survival. All food has some form of nutritional value, to find the value of any given consumable look in the Stat Tab of the item.\nThere are 4 nutrition groups;\nProtein - Protein Servings, Raw Meat\nFiber - Vegetable Servings, Raw Vegetables\nCarbohydrates - Breads, anything with grains\nEssential Vitamins - Fruit Servings, Raw Fruits\n\nAs long as your lowest nutritional value is:\n<1.00 - The longer any nutrition stat is below 1.0 the worse you diet will get. Starting at Bad Diet then Vitamin Deficiency and last Malnourished, during these stages you will slowly start dieing from lack of nutrition. To fix this check your Core Character Stats and see what nutrition stats are below 1.0 and consume things to improve them.\n>1.00 - Balanced Diet - will allow you to gain health from consumables\n>2.00 - Good Diet - will allow you to gain health and Wellness from consumables and gain 1 Stamina every 3 seconds\n>3.00 - Healthy Diet - will allow you to gain health and Wellness from consumables, gain 2 Stamina every 3 seconds, a 20% speed increase and grant Natural Healing when full."
+TrueSurvivalFoodServingsTip_title,"True Survival: Food Servings"
+TrueSurvivalFoodServingsTip,"All raw food items can be scrapped into food servings.\nDepending on the food type it may take more than 1 item in the stack to scrap it.\nSome canned foods may be scrapped to their respective food servings."
+
+
 [35bd00]Green[-]
 [f21b10]Red[-]
 [fff700]Yellow[-]

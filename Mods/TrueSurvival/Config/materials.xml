@@ -1076,6 +1076,7 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 	<property name="surface_category" value="cloth"/>
 	<property name="damage_category" value="wood"/>
 	<property name="Hardness" type="float" value="1"/>
+    <property name="forge_category" value="paper"/>
 	<property name="stepsound" value="wood"/>
 	<property name="stability_glue" value="4"/>
 	<property name="Mass" type="int" value="2"/>

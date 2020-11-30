@@ -659,7 +659,7 @@ Mesh files no longer used:
 		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
         <passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>                                                                              
 	</effect_group>
 	<effect_group name="Power Attack">
@@ -1005,8 +1005,8 @@ Mesh files no longer used:
 		<property name="UsePowerAttackAnimation" value="false"/>
 	</property>
 	<effect_group name="meleeToolSalvageT1Wrench">
-		<passive_effect name="EntityDamage" operation="base_set" value="16.5" tags="perkSalvageOperations"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="38.5" tags="perkSalvageOperations"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="5" tags="perkSalvageOperations"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkSalvageOperations"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="18.3" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="500" tags="perkSalvageOperations"/>
@@ -1027,7 +1027,7 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
-        <passive_effect name="DamageModifier" operation="perc_add" value="20" tags="jz_IronBuilding"/>
+        <passive_effect name="DamageModifier" operation="perc_add" value="10" tags="jz_IronBuilding"/>
 
         <passive_effect name="HarvestCount" operation="base_set" value="1" tags="ToolWrench"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="salvageHarvest"/>
@@ -1072,8 +1072,8 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolSalvageT2Ratchet">
-		<passive_effect name="EntityDamage" operation="base_set" value="16.5" tags="perkSalvageOperations"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="20.5" tags="perkSalvageOperations"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="5" tags="perkSalvageOperations"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkSalvageOperations"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSalvageOperations"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="21.8" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="300,900" tier="1,6" tags="perkSalvageOperations"/>
@@ -1094,11 +1094,11 @@ Mesh files no longer used:
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
-        <passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="100" tags="jz_IronBuilding"/>
-        <passive_effect name="DamageModifier" operation="perc_add" value="100" tags="ToolScrewdriver"/>
-        <passive_effect name="DamageModifier" operation="perc_add" value="100" tags="ToolWrench"/>
+       <!-- <passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>-->
+		<passive_effect name="DamageModifier" operation="perc_add" value="10" tags="jz_IronBuilding"/>
+        <passive_effect name="DamageModifier" operation="perc_add" value="10" tags="ToolScrewdriver"/>
+        <passive_effect name="DamageModifier" operation="perc_add" value="10" tags="ToolWrench"/>
 
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="ToolScrewdriver"/>
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="ToolWrench"/>
@@ -1148,8 +1148,8 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeToolSalvageT3ImpactDriver">
-		<passive_effect name="EntityDamage" operation="base_set" value="16.5" tags="perkSalvageOperations"/>
-		<passive_effect name="BlockDamage" operation="base_set" value="58" tags="perkSalvageOperations"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="5" tags="perkSalvageOperations"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkSalvageOperations"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSalvageOperations"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="24.7" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="500,1100" tier="1,6" tags="perkSalvageOperations"/>
@@ -1244,10 +1244,10 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeWpnBladeT0BoneKnife"> 
-          
-         
+        
  <!--JZMOD TESTING       
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffWoundSystem"/> 
+         <triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="jz_BuffGrab"/>
+         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffInfectionCatch"/> 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>    
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="95"/> 
          <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="95"/> 
@@ -3580,6 +3580,7 @@ needed?
 	<property name="HoldType" value="52"/>
 	<property name="Meshfile" value="#Other/Items?Tools/wire_strippersPrefab.prefab"/>
 	<property name="Material" value="Mmetal"/>
+    <property name="Weight" value="5"/>
 	<property name="DegradationBreaksAfter" value="true"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="metaldestroy1"/>
@@ -3607,6 +3608,7 @@ needed?
 	<property name="HoldType" value="51"/>
 	<property name="Meshfile" value="#Other/Items?Tools/PaintbrushPrefab.prefab"/>
 	<property name="Material" value="Mwood"/>
+    <property name="Weight" value="3"/>
 	<property name="DegradationBreaksAfter" value="true"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="wooddestroy1"/>
@@ -11971,8 +11973,6 @@ perkNightStalkerSilentNight
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffInjuryConcussion"/><display_value name="dStopsConcussion" value="1"/>
-		<display_value name="dHealthLoss" value=".1"/>
-		<display_value name="$waterAmountAdd" value="-40"/>
 		<display_value name="dStunResist" value="1"/>
 		<display_value name="dDuration" value="180"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrugPainkillersDuration" operation="add" value="183"/>
@@ -11982,7 +11982,7 @@ perkNightStalkerSilentNight
 	</effect_group>
     <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="10"/><display_value name="$waterAmountAdd" value="-10"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="-1"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="-1"/><display_value name="$jz_WellnessLv" value="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDrugPainkillers"/>
 	</effect_group>
 </item>
@@ -12413,8 +12413,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_drinking"/>
-		<property name="Create_item" value="drinkJarEmpty"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -12441,7 +12440,7 @@ perkNightStalkerSilentNight
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
 		<property name="Create_item" value="drinkCanEmpty"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12711,7 +12710,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12749,7 +12748,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12781,7 +12780,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="CraftingIngredientTime" value="60"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking,Medical"/>
@@ -12818,7 +12817,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12860,7 +12859,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="2.1"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12897,7 +12896,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="2.1"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12934,7 +12933,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="2.1"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12972,7 +12971,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_drinking"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -12985,7 +12984,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="6">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="2">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13013,7 +13013,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13026,7 +13026,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="9">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 	</effect_group>
 </item>
@@ -13073,7 +13074,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_drinking"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13112,7 +13113,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 	<effect_group tiered="false" name="Food Tier 2">
@@ -13175,7 +13176,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13213,7 +13214,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 	<effect_group tiered="false" name="Food Tier 2">
@@ -13223,7 +13224,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13253,7 +13255,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
     <effect_group tiered="false" name="Food Tier 2">
@@ -13263,7 +13265,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13293,7 +13296,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13304,7 +13307,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13334,7 +13338,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13345,7 +13349,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
@@ -13377,7 +13382,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13418,7 +13423,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13458,7 +13463,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13499,7 +13504,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13538,7 +13543,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="2.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13576,7 +13581,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="2.1"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Smell" value="largeSmell"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
@@ -13615,7 +13620,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_drinking"/>
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13654,7 +13659,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Smell" value="ExLargeSmell"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
@@ -13693,7 +13698,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="CraftingIngredientTime" value="95"/>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
@@ -13736,7 +13741,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13774,7 +13779,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Resources,Food/Cooking,CFFood/Cooking"/>
 
@@ -13817,7 +13822,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13858,7 +13863,7 @@ perkNightStalkerSilentNight
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13902,7 +13907,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13938,7 +13943,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -13980,7 +13985,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
 
@@ -14020,7 +14025,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/> <!-- ,Medicine -->
 
@@ -14062,7 +14067,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking"/> <!-- ,Medicine -->
 
@@ -16825,6 +16830,7 @@ perkNightStalkerSilentNight
 	</effect_group>
 </item>
 
+
 <!--
 	add these schematics when these are functional
 <item name="modYoureFiredSchematic">
@@ -18269,7 +18275,7 @@ perkNightStalkerSilentNight
 	<property name="CraftingIngredientTime" value="10"/>
 	<property class="Action0">
 		<property name="Delay" value="1.5"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<property name="Group" value="Food/Cooking,CFFood/Cooking,Science"/>
 	<effect_group tiered="false">
@@ -18762,7 +18768,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="resourceDoorKnob">
-	<property name="DescriptionKey" value="resourceBrassObjectGroupDesc"/>
+	<property name="DescriptionKey" value="resourceDoorKnobDesc"/>
 	<property name="HoldType" value="45"/>
 	<property name="Tags" value="junk"/>
 	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
@@ -18773,6 +18779,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="250"/> <!-- STK loot -->
 	<property name="Weight" value="50"/>
 	<property name="EconomicValue" value="40"/>
+    <property name="UnlockedBy" value="bookWasteTreasuresDoors"/> 
 	<property name="Group" value="Resources"/>
 </item>
 
@@ -23021,7 +23028,7 @@ perkNightStalkerSilentNight
     <property name="CustomIcon" value="OldRevolver" />
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
-		<property name="Magazine_items" value="ammo9mmBulletBall"/>
+		<property name="Magazine_items" value="ammo9mmBulletBall,jz_EmptyGun"/>
 		<property name="Sound_start" value="Pistol_Fire"/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
@@ -23121,7 +23128,7 @@ perkNightStalkerSilentNight
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value=".5"/> <!-- obsolete if rounds per minute exists -->
-		<property name="Magazine_items" value="ammo762mmBulletBall"/>
+		<property name="Magazine_items" value="ammo762mmBulletBall,jz_EmptyGun"/>
 		<property name="Reload_time" value="2.75"/>
 		<property name="Sound_start" value="sniperrifle_fire"/>
 		<property name="Sound_repeat" value=""/>
@@ -23220,7 +23227,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="ui_game_symbol_CraftedRevolver" />
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
-		<property name="Magazine_items" value="ammo9mmBulletBall"/>
+		<property name="Magazine_items" value="ammo9mmBulletBall,jz_EmptyGun"/>
 		<property name="Sound_start" value="Pistol_Fire"/>
 		<property name="Sound_repeat" value=""/>
 		<property name="Sound_end" value=""/>
@@ -23315,7 +23322,7 @@ perkNightStalkerSilentNight
 	<property class="Action0">
 		<property name="Class" value="Ranged"/>
 		<property name="Delay" value=".5"/> 
-		<property name="Magazine_items" value="ammo762mmBulletBall"/>
+		<property name="Magazine_items" value="ammo762mmBulletBall,jz_EmptyGun"/>
 		<property name="Reload_time" value="2.66"/>
 		<property name="Sound_start" value="sniperrifle_fire"/>
 		<property name="Sound_repeat" value=""/>
@@ -23902,7 +23909,7 @@ perkNightStalkerSilentNight
 <item name="jz_PartsAK47Receiver">
 	<property name="Extends" value="jz_MasterItem" />
 	<property name="DescriptionKey" value="AK47PartsDesc" />
-	<property name="CustomIcon" value="ui_game_symbol_jz_PartsAK47Receiver" />
+	<property name="CustomIcon" value="Ak47Parts" />
 	<property name="Material" value="Mmetal" />
 	<property name="Weight" value="10" />
 	<property name="Group" value="Ammo/Weapons" />
@@ -24476,14 +24483,13 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="ui_game_symbol_fryingPan" />
 	<property name="Meshfile" value="#@modfolder:Resources/JZMeleeFrynPan.unity3d?MeleeFrynPanPrefab" />
 	<property name="Material" value="Mmetal"/>
-	<property name="RepairTools" value="jz_CantRepair"/>
-	<property name="DegradationBreaksAfter" value="true"/>
-	<property name="SoundJammed" value="ItemNeedsRepair"/>
-	<property name="SoundDestroy" value="wooddestroy1"/>
+    <property name="Weight" value="5" />
 	<property name="EconomicValue" value="0"/>
 	<property name="SellableToTrader" value="false" />
-	<property name="ShowQuality" value="false"/>
+    <property name="Stacknumber" value="50"/> 
 	<property name="ItemTypeIcon" value="campfire"/>
+    <property name="Group" value="food/Cooking" />
+	<property name="DescriptionKey" value="fryingPanDesc" />
 	<property class="Action0">
 		<property name="Class" value="DynamicMelee"/>
 		<property name="Sound_start" value="swoosh"/>
@@ -24500,14 +24506,11 @@ perkNightStalkerSilentNight
 			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
 		</property>
 	</property>
-
 	<property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
 		<property name="Sound_start" value="swoosh"/>
 		<property name="Sphere" value=".15"/>
-		<property name="UsePowerAttackAnimation" value="true"/>
 		<property name="UseGrazingHits" value="true"/>
-		<property name="IsHorizontalSwing" value="true"/>
 		<property name="GrazeStart" value=".25"/>
 		<property name="GrazeEnd" value=".32"/>
 		<property name="SwingDegrees" value="120"/>
@@ -24519,15 +24522,13 @@ perkNightStalkerSilentNight
 			<property name="Override0" value="organic" param1="metalgrazeorganic"/>
 		</property>
 	</property>
-
-	<effect_group name="meleeWpnClubT0WoodenClub">
+    <effect_group name="jz_FryingPan" tiered="false">
 		<passive_effect name="MaxRange" operation="base_set" value="2.2"/>
 		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
-		<passive_effect name="EntityDamage" operation="base_set" value="8"/> <!-- meleeClubWood -->
-
-		<passive_effect name="BlockDamage" operation="base_set" value="12"/>
-
-		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="organic"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="5"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="10"/>
+		
+        <passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="organic"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="terrGravel"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="stone"/>
@@ -24536,20 +24537,11 @@ perkNightStalkerSilentNight
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>
-		
+        
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="60"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="100" />
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0" />
-	</effect_group>
-	<effect_group name="Power Attack">
-		<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
-		<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="17" tags="secondary"/>
-	</effect_group>
-	<property name="Group" value="food/Cooking" />
-	<property name="DescriptionKey" value="fryingPanDesc" />
+		<passive_effect name="StaminaLoss" operation="base_set" value="12"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>	
 </item>
 
 <item name="jz_PoliceBaton">
@@ -24660,7 +24652,7 @@ perkNightStalkerSilentNight
 	<property name="DegradationBreaksAfter" value="true"/>
 	<property name="SoundJammed" value="ItemNeedsRepair"/>
 	<property name="SoundDestroy" value="metaldestroy"/>
-	<property name="EconomicValue" value="0"/>
+	<property name="EconomicValue" value="700"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="SellableToTrader" value="false"/>
     <property name="CustomIcon" value="ui_game_symbol_crowbar" />
@@ -25021,9 +25013,9 @@ perkNightStalkerSilentNight
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="cloth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="10" tags="glass"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>
-		<passive_effect name="DamageModifier" operation="perc_add" value="5" tags="jz_SteelBuilding"/>
+		<!--<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-100" tags="jzSteel"/>-->
+		<passive_effect name="DamageModifier" operation="perc_add" value="20" tags="jz_SteelBuilding"/>
 		
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
@@ -25111,7 +25103,7 @@ perkNightStalkerSilentNight
 	<property name="Extends" value="jz_MedicalRedHotSteelPipe" />
 	<property name="Material" value="Mmetal" />
 	<property class="Action0">
-		<property name="Create_item" value="shortMetalPipe" />
+		<property name="Create_item" value="resourceMetalPipe" />
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStat" stat="Health" operation="subtract" value="20"/>
@@ -25244,7 +25236,7 @@ perkNightStalkerSilentNight
 	<property name="DropMeshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
 	<property name="Material" value="Mglass"/>
 	<property name="Stacknumber" value="128"/>
-	<property name="EconomicValue" value="5"/>
+	<property name="EconomicValue" value="2"/>
 	<property name="EconomicBundleSize" value="1"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="CustomIcon" value="ui_game_symbol_DirtyWater" />
@@ -25256,20 +25248,20 @@ perkNightStalkerSilentNight
         <!--<requirements compare_type="or">
 			<requirement name="!IsStatAtMax" stat="water"/>
 			<requirement name="HasBuff" buff="buffIsOnFire"/>
-		</requirements>	-->
+		</requirements>-->
 	</property>
 	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
 
 	<effect_group tiered="false">
 		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
-		<requirement name="!IsStatAtMax" stat="water"/>
+		<!--<requirement name="!IsStatAtMax" stat="water"/>-->
 
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="1"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/><display_value name="dDysenteryRisk" value=".30"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
 				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 			</triggered_effect>
 	</effect_group>
@@ -25282,7 +25274,7 @@ perkNightStalkerSilentNight
 
 <item name="jz_DrinkDrityDrinkOfWater">
 	<property name="Extends" value="jz_DrinkDirtyOuncesOfWater" />
-    <property name="EconomicValue" value="80"/>
+    <property name="EconomicValue" value="40"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="Stacknumber" value="15"/> 
 	<property name="DescriptionKey" value="jz_DrinkDrityDrinkOfWaterDesc" />
@@ -25296,7 +25288,7 @@ perkNightStalkerSilentNight
 
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/><display_value name="dDysenteryRisk" value=".30"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchDrink">
 				<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25314,7 +25306,7 @@ perkNightStalkerSilentNight
 	<property name="DropMeshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
 	<property name="Material" value="Mglass"/>
 	<property name="Stacknumber" value="128"/> 
-	<property name="EconomicValue" value="10"/>
+	<property name="EconomicValue" value="5"/>
 	<property name="CustomIcon" value="ui_game_symbol_CleanWater" />
 	<property name="DescriptionKey" value="jz_DrinkCleanOuncesOfWaterDesc" />
 	<property class="Action0">
@@ -25322,10 +25314,6 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_drinking"/>
-        <!--<requirements compare_type="or">
-			<requirement name="!IsStatAtMax" stat="water"/>
-			<requirement name="HasBuff" buff="buffIsOnFire"/>
-		</requirements>	-->
 	</property>
 	<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
 	<effect_group tiered="false">
@@ -25344,7 +25332,7 @@ perkNightStalkerSilentNight
 	<property name="Extends" value="jz_DrinkCleanOuncesOfWater" />
 	<property name="Stacknumber" value="1"/> 
 	<property name="DescriptionKey" value="jz_DrinkCleanDrinkOfWaterDesc" />
-    <property name="EconomicValue" value="160"/>
+    <property name="EconomicValue" value="80"/>
 	<property name="CustomIcon" value="ui_game_symbol_CleanWater" />
 	<property class="Action0">
 		<requirement name="!IsStatAtMax" stat="water"/>
@@ -25380,7 +25368,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -25394,7 +25382,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="90"/><display_value name="dDysenteryRisk" value=".9"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25415,7 +25403,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="7"/>
@@ -25445,7 +25433,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -25459,7 +25447,7 @@ perkNightStalkerSilentNight
 		
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="90"/><display_value name="dDysenteryRisk" value=".9"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
 	</effect_group>
 </item>
@@ -25479,7 +25467,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 		<property name="Sound_start" value="player_drinking"/>
 		<property name="Create_item" value="drinkJarEmpty"/>
 	</property>
@@ -25490,7 +25478,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".8"/><display_value name="TSProtein" value=".8"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".4"/><display_value name="TSVeggie" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -25513,7 +25502,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2"/>
@@ -25526,7 +25515,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25549,7 +25538,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25561,7 +25550,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25582,7 +25571,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25594,7 +25583,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25618,7 +25607,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -25631,7 +25620,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25652,7 +25641,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25664,7 +25653,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25685,7 +25674,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25697,7 +25686,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -25718,7 +25707,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -25727,7 +25716,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -25763,7 +25753,8 @@ perkNightStalkerSilentNight
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="2">
-				<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+				<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+                <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables,jz_BuffStaminaBoost"/>
 	</effect_group>
 	<effect_group tiered="false">
@@ -25856,7 +25847,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="22"/>
@@ -25885,7 +25876,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
@@ -25908,7 +25899,7 @@ perkNightStalkerSilentNight
 	<property name="Group" value="food/Cooking" />
 	<property name="DescriptionKey" value="flourDesc" />
     <property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
     <effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25941,7 +25932,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -25953,7 +25944,7 @@ perkNightStalkerSilentNight
             
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/><display_value name="dDysenteryRisk" value=".3"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
             <requirement name="ProgressionLevel" progression_name="jz_Soldier" operation="LT" value="1"/>
 		</triggered_effect>
@@ -25975,7 +25966,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="30"/>
@@ -25984,7 +25975,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProtein" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26015,7 +26007,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -26029,7 +26021,7 @@ perkNightStalkerSilentNight
 		
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="90"/><display_value name="dDysenteryRisk" value=".90"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
 	</effect_group>
 </item>
@@ -26072,7 +26064,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -26099,7 +26091,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
@@ -26126,7 +26118,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="16"/>
@@ -26153,7 +26145,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -26180,7 +26172,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
@@ -26207,7 +26199,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="16"/>
@@ -26234,7 +26226,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -26243,7 +26235,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26264,7 +26257,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="21"/><display_value name="TSFullness" value="21"/>
@@ -26273,7 +26266,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26294,7 +26288,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="22"/>
@@ -26303,7 +26297,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26325,7 +26320,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -26334,8 +26329,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
-		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>		
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProteinGrainFruit" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".4"/>
@@ -26358,7 +26353,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -26367,8 +26362,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
-		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProteinGrainVeggie" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".4"/>
@@ -26391,7 +26386,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -26400,8 +26395,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
-		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProteinFruitVeggie" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".4"/>
@@ -26424,7 +26419,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="36"/>
@@ -26433,7 +26428,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="4"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProteinGrainFruit" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".6"/>
@@ -26456,7 +26452,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="36"/>
@@ -26465,7 +26461,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="4"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProteinGrainVeggie" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".6"/>
@@ -26488,7 +26485,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="36"/>
@@ -26497,7 +26494,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="12">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="4"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProtein" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".6"/><display_value name="TSFruit" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".6"/><display_value name="TSVeggie" value=".6"/>
@@ -26520,7 +26518,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="32"/>
@@ -26529,7 +26527,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="11">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="4"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProteinFruitVeggieGrain" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".4"/>
@@ -26553,7 +26552,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="48"/>
@@ -26562,7 +26561,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="16">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="5"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProteinFruitVeggieGrain" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".6"/>
@@ -26586,7 +26586,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -26595,7 +26595,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26617,7 +26618,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="16"/>
@@ -26626,7 +26627,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="2"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProtein" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".4"/><display_value name="TSFruit" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26648,7 +26650,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -26657,8 +26659,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
-		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProtein" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".6"/><display_value name="TSFruit" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26680,7 +26682,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 	<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -26689,8 +26691,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
-		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26712,7 +26714,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="16"/>
@@ -26721,7 +26723,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="2"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProtein" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".4"/><display_value name="TSVeggie" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26743,7 +26746,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -26752,7 +26755,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>	
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProtein" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".6"/><display_value name="TSVeggie" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26792,7 +26796,7 @@ perkNightStalkerSilentNight
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="30"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
             <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
     </effect_group> 
     <effect_group tiered="false">
@@ -26830,7 +26834,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
    	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="7"/>
@@ -26843,7 +26847,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="5"/><display_value name="dDysenteryRisk" value=".05"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -26866,7 +26870,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="6"/>
@@ -26879,7 +26883,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="5"/><display_value name="dDysenteryRisk" value=".05"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -26901,7 +26905,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="6"/>
@@ -26914,7 +26918,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="95"/><display_value name="dDysenteryRisk" value=".95"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
 	</effect_group>
 </item>
@@ -26929,7 +26933,7 @@ perkNightStalkerSilentNight
     <property name="DescriptionKey" value="jz_FoodPeanutButterDesc" />
 	<property name="DisplayType" value="TSFoWaStHePrDy"/>
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
@@ -26942,7 +26946,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="10"/><display_value name="dDysenteryRisk" value=".10"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -26958,7 +26962,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="ui_game_symbol_oatMeal" />
 	<property name="DisplayType" value="TSFoWaStHeGrDy"/>
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
@@ -26971,7 +26975,7 @@ perkNightStalkerSilentNight
         
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="5"/><display_value name="dDysenteryRisk" value=".05"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
 		</triggered_effect>
 	</effect_group>
@@ -26987,7 +26991,7 @@ perkNightStalkerSilentNight
     <property name="DescriptionKey" value="MREDesc" />
 	<property name="DisplayType" value="TSFoWaStHePrFrVeGr"/>
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="40"/>
@@ -27014,7 +27018,7 @@ perkNightStalkerSilentNight
     <property name="DescriptionKey" value="MREDesc" />
 	<property name="DisplayType" value="TSFoWaStHePrFrVeGr"/>
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/><display_value name="TSFullness" value="50"/>
@@ -27040,7 +27044,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="ui_game_symbol_mreLarge" />
 	<property name="DisplayType" value="TSFoWaStHePrFrVeGr"/>
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="60"/>
@@ -27070,7 +27074,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="20"/>
@@ -27079,7 +27083,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3"> 
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="add" value=".2"/><display_value name="TSFruit" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -27102,7 +27107,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
     <effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="7"/>
@@ -27129,7 +27134,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="22"/>
@@ -27157,7 +27162,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="12"/>
@@ -27186,7 +27191,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
@@ -27195,7 +27200,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>	
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>	
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".2"/><display_value name="TSProtein" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".2"/><display_value name="TSGrain" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -27217,7 +27223,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="16"/>
@@ -27226,7 +27232,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>		
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="2">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>		
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".4"/><display_value name="TSProtein" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".4"/><display_value name="TSGrain" value=".4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -27248,7 +27255,7 @@ perkNightStalkerSilentNight
     <property name="SpoilagePerTick" value="1" />
     <property name="QualityTierColor" value="2" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="24"/>
@@ -27257,7 +27264,8 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="8">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>		
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_WellnessLv" operation="add" value="3">
-			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/></triggered_effect>				
+			<requirement name="HasBuff" buff="jz_BuffBalancedDietTag"/>
+            <requirement name="!HasBuff" buff="buffInfectionMain"/></triggered_effect>			
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="add" value=".6"/><display_value name="TSProtein" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="add" value=".6"/><display_value name="TSGrain" value=".6"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -28300,7 +28308,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
     <property name="DescriptionKey" value="jz_PartLargeEngineBlockDesc" />
-    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
+    <property name="UnlockedBy" value="jz_SchematicLargeEngine"/>
 </item>
 
 <item name="jz_PartSmallExhaust">
@@ -28322,7 +28330,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
 	<property name="Group" value="Resources" />
     <property name="DescriptionKey" value="jz_PartLargeExhaustDesc" />
-    <property name="UnlockedBy" value="jz_SchematicIronPickaxe"/>
+    <property name="UnlockedBy" value="jz_SchematicLargeEngine"/>
 </item>
 
 <item name="jz_Alternator">
@@ -28608,7 +28616,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="jz_Stick">
-	<property name="Tags" value="blunt,melee,weapon,meleeWeapon"/>
+	<property name="Tags" value="blunt,melee,weapon,meleeWeapon,NonXPTool"/>
 	<property name="HoldType" value="2"/>
 	<property name="Meshfile" value="#@modfolder:Resources/JZBranchMelee.unity3d?BranchMeleePrefab" />
 	<property name="DropMeshfile" value="#@modfolder:Resources/JZBranchMelee.unity3d?BranchMeleePrefab"/>
@@ -28723,7 +28731,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="ui_game_symbol_bioMass" />
     <property name="DescriptionKey" value="bioMassDesc" />
 	<property class="Action0">
-		<requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
@@ -28734,7 +28742,7 @@ perkNightStalkerSilentNight
 		
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="99"/><display_value name="dDysenteryRisk" value=".99"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatch">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
 			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/></triggered_effect>
 	</effect_group>
 </item>
@@ -29079,7 +29087,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="4"/>
@@ -29107,7 +29115,7 @@ perkNightStalkerSilentNight
 		<property name="Delay" value="1.0"/>
 		<property name="Use_time" value="..."/>
 		<property name="Sound_start" value="player_eating"/>
-        <requirement name="StatComparePercCurrentToMax" stat="Food" operation="LT" value="1"/>
+        <requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false" name="Food Tier 0">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="4"/>
@@ -29322,7 +29330,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="jz_WoodBranch">
-	<property name="Tags" value="blunt,melee,weapon,meleeWeapon"/>
+	<property name="Tags" value="blunt,melee,weapon,meleeWeapon,NonXPTool"/>
 	<property name="HoldType" value="2"/>
 	<property name="Meshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Weapons/Melee/Club/Club_Wood_BranchPrefab.prefab"/>
@@ -31423,6 +31431,22 @@ perkNightStalkerSilentNight
 	</effect_group>
 </item>
 
+<item name="jz_SchematicDoors">
+	<property name="Extends" value="schematicNoQualityMaster"/>
+    <property name="Weight" value="6"/>                                
+	<property name="CreativeMode" value="Player"/>
+	<property name="CustomIcon" value="metalReinforcedWoodDrawBridge"/>
+	<property name="DescriptionKey" value="poweredDoorsSchematicDesc"/>
+	<property name="Unlocks" value="garageDoorMetal_v1"/>
+	<property class="Action0">
+		<requirement name="ProgressionLevel" progression_name="SP_DoorsSchematic" operation="LT" value="1"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_DoorsSchematic" level="-1"/>
+       <triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+	</effect_group>
+</item>
+
 <item name="jz_LargeEngine">
     <property name="Extends" value="jz_MasterItem"/>
     <property name="Stacknumber" value="1"/>
@@ -32048,8 +32072,6 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
 	<property name="CustomIcon" value="jz_SateliteRadio"/>
 	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
 </item>
 
 <item name="jz_QI887Frequency">
@@ -32160,6 +32182,12 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="1" />
 	<property name="CustomIcon" value="SecurityCard"/>
 	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardADesc"/>
+</item>
+
+<item name="jz_EmptyGun">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="ammo9mmBulletBall"/>
 </item>
 
 <item name="jz_Insecticide">

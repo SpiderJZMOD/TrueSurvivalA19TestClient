@@ -807,7 +807,7 @@ group desc for stuff like metal siding
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="67"/> -->
 	<property name="CreativeMode" value="None"/>
 	<property name="FuelValue" value="100"/>
-	<property class="RepairItems"> <property name="jz_Plank" value="3"/> </property>
+	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="CustomUpgradeSound" value="place_block_wood"/>
 	<property name="EconomicValue" value="5"/>
 	<property name="EconomicBundleSize" value="20"/>
@@ -847,7 +847,7 @@ group desc for stuff like metal siding
 	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
 	<property name="CanPickup" value="true" param1="woodFrameBlockVariantHelper"/>
 	<!--<property name="DisplayType" value="blockShootThrough"/>-->
-	<property class="RepairItems"> <property name="jz_Plank" value="2"/> </property>
+	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<!-- <property name="CustomPlaceSound" value="place_block_wood"/>  this works but was too annoying -->
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="woodMaster"/>
@@ -869,10 +869,10 @@ group desc for stuff like metal siding
 	<!--JZMOD CLAWHAMMER-->
     <drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="jz_Stick" count="5" prob="1" tag="ToolClawHammer" />
-	<drop event="Harvest" name="jz_Plank" count="7" prob="1" tag="ToolClawHammer" />
+	<drop event="Harvest" name="jz_Plank" count="5" prob="1" tag="ToolClawHammer" />
     <drop event="Harvest" name="resourceNail" count="2" prob="1" tag="ToolClawHammer" />
     <drop event="Destroy" name="jz_Stick" count="5,15" prob="1" tool_category="ToolClawHammer" />
-	<drop event="Destroy" name="jz_Plank" count="2,8" prob="1" tool_category="ToolClawHammer" />
+	<drop event="Destroy" name="jz_Plank" count="2,7" prob="1" tool_category="ToolClawHammer" />
     <drop event="Destroy" name="resourceNail" count="1,2" prob="1" tool_category="ToolClawHammer" />
     <!--JZMOD WRENCH-->
 	<drop event="Destroy" name="jz_ScrapWire" count="1,2" prob="1" tool_category="ToolWrench" />                                                         
@@ -887,7 +887,7 @@ group desc for stuff like metal siding
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="67"/> -->
 	<property name="FuelValue" value="300"/>
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="jz_Plank" value="3"/> </property>
+	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="20"/>
 	<property name="FilterTags" value="fbuilding,fwood"/>
@@ -903,7 +903,8 @@ group desc for stuff like metal siding
     <drop event="Harvest" name="jz_Stick" count="5" prob="1" tag="ToolClawHammer" />
 	<drop event="Harvest" name="jz_Plank" count="1" prob="1" tag="ToolClawHammer" />
 	<drop event="Destroy" name="jz_Stick" count="5,10" prob="1" tool_category="ToolClawHammer" />
-	<drop event="Destroy" name="jz_Plank" count="1,4" prob="1" tool_category="ToolClawHammer" />                                                                  
+	<drop event="Destroy" name="jz_Plank" count="1,4" prob="1" tool_category="ToolClawHammer" />  
+    <drop event="Destroy" name="resourceNail" count="1,2" prob="1" tool_category="ToolClawHammer" />    
 </block>
 
 <block name="woodMaster">
@@ -929,7 +930,7 @@ group desc for stuff like metal siding
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="119"/> -->
 	<property name="CreativeMode" value="None"/>
 	<property name="FuelValue" value="300"/>
-	<property class="RepairItems"> <property name="jz_Plank" value="3"/> </property>
+	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="rWoodMetalMaster"/>
 		<property name="Item" value="resourceScrapIron"/>
@@ -1040,7 +1041,7 @@ group desc for stuff like metal siding
 	<property name="DescriptionKey" value="scrapIronGroupDesc"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="87"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="jz_IronSheetMetal" value="30"/> </property>
+	<property class="RepairItems"> <property name="jz_IronSheetMetal" value="10"/> </property>
 	<property name="EconomicValue" value="20"/>
 	<property name="FilterTags" value="fbuilding,firon"/>
 	<property name="SortOrder1" value="40e0"/>
@@ -1086,7 +1087,7 @@ group desc for stuff like metal siding
 	<property name="DescriptionKey" value="rScrapIronGroupDesc"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="110"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceScrapIron" value="30"/> </property>
+	<property class="RepairItems"> <property name="jz_IronSheetMetal" value="10"/> </property>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="resourceConcreteMix"/>
@@ -1107,7 +1108,7 @@ group desc for stuff like metal siding
 	<drop event="Harvest" name="resourceScrapIron" count="3" prob="1" tag="ToolWrench" />
    	<drop event="Harvest" name="jz_IronSheetMetal" count="5" prob="1" tag="ToolWrench" />
     <drop event="Destroy" name="resourceScrapIron" count="1,5" prob="1" tool_category="ToolWrench" />
-	<drop event="Destroy" name="jz_IronSheetMetal" count="1,15" prob="1" tool_category="ToolWrench" />                                                      
+	<drop event="Destroy" name="jz_IronSheetMetal" count="1,8" prob="1" tool_category="ToolWrench" />                                                      
 </block>
 
 <block name="rebarFrameMaster">
@@ -1135,7 +1136,7 @@ group desc for stuff like metal siding
 	</property>
 	<property name="CustomUpgradeSound" value="place_block_concrete"/>
 	<!-- <property name="CustomUpgradeSound" value="place_block_wood"/> -->
-	<property class="RepairItems"> <property name="resourceForgedIron" value="1"/> </property>
+	<property class="RepairItems"> <property name="resourceMetalPipe" value="5"/> </property>
 	<property name="EconomicValue" value="25"/>
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="FilterTags" value="fconstruction,fframes"/>
@@ -1152,8 +1153,8 @@ group desc for stuff like metal siding
 	<drop event="Destroy" name="resourceScrapIron" count="2,8" prob="1" tool_category="ToolWrench" />
 	<drop event="Destroy" name="jz_ScrapWire" count="1,2" prob="1" tool_category="ToolWrench" />
 	<!--JZMOD SLEDGE-->
-	<drop event="Harvest" name="jz_Rebar" count="2" prob="1" tag="ToolSledge" />
-	<drop event="Destroy" name="jz_Rebar" count="1,3" prob="1" tool_category="ToolSledge" />                                                                
+	<drop event="Harvest" name="resourceMetalPipe" count="2" prob="1" tag="ToolSledge" />
+	<drop event="Destroy" name="resourceMetalPipe" count="1,3" prob="1" tool_category="ToolSledge" />                                                                
 </block>
 
 <block name="pouredConcreteMaster">
@@ -1166,7 +1167,7 @@ group desc for stuff like metal siding
 	<property name="DescriptionKey" value="concreteGroupDesc"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="2"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceConcreteMix" value="8"/> </property>
+	<property class="RepairItems"> <property name="resourceConcreteMix" value="10"/> </property>
 	<property name="Class" value="UpgradeRated"/>
 	<property name="UpgradeRated.ToBlock" value="concreteMaster"/>
 	<property name="UpgradeRated.Rate" value="4"/>
@@ -1193,7 +1194,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="8"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="2"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceConcreteMix" value="8"/> </property>
+	<property class="RepairItems"> <property name="resourceConcreteMix" value="10"/> </property>
 	<property name="EconomicValue" value="50"/>
 	<property name="EconomicBundleSize" value="20"/>
 	<property name="FilterTags" value="fbuilding,fconcrete"/>
@@ -1240,7 +1241,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="176"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="2"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceConcreteMix" value="8"/> </property>
+	<property class="RepairItems"> <property name="resourceConcreteMix" value="10"/> </property>
 	<property name="Class" value="UpgradeRated"/>
 	<property name="UpgradeRated.ToBlock" value="rConcreteMaster"/>
 	<property name="UpgradeRated.Rate" value="5"/>
@@ -1267,7 +1268,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="315"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="91"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceConcreteMix" value="8"/> </property>
+	<property class="RepairItems"> <property name="resourceConcreteMix" value="10"/> </property>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="steelMaster"/>
 		<property name="Item" value="jz_SteelSheetMetal"/>
@@ -1299,7 +1300,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="355,355,356,356,356,356"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="112"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="jz_SteelSheetMetal" value="8"/> </property>
+	<property class="RepairItems"> <property name="jz_SteelSheetMetal" value="10"/> </property>
 	<property name="CustomUpgradeSound" value="place_block_metal"/>
 	
 	<property name="EconomicValue" value="160"/>
@@ -1376,7 +1377,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="226"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="63"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceCobblestones" value="3"/> </property>
+	<property class="RepairItems"> <property name="resourceCobblestones" value="10"/> </property>
 	<property name="EconomicValue" value="8"/>
 	<property name="EconomicBundleSize" value="40"/>
 	<property name="FilterTags" value="fbuilding,fbrick"/>
@@ -1410,7 +1411,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="328"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="15"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceCobblestones" value="8"/> </property>
+	<property class="RepairItems"> <property name="resourceCobblestones" value="10"/> </property>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="pouredConcreteMaster"/>
 		<property name="Item" value="resourceConcreteMix"/>
@@ -1441,7 +1442,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="7"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="1"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceCobblestones" value="5"/> </property>
+	<property class="RepairItems"> <property name="jz_Bricks" value="10"/> </property>
 	<property name="EconomicValue" value="8"/>
 	<property name="EconomicBundleSize" value="20"/>
 	<property name="FilterTags" value="fbuilding,fbrick"/>
@@ -1476,7 +1477,7 @@ group desc for stuff like metal siding
 	<property name="Texture" value="194"/>
 	<!-- <property name="ImposterExchange" value="imposterBlock" param1="57"/> -->
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceForgedIron" value="2"/> </property>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="10"/> </property>
 	<property name="EconomicValue" value="12"/>
 	<property name="FilterTags" value="fbuilding,firon"/>
 	<property name="SortOrder1" value="40f0"/>
@@ -1495,7 +1496,7 @@ group desc for stuff like metal siding
 	<property name="Extends" value="corrugatedMetalNoUpgradeMaster" param1="RepairItems"/>
 	<property name="DescriptionKey" value="scrapFrameGroupDesc"/>
 	<property name="CreativeMode" value="None"/>
-	<property class="RepairItems"> <property name="resourceScrapIron" value="12"/> </property>
+	<property class="RepairItems"> <property name="resourceScrapIron" value="10"/> </property>
 	<property class="UpgradeBlock">
 		<property name="ToBlock" value="scrapIronMaster"/>
 		<property name="Item" value="jz_IronSheetMetal"/>
@@ -14857,7 +14858,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0140"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="3,6"/>
 	<drop event="Destroy" name="jz_LogLarge" count="5,10"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1,2" prob="0.3" />                               
@@ -14875,7 +14876,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0140"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="3,6"/>
 	<drop event="Destroy" name="jz_LogLarge" count="10,15"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1,2" prob="0.3" />                         
@@ -14935,7 +14936,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0146"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="3,6"/>
 	<drop event="Destroy" name="jz_LogLarge" count="5,10"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1,2" prob="0.3" />          
@@ -14956,7 +14957,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0148"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="3,6"/>
 	<drop event="Destroy" name="jz_LogLarge" count="10,15"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1,2" prob="0.3" />                     
@@ -14975,7 +14976,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0370"/> <!-- SortTree -->
    <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,25"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,12"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,17"/>
 	<drop event="Destroy" name="jz_LogSmall" count="3,6"/>
 	<drop event="Destroy" name="jz_LogLarge" count="15,30"/>
 	<drop event="Destroy" name="treePlantedOak1m" count="1,3" prob="0.3" />                                                                        
@@ -15077,7 +15078,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="1,3"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />                                          
@@ -15094,7 +15095,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />       
@@ -15111,7 +15112,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="3,6"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />                                   
@@ -15128,7 +15129,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="3,6"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />          
@@ -15145,7 +15146,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,25"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,12"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,17"/>
 	<drop event="Destroy" name="jz_LogSmall" count="12,18"/>
 	<drop event="Destroy" name="jz_LogLarge" count="4,6"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />     
@@ -15162,7 +15163,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,25"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,12"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,17"/>
 	<drop event="Destroy" name="jz_LogSmall" count="12,20"/>
 	<drop event="Destroy" name="jz_LogLarge" count="4,7"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />             
@@ -15179,7 +15180,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />
@@ -15196,7 +15197,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />
@@ -15213,7 +15214,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0300"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />                                                  
@@ -15230,7 +15231,7 @@ NOT the TextureNumber.
     <property name="SortOrder2" value="0300"/>    <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />
@@ -15247,7 +15248,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0302"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,25"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,12"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,17"/>
 	<drop event="Destroy" name="jz_LogSmall" count="12,20"/>
 	<drop event="Destroy" name="jz_LogLarge" count="4,7"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />                               
@@ -15287,7 +15288,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0355"/> <!-- SortTree -->
    <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="1,3"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />                                   
@@ -15306,7 +15307,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0360"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,4"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1" prob="0.3" />                    
@@ -15326,7 +15327,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0365"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="3,6"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />         
@@ -15345,7 +15346,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0370"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,25"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,12"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,17"/>
 	<drop event="Destroy" name="jz_LogSmall" count="12,18"/>
 	<drop event="Destroy" name="jz_LogLarge" count="4,6"/>
 	<drop event="Destroy" name="treePlantedMountainPine1m" count="1,2" prob="0.3" />            
@@ -15362,7 +15363,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0400"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="2,5"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1" prob="0.3" />                           
 </block>
@@ -15379,7 +15380,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0400"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1,2" prob="0.3" />                            
 </block>
@@ -15395,7 +15396,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0400"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="1,3"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1,2" prob="0.3" />                                                 
@@ -15412,7 +15413,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0400"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,5"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1,2" prob="0.3" />
@@ -15488,7 +15489,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0460"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1" prob="0.3" />                         
 </block>
@@ -15507,7 +15508,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0465"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="1,3"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1,2" prob="0.3" />                                    
@@ -15525,7 +15526,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0470"/> <!-- SortTree -->
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="10,15"/>
 	<drop event="Destroy" name="jz_LogLarge" count="2,5"/>
 	<drop event="Destroy" name="treePlantedWinterPine1m" count="1,2" prob="0.3" />                                      
@@ -15610,7 +15611,7 @@ NOT the TextureNumber.
 	<property name="SortOrder1" value="a0d0"/>
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="1,2"/>
 	<drop event="Destroy" name="foodHoney" count="1" prob=".1"/>                
 </block>
@@ -15645,7 +15646,7 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0133"/> <!-- SortTree -->
      <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="4,8"/>
 	<drop event="Destroy" name="jz_LogLarge" count="5,10"/>
 	<drop event="Destroy" name="resourceCoal" count="8,15"/>      
@@ -15665,7 +15666,7 @@ NOT the TextureNumber.
 	<property name="ActivationDistance" value="14"/>
     <!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="10,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="5,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="5,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="8,12"/>
 	<drop event="Destroy" name="jz_LogLarge" count="8,12"/>
 	<drop event="Destroy" name="resourceCoal" count="10,20" />                  
@@ -17919,7 +17920,7 @@ NOT the TextureNumber.
 <block name="signShopGas">
 	<property name="CustomIcon" value="signShopGas"/>
 	<property name="Material" value="Mmetal"/>
-    <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                              
 	<property name="DisplayType" value="blockMulti"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -18013,7 +18014,7 @@ NOT the TextureNumber.
 <block name="signShopGunStore">
 	<property name="Material" value="Mmetal"/>
 	<property name="DisplayType" value="blockMulti"/>
-    <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                              
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
@@ -18118,7 +18119,7 @@ NOT the TextureNumber.
 <block name="signShopBookStore">
 	<property name="Material" value="Mmetal"/>
 	<property name="DisplayType" value="blockMulti"/>
-    <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                                
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="IsTerrainDecoration" value="true"/>
@@ -18219,7 +18220,7 @@ NOT the TextureNumber.
 <block name="signShopPharmacy">
 	<property name="Material" value="Mmetal"/>
 	<property name="DisplayType" value="blockMulti"/>
-    <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                                 
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="IsTerrainDecoration" value="true"/>
@@ -18319,7 +18320,7 @@ NOT the TextureNumber.
 
 <block name="signShopToolStore">
 	<property name="Material" value="Mmetal"/>
-     <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                                  
 	<property name="DisplayType" value="blockMulti"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -18422,7 +18423,7 @@ NOT the TextureNumber.
 
 <block name="signShopGrocery">
 	<property name="Material" value="Mmetal"/>
-    <property name="Tags" value="jz_CrowBarTag" />                                              
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver" />                                                
 	<property name="DisplayType" value="blockMulti"/>
 	<property name="StabilitySupport" value="false"/>
 	<property name="Shape" value="ModelEntity"/>
@@ -19208,7 +19209,7 @@ NOT the TextureNumber.
 	<property class="RepairItems"> <property name="jz_Plank" value="10"/> </property>
 	<property name="FilterTags" value="floot"/>
     <!--JZMOD ANY-->
-	<drop event="Destroy" name="jz_Plank" count="1,5" prob="1"/>
+	<drop event="Destroy" name="jz_Plank" count="5" prob="1"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>		                                                           
 </block>
 
@@ -22770,7 +22771,7 @@ NOT the TextureNumber.
     <property name="Class" value="Loot"/>
 	<property name="LootList" value="143"/>    
     <!--JZMOD CROWBAR-->		
-	<drop event="Destroy" name="wineBarrel" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                     
+	<drop event="Destroy" name="wineBarrelPlain" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                     
 </block>
 
 <block name="wineBarrelSet">
@@ -22779,18 +22780,12 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Decor/wineBarrelSetPrefab"/>
 	<property name="DisplayType" value="blockMulti"/>
 	<property name="MultiBlockDim" value="2,2,1"/>
-	<property name="ModelOffset" value=".5,.5,0"/>
-    <!--JZMOD CROWBAR-->		
-	<drop event="Destroy" name="wineBarrel" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="wineBarrelSet" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                     
+	<property name="ModelOffset" value=".5,.5,0"/>                                                                                     
 </block>
 
 <block name="wineBarrelPlain">
 	<property name="Extends" value="wineBarrel"/>
-	<property name="Model" value="Entities/Decor/BarrelPrefab"/>
-    <!--JZMOD CROWBAR-->		
-	<drop event="Destroy" name="wineBarrel" count="0" prob="1" tool_category="ToolCrowbar"/>
-	<drop event="Destroy" name="wineBarrelPlain" count="1" prob="1" tool_category="ToolCrowbar"/>                                                                                   
+	<property name="Model" value="Entities/Decor/BarrelPrefab"/>                                                                              
 </block>
 
 <block name="decoComputerDeskTopPC">
@@ -28008,6 +28003,7 @@ NOT the TextureNumber.
 	<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
 	<property name="Class" value="Loot"/>
 	<property name="Material" value="MCardboardLoot"/>
+    <property name="Weight" value="6"/>
 	<property name="Path" value="solid"/>
 	<property name="Shape" value="New"/>
 	<property name="Model" value="cube_no_cull"/> <!-- will not hide adjacent faces (if rotated) -->
@@ -28015,7 +28011,7 @@ NOT the TextureNumber.
 	<property name="Texture" value="276,276,270,270,270,270"/>
 	<property name="LootList" value="22"/>
 	<property class="RepairItems"> <property name="resourcePaper" value="10"/> <property name="jz_Plank" value="4"/> </property>
-	<drop event="Destroy" name="resourcePaper" count="2,8"/>
+	<drop event="Destroy" name="cntCardboardBox" count="1"/>
 	<property name="FilterTags" value="floot"/>
 </block>
 
@@ -29294,7 +29290,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Lighting/end_table_lightPrefab"/>-->
 	<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 	<property name="Group" value="Decor/Miscellaneous"/>
-    <property name="Tags" value="jz_CrowBarTag"/>             
+    <property name="Tags" value="jz_CrowBarTag,ToolScrewdriver"/>                   
     <!-- JZMOD CROWBAR-->
 	<drop event="Destroy" name="endTableLamp" count="1" tool_category="ToolCrowbar" />    
 </block>
@@ -29327,18 +29323,21 @@ NOT the TextureNumber.
     <property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#@modfolder:Resources/JZdesk_lamp.unity3d?desk_lampPrefab" /><!--
 	<property name="Model" value="Entities/Lighting/desk_lampPrefab"/>-->
+    <property name="Tags" value="ToolScrewdriver"/>  
 	<drop event="Destroy" name="resourceScrapBrass" count="8,18" prob="1"/>
 </block>
 
 <block name="tableLampLight">
 	<property name="Extends" value="porchLight01" param1="HandleFace"/>
     <property name="Shape" value="ModelEntity"/>
+    <property name="Tags" value="ToolScrewdriver"/>  
 	<property name="Model" value="#@modfolder:Resources/JZtable_lamp.unity3d?table_lampPrefab" /><!--
 	<property name="Model" value="Entities/Lighting/table_lampPrefab"/>-->
 </block>
 
 <block name="tableLampTippedOverLight">
 	<property name="Extends" value="cntTrashPile01"/>
+    <property name="Tags" value="ToolScrewdriver"/>  
     <property name="Model" value="#@modfolder:Resources/JZtable_lamp_tipped_over.unity3d?table_lamp_tipped_overPrefab" /><!--
 	<property name="Model" value="Entities/Lighting/table_lamp_tipped_overPrefab"/>-->
 </block>
@@ -29346,6 +29345,7 @@ NOT the TextureNumber.
 <block name="workLightPOI">
 	<property name="Extends" value="porchLight01" param1="HandleFace"/>
     <property name="Shape" value="ModelEntity"/>
+    <property name="Tags" value="ToolScrewdriver"/>  
 	<property name="Model" value="#@modfolder:Resources/JZwork_light.unity3d?work_lightPrefab" /><!--
 	<property name="Model" value="Entities/Lighting/work_lightPrefab"/>-->
 	<property name="DisplayType" value="blockMulti"/>
@@ -31534,6 +31534,7 @@ NOT the TextureNumber.
 	<!-- <property name="Class" value="PoweredDoor"/> -->
 	<property name="Material" value="MmetalGarageDoor3x2x2"/> <!-- hidden explosion resist to account for multiblock area -->
 	<property name="PassThroughDamage" value="true"/>
+    <property name="UnlockedBy" value="jz_SchematicDoors"/>
 	<property name="LightOpacity" value="1"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Tags" value="door"/>
@@ -31666,7 +31667,7 @@ NOT the TextureNumber.
 	<property name="CreativeMode" value="Player"/>
 	<property name="CustomIcon" value="garageDoorHouse"/>
 	<property name="StabilitySupport" value="false"/>
-	<property name="UnlockedBy" value="poweredDoorsSchematic"/>
+	<property name="UnlockedBy" value="jz_SchematicDoors"/>
 	<property name="Class" value="DoorSecure"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Material" value="MmetalGarageDoor5x3x1"/>
@@ -33846,9 +33847,11 @@ NOT the TextureNumber.
 	</property>
 	<property name="DescriptionKey" value="cntBarrelGroupDesc"/>
 	<drop event="Harvest" name="resourceScrapIron" count="3,6" tag="allToolsHarvest"/>
-	<drop event="Destroy" count="0"/>
-	<drop event="Fall" name="scrapMetalPile" count="1,5" prob="0.75" stick_chance="1"/>
 	<property name="FilterTags" value="fdecor,fother,floot"/>
+    <!--JZMOD ANY-->
+	<drop event="Harvest" name="resourceScrapIron" count="3,6" prob="1" tag="allHarvest"/>
+    <drop event="Destroy" count="0"/>
+	<drop event="Fall" name="scrapMetalPile" count="1,5" prob="0.75" stick_chance="1"/>     
 </block>
 
 <block name="cntBarrelPolymerMaster">
@@ -33887,7 +33890,9 @@ NOT the TextureNumber.
 	<property name="LootList" value="228"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
-
+    <property name="Tags" value="jz_CrowBarTag"/>                                                         
+	<!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelAcidSingle00" count="1" prob="1" tool_category="ToolCrowbar"/>  
 </block>
 
 <block name="cntBarrelAcidSingle45">
@@ -33895,6 +33900,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelAcid45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="15"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
+    <property name="Tags" value="jz_CrowBarTag"/>                                                          
 </block>
 
 <block name="cntBarrelAcidQuadA">
@@ -33902,6 +33908,7 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadAPrefab"/>
 	<property name="Explosion.ParticleIndex" value="15"/>
 	<drop event="Harvest" name="resourceAcid" prob=".5" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
 
 <block name="cntBarrelAcidQuadB">
@@ -33909,38 +33916,45 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelAcidQuadBPrefab"/>
 	<property name="Explosion.ParticleIndex" value="15"/>
 	<drop event="Harvest" name="resourceAcid" prob=".25" count="1" tag="WasteTreasuresAcidHarvest" tool_category="Disassemble"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
-
 
 <block name="cntBarrelGasSingle00">
 	<property name="Extends" value="cntBarrelMetalMaster" param1="CustomIcon"/>
 	<property name="Model" value="Entities/Industrial/barrelGasPrefab"/>
 	<property name="LootList" value="120"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+    <property name="Tags" value="jz_CrowBarTag"/>                                                         
+	<!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelGasSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelGasSingle45">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelGas45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="15"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
 
 <block name="cntBarrelGasQuadA">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelGasQuadAPrefab"/>
 	<property name="Explosion.ParticleIndex" value="16"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
 
 <block name="cntBarrelGasQuadB">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelGasQuadBPrefab"/>
 	<property name="Explosion.ParticleIndex" value="16"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
 
 <block name="cntBarrelGasOld">
 	<property name="Extends" value="cntBarrelGasSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrel03Prefab"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+    <property name="Tags" value="jz_CrowBarTag"/>   
 </block>
 
 
@@ -33949,12 +33963,16 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelGenericPrefab"/>
 	<property name="LootList" value="229"/>
 	<property name="Explosion.ParticleIndex" value="17"/>
+    <property name="Tags" value="jz_CrowBarTag"/>                                                         
+	<!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelGenericSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelGenericSingle45">
 	<property name="Extends" value="cntBarrelGenericSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelGeneric45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="18"/>
+     <property name="Tags" value="jz_CrowBarTag"/>    
 </block>
 
 <block name="cntBarrelGenericQuadA">
@@ -33967,6 +33985,7 @@ NOT the TextureNumber.
 	<property name="Extends" value="cntBarrelGenericSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelGenericQuadBPrefab"/>
 	<property name="Explosion.ParticleIndex" value="19"/>
+     <property name="Tags" value="jz_CrowBarTag"/>    
 </block>
 
 
@@ -33975,12 +33994,16 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelOilPrefab"/>
 	<property name="LootList" value="230"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+     <property name="Tags" value="jz_CrowBarTag"/> 
+    <!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelOilSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelOilSingle45">
 	<property name="Extends" value="cntBarrelOilSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelOil45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="18"/>
+     <property name="Tags" value="jz_CrowBarTag"/>    
 </block>
 
 <block name="cntBarrelOilQuadA">
@@ -33993,6 +34016,7 @@ NOT the TextureNumber.
 	<property name="Extends" value="cntBarrelOilSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelOilQuadBPrefab"/>
 	<property name="Explosion.ParticleIndex" value="16"/>
+    <property name="Tags" value="jz_CrowBarTag"/>    
 </block>
 
 
@@ -34001,22 +34025,28 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelRadiatedPrefab"/>
 	<property name="LootList" value="231"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
+    <!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelRadiatedSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelRadiatedSingle45">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiated45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="18"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelRadiatedQuadA">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiatedQuadAPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelRadiatedQuadB">
 	<property name="Extends" value="cntBarrelRadiatedSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelRadiatedQuadBPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 
@@ -34025,22 +34055,28 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelWhitePrefab"/>
 	<property name="LootList" value="232"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
+    <!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelWhiteSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelWhiteSingle45">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelWhite45Prefab"/>
 	<property name="Explosion.ParticleIndex" value="18"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelWhiteQuadA">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelWhiteQuadAPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelWhiteQuadB">
 	<property name="Extends" value="cntBarrelWhiteSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelWhiteQuadBPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 
@@ -34049,21 +34085,27 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Industrial/barrelPlasticPrefab"/>
 	<property name="LootList" value="233"/>
 	<property name="Explosion.ParticleIndex" value="14"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
+    <!--JZMOD CROWBAR-->
+	<drop event="Destroy" name="cntBarrelPlasticSingle00" count="1" prob="1" tool_category="ToolCrowbar"/> 
 </block>
 
 <block name="cntBarrelPlasticSingle45">
 	<property name="Extends" value="cntBarrelPlasticSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelPlastic45Prefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelPlasticQuadA">
 	<property name="Extends" value="cntBarrelPlasticSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelPlasticQuadAPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="cntBarrelPlasticQuadB">
 	<property name="Extends" value="cntBarrelPlasticSingle00"/>
 	<property name="Model" value="Entities/Industrial/barrelPlasticQuadBPrefab"/>
+    <property name="Tags" value="jz_CrowBarTag"/> 
 </block>
 
 <block name="decoCarBackBumperUpright">
@@ -35587,6 +35629,7 @@ ore block visualisation end -->
 	<property name="MaxDamage" value="200" />
 	<drop event="Destroy" count="0" />
 	<drop event="Destroy" name="jz_StorageSack" count="1" prob="1" />
+    <drop event="Destroy" name="jz_Plank" count="0" prob="1"/>
 	<drop event="Fall" name="terrDestroyedWoodDebris" count="0" prob="1" stick_chance="1" />
 </block>
 
@@ -35748,7 +35791,6 @@ ore block visualisation end -->
 	<property name="CustomIcon" value="flagstoneFrameBlock" />
 	<property name="Mesh" value="opaque"/>
 	<property name="Shape" value="New"/>
-    <property name="CanPickup" value="true" param1="jz_FlagstoneFrameBlock"/>
 	<property name="Model" value="cube_frame"/>
 	<property name="SortOrder2" value="0050"/> <!-- SortShape -->
 	<property name="Path" value="solid"/>
@@ -37427,6 +37469,7 @@ ore block visualisation end -->
 
 <block name="jz_VehiclesApache">
 	<property name="Extends" value="jz_MasterMilitaryVehicle1"/>
+    <property name="LootList" value="320"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#@modfolder:Resources/JZVehicleApache.unity3d?VehicleApachePrefab" />
@@ -37435,6 +37478,7 @@ ore block visualisation end -->
 
 <block name="jz_VehiclesCrashedApache">
 	<property name="Extends" value="jz_MasterMilitaryVehicle2"/>
+    <property name="LootList" value="320"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#@modfolder:Resources/JZVehicleCrashedApache.unity3d?VehicleCrashedApachePrefab" />
@@ -37442,6 +37486,7 @@ ore block visualisation end -->
 
 <block name="jz_VehiclesHeli">
 	<property name="Extends" value="jz_MasterMilitaryVehicle1"/>
+    <property name="LootList" value="320"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#@modfolder:Resources/JZVehicleHeli.unity3d?VehicleHeliPrefab" />
@@ -37450,6 +37495,7 @@ ore block visualisation end -->
 
 <block name="jz_VehiclesCrashedHeli">
 	<property name="Extends" value="jz_MasterMilitaryVehicle2"/>
+    <property name="LootList" value="320"/>
 	<property name="CreativeMode" value="Player"/>
 	<property name="Shape" value="ModelEntity"/>
 	<property name="Model" value="#@modfolder:Resources/JZVehicleCrashedHeli.unity3d?VehicleCrashedHeliPrefab" />
@@ -37767,7 +37813,7 @@ ore block visualisation end -->
     <property name="MaxDamage" value="200"/>
 	<!--JZMOD ANY-->
 	<drop event="Destroy" name="jz_Stick" count="5,20"/>
-	<drop event="Destroy" name="jz_WoodBranch" count="2,10"/>
+	<drop event="Destroy" name="jz_WoodBranch" count="2,15"/>
 	<drop event="Destroy" name="jz_LogSmall" count="1,2"/>
 	<drop event="Destroy" name="jz_HoneyComb" count="1,6" prob=".1"/>
 	<drop event="Destroy" name="jz_FoodGrubs" count="1,3" prob=".1"/>
@@ -40674,6 +40720,30 @@ ore block visualisation end -->
     <drop event="Harvest" name="jz_FoodOrange" count="6" tag="wildCropsHarvest"/>    
 </block>
 
+<block name="jz_BurntZombieLoot">
+	<property name="Material" value="Mwood_weak"/>
+    <property name="MaxDamage" value="50"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="Entities/Lighting/ember_pile_2Prefab"/>
+	<property name="Collide" value="melee,bullet,arrow,rocket"/>
+	<property name="StabilitySupport" value="false"/> <!-- build restriction -->
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="ImposterExclude" value="true"/>
+	<property name="ImposterDontBlock" value="true"/>
+	<property name="Class" value="Loot"/>
+	<property name="LootList" value="299"/>
+    <property name="BuffsWhenWalkedOn" value="buffBurningMolotov"/>
+	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="FilterTags" value="fdecor,fother"/>
+	<property name="DowngradeBlock" value="jz_GoreDecorRandomHelper"/>
+    <drop event="Harvest" name="resourceCoal" count="3,6" tag="oreWoodHarvest"/>
+	<drop event="Harvest" name="resourceCoal" count="3,6" tag="coalHarvest"/>
+	<drop event="Destroy" name="jz_Stick" count="5,20"/>
+	<drop event="Harvest" name="foodRottingFlesh" count="1" prob="1" tag="allHarvest" />
+	<drop event="Harvest" name="foodRottingFlesh" count="1,2" prob="1" tag="butcherHarvest"/>
+	<drop event="Destroy" name="resourceBone" count="2,5" tag="butcherHarvest"/>
+</block>
+
 <!-- SPHEREII CORE CONTROLER -->
     
     <block name="ConfigFeatureBlock">
@@ -40727,7 +40797,7 @@ ore block visualisation end -->
       <property class="AdvancedUI">
         <property name="Logging" value="false"/>
         <property name="DisableXPIconNotification" value="true" />        <!-- Don't like the UI element for XP? Set to true to disable. -->
-        <property name="UnlockEnemyHealthBar" value="false" />        <!-- Unlocks the enemy health bar-->
+        <property name="UnlockEnemyHealthBar" value="true" />        <!-- Unlocks the enemy health bar-->
       </property>
 
       <property class="AdvancedWorldGen">

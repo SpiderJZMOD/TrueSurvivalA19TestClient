@@ -2221,7 +2221,7 @@
 				<requirement name="ProgressionLevel" progression_name="SP_FishTacosSchematic" operation="LT" value="1"/></triggered_effect>
 			
 			<passive_effect name="CraftingTime" operation="perc_add" level="1" value="-0.2" tags="jz_ChefTag"/>
-			<effect_description level="1" desc_key="jz_ChefRank1Desc" long_desc_key="jz_ChefLongDesc"/>
+			<effect_description level="1" desc_key="jz_ChefRank1Desc" long_desc_key="jz_ChefDesc"/>
 		</effect_group>
 	</perk>
 	<!-- Burglar -->
@@ -2256,7 +2256,7 @@
 		
             <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="woodFrameBlockVariantHelper"/>
 			<passive_effect name="CraftingTime" operation="perc_add" level="1" value="-0.2" tags="jz_WorkBenchTag,jz_TablesawTag"/>
-			<effect_description level="1" desc_key="jz_CarpenterRank1Desc" long_desc_key="jz_CarpenterLongDesc"/>
+			<effect_description level="1" desc_key="jz_CarpenterRank1Desc" long_desc_key="jz_CarpenterDesc"/>
 		</effect_group>
 	</perk>
 	<!-- Mason -->
@@ -3018,7 +3018,7 @@
     
     <perk name="SP_DoorKnoobSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Key Lock" desc_key="SP_DoorKnoobSchematicDesc" icon="KeyLock">
 		<effect_group>
-			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceCloth"/>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="resourceDoorKnob"/>
 			<effect_description level="1" desc_key="SP_DoorKnoobSchematicDesc" long_desc_key="SP_DoorKnoobSchematicDesc"/>
 		</effect_group>
 	</perk>
@@ -3044,10 +3044,17 @@
 		</effect_group>
 	</perk>
     
-    <perk name="SP_WoodenChestSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Wooden Chest" desc_key="cntSecureStorageChestDesc" icon="cntChest01">
+    <perk name="SP_DoorsSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Large Doors" desc_key="SP_DoorsSchematicDesc" icon="garageDoorMetal_v1">
+		<effect_group>
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="garageDoorMetal_v1,garageDoorHousePlayer"/>
+			<effect_description level="1" desc_key="SP_DoorsSchematicDesc" long_desc_key="SP_DoorsSchematicDesc"/>
+		</effect_group>
+	</perk>
+    
+    <perk name="SP_WoodenChestSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Storage Box" desc_key="cntStorageGenericSignedDesc" icon="cntShippingCrateHero">
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="cntStorageGenericSigned"/>
-			<effect_description level="1" desc_key="cntSecureStorageChestDesc" long_desc_key="cntSecureStorageChestDesc"/>
+			<effect_description level="1" desc_key="cntStorageGenericSignedDesc" long_desc_key="cntStorageGenericSignedDesc"/>
 		</effect_group>
 	</perk>
     
@@ -3093,14 +3100,14 @@
 		</effect_group>
 	</perk>
 	
-	<perk name="SP_IronSheetMetalSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Iron Sheet Metal" desc_key="jz_IronSheetMetalDesc" icon="ui_game_symbol_fire">
+	<perk name="SP_IronSheetMetalSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Iron Sheet Metal" desc_key="jz_IronSheetMetalDesc" icon="rScrapIronCTRPlate">
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_IronSheetMetal"/>
 			<effect_description level="1" desc_key="jz_IronSheetMetalDesc" long_desc_key="jz_IronSheetMetalDesc"/>
 		</effect_group>
 	</perk>
 	
-	<perk name="SP_SteelSheetMetalSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Steel Sheet Metal" desc_key="jz_SteelSheetMetalDesc" icon="ui_game_symbol_fire">
+	<perk name="SP_SteelSheetMetalSchematic" parent="jz_CraftingSchematics" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Steel Sheet Metal" desc_key="jz_SteelSheetMetalDesc" icon="steelCTRPlate">
 		<effect_group>
 			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="jz_SteelSheetMetal"/>
 			<effect_description level="1" desc_key="jz_SteelSheetMetalDesc" long_desc_key="jz_SteelSheetMetalDesc"/>
@@ -5253,8 +5260,9 @@
         </effect_group>
         <effect_group>
             <requirement name="ProgressionLevel" progression_name="jz_SmallGameHunterSkill" operation="LT" value="3"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
             <requirement name="EntityTagCompare" target="other" tags="perkAT01"/>
-				<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="$jz_SmallGameXP" operation="add" value="5"/>
+            	<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar" cvar="$jz_SmallGameXP" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_SmallGameXP" operation="add" value="2">
 					<requirement name="StatCompareCurrent" target="other" stat="health" operation="GT" value="0"/></triggered_effect>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_SmallGameXP" operation="add" value="1">
@@ -5262,6 +5270,7 @@
 		</effect_group>
 		<effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT01"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
 			<requirement name="ProgressionLevel" progression_name="jz_SmallGameHunterSkill" operation="LT" value="3"/>
 			<requirement name="CVarCompare" cvar="$jz_SmallGameXP" operation="GTE" value="@$jz_SmallGameNextLvTotal"/>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_SmallGameLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
@@ -5287,6 +5296,7 @@
         </effect_group>
         <effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT02"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
             <requirement name="ProgressionLevel" progression_name="jz_LargeGameHunterSkill" operation="LT" value="3"/>
                 <triggered_effect trigger="onSelfKilledOther" action="ModifyCVar"  cvar="$jz_LargeGameXP" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar"  cvar="$jz_LargeGameXP" operation="add" value="2">
@@ -5296,6 +5306,7 @@
 		</effect_group>
 		<effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT02"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
 			<requirement name="ProgressionLevel" progression_name="jz_LargeGameHunterSkill" operation="LT" value="3"/>
 			<requirement name="CVarCompare" cvar="$jz_LargeGameXP" operation="GTE" value="@$jz_LargeGameNextLvTotal"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_LargeGameLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
@@ -5321,6 +5332,7 @@
         </effect_group>
         <effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT03"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
             <requirement name="ProgressionLevel" progression_name="jz_SmallPredGameHunterSkill" operation="LT" value="3"/>
         		<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar"  cvar="$jz_SmallPredGameXP" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar"  cvar="$jz_SmallPredGameXP" operation="add" value="2">
@@ -5330,6 +5342,7 @@
 		</effect_group>
 		<effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT03"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
 			<requirement name="ProgressionLevel" progression_name="jz_SmallPredGameHunterSkill" operation="LT" value="3"/>
 			<requirement name="CVarCompare" cvar="$jz_SmallPredGameXP" operation="GTE" value="@$jz_SmallPredGameNextLvTotal"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_SmallPredGameLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
@@ -5355,6 +5368,7 @@
         </effect_group>
         <effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT04"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
             <requirement name="ProgressionLevel" progression_name="jz_LargePredGameHunterSkill" operation="LT" value="3"/>
                 <triggered_effect trigger="onSelfKilledOther" action="ModifyCVar"  cvar="$jz_LargePredGameXP" operation="add" value="5"/>
                 <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar"  cvar="$jz_LargePredGameXP" operation="add" value="2">
@@ -5364,6 +5378,7 @@
 		</effect_group>
 		<effect_group>
             <requirement name="EntityTagCompare" target="other" tags="perkAT04"/>
+            <requirement name="!HoldingItemHasTags" tags="NonXPTool"/>
 			<requirement name="ProgressionLevel" progression_name="jz_LargePredGameHunterSkill" operation="LT" value="3"/>
 			<requirement name="CVarCompare" cvar="$jz_LargePredGameXP" operation="GTE" value="@$jz_LargePredGameNextLvTotal"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_LargePredGameLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
