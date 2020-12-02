@@ -9,7 +9,7 @@ Installation- 19.2
 2)Copy the 4 files in the 7DaysToDie_Data\Managed Folder and paste and replace them into your games same location (Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed)
 2)Copy the Prefab files in the Data/Prefabs Folder and paste and replace them into your games same location (Steam\steamapps\common\7 Days To Die\Data\Prefabs)
 3)Start Game with EAC off
-4)Log into the True Survival Server or start Single Player Game
+4) For Server play log on to the True Survival Server or start Single Player Game
 
 Required SP/Coop Game Settings
 -RWG Maps only
