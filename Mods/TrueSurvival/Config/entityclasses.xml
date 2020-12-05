@@ -183,6 +183,8 @@
 
 		<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffStatusCheck01,buffStatusCheck02"/>
 		<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="jz_BuffWoundSystem"/>
+        
+        <passive_effect name="HarvestCount" operation="base_set" value="@$SpawnQuestSoldier" tags="QHSoldier"/>
         <!--JZMOD HUNTING SKILLS-->
         <passive_effect name="TrackDistance" operation="base_set" value="100"/>
         <passive_effect name="HarvestCount" operation="base_set" value="0" tags="SmallGameButcher"/>
@@ -4761,6 +4763,10 @@ Kinda sorta works but is buggy and we don't have time for that.
 	</effect_group>				
 </entity_class>
 
+<entity_class name="jz_QZSoldierRadiated" extends="zombieSoldierRadiated">
+	<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+    <property name="LootListOnDeath" value="328"/>	
+</entity_class>
 
 <entity_class name="zombieRegularTemplate">
 			<property name="EntityType" value="Zombie"/> <!-- This one decides for scoring -->

@@ -4106,6 +4106,15 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item name="vehicleMotorcyclePlaceable" prob="10" />
 	<item name="vehicle4x4TruckPlaceable" prob="5" />
 </lootgroup>
+
+
+<lootgroup name="QuestZombieSoldierLoot" count="all">
+    <item name="jz_QIMilitarySecurityCard" count="1" />
+    <item group="junkPersonal" count="2" />
+    <item group="weaponsMilitaryParts" count="2" />
+	<item group="groupAmmoAdvanced" count="2" />
+	<item group="groupArmorMilitary" count="1" />
+</lootgroup>
 <!--
 	<item group="groupModAllT3" loot_prob_template="QuestT3Prob"/>
 
@@ -5968,6 +5977,10 @@ treasureTemplate
 	<item group="automotive+tools+junk" prob="49" />
     <item group="WorkingVehiclePlaceable" prob="1" />
 	<item group="rottenFood" prob="50" />
+</lootcontainer>
+<!-- Quest Soldier-->
+<lootcontainer id="328" count="1" size="5,4" destroy_on_close="true" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1">
+	<item group="QuestZombieSoldierLoot" count="1" />
 </lootcontainer>
   <!-- the max cap for lootcontainer id is 1023 -->
 </set>

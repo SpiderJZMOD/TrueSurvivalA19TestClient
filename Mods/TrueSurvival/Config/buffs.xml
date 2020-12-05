@@ -642,6 +642,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			<passive_effect name="PlayerExpGain" operation="perc_subtract" value="@$jzXPFix" tags="Harvesting">
 				<requirement name="HoldingItemHasTags" tags="perkMiner69r"/>
 			</passive_effect>
+                      
             <!--JZMOD WATER REGAIN PER LEVEL 
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jzHydrationBonus" operation="set" value="@$PlayerLevelBonus"/>
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jzHydrationBonus" operation="multiply" value="0.001"/>        
@@ -9845,7 +9846,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffDeadIsDeadResetTag"  /> 
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffDeadIsDeadResetNoCheating"  /> 
 				<triggered_effect trigger="onSelfBuffStart" action="ResetPlayerSkills, Mods" target="self" value="0"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ClearMap, Mods" />				
+				<triggered_effect trigger="onSelfBuffStart" action="ClearMapSDX, Mods" />				
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$LastPlayerLevel" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PlayerLevelBonus" operation="set" value="1"/> 
                
@@ -9987,15 +9988,32 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>    
     
     <buff name="jz_BuffFoodStuffed" remove_on_death="false" name_key="Stuffed" tooltip_key="Uhhhhhhhhaaaa!" description_key="You have stuffed your self with too much food and can barley move until you digest some" icon="ui_game_symbol_stuffed" >
-    <stack_type value="ignore"/>
-	<duration value="0"/>
-		<effect_group>
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
 			<passive_effect name="Mobility" operation="perc_add" value="-0.3"/>
             <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffFoodStuffed">
 				<requirement name="StatCompare" target="self" stat="food" operation="lt" value="99"/></triggered_effect>	
 		</effect_group>
      </buff>    
-</set>
+
+    <buff name="jz_BuffSpawnSoldier" hidden="true" remove_on_death="false">
+        <stack_type value="duration"/>
+		<duration value="2"/>  
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$SpawnQuestSoldier" operation="set" value="1"/>
+        </effect_group>  
+	</buff>    
+  
+    <buff name="jz_BuffTurnOffSpawnSoldier" hidden="true" remove_on_death="false">
+        <stack_type value="duration"/>
+		<duration value="2"/>  
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$SpawnQuestSoldier" operation="set" value="0"/>
+        </effect_group>  
+	</buff>  
+   
+</set>    
 </configs>
 
 

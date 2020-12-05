@@ -32177,6 +32177,13 @@ perkNightStalkerSilentNight
 	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardDesc"/>
 </item>
 
+<item name="jz_QIMilitarySecuritySoldier">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="SecurityCard"/>
+	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardDesc"/>
+</item>
+
 <item name="jz_QIMilitarySecurityCardA">
 	<property name="Extends" value="jz_MasterItem"/>
 	<property name="Stacknumber" value="1" />
@@ -32680,8 +32687,8 @@ perkNightStalkerSilentNight
 	</effect_group>
     <effect_group name="QuestTissueExtration">
         <requirement name="IsNight"/>  
-        <requirement name="IsBloodMoon" operation="GTE" value="1"/> 
-       <!-- <requirement name="EntityTagCompare" target="other" tags="parasite"/> -->
+        <!-- <requirement name="IsBloodMoon" operation="GTE" value="1"/> 
+        <requirement name="EntityTagCompare" target="other" tags="parasite"/> -->
         <requirement name="IsAlive" target="other"/>        
         <requirement name="CVarCompare" target="self" cvar="$jz_TissueExtractingCount" operation="LT" value="11"/>        
             <triggered_effect trigger="onSelfDamagedOther" action="CreateItemSDX, Mods" item="jz_QIMutatedTissueSample" count="1"/>               
