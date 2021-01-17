@@ -2,14 +2,16 @@ Key,English
 [35bd00]Green[-]
 [f21b10]Red[-]
 [fff700]Yellow[-]
+
+
+jz_QZSoldierRadiated,"Security Soldier"
+
 BUFF_________________________XML,BUFF_________________________XML
 jz_BuffGashDesc,"You have a large [f21b10]Gash[-]. You will need to use a [35bd00]Suture Kit[-] to stitch it closed or a [35bd00]Hot Pipe[-] to cauterize it closed. If not treated it could get worse.\n\n-8% Mobility\n-1HP per 20sec"
 jz_BuffGashStitchedUpDesc,"Should leave a nice scar but its going to need at lest a [35bd00]Bandage[-] if you don't want it to get worse.\n-4% Mobility\n-2 Wellness if not treated"
 jz_BuffGashBandagedDesc,"Your Gash is bandaged up and healing. It will need to be changed when it gets dirty\n-2% Mobility"
 jz_BuffGashDirtyBandagedDesc,"Your bandage has gotten dirty and needs changed with at lest another [35bd00]Bandage[-]. If you don't tend to it soon it will get worse\n-3% Mobility\n-1 Wellness if not treated"
 jz_BuffPuncturedDesc,"You have a deep [f21b10]Puncture Wound[-]. Your going to need a [35bd00]Sanitize Bandage[-] to clean and pack the hole\n-10% Mobility\n-1HP per 20sec\n-1 Wellness"
-
-
 jz_BuffThrobbingPainDesc,"OOww! That hurts take some [35bd00]Painkillers[-] to relieve the pain\n\n-1 Stamina every 5 sec\n+10 Core Temp"
 jz_BuffGangreneWoundDesc,"Your wound has become [f21b10]Gangrene[-]. The only option you have is to cut off the dead tissue, this will leave you permanently scared. Use a bladed weapon to cute away the [f21b10]Gangrene[-] tissue. You will then have to treat and care for the remaining wound\n\n-4 Stamina every 1 sec\n-1 Health every 10 sec\n-12% Mobility\n-1 Wellness every 1 min\n30% more Health Loss\nUntil Treated"
 jz_BuffTendingSixDesc,"Your [f21b10]Sever Wound[-] is bandaged and healing. Try not to get hurt so it will heal.\n\n-1 Stamina every 2 sec\n-3% Mobility\n5% more Health Loss"
@@ -472,8 +474,99 @@ jz_PlantedFertilizedOrange2DryDesc,"Fertilized Orange Sapling(Dry)"
 jz_PlantedFertilizedOrange3,"Fertilized Orange(Growing)"
 jz_PlantedFertilizedOrange3DryDesc,"Fertilized Orange(Dry)"
 jz_PlantedFertilizedOrange4Desc,"Fertilized Orange(Grown)"
-
+jz_SateliteQuestItemDesc,"Satellite Transmitter"
+jz_QIDoctorsTissueExtractorDesc,"Tissue Extractor"
+jz_QISoldierClothesDesc,"Soldiers Belongings"
+jz_QIBossSpawner,"Sonic Projector"
+jz_QIBossSpawnerDesc,"A device invented by the Military that attracts the mutant creatures for killing"
+jz_QISoldierNoteBlockDesc,"Soldiers Note"
+jz_QISoldierBodyBlockDesc,"Soldiers Body"
 ITEM_________________________XML,ITEM_________________________XML
+
+jz_drugHerbalAntibioticsDesc,"Herbal Antibiotics can slowly cure infections.\n\nCan be crafted in a Mortar and Pestle at a campfire."
+jz_QISoldierBody,"Soldier's Body"
+jz_QISoldierBodyDesc,"The body of the Soldier from the CDC."
+jz_QISeedLeek,"Engineered Leek Seeds"
+jz_QISeedLeekDesc,"Leek Seeds that have been genetically engineered by the CDC Doctors to create a cure to the Z-Virus. Plant these seeds in the Burnt Biome and use Burnt Spore Fertilizer crafted from Burnt Zombie Spores gathered by killing Zombies during the Bloodmoon in the Burnt Biome" 
+jz_QISeedChillis,"Engineered Chili Seeds"
+jz_QISeedChillisDesc,"Chili Seeds that have been genetically engineered by the CDC Doctors to create a cure to the Z-Virus. Plant these seeds in the Desert and use Desert Spore Fertilizer crafted from Desert Zombie Spores gathered by killing Zombies during the Bloodmoon in the Desert" 
+jz_QISeedCucumber,"Engineered Cucumber Seeds"
+jz_QISeedCucumberDesc,"Cucumber Seeds that have been genetically engineered by the CDC Doctors to create a cure to the Z-Virus. Plant these seeds in the Wasteland and use Wasteland Spore Fertilizer crafted from Wasteland Zombie Spores gathered by killing Zombies during the Bloodmoon in the Wasteland" 
+jz_QISeedSnowberry,"Engineered Snowberry Seeds"
+jz_QISeedSnowberryDesc,"Snowberry Seeds that have been genetically engineered by the CDC Doctors to create a cure to the Z-Virus. Plant these seeds in the Snow Biome and use Snow Spore Fertilizer crafted from Snow Zombie Spores gathered by killing Zombies during the Bloodmoon in the Snow Biome" 
+jz_QISeedCarrot,"Engineered Carrot Seeds"
+jz_QISeedCarrotDesc,"Carrot Seeds that have been genetically engineered by the CDC Doctors to create a cure to the Z-Virus. Plant these seeds in the Forest and use Forest Spore Fertilizer crafted from Forest Zombie Spores gathered by killing Zombies during the Bloodmoon in the Forest" 
+jz_QIBMSporesForest,"Forest Zombie Fluids"
+jz_QIBMSporesForestDesc,"Fluids gathered from killing Zombies during a Bloodmoon in the Forest"
+jz_QIFertilizerForest,"Forest Fertilizer"
+jz_QIFertilizerForestDesc,"Special Fertilizer used to help Engineered Carrot grow"
+jz_QIBMSporesDesert,"Desert Zombie Fluids"
+jz_QIBMSporesDesertDesc,"Fluids gathered from killing Zombies during a Bloodmoon in the Desert"
+jz_QIFertilizerDesert,"Desert Fertilizer"
+jz_QIFertilizerDesertDesc,"Special Fertilizer used to help Engineered Chillis grow"
+jz_QIBMSporesWasteland,"Wasteland Zombie Fluids"
+jz_QIBMSporesWastelandDesc,"Fluids gathered from killing Zombies during a Bloodmoon in the Wasteland"
+jz_QIFertilizerWasteland,"Wasteland Fertilizer"
+jz_QIFertilizerWastelandDesc,"Special Fertilizer used to help Engineered Cucumbers grow"
+jz_QIBMSporesBurnt,"Burnt Zombie Fluids"
+jz_QIBMSporesBurntDesc,"Fluids gathered from killing Zombies during a Bloodmoon in the Burnt Biome"
+jz_QIFertilizerBurnt,"Burnt Fertilizer"
+jz_QIFertilizerBurntDesc,"Special Fertilizer used to help Engineered Leeks grow"
+jz_QIBMSporesSnow,"Snow Zombie Fluids"
+jz_QIBMSporesSnowDesc,"Fluids gathered from killing Zombies during a Bloodmoon in the Snow Biome"
+jz_QIFertilizerSnow,"Snow Fertilizer"
+jz_QIFertilizerSnowDesc,"Special Fertilizer used to help Engineered Snowberrys grow"
+jz_QISoldierNote,"Soldiers Note"
+jz_QISoldierNoteDesc,"A note left by the soldier you came to find. There is a small drawn map and it says he has the CDC files."
+jz_QICDCFiles,"CDC Files"
+jz_QICDCFilesDesc,"All the information and research that the CDC had gathered on the event and the virus."
+jz_QIReadCDCFiles,"Read CDC Files,"
+jz_QIReadCDCFilesDesc,"All the information and research that the CDC had gathered on the event and the virus."
+jz_QIZAntiVirus,"Z Virus Cure"
+jz_QIZAntiVirusDesc,"A possible cure created from the information gathered by the CDC. Theres only enough for one dose."
+jz_QILeek,"Engineered Leeks"
+jz_QILeekDesc,"A genetically engineered leek altered to produce anti vials for the Z-Virus."
+jz_QICucmber,"Engineered Cucumbers"
+jz_QICucmberDesc,"A genetically engineered leek altered to produce anti vials for the Z-Virus."
+jz_QIChilli,"Engineered Chillis"
+jz_QIChilliDesc,"A genetically engineered leek altered to produce anti vials for the Z-Virus."
+jz_QISnowberry,"Engineered Snowberrys"
+jz_QISnowberryDesc,"A genetically engineered leek altered to produce anti vials for the Z-Virus."
+jz_QICarrot,"Engineered Carrots"
+jz_QICarrotDesc,"A genetically engineered leek altered to produce anti vials for the Z-Virus."
+jz_QIBioKit,"Engineered Seed Packs"
+jz_QIBioKitDesc,"A pack of genetically engineered seeds altered to produce anti vials for the Z-Virus."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 jz_EmptyGun,"Empty Gun"
@@ -630,13 +723,14 @@ jz_schematicGeneralGroupDesc,"Reading the schematic will teach you how to craft 
 jz_SplashOfWater,Splash of Water
 jz_SplashOfWaterDesc,"Splash some water on your head to cool off for a while"
 jz_ProfessionChoice,Knowledge Point
-jz_ProfessionChoiceDesc,"Use these points to purchase your starting player stats and knowledge. Purchase Negative traits to earn more. Scrap or trash any points you don't want to use."
+jz_ProfessionChoiceDesc,"Use these points to purchase your starting player stats and knowledge. Purchase Negative traits to earn more. Scrap or trash any points you don't want to use.\n\n[f21b10]These Points will not last long, use immediately[-]"
 jz_TraitRefundDesc,"Used to facilitate the refund of Knowledge Points. It is safe to trash or scrap this for Paper."
 jz_TraitRefundSlowDriver,Refund Receipt
 jz_TraitRefundSleepy,Refund Receipt
 jz_TraitRefundClumsy,Refund Receipt
 jz_TraitRefundAllThumbs,Refund Receipt
 jz_TraitRefundWeakStomach,Refund Receipt
+jz_NegativeTraitMasochist,Refund Receipt
 jz_TraitRefundAgoraphobic,Refund Receipt
 jz_TraitRefundClaustrophobic,Refund Receipt
 jz_TraitRefundBadLeg,Refund Receipt
@@ -738,6 +832,8 @@ jz_NegativeTraitThinSkinned,Neg Trait Thin Skinned
 jz_NegativeTraitThinSkinnedDesc,"NEGATIVE TRAIT\n10% More chance to get Injured from Attackers\n[f21b10]Traits do not stack, Don't buy two of the same[-]\n[f21b10]REFUNDS 4 Knowledge Points[-]"
 jz_NegativeTraitWeak,Neg Trait Weak
 jz_NegativeTraitWeakDesc,"NEGATIVE TRAIT\n10% More Stamina used w/Melee\n10% More Stamina used while Encumbered\n[f21b10]Traits do not stack, Don't buy two of the same[-]\n[f21b10]REFUNDS 4 Knowledge Points[-]"
+jz_NegativeTraitMasochist,Neg Trait Masochist
+jz_NegativeTraittMasochistDesc,"NEGATIVE TRAIT\nFor those that want even more of a challenge.\nLowers Wellness Cap to 125\nLowers current Wellness by 1/2\nLowers current Nutrition Stats by 1/2\n[f21b10]Traits do not stack, Don't buy two of the same[-]\n[f21b10]REFUNDS 1 Knowledge Points[-]"
 jz_PositiveTraitFastDriver,Pos Trait Fast Driver
 jz_PositiveTraitFastDriverDesc,"POSITIVE TRAIT\n5% Faster while driving Vehicles\n[f21b10]Traits do not stack, Don't buy two of the same[-]"
 jz_PositiveTraitWakeful,Pos Trait Wakeful
@@ -899,7 +995,7 @@ jz_SchematicLargeEngine,Engine Crafting Guild
 jz_SchematicLargeEngineDesc,"This book completely details how to assemble a vehicles engine from its parts. If you know this recipe you can scrap it for Skill Paper."
 jz_SchematicSteelShovel,Steel Shovel Crafting Guide
 jz_SchematicSteelShovelDesc,"This book completely details how to craft and assemble a Steel Shovel and its parts. If you know this recipe you can scrap it for Skill Paper."
-jz_SchematicSteelFireaxe,Steel Fireaxe Crafting Guide
+jz_SchematicSteelFireaxe,Steel Axe Crafting Guide
 jz_SchematicSteelFireaxeDesc,"This book completely details how to craft and assemble a Steel Fireaxe and its parts. If you know this recipe you can scrap it for Skill Paper."
 jz_SchematicSteelPickaxe,Steel Pickaxe Crafting Guide
 jz_SchematicSteelPickaxeDesc,"This book completely details how to craft and assemble a Steel Pickaxe and its parts. If you know this recipe you can scrap it for Skill Paper."
@@ -1018,7 +1114,7 @@ jz_IronPaperClips,Paper Clips
 jz_IronSoldier,Toy Soldier
 jz_IronScissors,Scissors
 jz_HoneyCombDesc,"A small piece of honeycomb dripping with honey."
-jz_HoneyComb,"Ounce of Honey"
+jz_HoneyComb,"Ounces of Honey"
 jz_PaperBookDesc,"An old ragged book with unreadable pages."
 jz_PaperBook,Old Book
 plankDesc,"A cut plank of wood."
@@ -1318,6 +1414,8 @@ jz_FarmingWateringCan,Watering Can
 jz_FarmingWateringCanDesc,"A Watering Can used in farming. Can use fertilizer on planted seeds to increase yield, ounces of dirty water to water cultivated plants and Insecticide to remove insect infestations."
 jz_Insecticide,Insecticide
 jz_InsecticideDesc,Farming Insecticide used on cultivated plants that are having insect infestations
+jz_QIMilitarySecuritySoldier,"Soldiers Belongings"
+jz_QIMilitarySecuritySoldierDesc,"The Security Soldiers belongings. Can be 'Read' to re try quest encounter"
 jz_QIMilitarySecurityCardA,Military Security Card
 jz_QIMilitarySecurityCardADesc,"A Military Access ID with the Clearance Level of Security 1\n\n\n[fff700]Quest item, do not lose![-]"
 jz_QIMilitarySecurityCard,Military Security Card
@@ -1350,10 +1448,8 @@ jz_SchematicMotorcycle,Motorcycle Crafting Guide
 jz_SchematicMiniBike,Mini Bike Crafting Guide
 jz_SchematicBicycle,Bicycle Crafting Guide
 jz_SchematicCookingPotMine,Cooking Pot Mine Crafting Guide
-jz_SchematicChilliSeed,Chilli Seed Crafting Guide
-jz_SchematicCucumberSeed,Cucumber Seed Crafting Guide
+
 jz_SchematicEggPlantSeed,Egg Plant Seed Crafting Guide
-jz_SchematicLeekSeed,Leek Seed Crafting Guide
 jz_SchematicCarrotSeed,Carrot Seed Crafting Guide
 jz_SchematicSteelSheetMetal,Steel Sheet Metal Crafting Guide
 jz_SchematicConcreteMix,Concrete Mix Crafting Guide
@@ -1570,16 +1666,16 @@ jzquest_StoryLinePt3Sub,"Find some Batteries"
 jzquest_StoryLinePt3Desc,"Well you found a Walkie but its dead. You will need to find some C Batteries to get the Walkie working if you ever want to find any of the survivors from your camp."
 jzquest_StoryLinePt4,"1 Storyline Quest Pt4: Reaching Out"
 jzquest_StoryLinePt4Sub,"Walkie Communication"
-jzquest_StoryLinePt4Desc,"You snap the batteries in and it crackles to life. As you flip through the channels you start to hear conversation broken up by static. You speak into the Walkie and a familiar female voice answers back. You can't believe it, it's the Doctor from your camp! You tell her you got away ok and ask how she is doing. She explains while running from the camp she ran into a Military Convoy that was headed to the CDC Headquarters and they offered her safety. As you listen you begin to notice the connection is getting weak and relies that the convoy must be moving out of range of the Walkie's. You tell the Doc you are losing her signal and a man gets on the line and tells you they passed by a Radio Tower in the Forest and it has a Satellite Transmitter at the top of the tower. If you use a Screwdriver or Wrench on it you can get the equipment to turn your Walkie into a Sat Phone and extend its range. He then tells you that 88.7 is the frequency you can reach them at at the CDC." 
+jzquest_StoryLinePt4Desc,"You snap the batteries in and it crackles to life. As you flip through the channels you start to hear conversation broken up by static. You speak into the Walkie and a familiar female voice answers back. You can't believe it, it's the Doctor from your camp! You tell her you got away ok and ask how she is doing. She explains while running from the camp she ran into a Military Convoy that was headed to the CDC Headquarters and they offered her safety. As you listen you begin to notice the connection is getting weak and relies that the convoy must be moving out of range of the Walkie's. You tell the Doc you are losing her signal and a man gets on the line and tells you they passed by a Radio Tower in the Forest and it has a Satellite Transmitter at the top of the tower. If you use a Screwdriver or Wrench on it you can get the equipment to turn your Walkie into a Satellite Radio and extend its range. He then tells you that 88.7 is the frequency you can reach them at at the CDC." 
 jzquest_StoryLinePt5,"1 Storyline Quest Pt5: Finding a Station"
 jzquest_StoryLinePt5Sub,"Crafting a Sat Phone"
-jzquest_StoryLinePt5Desc,"Now that you have the parts travel back to your base camp and craft and place the Sat Phone." 
+jzquest_StoryLinePt5Desc,"Now that you have the parts travel back to your base camp and craft and place the Satellite Radio." 
 jzquest_StoryLinePt6,"1 Storyline Quest Pt6: Going Home"
 jzquest_StoryLinePt6Sub,"Collecting Gear"
-jzquest_StoryLinePt6Desc,"You dial in the frequency the man gave you and try to reach the Doctor. She lets you know that they arrived safely at the CDC but as they were traveling they saw a large Horde thats about to pass the CDC and heading your way. She says that she saw something strange in the Horde but not sure what it was. The Doc says the CDC has sub levels and that everyone is going underground till the Horde passes. She's asked you to get some tissue samples from the strange creatures she saw moving with the Horde. To do so you will need the Tissue Extractor from her old Med Bay at your old camp at the High School. She tells you to contact her after you have the samples" 
+jzquest_StoryLinePt6Desc,"You dial in the frequency the man gave you and try to reach the Doctor. She lets you know that they arrived safely at the CDC but as they were traveling they saw a large Horde thats about to pass the CDC and heading your way. She says that she saw something strange in the Horde but not sure what it was. The Doc says the CDC has sub levels and that everyone is going underground till the Horde passes. She's asked you to get some tissue samples from the strange creatures she saw moving with the Horde. To do so you will need the Tissue Extractor from her old Med Bay at your old camp at the Favales Academy. She tells you to contact her after you have the samples"   
 jzquest_StoryLinePt7,"1 Storyline Quest Pt7: A Pound of Flesh"
 jzquest_StoryLinePt7Sub,"Collecting and Testing Samples"
-jzquest_StoryLinePt7Desc,"Now that you have the Extractor craft a Tissue Extractor Spear to use it on dead Mutated Creatures during the Bloodmoon to gather Mutated Tissue Samples for the Doctor" 
+jzquest_StoryLinePt7Desc,"Now that you have the Extractor craft a Tissue Extractor Spear to use it on Mutated Creatures during the Bloodmoon to gather Mutated Tissue Samples for the Doctor" 
 jzquest_StoryLinePt8,"1 Storyline Quest Pt8: Reporting In"
 jzquest_StoryLinePt8Sub,"Report the results"
 jzquest_StoryLinePt8Desc,"Report your success to the Doc" 
@@ -1591,7 +1687,7 @@ jzquest_StoryLinePt10Sub,"Report the results"
 jzquest_StoryLinePt10Desc,"Report your success to the Doc" 
 jzquest_StoryLinePt11,"1 Storyline Quest Pt11: A Strange Growth"
 jzquest_StoryLinePt11Sub,"Collect the samples"
-jzquest_StoryLinePt11Desc,"After you read her the results she sounds surprised of the findings and leaves for a few minutes to talk to the other scientist. When she returns she tells you the findings have created more questions than answers and more information is needed to explain them. The Doc tells you the Military informed her they saw some unusual plant growths near their original base and she ask you to travel the to burnt out section of the city and get some samples to test at the Hospital. Report back your findings" 
+jzquest_StoryLinePt11Desc,"After you read her the results she sounds surprised of the findings and leaves for a few minutes to talk to the other scientist. When she returns she tells you the findings have created more questions than answers and more information is needed to explain them. The Doc tells you the Military informed her they saw some unusual plant growths near their missile base and she ask you to travel the to burnt out section of the city and use the Tissue Extractor to get some samples to test at the Hospital. Report back your findings" 
 jzquest_StoryLinePt12,"1 Storyline Quest Pt12: Reporting In"
 jzquest_StoryLinePt12Sub,"Report the results"
 jzquest_StoryLinePt12Desc,"Report your success to the Doc" 
@@ -1601,15 +1697,48 @@ jzquest_StoryLinePt13Desc,"When you get in touch with the Doctor to tell her abo
 jzquest_StoryLinePt14,"1 Storyline Quest Pt14: Reporting In"
 jzquest_StoryLinePt14Sub,"Report back"
 jzquest_StoryLinePt14Desc,"Report your success to the Doc" 
-jzquest_StoryLinePt15,"1 Storyline Quest Pt15: Let it Snow"
+jzquest_StoryLinePt15,"1 Storyline Quest Pt15: Apartment Hunting"
 jzquest_StoryLinePt15Sub,"Find a Security Card" 
-jzquest_StoryLinePt15Desc,"When you call back to report your success a Soldier tells you that the Doctor is sick with the flu like the others and is resting. He tells you they might have an idea where this all started. He tells you that there is a secret underground Military base in the burnt section that they lost contact with a few days before the zombies started showing up. He lets you know you will need a Security Card to access any of the computers and tells you he has a friend that works there that left to go to a Hunting Lodge in the snow just before the base went dark. He should have a Card" 
+jzquest_StoryLinePt15Desc,"When you call back to report your success a Soldier tells you that the Doctor is sick with the flu like the others and is resting. He tells you they might have an idea where this all started. He explains that there is a secret underground Military testing facility under the Missile Base that they lost contact with a few days before the zombies started showing up. He lets you know you will need a Security Card to access any of the computers and that he knows a Soldier that lives on the top floor of the large apartment building in town that was stationed there. He should have a Security Card in his apartment." 
+jzquest_StoryLinePt15b,"Find a Security Card... Again"
+jzquest_StoryLinePt15bSub,"Find a Security Card... Again"
+jzquest_StoryLinePt15bDesc,"Used to repeat Story Line quest 15's encounter" 
 jzquest_StoryLinePt16,"1 Storyline Quest Pt16: Belly of the Beast"
 jzquest_StoryLinePt16Sub,"Learn the Truth" 
-jzquest_StoryLinePt16Desc,"Now that you have the Security Card find the Military base in the Burnt Biome and make your way to the bottom test lab and into the Security Room to use the Security Card and learn what happened there" 
+jzquest_StoryLinePt16Desc,"Now that you have the Security Card find the Military Missile Base and make your way to the bottom test lab and into the Security Room to use the Security Card and learn what happened there" 
 jzquest_StoryLinePt17,"1 Storyline Quest Pt17: The Beginning"
 jzquest_StoryLinePt17Sub,"Report what you have learned" 
-jzquest_StoryLinePt17Desc,"You click on the last recording. Nights Vail Testing flashes in the upper corner of the screen. You see a group of Scientists gathered around a couch sized machine conducting an experiment. As the machine starts, wind appears to move papers around the room and a small ball of electricity begins to form growing to about the size of a beach ball. The Scientists begin to get animated and you see them trying to yal to each other above the noise of the device. The machine begins to smoke and the electric ball appears to explode.The video goes black then comes back on with the camera on the ground facing the back exit.You see the scientist get to their feet looking in fear in the direction of the machine. As they try to open the exit a grotesque foot lands in front of the camera and then a mutated creature comes into view attacking and killing all the scientist in seconds before another foot steps in front of the camera then the video goes to static. " 
+jzquest_StoryLinePt17Desc,"You click on the last recording. Nights Vail Testing flashes in the upper corner of the screen. You see a group of Scientists gathered around a couch sized machine conducting an experiment. As the machine starts, wind appears to move papers around the room and a small ball of electricity begins to form growing to about the size of a beach ball. The Scientists begin to get animated and you see them trying to scream to each other above the noise of the device. The machine begins to smoke and the electric ball appears to explode.The video goes black then comes back on with the camera on the ground facing the back exit.You see the scientist get to their feet looking in fear in the direction of the machine. As they try to open the exit a grotesque foot lands in front of the camera and then a mutated creature comes into view attacking and killing all the scientist in seconds before another foot steps in front of the camera then the video goes to static. Return to your base and contact the CDC with this information. " 
+jzquest_StoryLinePt18,"1 Storyline Quest Pt18: When It Hits the Fan"
+jzquest_StoryLinePt18Sub,"Save the Soldier Save the World"
+jzquest_StoryLinePt18Desc,"You contact the CDC, a frantic soldier answers and tells you a few people died from being sick over night and turned into Z’s, they quickly infected others and then in the confusion the C.D.C entrance was left open and somehow a fire started on the first floor. The Soldier begs you to come save him, he is trapped underground in the lab with Z’s all around and the building is burning above him. He tells you he's located in the CDC and that he has the CDC Files with all the Scientists work on the incident and virus with him and the last thing the Doc told him was to give it to you. Travel to the C.D.C and fight your way to the bottom to save the Soldier and to retrieve the CDC Files""
+jzquest_StoryLinePt19,"1 Storyline Quest Pt19: The Final Piece"
+jzquest_StoryLinePt19Sub,"Down the Hole"
+jzquest_StoryLinePt19Desc,"The Soldier escaped but left a note for you that says he has the CDC Files and he is running to a bunker he knows of. He left you a map."
+jzquest_StoryLinePt20,"1 Storyline Quest Pt20: Learn the whole truth"
+jzquest_StoryLinePt20Sub,"Knowledge is power"
+jzquest_StoryLinePt20Desc,"Now that you have the CDC files read them to learn the truth. 
+jzquest_StoryLinePt21,"1 Storyline Quest Pt21: The Hubris of Man"
+jzquest_StoryLinePt21Sub,"The Whole Truth"
+jzquest_StoryLinePt21Desc,"The CDC Files detail the Military's attempt (code name Nights Veil) to use micro black holes as warheads for projectiles. It details the happenings of the security tape you saw in the military base. It explains a week before that incident the scientist successfully created the first stable singularity that lasted for .01 of a second before they shut it down. The tape you watched was their next attempt to maintain the blackhole for a longer. During that experiment it is believed a hole of some kind opened between earth and somewhere else. It looks like the scientist where trying to figure out if the hole was to another place, time or dimension but they could not agree and did not finish their work."
+jzquest_StoryLinePt22A,"1 Storyline Quest Pt22A: The End Game"
+jzquest_StoryLinePt22ASub,"The Brains"
+jzquest_StoryLinePt22ADesc,"It looks like the medical team had more success trying to cure the virus than the Military did stopping the mutants. They have identified 5 possible compounds that have shown promise in slowing, stopping and reversing the Z Virus. You must finish their work using the BioEngineered seeds in the Bio Kit. Plant each seed in its specific biome and use spores gathered from zombies during Bloodmoons in their biomes to craft specialized Fertilizer for each plant to grow. Harvest 50 of each crop and use them to craft the Z Anti Virus."
+jzquest_StoryLinePt22B,"1 Storyline Quest Pt22B: The End Game"
+jzquest_StoryLinePt22BSub,"The Brawn (Snow)"
+jzquest_StoryLinePt22BDesc,"Even if the Z Anti-Virus works it wont stop the Mutants that have come through the portal. Most of them can be dealt with but a few large mutants have been spotted. Craft the Military's Mutant Attractor and place it in each biome during the Bloodmoon and kill the Boss Mutants that it attracts"
+jzquest_StoryLinePt22C,"1 Storyline Quest Pt22C: The End Game"
+jzquest_StoryLinePt22CSub,"The Brawn (Desert)"
+jzquest_StoryLinePt22CDesc,"Even if the Z Anti-Virus works it wont stop the Mutants that have come through the portal. Most of them can be dealt with but a few large mutants have been spotted. Craft the Military's Mutant Attractor and place it in each biome during the Bloodmoon and kill the Boss Mutants that it attracts"
+jzquest_StoryLinePt22D,"1 Storyline Quest Pt22D: The End Game"
+jzquest_StoryLinePt22DSub,"The Brawn (Wasteland)"
+jzquest_StoryLinePt22DDesc,"Even if the Z Anti-Virus works it wont stop the Mutants that have come through the portal. Most of them can be dealt with but a few large mutants have been spotted. Craft the Military's Mutant Attractor and place it in each biome during the Bloodmoon and kill the Boss Mutants that it attracts"
+jzquest_StoryLinePt22E,"1 Storyline Quest Pt22E: The End Game"
+jzquest_StoryLinePt22ESub,"The Brawn (Burnt)"
+jzquest_StoryLinePt22EDesc,"Even if the Z Anti-Virus works it wont stop the Mutants that have come through the portal. Most of them can be dealt with but a few large mutants have been spotted. Craft the Military's Mutant Attractor and place it in each biome during the Bloodmoon and kill the Boss Mutants that it attracts"
+jzquest_StoryLinePt22F,"1 Storyline Quest Pt22F: The End Game"
+jzquest_StoryLinePt22FSub,"The Brawn (Forest)"
+jzquest_StoryLinePt22FDesc,"Even if the Z Anti-Virus works it wont stop the Mutants that have come through the portal. Most of them can be dealt with but a few large mutants have been spotted. Craft the Military's Mutant Attractor and place it in each biome during the Bloodmoon and kill the Boss Mutants that it attracts"
 jzquest_RefundQuestName,Starting Refund Quest
 jzquest_RefundDesc,"This quest is used to return Knowledge Points when choosing your players Traits in the beginning of the game. After choosing your players Traits and Profession it is safe to abandon this quest."
 jzquest_StoneaxeCrafting,"zTool-Stoneaxe Crafting"

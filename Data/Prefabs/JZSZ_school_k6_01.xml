@@ -4,7 +4,7 @@
   <property name="AllowTopSoilDecorations" value="False" />
   <property name="YOffset" value="-1" />
   <property name="RotationToFaceNorth" value="2" />
-  <property name="Zoning" value="downtown,residentialnew" />
+  <property name="Zoning" value="downtown, residentialnew" />
   <property name="AllowedTownships" value="city,town,rural" />
   <property name="TraderArea" value="False" />
   <property name="ExcludeDistantPOIMesh" value="False" />
@@ -22,16 +22,17 @@
   <property name="SleeperVolumeFlags" value="0,0,0,0" />
   <property name="ShowQuestClearCount" value="1" />
   <property name="SleeperIsQuestExclude" value="False,False,False,False" />
+  <property name="QuestTags" value="clear,fetch" />
   <property class="Stats">
-    <property name="TotalVertices" value="995055" />
-    <property name="TotalTriangles" value="1060549" />
+    <property name="TotalVertices" value="993928" />
+    <property name="TotalTriangles" value="1059019" />
     <property class="BlockEntities">
-      <property name="Vertices" value="798819" />
-      <property name="Triangles" value="928238" />
+      <property name="Vertices" value="797362" />
+      <property name="Triangles" value="926406" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="111034" />
-      <property name="Triangles" value="60551" />
+      <property name="Vertices" value="111364" />
+      <property name="Triangles" value="60853" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />

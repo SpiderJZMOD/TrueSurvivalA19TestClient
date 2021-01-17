@@ -80,10 +80,15 @@
 	</prefab_rule>
 	
 	<prefab_rule name="prefabList">
-        <prefab name="lodge_01" />
+        <prefab name="apartment_adobe_red_5_flr"/>
+        <prefab name="utility_celltower_02"/>
+		<prefab name="utility_celltower_01"/>
+        <prefab name="hospital_01" />
+        <prefab name="installation_red_mesa"/>
         <prefab name="JZSZ_school_k6_01"/>
-        <prefab name="bombshelter_01"/>
-		<prefab name="bombshelter_md_01"/>
+        <prefab name="bombshelter_md_01"/>
+        <prefab name="store_pharmacy_01" />
+		<prefab name="store_pharmacy_02" />
 		<prefab name="carlot_01"/>
 		<prefab name="carlot_02"/>
 		<prefab name="skate_park_01"/>
@@ -101,6 +106,8 @@
 		<prefab name="business_strip_old_02"/>
 		<prefab name="business_strip_old_03"/>
 		<prefab name="business_strip_old_04"/>
+        <prefab name="bombshelter_01"/>
+        <prefab name="lodge_01" />
 		<prefab name="courthouse_med_01"/>
 		<prefab name="post_office_sm_01"/>
 		<prefab name="post_office_med_01"/>
@@ -147,8 +154,7 @@
 		<prefab name="ranger_station_04" />
 		<prefab name="ranger_station_05" />
 		<prefab name="ranger_station_06" />
-		<prefab name="ranger_station_07" />
-		
+		<prefab name="ranger_station_07" />	
 		<prefab name="survivor_site_01" />
 		<prefab name="survivor_site_02" />
 		<prefab name="survivor_site_03" />
@@ -193,13 +199,11 @@
 		<prefab name="park_02"/>
 		<prefab name="church_sm_01"/>
 		<prefab name="church_01"/>
-		<prefab name="funeral_home_01"/>
-		<prefab name="hospital_01" />
+		<prefab name="funeral_home_01"/>		
 		<prefab name="school_01"/>
 		<!--<prefab name="school_k6_01"/>-->
 		<prefab name="school_daycare_01"/>
-		<prefab name="football_stadium" />
-		<prefab name="apartment_adobe_red_5_flr"/>
+		<prefab name="football_stadium" />	
 		<prefab name="apartment_brick_6_flr" />
 		<prefab name="house_old_bungalow_01"/>
 		<prefab name="house_old_bungalow_02"/>
@@ -393,13 +397,12 @@
 		<prefab name="store_laundry_01"/>
 		<prefab name="store_salon"/>
 		<prefab name="store_autoparts_01"/>
-      	<prefab name="store_pharmacy_01" />
-		<prefab name="store_pharmacy_02" />
+      	
 		<prefab name="skyscraper_01"/>
 		<prefab name="skyscraper_02"/>
 		<prefab name="skyscraper_03"/>
 		<prefab name="skyscraper_04" />
-		<prefab name="installation_red_mesa"/>
+		
 		<prefab name="sawmill_01"/>
 		<prefab name="utility_waterworks_01"/>
 		<prefab name="utility_electric_co_01"/>
@@ -422,8 +425,7 @@
 		<prefab name="vacant_lot_03"/>
 		<prefab name="vacant_lot_04"/>
 		<prefab name="vacant_lot_05"/>
-		<prefab name="utility_celltower_02"/>
-		<prefab name="utility_celltower_01"/>
+		
 		<prefab name="army_barracks_01"/>
 		<prefab name="junkyard_lg_01"/>
 		<prefab name="junkyard_med_01"/>

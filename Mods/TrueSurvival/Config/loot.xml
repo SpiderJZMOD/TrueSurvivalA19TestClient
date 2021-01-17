@@ -3964,7 +3964,6 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <lootgroup name="groupQuestSchematics">
 	<item name="drugHerbalAntibioticsSchematic"/>
-	<item name="foodCanShamSchematic"/>
 	<item group="PerkBooks" prob="20"/> <!--133-->
 	<item group="skillBookChance" prob="20"/>
 	<item group="T3BookList" prob="10"/>

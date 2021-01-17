@@ -1244,9 +1244,9 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeWpnBladeT0BoneKnife"> 
-        
+      
  <!--JZMOD TESTING       
-         <triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="jz_BuffGrab"/>
+         
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffInfectionCatch"/> 
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>    
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="95"/> 
@@ -8120,6 +8120,7 @@ needed?
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="5"/><display_value name="dExDamageBlock" value="5"/>
 		<!-- adding 10% damage because it's impossible to place explosives inside an entity where it would do the exact damage -->
 		<passive_effect name="EntityDamage" operation="base_set" value="253"/><display_value name="dExDamageEntity" value="230"/>
@@ -8128,32 +8129,36 @@ needed?
 	</effect_group>
 
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="10"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="25"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="25"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="50"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="50"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="75"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="75"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="Equals" value="100"/>
+       		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
@@ -8183,7 +8188,7 @@ needed?
 	<property name="Explosion.DamageBonus.earth" value="0"/> <!-- should work? -->
 	<property name="Explosion.DamageBonus.water" value="0"/>
 	<property name="Explosion.BlastPower" value="75"/> <!-- (int,100) how far ragdolls and such are flung -->
-	<property name="FuseTime" value="6"/>
+	<property name="FuseTime" value="4"/>
 	<property name="FusePrimeOnActivate" value="true"/>
 	<property name="ExplodeOnHit" value="true"/>
 	<property name="StickPercent" value=".5"/>
@@ -8208,6 +8213,7 @@ needed?
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="10"/><display_value name="dExDamageBlock" value="10"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="341"/><display_value name="dExDamageEntity" value="310"/>
 		<display_value name="dExRadius" value="5"/>
@@ -8260,32 +8266,36 @@ add knockdown resist to armor
 -->
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="10"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="25"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="25"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="50"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="50"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="75"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="75"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="Equals" value="100"/>
+       		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
@@ -8301,41 +8311,46 @@ add knockdown resist to armor
 	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Grenade/GrenadePrefab.prefab"/>
 	<property name="UnlockedBy" value="thrownGrenadeSchematic"/>
 	<property name="DisplayType" value="ammoGrenade"/>
-	<property name="FuseTime" value="3"/>
+	<property name="FuseTime" value="4"/>
 	<property name="StickPercent" value=".3"/>
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="10"/><display_value name="dExDamageBlock" value="10"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="341"/><display_value name="dExDamageEntity" value="310"/>
 		<display_value name="dExRadius" value="5"/>
 		<display_value name="dFuseTime" value="3"/>
 	</effect_group>
-	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
+    <effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="10"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="25"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="25"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="50"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="50"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="75"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="75"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="Equals" value="100"/>
+       		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
@@ -8388,38 +8403,43 @@ add knockdown resist to armor
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="110"/><display_value name="dExDamageBlock" value="3000"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="800"/><display_value name="dExDamageEntity" value="600"/>
 		<display_value name="dExRadius" value="1"/>
 		<display_value name="dFuseTime" value="4"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="10"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="25"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="25"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="50"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="50"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="75"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="75"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="Equals" value="100"/>
+       		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
@@ -8467,38 +8487,43 @@ add knockdown resist to armor
 	</property>
 	<property name="ThrowableDecoy" value="true"/>
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<passive_effect name="BlockDamage" operation="base_set" value="3000"/><display_value name="dExDamageBlock" value="3000"/>
 		<passive_effect name="EntityDamage" operation="base_set" value="550"/><display_value name="dExDamageEntity" value="500"/>
 		<display_value name="dExRadius" value="6"/>
 		<display_value name="dFuseTime" value="4"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="1"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="10"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="25"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".1"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".1"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".05"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="2"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="25"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="50"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".2"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".2"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".1"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="3"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="50"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="75"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".3"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".3"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".2"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="4"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="GTE" value="75"/>
+        <requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".4"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".3"/>
 	</effect_group>
 	<effect_group tiered="false" name="workaround for explosives ignoring perks/buffs">
-		<requirement name="ProgressionLevel" progression_name="perkDemolitionsExpert" operation="Equals" value="5"/>
-			<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+		<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="Equals" value="100"/>
+       		<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
 			<passive_effect name="BlockDamage"  operation="perc_add" value=".5"/>
 			<passive_effect name="DismemberChance" operation="base_add" value=".45"/>
 	</effect_group>
@@ -8559,6 +8584,7 @@ add knockdown resist to armor
 	</property> -->
 
 	<effect_group tiered="false">
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffExplosiveThrown"/>
 		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="16">
 			<requirement name="ProgressionLevel" progression_name="perkFiremansAlmanacMolotov" operation="Equals" value="0"/></triggered_effect>
 		<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" target="positionAOE" range="2.7" cvar="buffBurningMolotovDuration" operation="set" value="17">
@@ -11999,6 +12025,7 @@ perkNightStalkerSilentNight
 	<property name="Stacknumber" value="10"/> <!-- STK loot -->
 	<property name="UnlockedBy" value="drugHerbalAntibioticsSchematic"/>
 	<property name="DisplayType" value="cureInfection"/>
+    <property name="DescriptionKey" value="jz_drugHerbalAntibioticsDesc"/>
 	<property name="TintColor" value="120,255,120"/>
 	<property name="Group" value="Science,CFChemicals,Medical"/>
 
@@ -22158,6 +22185,14 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="resourcePaper" />
 </item>
 
+<item name="jz_NegativeTraitMasochist">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Material" value="Mpaper" />
+	<property name="DescriptionKey" value="jz_TraitRefundDesc"/>
+	<property name="Weight" value="2" />
+	<property name="CustomIcon" value="resourcePaper" />
+</item>
+
 <item name="jz_TraitRefundAgoraphobic">
 	<property name="Extends" value="jz_MasterItem"/>
 	<property name="Material" value="Mpaper" />
@@ -22712,6 +22747,17 @@ perkNightStalkerSilentNight
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_TraitWeak" level="-1"/>
+	</effect_group>
+</item>
+
+<item name="jz_NegativeTraitMasochist">
+	<property name="Extends" value="jz_NegativeTraitSlowDriver"/>
+	<property name="DescriptionKey" value="jz_NegativeTraittMasochistDesc"/>
+	<property class="Action0">
+		<property name="Create_item" value="jz_TraitRefundMasochist"/>
+	</property>
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_TraitMasochist" level="-1"/>
 	</effect_group>
 </item>
 <!--JZMOD POSITIVE TRAITS-->
@@ -24643,7 +24689,7 @@ perkNightStalkerSilentNight
 </item>
 
 <item name="jz_Crowbar">
-	<property name="Tags" value="melee,grunting,medium,tool,shovel"/>
+	<property name="Tags" value="melee,grunting,medium,tool,shovel,NonXPTool"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="18"/>
 	<property name="Meshfile" value="#@modfolder:Resources/JZCrowbar.unity3d?CrowbarPrefab" />
@@ -25556,39 +25602,6 @@ perkNightStalkerSilentNight
 	</effect_group>
 </item>
 
-<item name="jz_FoodLeek">
-	<property name="Extends" value="jz_MasterFood" />
-    <property name="CustomIcon" value="ui_game_symbol_leek" />
-	<property name="Material" value="Mveggie" />
-	<property name="Weight" value="1" />
-	<property name="DescriptionKey" value="leekDesc" />
-	<property name="DisplayType" value="TSFoWaStHeVeDy"/>
-	<property name="Spoilable" value="true" />
-    <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="jz_MoldyVeggies" />
-    <property name="TickPerLoss" value="150" />
-    <property name="SpoilageMax" value="1000" />
-    <property name="SpoilagePerTick" value="1" />
-    <property name="QualityTierColor" value="2" />
-	<property class="Action0">
-		<requirement name="!IsStatAtMax" stat="Food"/> 
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="6"/><display_value name="TSStaminaLoss" value="-6"/> 
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
-        
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</effect_group>
-</item>
-
 <item name="jz_FoodEggPlant">
 	<property name="Extends" value="jz_MasterFood" />
 	<property name="Material" value="Mveggie" />
@@ -25614,72 +25627,6 @@ perkNightStalkerSilentNight
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="4"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="16"/><display_value name="TSStaminaLoss" value="-16"/> 
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="2">
-			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
-        
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</effect_group>
-</item>
-
-<item name="jz_FoodCucumber">
-	<property name="Extends" value="jz_MasterFood" />
-    <property name="CustomIcon" value="ui_game_symbol_Cucumber" />
-	<property name="Material" value="Mveggie" />
-	<property name="Weight" value="1" />
-	<property name="DescriptionKey" value="cucumberDesc" />
-	<property name="DisplayType" value="TSFoWaStHeVeDy"/>
-	<property name="Spoilable" value="true" />
-    <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="jz_MoldyVeggies" />
-    <property name="TickPerLoss" value="150" />
-    <property name="SpoilageMax" value="1000" />
-    <property name="SpoilagePerTick" value="1" />
-    <property name="QualityTierColor" value="2" />
-	<property class="Action0">
-		<requirement name="!IsStatAtMax" stat="Food"/> 
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="6"/><display_value name="TSStaminaLoss" value="-6"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1">
-			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
-        
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20"/><display_value name="dDysenteryRisk" value=".20"/> 
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
-			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll"/>
-		</triggered_effect>
-	</effect_group>
-</item>
-
-<item name="jz_FoodChilli">
-	<property name="Extends" value="jz_MasterFood" />
-    <property name="CustomIcon" value="ui_game_symbol_Chilli" />
-	<property name="Material" value="Mveggie" />
-	<property name="Weight" value="1" />
-	<property name="DescriptionKey" value="chilliDesc" />
-	<property name="DisplayType" value="TSFoWaStHeVeDy"/>
-	<property name="Spoilable" value="true" />
-    <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="jz_MoldyVeggies" />
-    <property name="TickPerLoss" value="150" />
-    <property name="SpoilageMax" value="1000" />
-    <property name="SpoilagePerTick" value="1" />
-    <property name="QualityTierColor" value="2" />
-	<property class="Action0">
-		<requirement name="!IsStatAtMax" stat="Food"/> 
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="3"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="6"/><display_value name="TSStaminaLoss" value="-6"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="1">
 			<requirement name="HasBuff" buff="jz_BuffGoodDietTag"/></triggered_effect>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="add" value=".2"/><display_value name="TSVeggie" value=".2"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
@@ -26770,7 +26717,7 @@ perkNightStalkerSilentNight
 	<property name="DescriptionKey" value="canUnlabeledDesc" />
 	<property name="CustomIcon" value="ui_game_symbol_canUnlabeled" />
 	<property name="Tags" value="food"/>
-	<effect_group tiered="false">\
+	<effect_group tiered="false">
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="20"/>
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5">
             <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="80"/></triggered_effect>
@@ -29825,34 +29772,6 @@ perkNightStalkerSilentNight
 </item>
 
 <!-- JZMOD SCHEMATICS -->
-<item name="jz_SchematicChilliSeed">
-	<property name="Extends" value="schematicMaster"/>
-	<property name="CreativeMode" value="Player"/>
-	<property name="CustomIcon" value="jz_SteelSheetMetal"/>
-	<property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
-	<property class="Action0">
-		<requirement name="ProgressionLevel" progression_name="SP_ChilliSeedSchematic" operation="LT" value="1"/>
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_ChilliSeedSchematic" level="-1"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
-	</effect_group>
-</item>
-
-<item name="jz_SchematicCucumberSeed">
-	<property name="Extends" value="schematicMaster"/>
-	<property name="CreativeMode" value="Player"/>
-	<property name="CustomIcon" value="jz_SteelSheetMetal"/>
-	<property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
-	<property class="Action0">
-		<requirement name="ProgressionLevel" progression_name="SP_CucumberSeedSchematic" operation="LT" value="1"/>
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_CucumberSeedSchematic" level="-1"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
-	</effect_group>
-</item>
-
 <item name="jz_SchematicEggPlantSeed">
 	<property name="Extends" value="schematicMaster"/>
 	<property name="CreativeMode" value="Player"/>
@@ -29864,21 +29783,6 @@ perkNightStalkerSilentNight
 	</property>
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_EggPlantSeedSchematic" level="-1"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
-	</effect_group>
-</item>
-
-<item name="jz_SchematicLeekSeed">
-	<property name="Extends" value="schematicMaster"/>
-	<property name="CreativeMode" value="Player"/>
-	<property name="CustomIcon" value="jz_SteelSheetMetal"/>
-
-	<property name="DescriptionKey" value="jz_ItemSchematicDesc"/>
-	<property class="Action0">
-		<requirement name="ProgressionLevel" progression_name="SP_LeekSeedSchematic" operation="LT" value="1"/>
-	</property>
-	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="SP_LeekSeedSchematic" level="-1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
 	</effect_group>
 </item>
@@ -32037,160 +31941,6 @@ perkNightStalkerSilentNight
 	</effect_group>
 </item>
 
-<item name="jz_QIDeadWalkieTalkie">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="Walkie"/>
-	<property name="DescriptionKey" value="jz_QIDeadWalkieTalkieDesc"/>
-</item>
-
-<item name="jz_QIGoodWalkieTalkie">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="Walkie"/>
-	<property name="DescriptionKey" value="jz_QIGoodWalkieTalkieDesc"/>
-	<property name="Spoilable" value="true" />
-    <property name="ShowQuality" value="false"/>
-    <property name="SpoiledItem" value="jz_QIDeadWalkieTalkie" />
-    <property name="TickPerLoss" value="150" />
-    <property name="SpoilageMax" value="1000" />
-    <property name="SpoilagePerTick" value="1" />
-    <property name="QualityTierColor" value="4" />
-</item>
-
-<item name="jz_CBatterie">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="24" />
-	<property name="CustomIcon" value="CBattery"/>
-	<property name="DescriptionKey" value="jz_CBatterieDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QISateliteRadio">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="jz_SateliteRadio"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-</item>
-
-<item name="jz_QI887Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioStationDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QI934Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QI1065Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QI865Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QI9885Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QI1079Frequency">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="resourcePaper"/>
-	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
-    <property name="Material" value="Mlead_scrap"/>
-    <property name="Weight" value="1" />
-</item>
-
-<item name="jz_QITissueExtractor">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="BiopsyGun"/>
-	<property name="DescriptionKey" value="jz_QITissueExtractorDesc"/>
-</item>
-
-<item name="jz_QIMutatedTissueSample">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="10" />
-	<property name="CustomIcon" value="TissueSample"/>
-	<property name="DescriptionKey" value="jz_QIMutatedTissueSampleDesc"/>
-</item>
-
-<item name="jz_QIMutatedTissueReport">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="Report"/>
-	<property name="DescriptionKey" value="jz_QIMutatedTissueReportDesc"/>
-</item>
-
-<item name="jz_QIMutatedFungusSample">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="10" />
-	<property name="CustomIcon" value="FungusSample"/>
-	<property name="DescriptionKey" value="jz_QIMutatedFungusSampleDesc"/>
-</item>
-
-<item name="jz_QIMutatedFungusReport">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="Report"/>
-	<property name="DescriptionKey" value="jz_QIMutatedFungusReportDesc"/>
-</item>
-
-<item name="jz_QIMutatedTissueSample2">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="TissueSample"/>
-	<property name="DescriptionKey" value="jz_QIMutatedTissueSample2Desc"/>
-</item>
-
-<item name="jz_QIMilitarySecurityCard">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="SecurityCard"/>
-	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardDesc"/>
-</item>
-
-<item name="jz_QIMilitarySecuritySoldier">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="SecurityCard"/>
-	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardDesc"/>
-</item>
-
-<item name="jz_QIMilitarySecurityCardA">
-	<property name="Extends" value="jz_MasterItem"/>
-	<property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="SecurityCard"/>
-	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardADesc"/>
-</item>
-
 <item name="jz_EmptyGun">
 	<property name="Extends" value="jz_MasterItem"/>
 	<property name="Stacknumber" value="1" />
@@ -32226,7 +31976,7 @@ perkNightStalkerSilentNight
 		<property name="Upgrade_hit_offset" value="0"/>
         <property name="Upgrade_action_sound" value="bucketplace_water"/>
 		<property name="Sound_start" value="bucketplace_water"/>
-        <property name="Allowed_upgrade_items" value="jz_DrinkDirtyOuncesOfWater,jz_Insecticide,resourceFertilizer"/>
+        <property name="Allowed_upgrade_items" value="jz_DrinkDirtyOuncesOfWater,jz_Insecticide,resourceFertilizer,jz_QIFertilizerSnow,jz_QIFertilizerBurnt,jz_QIFertilizerWasteland,jz_QIFertilizerDesert,jz_QIFertilizerForest"/>
 		<property name="UsePowerAttackAnimation" value="false"/>
 	</property>
 	<property class="Action1"> 
@@ -32497,16 +32247,6 @@ perkNightStalkerSilentNight
 	</property>
 </item>
 
-<item name="jz_QIBugOutBag">
-	<property name="Extends" value="jz_ProfessionSoldier"/>
-	<property name="CustomIcon" value="cntDuffle01"/>
-    <property name="DescriptionKey" value="jz_QIBugOutBagDesc"/>
-	<property class="Action0">
-		<property name="Create_item" value="medicalBandage,candle,drugPainkillers,jz_FoodMRESmall,jz_DrinkCleanOuncesOfWater,jz_QIDeadWalkieTalkie,jz_OldKnife"/>
-		<property name="Create_item_count" value="1,1,1,1,32,1"/>
-	</property>
-</item>
-
 <item name="jz_SpoiledDrink">
 	<property name="Extends" value="jz_ProfessionSoldier"/>
 	<property name="CustomIcon" value="drinkJarBoiledWater"/>
@@ -32527,87 +32267,42 @@ perkNightStalkerSilentNight
 	</property>
 </item>
 
-<item name="jz_SchematicTESTTEST">
-	<property name="Extends" value="schematicMaster"/>
-	<property name="Weight" value="3"/>
-	<property name="CreativeMode" value="Player"/>
-	<property name="CustomIcon" value="meleeToolAxeT1IronFireaxe"/>
-	
-	<property name="DescriptionKey" value="jz_SchematicIronFireaxeDesc"/>
+<item name="jz_DeadIsDeadResetItem"> 
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="HoldType" value="23"/>
+	<property name="Meshfile" value="#Other/Items?Misc/brokenGlassPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="MresourceBrokenGlass"/>
+	<property name="Stacknumber" value="1"/> 
+	<property name="SellableToTrader" value="false"/>
+    <property name="DescriptionKey" value="jz_DeadIsDeadResetItemDesc"/>
+    <property name="CustomIcon" value="DeadIsDead"/>
 	<property class="Action0">
-	<requirement name="ProgressionLevel" progression_name="jz_TraderLevelSort" operation="LT" value="100"/>
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Use_time" value="..."/>
+		<property name="Gain_health" value="-50"/>
+		<property name="Sound_start" value="player_eating"/>
+        <requirement name="NotHasBuff" buff="jz_BuffDeadIsDeadResetNoCheating"/>
 	</property>
+	<property name="Group" value="Resources"/>
+
 	<effect_group tiered="false">
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifySkillSDX, Mods" tag="jz_TraderLevelSort" operation="add" value="1"/>
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="jz_BuffDeadIsDeadResetTag"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-50"/><display_value name="foodHealthAmount" value="-200"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInternalBleeding"/>
 	</effect_group>
 </item>
-
-		<item name="meleeHandZombie001">
-			<property name="Extends" value="meleeHandZombie01"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>	
-		
-		<item name="meleeHandZombie002"> 
-			<property name="Extends" value="meleeHandZombie02"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>
-		<item name="meleeHandZombieFeral2">
-			<property name="Extends" value="meleeHandZombieFeral"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>	
-		
-		<item name="meleeHandZombie02Feral2"> 
-			<property name="Extends" value="meleeHandZombie02Feral"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>		
-		<item name="meleeHandZombieBurning2">
-			<property name="Extends" value="meleeHandZombieBurning"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>	
-		
-		<item name="meleeHandZombieBurningFeral2"> 
-			<property name="Extends" value="meleeHandZombieBurningFeral"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>		
-		<item name="meleeHandZombieBurningCrawler2">
-			<property name="Extends" value="meleeHandZombieBurningCrawler"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>	
-		
-		<item name="meleeHandZombieCop2"> 
-			<property name="Extends" value="meleeHandZombieCop"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-		</item>		
-		
-		<item name="meleeHandZombieBehemoth">
-			<property name="Extends" value="meleeHandMaster"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="12"/>
-			<property class="Action0">
-				<property name="DamageEntity" value="500"/>
-				<property name="DamageBlock" value="2000"/>
-				<property name="Range" value="4"/>
-				<property name="Sphere" value="3"/>
-				<property name="Block_range" value="5"/>
-			</property>
-			<effect_group name="meleeHandZombie002" tiered="false">
-				<passive_effect name="ModSlots" operation="base_set" value="0"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-					buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-					weights=".07,.07,.05,.29,.36,.11,.1"/>
-				
-				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
-			</effect_group>
-		</item>
+<!-- JZMOD CAMPAING ITEMS-->
+<item name="jz_QIBugOutBag">
+	<property name="Extends" value="jz_ProfessionSoldier"/>
+	<property name="CustomIcon" value="cntDuffle01"/>
+    <property name="DescriptionKey" value="jz_QIBugOutBagDesc"/>
+	<property class="Action0">
+		<property name="Create_item" value="medicalBandage,candle,drugPainkillers,jz_FoodMRESmall,jz_DrinkCleanOuncesOfWater,jz_QIDeadWalkieTalkie,jz_OldKnife"/>
+		<property name="Create_item_count" value="1,1,1,1,32,1"/>
+	</property>
+</item>
 
 <item name="jz_TissueExtractorSpear">
 	<property name="Tags" value="melee,grunting,medium,weapon,meleeWeapon,longShaft"/>
@@ -32646,8 +32341,7 @@ perkNightStalkerSilentNight
         <requirement name="NotHasBuff" buff="buffArmSprained"/>
         <requirement name="NotHasBuff" buff="buffArmBroken"/>
 		<requirement name="NotHasBuff" buff="buffArmSplinted"/>
-		<requirement name="NotHasBuff" buff="buffArmCast"/>   
-       
+		<requirement name="NotHasBuff" buff="buffArmCast"/>        
 	</property>
     <property class="Action1">
 		<property name="Class" value="DynamicMelee"/>
@@ -32687,42 +32381,378 @@ perkNightStalkerSilentNight
 	</effect_group>
     <effect_group name="QuestTissueExtration">
         <requirement name="IsNight"/>  
-        <!-- <requirement name="IsBloodMoon" operation="GTE" value="1"/> 
-        <requirement name="EntityTagCompare" target="other" tags="parasite"/> -->
+        <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
         <requirement name="IsAlive" target="other"/>        
         <requirement name="CVarCompare" target="self" cvar="$jz_TissueExtractingCount" operation="LT" value="11"/>        
             <triggered_effect trigger="onSelfDamagedOther" action="CreateItemSDX, Mods" item="jz_QIMutatedTissueSample" count="1"/>               
             <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="jz_BuffUsedTissueExtractor"/>                
             <triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$jz_TissueExtractingCount" operation="add" value="1"/>	 
 	</effect_group>
-</item>
-
-<item name="jz_DeadIsDeadResetItem"> 
-	<property name="DisplayType" value="foodRaw"/>
-	<property name="HoldType" value="23"/>
-	<property name="Meshfile" value="#Other/Items?Misc/brokenGlassPrefab.prefab"/>
-	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-	<property name="Material" value="MresourceBrokenGlass"/>
-	<property name="Stacknumber" value="1"/> 
-	<property name="SellableToTrader" value="false"/>
-    <property name="DescriptionKey" value="jz_DeadIsDeadResetItemDesc"/>
-    <property name="CustomIcon" value="DeadIsDead"/>
-	<property class="Action0">
-		<property name="Class" value="Eat"/>
-		<property name="Delay" value="1.0"/>
-		<property name="Use_time" value="..."/>
-		<property name="Gain_health" value="-50"/>
-		<property name="Sound_start" value="player_eating"/>
-        <requirement name="NotHasBuff" buff="jz_BuffDeadIsDeadResetNoCheating"/>
-	</property>
-	<property name="Group" value="Resources"/>
-
-	<effect_group tiered="false">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="jz_BuffDeadIsDeadResetTag"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-50"/><display_value name="foodHealthAmount" value="-200"/>
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInternalBleeding"/>
+    <effect_group name="QuestTissueExtrationPt2">
+        <requirement name="HasBuff" target="self" buff="jz_BuffSLPt13Activate"/>
+        <requirement name="IsNight"/>  
+        <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+        <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+        <requirement name="IsAlive" target="other"/>        
+        <requirement name="CVarCompare" target="self" cvar="$jz_TissueExtractingPt2Count" operation="LT" value="11"/>        
+            <triggered_effect trigger="onSelfDamagedOther" action="CreateItemSDX, Mods" item="jz_QIMutatedTissueSample2" count="1"/>               
+            <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="jz_BuffUsedTissueExtractor"/>                
+            <triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" cvar="$jz_TissueExtractingPt2Count" operation="add" value="1"/>	 
 	</effect_group>
 </item>
 
+<item name="jz_QIDeadWalkieTalkie">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="Walkie"/>
+	<property name="DescriptionKey" value="jz_QIDeadWalkieTalkieDesc"/>
+</item>
+
+<item name="jz_QIGoodWalkieTalkie">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="Walkie"/>
+	<property name="DescriptionKey" value="jz_QIGoodWalkieTalkieDesc"/>
+	<property name="Spoilable" value="true" />
+    <property name="ShowQuality" value="false"/>
+    <property name="SpoiledItem" value="jz_QIDeadWalkieTalkie" />
+    <property name="TickPerLoss" value="150" />
+    <property name="SpoilageMax" value="1000" />
+    <property name="SpoilagePerTick" value="1" />
+    <property name="QualityTierColor" value="4" />
+</item>
+
+<item name="jz_CBatterie">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="24" />
+	<property name="CustomIcon" value="CBattery"/>
+	<property name="DescriptionKey" value="jz_CBatterieDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QISateliteRadio">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="jz_SateliteRadio"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+</item>
+
+<item name="jz_QI887Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioStationDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QI934Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QI1065Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QI865Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QI9885Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QI1079Frequency">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="resourcePaper"/>
+	<property name="DescriptionKey" value="jz_QISateliteRadioDesc"/>
+    <property name="Material" value="Mlead_scrap"/>
+    <property name="Weight" value="1" />
+</item>
+
+<item name="jz_QITissueExtractor">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="BiopsyGun"/>
+	<property name="DescriptionKey" value="jz_QITissueExtractorDesc"/>
+</item>
+
+<item name="jz_QIMutatedTissueSample">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="10" />
+	<property name="CustomIcon" value="TissueSample"/>
+	<property name="DescriptionKey" value="jz_QIMutatedTissueSampleDesc"/>
+</item>
+
+<item name="jz_QIMutatedTissueReport">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="Report"/>
+	<property name="DescriptionKey" value="jz_QIMutatedTissueReportDesc"/>
+</item>
+
+<item name="jz_QIMutatedFungusSample">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="10" />
+	<property name="CustomIcon" value="FungusSample"/>
+	<property name="DescriptionKey" value="jz_QIMutatedFungusSampleDesc"/>
+</item>
+
+<item name="jz_QIMutatedFungusReport">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="Report"/>
+	<property name="DescriptionKey" value="jz_QIMutatedFungusReportDesc"/>
+</item>
+
+<item name="jz_QIMutatedTissueSample2">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="10" />
+	<property name="CustomIcon" value="TissueSample"/>
+	<property name="DescriptionKey" value="jz_QIMutatedTissueSample2Desc"/>
+</item>
+
+<item name="jz_QIMilitarySecurityCard">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="SecurityCard"/>
+	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardDesc"/>
+</item>
+
+<item name="jz_QIMilitarySecuritySoldier">
+	<property name="Extends" value="challengeQuestMaster"/>
+    <property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="cntDuffle01"/>
+	<property name="DescriptionKey" value="jz_QIMilitarySecuritySoldierDesc"/>
+	<property class="Action0">
+		<property name="QuestGiven" value="jzquest_StoryLinePt15b"/>
+	</property>
+</item>
+
+<item name="jz_QIQuestPOISpawnCheck">
+	<property name="Extends" value="challengeQuestMaster"/>
+    <property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="cntDuffle01"/>
+	<property name="DescriptionKey" value="test"/>
+	<property class="Action0">
+		<property name="QuestGiven" value="jzquest_StoryLinePOICheck"/>
+	</property>
+</item>
+
+<item name="jz_QIMilitarySecurityCardA">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="SecurityCard"/>
+	<property name="DescriptionKey" value="jz_QIMilitarySecurityCardADesc"/>
+</item>
+
+<item name="jz_QISoldierBody">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="Stacknumber" value="1" />
+	<property name="CustomIcon" value="goreBlockHumanCorpse3"/>
+	<property name="DescriptionKey" value="jz_QISoldierBodyDesc"/>
+</item>
+
+<item name="jz_QISeedLeek">
+	<property name="Extends" value="jz_MasterItem" />
+	<property name="CustomIcon" value="carrotSeed" />
+	<property name="DescriptionKey" value="jz_QISeedLeekDesc" />
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Blockname" value="jz_PlantedLeek1"/>
+        <requirement name="InBiome" biome="9"/>
+	</property>
+</item>
+
+<item name="jz_QISeedChillis">
+	<property name="Extends" value="jz_MasterItem" />
+	<property name="CustomIcon" value="carrotSeed" />
+	<property name="DescriptionKey" value="jz_QISeedChillisDesc" />
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Blockname" value="jz_PlantedChillis1"/>
+        <requirement name="InBiome" biome="5"/>
+	</property>
+</item>
+
+<item name="jz_QISeedCucumber">
+	<property name="Extends" value="jz_MasterItem" />
+	<property name="CustomIcon" value="carrotSeed" />
+	<property name="DescriptionKey" value="jz_QISeedCucumberDesc" />
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Blockname" value="jz_PlantedCucumber1"/>
+        <requirement name="InBiome" biome="8"/>
+	</property>
+</item>
+
+<item name="jz_QISeedSnowberry">
+	<property name="Extends" value="jz_MasterItem" />
+	<property name="CustomIcon" value="carrotSeed" />
+	<property name="DescriptionKey" value="jz_QISeedSnowberryDesc" />
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Blockname" value="jz_PlantedSnowberry1QI"/>
+        <requirement name="InBiome" biome="1"/>
+	</property>
+</item>
+
+<item name="jz_QISeedCarrot">
+	<property name="Extends" value="jz_MasterItem" />
+	<property name="CustomIcon" value="carrotSeed"/>
+	<property name="DescriptionKey" value="jz_QISeedCarrotDesc" />
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Blockname" value="jz_PlantedCarrot1QI"/>
+        <requirement name="InBiome" biome="3"/>
+	</property>
+</item>
+
+<item name="jz_QIBMSporesForest">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ZSample"/>
+	<property name="DescriptionKey" value="jz_QIBMSporesForestDesc"/>
+</item>
+
+<item name="jz_QIFertilizerForest">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="resourceFertilizer"/>
+	<property name="DescriptionKey" value="jz_QIFertilizerForestDesc"/>
+</item>
+
+<item name="jz_QIBMSporesDesert">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ZSample"/>
+	<property name="DescriptionKey" value="jz_QIBMSporesDesertDesc"/>
+</item>
+
+<item name="jz_QIFertilizerDesert">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="resourceFertilizer"/>
+	<property name="DescriptionKey" value="jz_QIFertilizerDesertDesc"/>
+</item>
+
+<item name="jz_QIBMSporesWasteland">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ZSample"/>
+	<property name="DescriptionKey" value="jz_QIBMSporesWastelandDesc"/>
+</item>
+
+<item name="jz_QIFertilizerWasteland">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="resourceFertilizer"/>
+	<property name="DescriptionKey" value="jz_QIFertilizerWastelandDesc"/>
+</item>
+
+<item name="jz_QIBMSporesBurnt">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ZSample"/>
+	<property name="DescriptionKey" value="jz_QIBMSporesBurntDesc"/>
+</item>
+
+<item name="jz_QIFertilizerBurnt">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="resourceFertilizer"/>
+	<property name="DescriptionKey" value="jz_QIFertilizerBurntDesc"/>
+</item>
+
+<item name="jz_QIBMSporesSnow">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ZSample"/>
+	<property name="DescriptionKey" value="jz_QIBMSporesSnowDesc"/>
+</item>
+
+<item name="jz_QIFertilizerSnow">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="resourceFertilizer"/>
+	<property name="DescriptionKey" value="jz_QIFertilizerSnowDesc"/>
+</item>
+
+<item name="jz_QISoldierNote">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="challengeQuestMaster"/>
+	<property name="DescriptionKey" value="jz_QISoldierNoteDesc"/>
+</item>
+
+<item name="jz_QICDCFiles">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="Report"/>
+	<property name="DescriptionKey" value="jz_QICDCFilesDesc"/>
+</item>
+
+<item name="jz_QIReadCDCFiles">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="Report"/>
+	<property name="DescriptionKey" value="jz_QIReadCDCFilesDesc"/>
+</item>
+
+<item name="jz_QIZAntiVirus">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="Report"/>
+	<property name="DescriptionKey" value="jz_QIZAntiVirusDesc"/>
+</item>
+
+<item name="jz_QILeek">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ui_game_symbol_leek"/>
+	<property name="DescriptionKey" value="jz_QILeekDesc"/>
+</item>
+
+<item name="jz_QICucmber">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ui_game_symbol_Cucumber"/>
+	<property name="DescriptionKey" value="jz_QICucmberDesc"/>
+</item>
+
+<item name="jz_QIChilli">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ui_game_symbol_Chilli"/>
+	<property name="DescriptionKey" value="jz_QIChilliDesc"/>
+</item>
+
+<item name="jz_QISnowberry">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="foodCropBlueberries"/> <property name="CustomIconTint" value="ffffaf"/>
+	<property name="DescriptionKey" value="jz_QISnowberryDesc"/>
+</item>
+
+<item name="jz_QICarrot">
+	<property name="Extends" value="jz_MasterItem"/>
+	<property name="CustomIcon" value="ui_game_symbol_carrot"/>
+	<property name="DescriptionKey" value="jz_QICarrotDesc"/>
+</item>
+
+<item name="jz_QIBioKit">
+	<property name="Extends" value="jz_ProfessionSoldier"/>
+	<property name="CustomIcon" value="cntDuffle01"/>
+    <property name="DescriptionKey" value="jz_QIBioKitDesc"/>
+	<property class="Action0">
+		<property name="Create_item" value="jz_QISeedLeek,jz_QISeedChillis,jz_QISeedCucumber,jz_QISeedSnowberry,jz_QISeedCarrot"/>
+		<property name="Create_item_count" value="5,5,5,5,5,5"/>
+	</property>
+</item>
 </set>
 </configs>  <!-- Item limit: There can be 32k items in the game. IDs are generated internally on loading the game/items. -->

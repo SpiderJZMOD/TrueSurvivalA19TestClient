@@ -269,7 +269,7 @@
     <!--FarmingSkill-->
 	<perk name="jz_FarmingSkill" parent="jz_ToolAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Farming Skill" desc_key="jz_FarmingSkillDesc" icon="ui_game_symbol_crops">
 		<effect_group>
-			<passive_effect name="HarvestCount" operation="base_set" level="0,50,99" value="1,2,3" tags="cropHarvest"/>
+			<passive_effect name="HarvestCount" operation="base_set" value="1,2,3" level="0,50,100" tags="cropHarvest"/>
         </effect_group>
 		<effect_group>
             <requirement name="TriggerHasTags" tags="jz_PlayerCropTag"/>
@@ -534,9 +534,9 @@
 	<perk name="jz_MachineGunSkill" parent="jz_FirearmAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Machine Gun Skill" desc_key="jz_MachineGunSkillDesc" icon="ui_game_symbol_rifle">
 		<effect_group>
             <passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2,.3" level="0,30,65,100" tags="jz_MachineGunSkillTag"/>
-			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="0,-.01,-.02-.03" level="0,30,60,90" tags="jz_MachineGunSkillTag"/>
+			<passive_effect name="KickDegreesVerticalMin" operation="perc_add" value="0,-.01,-.02-.03,-.03" level="0,30,60,90,100" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="KickDegreesVerticalMax" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
-			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value="0,-.01,-.02-.03" level="0,30,60,90" tags="jz_MachineGunSkillTag"/>
+			<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" value="0,-.01,-.02-.03,-.03" level="0,30,60,90,100" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
 			<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value="0,-.03,-.06,-.09,-.12,-.15" level="0,20,40,60,80,100" tags="jz_MachineGunSkillTag"/>
@@ -574,9 +574,9 @@
     <!--JunkTurretSkill-->
 	<perk name="jz_JunkBotsSkill" parent="jz_FirearmAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="JunkTurret Skill" desc_key="jz_JunkBotsSkillDesc" icon="ui_game_symbol_electric_turret">
 		<effect_group>
-            <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.125,.25,.375,.5" level="0,20,40,60,80" tags="turretMelee"/>
+            <passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.125,.25,.375,.5,.5" level="0,20,40,60,80,100" tags="turretMelee"/>
 			<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,.1,.2" level="0,80,100" tags="jz_JunkBotsSkillTag"/>
-			<passive_effect name="MagazineSize" operation="base_add" level="0,5" value="10,50" tags="perkTurrets">
+			<passive_effect name="MagazineSize" operation="base_add" level="0,5,5" value="10,50,100" tags="perkTurrets">
 				<requirement name="!ItemHasTags" tags="turretMelee"/> </passive_effect>
             <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="0,-.05,-.1,-.15,-.2,-.25" level="0,20,40,60,80,100" tags="jz_JunkBotsSkillTag"/>
 			<passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.3,.7,1.1,1.5,1.5" level="0,20,40,60,80,100" tags="turretRanged"/>
@@ -630,13 +630,6 @@
 	    <effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>
 			<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
-			<triggered_effect trigger="onSelfKilledOther" action="ModifyCVar"  cvar="$jz_ExposivesXP" operation="add" value="5"/>
-			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar"  cvar="$jz_ExposivesXP" operation="add" value="1">
-				<requirement name="StatCompareCurrent" target="other" stat="health" operation="GT" value="0"/></triggered_effect>
-		</effect_group>
-		<effect_group>
-            <requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>
-			<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<requirement name="CVarCompare" cvar="$jz_ExposivesXP" operation="GTE" value="@$jz_ExposivesSkillNextLvTotal"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_ExposivesSkillLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_ExposivesSkillNextLvTotal" operation="add" value="@$jz_ExposivesSkillLvAdd"/>
@@ -657,8 +650,8 @@
         <effect_group>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_BrawlerSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_BrawlerSkillTag"/>
-			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BrawlerSkillTag"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BrawlerSkillTag"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3,.3" level="0,30,60,90,100" tags="jz_BrawlerSkillTag"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_BrawlerSkillTag"/>
 		</effect_group>
         <effect_group>
             <requirement name="HoldingItemHasTags" tags="jz_BrawlerSkillTag"/>
@@ -718,8 +711,8 @@
     <!--BluntSkill-->
 	<perk name="jz_BluntSkill" parent="jz_MeleeAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Blunt Weapon Skill" desc_key="jz_BluntSkillDesc" icon="ui_game_symbol_melee">
 		<effect_group>
-            <passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BluntSkillTag"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BluntSkillTag"/>
+            <passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3,.3" level="0,30,60,90,100" tags="jz_BluntSkillTag"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_BluntSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_BluntSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_BluntSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.4,.8,1.2,1.6,2" level="0,20,40,60,80,100" tags="jz_BluntSkillTag">
@@ -796,7 +789,7 @@
     <!--SledgeSkill-->
 	<perk name="jz_SledgeSkill" parent="jz_MeleeAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Sledge Weapon Skill" desc_key="jz_SledgeSkillDesc" icon="ui_game_symbol_sledge">
 		<effect_group>
-            <passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_SledgeSkillTag"/>
+            <passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_SledgeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_SledgeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_SledgeSkillTag"/>
         </effect_group>
@@ -870,8 +863,8 @@
 	<!--BladeSkill-->
     <perk name="jz_BladeSkill" parent="jz_MeleeAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Bladed Weapon Skill" desc_key="jz_BladeSkillDesc" icon="ui_game_symbol_deep_cuts">
 		<effect_group>
-			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_BladeSkillTag"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_BladeSkillTag"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3,.3" level="0,30,60,90,100" tags="jz_BladeSkillTag"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_BladeSkillTag"/>
         	<passive_effect name="BlockDamage" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_BladeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_BladeSkillTag"/>
 		</effect_group>
@@ -945,8 +938,8 @@
     <!--MiningSkill-->
 	<perk name="jz_PickaxeSkill" parent="jz_ToolAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Pickaxe Skill" desc_key="jz_MiningSkillDesc" icon="meleeToolPickT1IronPickaxe">
 		<effect_group>
-			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_PickaxeSkillTag"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_PickaxeSkillTag"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3,.3" level="0,30,60,90,100" tags="jz_PickaxeSkillTag"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_PickaxeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.3,.6,.9,1.2,1.5" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
             <passive_effect name="HarvestCount" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_PickaxeSkillTag"/>
@@ -984,8 +977,8 @@
     <!--AxeSkill-->
 	<perk name="jz_AxeSkill" parent="jz_ToolAction" min_level="0" max_level="100" base_skill_point_cost="1" cost_multiplier_per_level="1.2" name_key="Axe Skill" desc_key="jz_AxeSkillDesc" icon="meleeToolAxeT1IronFireaxe">
 		<effect_group>
-			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3" level="0,30,60,90" tags="jz_AxeSkillTag"/>
-			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3" level="0,30,60,90" tags="jz_AxeSkillTag"/>
+			<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.1,.2,.3,.3" level="0,30,60,90,100" tags="jz_AxeSkillTag"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" value="0,-.1,-.2,-.3,-.3" level="0,30,60,90,100" tags="jz_AxeSkillTag"/>
             <passive_effect name="BlockDamage" operation="perc_add" value="0,.3,.6,.9,1.2,1.5" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="0,.1,.2,.3,.4,.5" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
             <passive_effect name="HarvestCount" operation="perc_add" value="0,.2,.4,.6,.8,1" level="0,20,40,60,80,100" tags="jz_AxeSkillTag"/>
@@ -1991,7 +1984,7 @@
 		</effect_group>
 	</perk>
 	<!-- SteelFireaxeCrafting-->
-	<perk name="jz_SteelFireaxeCrafting" parent="jz_ToolCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Steel Fireaxe Crafting" desc_key="jz_CraftingDesc" icon="meleeToolAxeT2SteelAxe">
+	<perk name="jz_SteelFireaxeCrafting" parent="jz_ToolCrafting" min_level="0" max_level="5" base_skill_point_cost="0" name_key="Steel Axe Crafting" desc_key="jz_CraftingDesc" icon="meleeToolAxeT2SteelAxe">
 		<effect_group>
 			<passive_effect name="CraftingTier" operation="base_add" level="1,2,3,4,5" value="1,2,3,4,5" tags="jz_SteelFireaxeCraftingTag"/>
 		</effect_group>
@@ -2786,6 +2779,17 @@
 				<requirement name="HasBuff" buff="buffEncumberedInv"/></passive_effect>
 		</effect_group>
 		<effect_group>
+			<effect_description level="1" desc_key="jz_TraitWeakDesc" long_desc_key="jz_TraitWeakDesc"/>
+		</effect_group>
+	</perk>
+    <perk name="jz_TraitMasochist" parent="NegativeTraits" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Masochist" desc_key="jz_NegativeTraittMasochistDesc" icon="ui_game_symbol_near_death_trauma">
+		<!--1/2 Max Wellness / 1/2 wellness start -->
+        <effect_group>
+            <triggered_effect trigger="onSelfWalk" action="AddBuff" buff="jz_BuffMasochistActivate">
+				<requirement name="ProgressionLevel" progression_name="jz_TraitMasochist" operation="GTE" value="1"/>
+				<requirement name="NotHasBuff" buff="jz_BuffMasochistActivate"/>
+			</triggered_effect>
+            
 			<effect_description level="1" desc_key="jz_TraitWeakDesc" long_desc_key="jz_TraitWeakDesc"/>
 		</effect_group>
 	</perk>

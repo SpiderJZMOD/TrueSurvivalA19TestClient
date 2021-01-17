@@ -964,12 +964,12 @@
             <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="Essential Vitamins" valuecontent="{cvar($jz_PlayerFruitVitamin:0.00)}" />
             <player_stats_entry backgroundcolor="[darkGrey]" textcontent="Fiber" valuecontent="{cvar($jz_PlayerVeggieVitamin:0.00)}" />
             <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="Carbohydrates" valuecontent="{cvar($jz_PlayerGrainVitamin:0.00)}" />
-            <player_stats_entry backgroundcolor="[darkGrey]" textcontent="Amputations" valuecontent="{cvar($amputationCounter:00)}" />                                                                                  
-			<player_stats_entry backgroundcolor="[darkestGrey]"    textcontent="" valuecontent="" />
+            <player_stats_entry backgroundcolor="[darkGrey]" textcontent="Amputations" valuecontent="{cvar($amputationCounter:00)}" />   
+            <player_stats_entry backgroundcolor="[darkestGrey]" textcontent="Injury Stacks" valuecontent="{cvar($scratchCounter:00)}" />               
 			<player_stats_entry backgroundcolor="[darkGrey]" textcontent="" valuecontent="" />
 			<player_stats_entry backgroundcolor="[darkestGrey]"    textcontent="" valuecontent="" />
 			<player_stats_entry backgroundcolor="[darkGrey]" textcontent="" valuecontent="" />
-			<player_stats_entry backgroundcolor="[darkestGrey]"    textcontent="" valuecontent="" />
+            <player_stats_entry backgroundcolor="[darkestGrey]"    textcontent="" valuecontent="" />
 		</grid>
 
 		<grid visible="{showcore}" depth="0" pos="0,-86" width="327" cols="1" cell_height="30" repeat_content="false" arrangement="vertical">

@@ -455,17 +455,17 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			-->
 
 			<!-- Being at low health increases the chance of getting hit by a critical effect -->
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.9"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.8"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.7"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.6"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.5"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.4"/></passive_effect>
                      
 			<!-- Remove particle effect if not on fire, this is a backup removal for remote clients -->
@@ -613,7 +613,12 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			</triggered_effect>
             
             <!-- Player Wellness Set-->
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="set" value="125">
+                <requirement name="ProgressionLevel" progression_name="jz_TraitMasochist" operation="Equals" value="1"/>               
+                <requirement name="CVarCompare" cvar="$jz_WellnessLv" operation="GTE" value="126"/></triggered_effect>
+                    
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="set" value="250">
+                <requirement name="ProgressionLevel" progression_name="jz_TraitMasochist" operation="Equals" value="0"/>
                 <requirement name="CVarCompare" cvar="$jz_WellnessLv" operation="GTE" value="251"/></triggered_effect>
             <!--<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$PlayerWellness" operation="set" value="@$jz_WellnessLv"/>
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$PlayerWellness" operation="set" value="@$jz_WellnessLv"/>-->
@@ -1299,7 +1304,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
                 <requirement name="NotHasBuff" buff="jz_BuffDeadIsDeadResetTag"/></triggered_effect><!--Wellness-->
             <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="80">
                 <requirement name="NotHasBuff" buff="jz_BuffDeadIsDeadResetTag"/></triggered_effect><!--Health-->
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20">
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="20">
                 <requirement name="NotHasBuff" buff="jz_BuffDeadIsDeadResetTag"/></triggered_effect><!--Hydration-->
             <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="100">
                 <requirement name="HasBuff" buff="jz_BuffDeadIsDeadResetTag"/></triggered_effect>
@@ -5223,6 +5228,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry01"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry03"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffHungry03Wellness"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffStatusHungry01">
 				<requirement name="StatComparePercCurrentToMax" stat="Food" operation="GT" value="0.27"/></triggered_effect>
 
@@ -5257,17 +5263,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusHungryBlockage" operation="multiply" value=".266"/>
 			<passive_effect name="StaminaMaxBlockage" operation="base_add" value="@$buffStatusHungryBlockage"/>
 
-			<!--
-			<passive_effect name="AttributeLevel" operation="base_subtract" value="2" tags="attStrength,attFortitude"/>
-			<passive_effect name="AttributeLevel" operation="base_subtract" value="1" tags="attPerception"/>
-			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPerkAbilityUpdate"/>
-			-->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffHungry03Wellness"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry01"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry02"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffStatusHungry02">
 				<requirement name="StatComparePercCurrentToMax" stat="Food" operation="GT" value="0.04"/></triggered_effect>
 		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffHungry03Wellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="300"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
 	</buff>
 
 	<buff name="buffStatusThirsty01" name_key="buffStatusThirsty01Name" description_key="buffStatusThirsty01Desc" tooltip_key="buffStatusThirsty01Tooltip" icon="ui_game_symbol_water" icon_color="255,128,0">
@@ -5301,6 +5311,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty01"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty03"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThirsty03Wellness"/>
 		</effect_group>
 		<effect_group>
 			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.27"/>
@@ -5327,6 +5338,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<!--  <passive_effect name="HealthChangeOT" operation="base_subtract" value=".01248"/> 45 p h, does not work -->
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".0917"/> <!-- 150 p h -->
 
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffThirsty03Wellness"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty01"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty02"/>
 
@@ -5347,6 +5359,14 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
+    <buff name="jz_BuffThirsty03Wellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="300"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
 	<!--
 	<buff name="buffStatusWounded" name_key="buffStatusWoundedName" description_key="buffStatusWoundedTooltip" tooltip_key="buffStatusWoundedTooltip" icon="ui_game_symbol_medical" icon_color="255,128,0">
 		<damage_type value="Piercing"/>
@@ -7029,14 +7049,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			 <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="stamina" operation="subtract" value="24"/>
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="health" operation="subtract" value="1"/>
 		
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDidntHealBurn"/>
-		</effect_group>	
-	</buff>
-	<buff name="jz_BuffDidntHealBurn" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-		<duration value="1"/>
-		<effect_group>
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="10"/>			
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="10"/>	
 		</effect_group>	
 	</buff>
 	<buff name="jz_BuffTendingBurnWound" hidden="true" remove_on_death="false">
@@ -7687,7 +7700,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<effect_group>
 			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="jz_BuffGrab"/>
 
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.5,.2" duration="0,4"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value=".8,.4" duration="0,4"/>
 			<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.5,0" duration="0,4"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" fade="1" effect_name="Blur"/>
@@ -8254,25 +8267,6 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<passive_effect name="Mobility" operation="perc_add" value="0.5,0" duration="2,20"/>
         </effect_group>
 	</buff>
-<!-- JZMOD HOT PIPE-->
-    <buff name="jz_BuffCauterize" hidden="true" remove_on_death="false">
-        <stack_type value="ignore"/>
-		<duration value="1.5"/>
-        <effect_group>
-            <!-- ANIMAL BITE -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffAnimalBiteCauterized">
-                <requirement name="HasBuff" buff="jz_BuffAnimalBite"/></triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAnimalBite"/>
-            <!-- ZOMBIE BITE -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffZombieBiteCauterized">
-                <requirement name="HasBuff" buff="jz_BuffZombieBite"/></triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffZombieBite"/>
-			<!-- PARASITE BITE -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffParasiteBiteCauterized">
-                <requirement name="HasBuff" buff="jz_BuffParasiteBite"/></triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffParasiteBite"/>
-        </effect_group>
-    </buff>
 <!-- JZMOD WOUND SYSTEM-->
     <buff name="jz_BuffUsingHands" hidden="true" remove_on_death="true">
         <stack_type value="ignore"/>
@@ -8285,8 +8279,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
         <duration value="0"/>
 		<display_value value="$scratchCounter"/><display_value_key value="{00}"/>
 		<effect_group name="Ticker, Remover">
-			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
-			<!--<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>-->
+			<!--<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>-->
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
                 <requirement name="NotHasBuff" buff="jz_BuffUsingHands"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
@@ -8558,9 +8552,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<stack_type value="ignore"/>
         <update_rate value="120"/>
 		<effect_group>
-            <requirement name="CVarCompare" target="self" cvar="$jz_WellnessLv" operation="GT" value="20"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
 		</effect_group>	
 	</buff>
     
@@ -8667,9 +8660,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<stack_type value="ignore"/>
         <update_rate value="90"/>
 		<effect_group>
-            <requirement name="CVarCompare" target="self" cvar="$jz_WellnessLv" operation="GT" value="20"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
 		</effect_group>	
 	</buff>
    
@@ -8781,9 +8773,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<stack_type value="ignore"/>
         <update_rate value="60"/>
 		<effect_group>
-            <requirement name="CVarCompare" target="self" cvar="$jz_WellnessLv" operation="GT" value="20"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
 		</effect_group>	
 	</buff>
  <!-- JZMOD PAIN -->
@@ -9931,6 +9922,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegBroken"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSplinted"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegCast"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffMasochistActivate"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffEndGameCampaign"/>
                                             
                 <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffNewbieCoat"  />
         </effect_group>
@@ -9954,8 +9947,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffDeadIsDeadResetNoCheating" hidden="true" remove_on_death="false">
         <stack_type value="ignore"/>
-		<duration value="1800"/>  
-    
+		<duration value="1800"/>     
 	</buff>
  
     <buff name="jz_BuffUsedTissueExtractor" hidden="true" remove_on_death="true" >
@@ -9996,7 +9988,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 				<requirement name="StatCompare" target="self" stat="food" operation="lt" value="99"/></triggered_effect>	
 		</effect_group>
      </buff>    
-
+    <!--JZMOD QUEST SPAWN TRIGGER ACTIVATION-->
     <buff name="jz_BuffSpawnSoldier" hidden="true" remove_on_death="false">
         <stack_type value="duration"/>
 		<duration value="2"/>  
@@ -10012,7 +10004,176 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$SpawnQuestSoldier" operation="set" value="0"/>
         </effect_group>  
 	</buff>  
-   
+    <!--JZMOD EXPLOSIVE SKILL XP TRIGGER-->
+    <buff name="jz_BuffExplosiveThrown" hidden="true" remove_on_death="false">
+        <stack_type value="duration"/>
+		<duration value="5"/>  
+        <effect_group>
+                <triggered_effect trigger="onSelfExplosionDamagedOther" action="ModifyCVar" cvar="$jz_ExposivesXP" operation="add" value="1"/>
+		</effect_group>
+	</buff>  
+    <!--JZMOD Masochist-->
+    <buff name="jz_BuffMasochistActivate" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/>  
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="multiply" value=".5"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_PlayerVeggieVitamin" operation="multiply" value=".5"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_PlayerFruitVitamin" operation="multiply" value=".5"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_PlayerGrainVitamin" operation="multiply" value=".5"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_PlayerProteinVitamin" operation="multiply" value=".5"/>        
+		</effect_group>
+	</buff>  
+    <!--JZMOD END GAME CAMPAIGN -->
+    <buff name="jz_BuffEndGameCampaign" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/> 
+        <update_rate value="1"/>
+        
+        <effect_group name="End Game Spore Harvest">
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="9"/>
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>
+                <triggered_effect trigger="onSelfKilledOther" action="CreateItemSDX, Mods" item="jz_QIBMSporesBurnt" count="1"/>                   
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="5"/>
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>       
+                <triggered_effect trigger="onSelfKilledOther" action="CreateItemSDX, Mods" item="jz_QIBMSporesDesert" count="1"/>                   
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="8"/>
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>      
+                <triggered_effect trigger="onSelfKilledOther" action="CreateItemSDX, Mods" item="jz_QIBMSporesWasteland" count="1"/>                   
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="1"/>
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>        
+                <triggered_effect trigger="onSelfKilledOther" action="CreateItemSDX, Mods" item="jz_QIBMSporesSnow" count="1"/>                   
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="3"/>
+            <requirement name="EntityTagCompare" target="other" tags="zombie"/>       
+                <triggered_effect trigger="onSelfKilledOther" action="CreateItemSDX, Mods" item="jz_QIBMSporesForest" count="1"/>                   
+		</effect_group>
+        <effect_group name="End Game Boss Buff">
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="9"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="BurntForestBloodmoon"/>
+
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="ForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="SnowBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="WastelandBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="DesertBloodmoon"/>                
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="5"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="DesertBloodmoon"/> 
+                
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="ForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="SnowBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="WastelandBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BurntForestBloodmoon"/>    
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="8"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="WastelandBloodmoon"/> 
+                
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="ForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="SnowBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BurntForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="DesertBloodmoon"/>    
+		</effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="1"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="SnowBloodmoon"/> 
+                
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="ForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BurntForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="WastelandBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="DesertBloodmoon"/>    
+        </effect_group>
+        <effect_group>
+            <requirement name="IsNight"/>  
+            <requirement name="RequirementIsBloodMoonDMT, Mods" /> 
+            <requirement name="InBiome" biome="3"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="ForestBloodmoon"/> 
+                
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="BurntForestBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="SnowBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="WastelandBloodmoon"/> 
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="DesertBloodmoon"/>    
+		</effect_group>  
+	</buff>  
+    
+    <buff name="BurntForestBloodmoon" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/> 
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="PumpQuestSDX, Mods" target="self"  />
+        </effect_group>      
+	</buff>
+    
+    <buff name="ForestBloodmoon" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/> 
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="PumpQuestSDX, Mods" target="self"  />
+        </effect_group>  
+    </buff>
+    
+    <buff name="SnowBloodmoon" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/>  
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="PumpQuestSDX, Mods" target="self"  />
+        </effect_group>  
+	</buff>
+    
+    <buff name="WastelandBloodmoon" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/> 
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="PumpQuestSDX, Mods" target="self"  />
+        </effect_group>          
+	</buff>
+    
+    <buff name="DesertBloodmoon" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="PumpQuestSDX, Mods" target="self"  />
+        </effect_group>  
+	</buff>
+    
+    <buff name="jz_BuffSLPt13Activate" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="0"/>
+	</buff>
+    
+    <buff name="jz_BuffSLPt13Deactivate" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+		<duration value="2"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSLPt13Activate"/>   
+        </effect_group> 
+	</buff>
 </set>    
 </configs>
 
