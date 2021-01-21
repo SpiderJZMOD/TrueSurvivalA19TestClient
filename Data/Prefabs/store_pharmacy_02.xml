@@ -5,10 +5,12 @@
   <property name="ExcludePOICulling" value="False" />
   <property name="DistantPOIYOffset" value="0" />
   <property name="AllowTopSoilDecorations" value="False" />
+    
+  <property name="QuestTags" value="clear,fetch,hidden_cache" />
   <property name="Zoning" value="Commercial" />
   <property name="AllowedTownships" value="city,town,rural" />
+  
   <property name="DifficultyTier" value="3" />
-  <property name="QuestTags" value="clear,fetch,hidden_cache" />
   <property name="TraderArea" value="False" />
   <property name="RotationToFaceNorth" value="2" />
   <property name="EditorGroups" value="commercial" />

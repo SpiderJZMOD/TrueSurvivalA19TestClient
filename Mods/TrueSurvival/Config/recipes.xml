@@ -791,9 +791,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="jz_QICDCFiles" count="1"/>
 </recipe>
 
-<recipe name="jz_QISoldierNote" count="1" craft_time="1" craft_exp_gain="0" tags="learnable" >
-	<ingredient name="resourceYuccaFibers" count="1"/>
-</recipe>
 <!-- Campfire Crafted ******************************************************************************************************************************************************* -->
 <recipe name="drugHerbalAntibiotics" count="1" craft_area="campfire" craft_tool="jz_MortarAndPestle" craft_time="4" craft_exp_gain="20" tags="learnable">
 	<ingredient name="foodCropMushrooms" count="3"/>

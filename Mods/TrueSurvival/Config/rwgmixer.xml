@@ -80,6 +80,7 @@
 	</prefab_rule>
 	
 	<prefab_rule name="prefabList">
+        <prefab name="JZ_CDC_Final"/>
         <prefab name="apartment_adobe_red_5_flr"/>
         <prefab name="utility_celltower_02"/>
 		<prefab name="utility_celltower_01"/>

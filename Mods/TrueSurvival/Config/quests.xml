@@ -506,7 +506,6 @@
 		</objective>
           
         <reward type="SkillPoints" value="1"/>  
-        <reward type="Recipe" id="jz_QISoldierNote" />
         <reward type="Quest" id="jzquest_StoryLinePt18" />        
 	</quest>
     <quest id="jzquest_StoryLinePt18">
@@ -758,11 +757,131 @@
         <reward type="Quest" id="jzquest_StoryLinePOITestPharmacy2" />  
         <reward type="Quest" id="jzquest_StoryLinePOITestApartment" />
         <reward type="Quest" id="jzquest_StoryLinePOITestRedMesa" /> 
-        <reward type="Quest" id="jzquest_StoryLinePOITestBombShelter" />         
+        <reward type="Quest" id="jzquest_StoryLinePOITestBombShelter" />        
+        <reward type="Quest" id="jzquest_StoryLinePOITestCDC" />
+        <reward type="Quest" id="jzquest_StoryLinePOITestRekt" />  
+        <reward type="Quest" id="jzquest_StoryLinePOITestJoel" />  
+        <reward type="Quest" id="jzquest_StoryLinePOITestJen" />
+        <reward type="Quest" id="jzquest_StoryLinePOITestBob" /> 
+        <reward type="Quest" id="jzquest_StoryLinePOITestHugh" />                
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestCDC">
+		<property name="name_key" value="G-CDC POI Test" />
+		<property name="subtitle_key" value="CDC POI Test" />
+		<property name="description_key" value="CDC POI Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="JZ_CDC_Final" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestRekt">
+		<property name="name_key" value="Trader Rekt Test" />
+		<property name="subtitle_key" value="Trader Rekt Test" />
+		<property name="description_key" value="Trader Rekt Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="trader_rekt" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestJoel">
+		<property name="name_key" value="Trader Joel Test" />
+		<property name="subtitle_key" value="Trader Joel Test" />
+		<property name="description_key" value="Trader Joel Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="trader_joel" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestJen">
+		<property name="name_key" value="Trader Jen Test" />
+		<property name="subtitle_key" value="Trader Jen Test" />
+		<property name="description_key" value="Trader Jen Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="trader_jen" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestBob">
+		<property name="name_key" value="Trader Bob Test" />
+		<property name="subtitle_key" value="Trader Bob Test" />
+		<property name="description_key" value="Trader Bob Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="trader_bob" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
+	</quest>
+    
+    <quest id="jzquest_StoryLinePOITestHugh">
+		<property name="name_key" value="Trader Hugh Test" />
+		<property name="subtitle_key" value="Trader Hugh Test" />
+		<property name="description_key" value="Trader Hugh Test" />
+		<property name="icon" value="ui_game_symbol_map_bed" />
+		<property name="category_key" value="quest" />
+		<property name="difficulty" value="veryeasy"/>
+		<property name="shareable" value="false" />
+       
+        <objective type="GotoPOISDX, Mods" value="10-60000" phase="1">
+            <property name="completion_distance" value="50" />
+            <property name="phase" value="1" />
+            <property name="PrefabName" value="trader_hugh" />
+            <property name="nav_object" value="quest" />
+        </objective>
+      
+        <reward type="Exp" value="1"/>
 	</quest>
     
      <quest id="jzquest_StoryLinePOITestCell">
-		<property name="name_key" value="Cell POI Test" />
+		<property name="name_key" value="A-Cell POI Test" />
 		<property name="subtitle_key" value="Cell POI Test" />
 		<property name="description_key" value="Cell POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -781,7 +900,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestCell2">
-		<property name="name_key" value="Cell2 POI Test" />
+		<property name="name_key" value="A-Cell2 POI Test" />
 		<property name="subtitle_key" value="Cell2 POI Test" />
 		<property name="description_key" value="Cell2 POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -800,7 +919,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestJZSchool">
-		<property name="name_key" value="School POI Test" />
+		<property name="name_key" value="B-School POI Test" />
 		<property name="subtitle_key" value="School POI Test" />
 		<property name="description_key" value="School POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -819,7 +938,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestHospital">
-		<property name="name_key" value="Hospital POI Test" />
+		<property name="name_key" value="C-Hospital POI Test" />
 		<property name="subtitle_key" value="Hospital POI Test" />
 		<property name="description_key" value="Hospital POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -838,7 +957,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestPharmacy">
-		<property name="name_key" value="Pharmacy POI Test" />
+		<property name="name_key" value="C-Pharmacy POI Test" />
 		<property name="subtitle_key" value="Pharmacy POI Test" />
 		<property name="description_key" value="Pharmacy POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -857,7 +976,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestPharmacy2">
-		<property name="name_key" value="Pharmacy2 POI Test" />
+		<property name="name_key" value="C-Pharmacy2 POI Test" />
 		<property name="subtitle_key" value="Pharmacy2 POI Test" />
 		<property name="description_key" value="Pharmacy2 POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -876,7 +995,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestApartment">
-		<property name="name_key" value="Apartment POI Test" />
+		<property name="name_key" value="D-Apartment POI Test" />
 		<property name="subtitle_key" value="Apartment POI Test" />
 		<property name="description_key" value="Apartment POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -895,7 +1014,7 @@
 	</quest>
     
      <quest id="jzquest_StoryLinePOITestRedMesa">
-		<property name="name_key" value="RedMesa POI Test" />
+		<property name="name_key" value="E-RedMesa POI Test" />
 		<property name="subtitle_key" value="RedMesa POI Test" />
 		<property name="description_key" value="RedMesa POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -914,7 +1033,7 @@
 	</quest>
     
     <quest id="jzquest_StoryLinePOITestBombShelter">
-		<property name="name_key" value="BombShelter POI Test" />
+		<property name="name_key" value="F-BombShelter POI Test" />
 		<property name="subtitle_key" value="BombShelter POI Test" />
 		<property name="description_key" value="BombShelter POI Test" />
 		<property name="icon" value="ui_game_symbol_map_bed" />
@@ -1130,7 +1249,7 @@
 		<property name="difficulty" value="veryeasy"/>
 		<property name="shareable" value="false" />
 
-		<objective type="FetchKeep" id="jz_NegativeTraitMasochist" value="1" phase="1"/>
+		<objective type="FetchKeep" id="jz_TraitRefundMasochist" value="1" phase="1"/>
 		
 		<reward type="Item" id="jz_ProfessionChoice" value="1" />
     </quest>

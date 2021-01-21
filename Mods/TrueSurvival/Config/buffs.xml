@@ -9849,7 +9849,13 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$infectionCureCounter" operation="set" value="0"/>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="infectionCounter" operation="set" value="0"/>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="amputationCounter" operation="set" value="0"/>
-                
+                               
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNewbieCoat" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBurnWound" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingBurnWound" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBadLeg" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBadLegLimpA" />
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBadLegLimpB" />   
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputate" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffNubbins" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised" />

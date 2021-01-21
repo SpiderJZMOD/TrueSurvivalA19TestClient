@@ -2,10 +2,12 @@
 <prefab>
   <property name="CopyAirBlocks" value="True" />
   <property name="AllowTopSoilDecorations" value="False" />
-  <property name="Zoning" value="Industrial" />
   <property name="RotationToFaceNorth" value="2" />
+  
+  <property name="QuestTags" value="clear,fetch" />
   <property name="AllowedTownships" value="wilderness,rural,town,city" />
-  <property name="AllowedBiomes" value="pine_forest"/>
+  <property name="Zoning" value="Industrial" />
+   
   <property name="YOffset" value="-1" />
   <property name="TraderArea" value="False" />
   <property name="ExcludeDistantPOIMesh" value="False" />

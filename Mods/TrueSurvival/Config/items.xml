@@ -6002,7 +6002,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
             
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
@@ -6033,7 +6033,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 
 		<!-- If the  buffInfectionCatch  buff makes it past buff resistance, this value is added to the  infectionCounter,  increasing infection level -->
 		<!-- Buckets are: -->
@@ -6067,7 +6067,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6094,7 +6094,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6114,7 +6114,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="30"/>  A16 2 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6139,7 +6139,7 @@ needed?
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6166,7 +6166,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6190,7 +6190,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6242,7 +6242,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
@@ -6294,7 +6294,7 @@ needed?
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="10"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6342,7 +6342,7 @@ needed?
 		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="40"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6391,7 +6391,7 @@ needed?
 		<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6411,7 +6411,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6431,7 +6431,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6450,7 +6450,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffInfectionCatch">
             <requirement name="!HasBuff" target="self" buff="jz_BuffStopBite"/></triggered_effect>
         <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="jz_BuffGrabTrigger"/>
@@ -6474,7 +6474,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 	</effect_group>
 </item>
 
@@ -6491,7 +6491,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 	</effect_group>
@@ -6509,7 +6509,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
 	</effect_group>
@@ -6524,7 +6524,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
 	</effect_group>
 </item>
@@ -6542,7 +6542,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
 	</effect_group>
 </item>
@@ -6559,7 +6559,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 	</effect_group>
@@ -6578,7 +6578,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
 	</effect_group>
@@ -6593,7 +6593,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 	</effect_group>
@@ -6612,7 +6612,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
 	</effect_group>
@@ -6629,7 +6629,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
 	</effect_group>
@@ -6647,7 +6647,7 @@ needed?
 		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
            <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="2400"/><!--AbrasionFeral-->
 	</effect_group>
@@ -6687,7 +6687,7 @@ needed?
 		<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 	</effect_group>
 </item>
 
@@ -6704,7 +6704,7 @@ needed?
 		<passive_effect name="ModSlots" operation="base_set" value="0"/>
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
 		<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
 	</effect_group>
@@ -6743,7 +6743,7 @@ needed?
 
 		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
 			buff="buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,jz_BuffGash,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryConcussionTrigger"
-			weights=".07,.07,.05,.29,.36,.11,.1"/>
+			weights=".07,.07,.01,.29,.36,.11,.1"/>
 		
         <triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
 	</effect_group>
@@ -22185,7 +22185,7 @@ perkNightStalkerSilentNight
 	<property name="CustomIcon" value="resourcePaper" />
 </item>
 
-<item name="jz_NegativeTraitMasochist">
+<item name="jz_TraitRefundMasochist">
 	<property name="Extends" value="jz_MasterItem"/>
 	<property name="Material" value="Mpaper" />
 	<property name="DescriptionKey" value="jz_TraitRefundDesc"/>
@@ -32555,7 +32555,7 @@ perkNightStalkerSilentNight
 <item name="jz_QIQuestPOISpawnCheck">
 	<property name="Extends" value="challengeQuestMaster"/>
     <property name="Stacknumber" value="1" />
-	<property name="CustomIcon" value="cntDuffle01"/>
+	<property name="CustomIcon" value="POIFind"/>
 	<property name="DescriptionKey" value="test"/>
 	<property class="Action0">
 		<property name="QuestGiven" value="jzquest_StoryLinePOICheck"/>

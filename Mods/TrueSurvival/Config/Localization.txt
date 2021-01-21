@@ -730,7 +730,7 @@ jz_TraitRefundSleepy,Refund Receipt
 jz_TraitRefundClumsy,Refund Receipt
 jz_TraitRefundAllThumbs,Refund Receipt
 jz_TraitRefundWeakStomach,Refund Receipt
-jz_NegativeTraitMasochist,Refund Receipt
+jz_TraitRefundMasochist,Refund Receipt
 jz_TraitRefundAgoraphobic,Refund Receipt
 jz_TraitRefundClaustrophobic,Refund Receipt
 jz_TraitRefundBadLeg,Refund Receipt

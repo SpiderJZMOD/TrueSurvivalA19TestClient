@@ -2,9 +2,12 @@
 <prefab>
   <property name="CopyAirBlocks" value="True" />
   <property name="AllowTopSoilDecorations" value="False" />
-  <property name="Zoning" value="ResidentialOld" />
-  <property name="RotationToFaceNorth" value="2" />
+  
+  <property name="QuestTags" value="clear,fetch" />
+  <property name="Zoning" value="ResidentialOld, Commercial, downtown" />
   <property name="AllowedTownships" value="rural,town,wilderness" />
+  
+  <property name="RotationToFaceNorth" value="2" />
   <property name="YOffset" value="-12" />
   <property name="TraderArea" value="False" />
   <property name="ExcludeDistantPOIMesh" value="False" />
@@ -20,7 +23,7 @@
   <property name="ExcludePOICulling" value="False" />
   <property name="SleeperVolumeGroupId" value="0,0,0" />
   <property name="SleeperVolumeFlags" value="0,0,0" />
-  <property name="QuestTags" value="clear,fetch" />
+  
   <property name="ShowQuestClearCount" value="1" />
   <property name="SleeperIsQuestExclude" value="False,False,False" />
   <property class="Stats">
