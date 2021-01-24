@@ -886,6 +886,28 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
             <requirement name="StatCompare" target="self" stat="food" operation="lte" value="98"/>
                 <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffFoodStuffed"/>                
         </effect_group>-->
+        <!-- JZMOD HEALING SPEED-->  
+        <effect_group name="Set Tending Timer">
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="1">
+				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="0"/>
+				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="0"/> </triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="1">
+				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="1"/>
+				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="1"/> </triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="2">
+				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="1"/>
+				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="3">
+				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="0"/>
+				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="1"/> </triggered_effect>
+                    
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$TendingTime" operation="set" value="1800">
+                <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$TendingTime" operation="set" value="1440">
+                <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$TendingTime" operation="set" value="2160">
+                <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></triggered_effect>
+		</effect_group>
 	</buff>
 
 	<buff name="buffStatusCheck02" hidden="true" remove_on_death="false">
@@ -1243,19 +1265,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 				<requirement name="ProgressionLevel" progression_name="jz_TraitWakeful" operation="Equals" value="0"/>
 				<requirement name="ProgressionLevel" progression_name="jz_TraitSleepy" operation="Equals" value="1"/> </triggered_effect>
                 
-            <!-- Healing update -->
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="1">
-				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="0"/>
-				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="0"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="1">
-				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="1"/>
-				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="1"/> </triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="2">
-				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="1"/>
-				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="0"/></triggered_effect>
-			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$HealingBonus" operation="set" value="3">
-				<requirement name="ProgressionLevel" progression_name="jz_TraitMedic" operation="Equals" value="0"/>
-				<requirement name="ProgressionLevel" progression_name="jz_TraitHemophobic" operation="Equals" value="1"/> </triggered_effect>
+            
 		</effect_group>                                                                                                               
 		
 	</buff>
@@ -7347,14 +7357,22 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffGashBandaged" remove_on_death="false" name_key="Bandaged Gash" tooltip_key="Feels Better" description_key="jz_BuffGashBandagedDesc" icon="BandagedGash">
 		<stack_type value="ignore"/>
-        <duration value="1800">
-            <requirement name="ProgressionLevel" progression_name="HealingBonus" operation="Equals" value="0"/></duration>
-        <duration value="1440">
-            <requirement name="ProgressionLevel" progression_name="HealingBonus" operation="Equals" value="1"/></duration>
-		<effect_group>
+        <update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffGashBandaged">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>  
+
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffGashDirtyBandaged">
+                 <requirement name="!HasBuff" buff="jz_BuffGash"/></triggered_effect>
             <passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffGashDirtyBandaged"/>
-        </effect_group>
+		</effect_group>
 	</buff>
     
      <buff name="jz_BuffGashDirtyBandaged" remove_on_death="false" name_key="Dirty Bandage" tooltip_key="Its Starting to Smell" description_key="Your bandage has gotten dirty and needs changing. If you don't do it soon it will get worse\n-3% Mobility\n-1 Wellness if not treated" icon="ui_game_symbol_gash">
@@ -7388,15 +7406,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffPunctureBandagedSani" remove_on_death="false" name_key="Bandaged Puncture Wound" tooltip_key="Pack it tight" description_key="Your Puncture Wound is healing well but it will need at lest a Medical Bandage to continue healing after this bandage gets dirty\n-5% Mobility" icon="BandagedPuncture">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffPunctureBandagedSani">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/> 
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.05"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedA"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedA">
+                <requirement name="!HasBuff" buff="jz_BuffPunctured"/></triggered_effect>
 		</effect_group>
 	</buff>
     
@@ -7412,15 +7436,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffPunctureBandageMedic" remove_on_death="false" name_key="Bandaged Puncture Wound" tooltip_key="Pack it tight" description_key="Your Puncture Wound is healing well but it will need to be re bandaged to continue healing after this bandage gets dirty\n-2% Mobility" icon="BandagedPuncture">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffPunctureBandageMedic">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/> 
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedB"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedB">
+                <requirement name="!HasBuff" buff="jz_BuffPunctured"/></triggered_effect>
 		</effect_group>
 	</buff>
     
@@ -7436,15 +7466,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffPunctureBandage" remove_on_death="false" name_key="Bandaged Puncture Wound" tooltip_key="Pack it tight" description_key="Your Puncture Wound is healing well but it will need to be re bandaged to continue healing after this bandage gets dirty\n-1% Mobility" icon="BandagedPuncture">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffPunctureBandage">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedC"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyPunctureBandagedC">
+                 <requirement name="!HasBuff" buff="jz_BuffPunctured"/></triggered_effect>
 		</effect_group>
 	</buff>
     
@@ -7490,15 +7526,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffGoredBandageSani" remove_on_death="false" name_key="Bandaged Gore Wound" tooltip_key="Feeling better" description_key="Your Gore Wound is healing well but it will need at lest a Medical Bandage to continue healing after this bandage gets dirty\n-4% Mobility" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffGoredBandageSani">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffGoredDirtyBandangeA" />
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffGoredDirtyBandangeA">
+                <requirement name="!HasBuff" buff="jz_BuffGored"/></triggered_effect>
         </effect_group>
 	</buff>
     
@@ -7514,15 +7556,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
      <buff name="jz_BuffGoredBandageMedic" remove_on_death="false" name_key="Bandaged Gore Wound" tooltip_key="Feeling better" description_key="Your Gore Wound is healing well but it will need to be re bandaged to continue healing after this bandage gets dirty\n-2% Mobility" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffGoredBandageMedic">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
-             <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffGoredDirtyBandangeB" />
+             <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffGoredDirtyBandangeB">
+                <requirement name="!HasBuff" buff="jz_BuffGored"/></triggered_effect>
         </effect_group>
 	</buff>
 	
@@ -7538,14 +7586,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	
      <buff name="jz_BuffGoredBandage" remove_on_death="false" name_key="Bandaged Gore Wound" tooltip_key="Feeling better" description_key="Your Gore Wound is healing well but it will need to re bandaged to continue healing after this bandage gets dirty\n-1% Mobility" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-		<effect_group>
+		<update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffGoredBandage">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/> 
+            
             <passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffGoredDirtyBandangeC">
+                <requirement name="!HasBuff" buff="jz_BuffGored"/></triggered_effect>
         </effect_group>
 	</buff>
 	
@@ -7589,12 +7644,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffAnimalBiteAloed" remove_on_death="false" name_key="Bandaged Animal Bite" tooltip_key="Feeling better" description_key="Your Animal Bite is healing well but it will need at to be bandaged to continue healing after this bandage gets dirty\n-1% Mobility\n-1 Stamina per 10sec" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
+		<duration value="1800"/>
 		<update_rate value="10"/>
 		<effect_group>
             <passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
@@ -7656,21 +7706,21 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.2"/></triggered_effect>
              <!--JZMOD GRAB CHANCE INCREASES WHEN FATIGUE LOW-->
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="10"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="10"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="20"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="20"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="30"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="30"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="40"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="40"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="50"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="50"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="60"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="60"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="70"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="70"/></triggered_effect>
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="3">	
-                <requirement name="CVarCompare" cvar="$fatiguedCounter" operation="GT" value="80"/></triggered_effect>
+                <requirement name="CVarCompare" cvar="$fatigueTicker" operation="GT" value="80"/></triggered_effect>
              <!--JZMOD GRAB CHANCE INCREASES WHEN NUTRITION LOW-->
              <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$grabChance" operation="add" value="0">	
                 <requirement name="HasBuff" buff="jz_BuffHealthyDiet"/></triggered_effect>
@@ -7759,17 +7809,22 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffZombieBiteAloed" remove_on_death="false" name_key="Bandaged Zombie Bite" tooltip_key="Feeling better" description_key="Your Zombie Bite is healing well but it will need to be re bandaged to continue healing after this bandage gets dirty\n-3% Mobility\n-1 Stamina per 6sec" icon="BandagedBite">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
 		<update_rate value="6"/>
-		<effect_group>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="6"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffZombieBiteAloed">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/> 
+		
             <passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="stamina" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffAnimalBiteDirtyBandangeA" />
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffAnimalBiteDirtyBandangeA">
+                <requirement name="!HasBuff" buff="jz_BuffZombieBite"/></triggered_effect>
         </effect_group>
 	</buff>
     
@@ -7787,17 +7842,22 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
        
 	 <buff name="jz_BuffZombieBiteBandage" remove_on_death="false" name_key="Bandaged Zombie Bite" tooltip_key="Feeling better" description_key="Your Zombie Bite is healing well but it will need at to be bandaged to continue healing after this bandage gets dirty\n-2% Mobility\n-1 Stamina per 9sec" icon="BandagedBite">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
 		<update_rate value="9"/>
-		<effect_group>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>   
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="9"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffZombieBiteAloed">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/> 
+		
             <passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="stamina" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffZombieBiteDirtyBandangeB" />
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffZombieBiteDirtyBandangeB">
+                <requirement name="!HasBuff" buff="jz_BuffZombieBite"/></triggered_effect>
         </effect_group>
 	</buff>
 	
@@ -7846,12 +7906,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
     
     <buff name="jz_BuffParasiteBiteAloed" remove_on_death="false" name_key="Bandaged Parasite Bite" tooltip_key="Feeling better" description_key="Your Parasite Bite is healing well but it will need to be re bandaged to continue healing after this bandage gets dirty\n-4% Mobility\n-1 Stamina per 4sec" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
+		<duration value="1800"/>
 		<update_rate value="4"/>
 		<effect_group>
             <passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
@@ -7874,12 +7929,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
        
 	 <buff name="jz_BuffParasiteBiteBandage" remove_on_death="false" name_key="Bandaged Parasite Bite" tooltip_key="Feeling better" description_key="Your Parasite Bite is healing well but it will need at to be bandaged to continue healing after this bandage gets dirty\n-2% Mobility\n-1 Stamina per 6sec" icon="ui_game_symbol_gash">
 		<stack_type value="ignore"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
+		<duration value="1800"/>
 		<update_rate value="6"/>
 		<effect_group>
             <passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
@@ -7928,14 +7978,25 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<duration value="1.5"/>
         <effect_group>
             <!-- SMALL WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOne">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneB">
                 <requirement name="HasBuff" buff="jz_BuffSmallWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwo">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOne"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOneA"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoA"/> </triggered_effect> 
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeA"/> </triggered_effect>   
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourA"/> </triggered_effect>
+            <!-- GANGRENE WOUND -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourG">
+                <requirement name="HasBuff" buff="jz_BuffAmputationWound"/> </triggered_effect>
             <!-- BLEEDING -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
             <!-- GASH -->
@@ -7976,24 +8037,39 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingBurnWound">
                 <requirement name="HasBuff" buff="jz_BuffBurnWound"/></triggered_effect>
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBurnWound"/>
-             <!-- SMALL WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOne">
+            <!-- SMALL WOUND -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneB">
                 <requirement name="HasBuff" buff="jz_BuffSmallWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwo">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOne"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOneA"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoA"/> </triggered_effect> 
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeA"/> </triggered_effect>   
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourA"/> </triggered_effect>
             <!-- WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThree">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoD">
                 <requirement name="HasBuff" buff="jz_BuffWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFour">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwo"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourC"/> </triggered_effect>
+            <!-- GANGRENE WOUND -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourG">
+                <requirement name="HasBuff" buff="jz_BuffAmputationWound"/> </triggered_effect>
             <!-- BLEEDING -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
              <!-- GASH -->
@@ -8043,32 +8119,47 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<duration value="1.5"/>
         <effect_group>
             <!-- SMALL WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOne">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneB">
                 <requirement name="HasBuff" buff="jz_BuffSmallWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwo">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOne"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOneA"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoA"/> </triggered_effect> 
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeA"/> </triggered_effect>   
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourA"/> </triggered_effect>
             <!-- WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThree">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoD">
                 <requirement name="HasBuff" buff="jz_BuffWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFour">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwo"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourC"/> </triggered_effect>
             <!-- SEVERE WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFive">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeF">
                 <requirement name="HasBuff" buff="jz_BuffSevereWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingSix">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThree"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThree"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeE">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeE"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourF">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourF"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourE">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourE"/> </triggered_effect>
+            <!-- GANGRENE WOUND -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourG">
+                <requirement name="HasBuff" buff="jz_BuffAmputationWound"/> </triggered_effect>
              <!-- BLEEDING -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
             <!-- GASH -->
@@ -8118,32 +8209,47 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<duration value="1.5"/>
         <effect_group>
             <!-- SMALL WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOne">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneB">
                 <requirement name="HasBuff" buff="jz_BuffSmallWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwo">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOne"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingOneA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageOneA"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoA"/> </triggered_effect> 
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeA"/> </triggered_effect>   
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourB">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourB"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourA">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourA"/> </triggered_effect>
             <!-- WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThree">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoD">
                 <requirement name="HasBuff" buff="jz_BuffWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFour">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwo"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingTwoC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageTwoC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeC"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourD">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourD"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourC">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourC"/> </triggered_effect>
             <!-- SEVERE WOUND -->
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFive">
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeF">
                 <requirement name="HasBuff" buff="jz_BuffSevereWound"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingSix">
-                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThree"/> </triggered_effect>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThree"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingThreeE">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageThreeE"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourF">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourF"/> </triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourE">
+                <requirement name="HasBuff" buff="jz_BuffDirtyBandageFourE"/> </triggered_effect>
+            <!-- GANGRENE WOUND -->
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffTendingFourG">
+                <requirement name="HasBuff" buff="jz_BuffAmputationWound"/> </triggered_effect>
             <!-- BLEEDING -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
             <!-- GASH -->
@@ -8272,113 +8378,223 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
         <stack_type value="ignore"/>
         <duration value=".5"/>
      </buff>
-     
+       
     <buff name="jz_BuffWoundSystem" remove_on_death="false" name_key="Cumulative Scratch #" icon="ui_game_symbol_percent" icon_color="255,255,0" icon_blink="false" hidden="true">
         <stack_type value="replace"/>
-        <update_rate value="15"/>
         <duration value="0"/>
 		<display_value value="$scratchCounter"/><display_value_key value="{00}"/>
-		<effect_group name="Ticker, Remover">
-			<!--<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
-			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>-->
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
+		<effect_group name="Ticker">
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
                 <requirement name="NotHasBuff" buff="jz_BuffUsingHands"/></triggered_effect>
 			<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="1">
                 <requirement name="NotHasBuff" buff="jz_BuffUsingHands"/></triggered_effect>
-            <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="40">
-				<requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="40"/></triggered_effect>
-            
-            <!--<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundSystem">
-				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="0"/></triggered_effect>-->
+            <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81">
+				<requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="81"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff"  buff="jz_BuffWoundStageActivations"/>
 		</effect_group>
-          
+     </buff>
+    
+    <buff name="jz_BuffWoundStageActivations" remove_on_death="false" name_key="WoundStageActivations" icon="ui_game_symbol_percent" icon_color="255,255,0" icon_blink="false" hidden="true">
+        <stack_type value="ignore"/>
+        <update_rate value="1"/>
+        <duration value="0"/>
+        
         <effect_group name="Bruised Fader Activation">
             <requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="1"/>
+            <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="20"/>
                 <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffBruiseFader"/>
                 <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffBruiseFader"/>
 		</effect_group>
         
         <effect_group name="Bruised Stage Deactivation">
-            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffBruised">
-                <requirement name="HasBuff" buff="jz_BuffBruised"/>
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="2"/></triggered_effect>
+            <requirement name="HasBuff" buff="jz_BuffBruised"/>
+            <requirement name="CVarCompare" cvar="$scratchCounter" operation="LT" value="2"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffBruised"/>         
 		</effect_group>
         
-		<effect_group name="Bruised Stage Activation">
+		<effect_group name="Bruised Stage Activation All">
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
 			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="6"/>
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="10"/>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffBruised"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="20"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffBruised"/>
                 <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffBruised"/>                
 		</effect_group>
         
-		<effect_group name="Small Wound Stage Activation">
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="11"/>
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="19"/>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffThrobbingPain">
-					<requirement name="NotHasBuff" buff="jz_BuffThrobbingPain"/>
-					<requirement name="NotHasBuff" buff="buffDrugPainkillers"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingTwo"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffSmallWound">
-					<requirement name="NotHasBuff" buff="jz_BuffSmallWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingTwo"/></triggered_effect>
-                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSmallWound">
-					<requirement name="NotHasBuff" buff="jz_BuffSmallWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageOne"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingTwo"/></triggered_effect>
+		<effect_group name="Small Wound Stage Activation NonTreated">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="21"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="40"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSmallWound"/>	
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSmallWound"/>		
 		</effect_group>
         
-		<effect_group name="Wound Stage Activation">
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="20"/>
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="29"/>
-                <triggered_effect trigger="onSelfBuffStack" action="AddBuff" fireOneBuff="true" buff="buffLegSprainedCHTrigger,buffArmSprainedCHTrigger" weights="80,80">
-					<requirement name="NotHasBuff" buff="jz_BuffWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageTwo"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFour"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffWound">
-					<requirement name="NotHasBuff" buff="jz_BuffWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageTwo"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFour"/></triggered_effect>
-                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWound">
-					<requirement name="NotHasBuff" buff="jz_BuffWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageTwo"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFour"/></triggered_effect>
+        <effect_group name="Small Wound Stage Activation Reset">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="1"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="21"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="40"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSmallWound"/>	
+              	<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSmallWound"/>		
 		</effect_group>
         
-		<effect_group name="Severe Wound Stage Activation">
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="30"/>
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="39"/>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffGash">
-					<requirement name="NotHasBuff" buff="jz_BuffSevereWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffGash"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFive"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingSix"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffSevereWound">
-					<requirement name="NotHasBuff" buff="jz_BuffSevereWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFive"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingSix"/></triggered_effect>
-                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSevereWound">
-					<requirement name="NotHasBuff" buff="jz_BuffSevereWound"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingFive"/>
-					<requirement name="NotHasBuff" buff="jz_BuffDirtyBandageThree"/>
-					<requirement name="NotHasBuff" buff="jz_BuffTendingSix"/></triggered_effect>
+		<effect_group name="Wound Stage Activation NonTreated">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="41"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="60"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWound"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWound"/>
 		</effect_group>
         
-		<effect_group name="Gangrene Wound Stage Activation">
-			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="40"/>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" fireOneBuff="true" buff="buffArmBroken,buffLegBroken" weights="50,50">
-					<requirement name="NotHasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
-				<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="jz_BuffGangreneWound">
-					<requirement name="NotHasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+        <effect_group name="Wound Stage Activation Reset">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="1"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="41"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="60"/>
+                <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWound"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWound"/>
+		</effect_group>
+                      
+        <effect_group name="Wound Stage Activation Increase Override">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+        	<requirement name="CVarCompare" cvar="$currentScratchCount" operation="LT" value="41"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="41"/>
+            <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="60"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWound"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWound"/>
+		</effect_group>   
+        
+		<effect_group name="Severe Wound Stage Activation NonTreated">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="61"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="80"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>	
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWound"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSevereWound"/>			
+		</effect_group>
+        
+        <effect_group name="Severe Wound Stage Activation Reset">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="1"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="61"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="80"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWound"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSevereWound"/>			
+		</effect_group>
+        
+        <effect_group name="Severe Wound Stage Activation Increase Override">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+        	<requirement name="CVarCompare" cvar="$currentScratchCount" operation="LT" value="61"/>
+            <requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="61"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="80"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWound"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffSevereWound"/>			
+		</effect_group>
+        
+        <effect_group name="Gangrene Wound Stage Activation NonTreated">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="81"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>	
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWound"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>	
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffGangreneWound"/>			
+		</effect_group>
+        
+        <effect_group name="Gangrene Wound Stage Activation Reset">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="1"/>
+            <requirement name="CVarCompare" cvar="$TendingTag" operation="Equals" value="0"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="81"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWound"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffGangreneWound"/>			
+		</effect_group>
+        
+        <effect_group name="Gangrene Wound Stage Activation Increase Override">
+            <requirement name="CVarCompare" cvar="$ResetTag" operation="Equals" value="0"/>
+        	<requirement name="CVarCompare" cvar="$currentScratchCount" operation="LT" value="81"/>
+			<requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="81"/>
+				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWound"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffWoundAltEffect"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffWoundAltEffect"/>	
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="jz_BuffGangreneWound"/>			
+		</effect_group>
+        
+        <effect_group name="Increase or Decrease Tag">
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$currentScratchCount" operation="set" value="@$scratchCounter"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$currentScratchCount" operation="set" value="@$scratchCounter"/> 
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$ResetTag" operation="set" value="0"/>             
+        </effect_group>            
+	</buff>
+    
+    <buff name="jz_BuffWoundAltEffect" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/><!-- 0 -->
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="true" buff="jz_BuffThrobbingPain,jz_BuffLegSprainedTrigger,jz_BuffArmSprainedTrigger,jz_BuffGash" weights="30,25,25,20"/>       
+        </effect_group>
+    </buff>    
+    
+    <buff name="jz_BuffLegSprainedTrigger" name_key="buffLegSprainedFallTrigger"  icon="ui_game_symbol_critical" icon_color="255,0,0" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="0.1"/>
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="HasBuff" buff="buffLegBroken"/>
+				<requirement name="HasBuff" buff="buffLegSplinted"/>
+				<requirement name="HasBuff" buff="buffLegCast"/>
+			</requirements>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$legHurtCounter" operation="set" value="7208"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="HasBuff" buff="buffLegSprained"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLegBroken"/>
+		</effect_group>
+        <effect_group>
+			<requirement name="NotHasBuff" buff="buffLegBroken"/>
+			<requirement name="NotHasBuff" buff="buffLegSplinted"/>
+			<requirement name="NotHasBuff" buff="buffLegCast"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLegSprained"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffArmSprainedTrigger" name_key="buffArmSprainedFallTrigger" icon="ui_game_symbol_critical" icon_color="255,0,0" hidden="true">
+		<stack_type value="ignore"/>
+		<duration value="0.1"/>
+		<effect_group>
+			<requirements compare_type="or">
+				<requirement name="HasBuff" buff="buffArmBroken"/>
+				<requirement name="HasBuff" buff="buffArmSplinted"/>
+				<requirement name="HasBuff" buff="buffArmCast"/>
+			</requirements>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$armHurtCounter" operation="set" value="7208"/>
+		</effect_group>
+        <effect_group>
+			<requirement name="HasBuff" buff="buffArmSprained"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffArmBroken"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="NotHasBuff" buff="buffArmBroken"/>
+			<requirement name="NotHasBuff" buff="buffArmSplinted"/>
+			<requirement name="NotHasBuff" buff="buffArmCast"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffArmSprained"/>
 		</effect_group>
 	</buff>
     <!-- JZMOD WOUND SYSTEM-->
@@ -8389,17 +8605,11 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
         <effect_group name="Ticker, Remover">
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$scratchCounter" operation="add" value="-1">
                 <requirement name="CVarCompare" cvar="$scratchCounter" operation="GTE" value="1"/>
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="10"/>
-			</triggered_effect>
-            
+                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="20"/></triggered_effect>
             <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0">
-				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LT" value="0"/>
-			</triggered_effect>
-            
+				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LT" value="0"/></triggered_effect>
             <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffBruiseFader">
-				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="0"/>
-			</triggered_effect>
-            
+				<requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="0"/></triggered_effect>   
             <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
         </effect_group>
 	</buff>    
@@ -8411,27 +8621,972 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			
 			<passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
 		</effect_group>		
 	</buff>
-	<!---JZMOD SMALL WOUND-->
+            
+	<!-- JZMOD GANGRENE WOUND --> 
+    <buff name="jz_BuffGangreneWound" remove_on_death="false" name_key="Gangrene Wound" tooltip_key="Your wound has become Gangrene" description_key="jz_BuffGangreneWoundDesc" icon="ui_game_symbol_infectedWound" >
+        <stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".30"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.15"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="4"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="4"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundWellness"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundHealthLoss"/> 
+            
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOneA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneA"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoC"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoA"/>     
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>                
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeF"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeE"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeE"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeC"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeB"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeA"/>                  
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourF"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourE"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourE"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourC"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourB"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourA"/>      
+		</effect_group>	        
+	</buff>
+    
+    <buff name="jz_BuffGangreneWoundHealthLoss" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="10"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffGangreneWoundWellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="60"/>
+		<effect_group>
+          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    <!--JZMOD AMPUTATE-->            
+	<buff name="jz_BuffAmputate" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+		<duration value="2"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="30"/>
+            <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="player#painlg"/>                            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$TendingTag" operation="set" value="1"/>      
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundWellness"/>                                    
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$amputationCounter" operation="add" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffNubbins"/>  	
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffAmputationWound"/>  
+
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Dark" intensity=".8" fade=".5"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyScreenEffect" effect_name="Dark" intensity="0" fade=".5"/>              
+		</effect_group>
+	</buff>  
+    
+    <buff name="jz_BuffAmputationWound" remove_on_death="false" name_key="Amputation Wound" tooltip_key="Your going to miss that!" description_key="jz_BuffAmputationWoundDesc" icon="Amputation" >
+        <stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".25"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.15"/> 
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="3"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="3"/>			
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffAmputationWellness"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffAmputationHealthLoss"/>             		
+		</effect_group>	      	
+	</buff>
+    
+    <buff name="jz_BuffAmputationHealthLoss" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="10"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffAmputationWellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="60"/>
+		<effect_group>
+          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+              
+    <buff name="jz_BuffTendingFourG" remove_on_death="false" name_key="Bandaged Amputation" tooltip_key="Thats better for now" description_key="jz_BuffTendingGDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="1"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".16"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.1"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWellness"/> 
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourG">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>            
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourF"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageFourF" remove_on_death="false" name_key="Dirty Amputation Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageFDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="900"/><!--900-->
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".2"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.1"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingFourF" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingFDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+         <update_rate value="2"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".14"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.08"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourF"/>   
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourF">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>            
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourE">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageFourE" remove_on_death="false" name_key="Dirty Severe Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageEDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".19"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.09"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group> 
+	</buff>
+	
+	<buff name="jz_BuffTendingFourE" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingEDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="4"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="4"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourE"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourE">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourD">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageFourD" remove_on_death="false" name_key="Dirty Severe Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageDDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".16"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.07"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingFourD" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingDDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="6"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="6"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourD"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourD">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourC">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageFourC" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageCDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".14"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group> 
+	</buff>
+	
+	<buff name="jz_BuffTendingFourC" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingCDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="8"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".08"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="8"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourC"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourC">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourB">
+                 <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageFourB" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageBDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="2"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.05"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingFourB" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingBDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="9"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".06"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="9"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourB"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourB">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageFourA">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageFourA" remove_on_death="false" name_key="Dirty Small Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageADesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="3"/>
+		<duration value="900"/><!--900-->
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="41"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffTendingFourA" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingADesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="10"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".04"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourA"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingFourA">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    <!-- JZMOD SEVERE WOUND -->
+    <buff name="jz_BuffSevereWound" remove_on_death="false" name_key="Severe Wound" tooltip_key="You have gotten a severe wound" description_key="jz_BuffSevereWoundDesc" icon="ui_game_symbol_severeWound" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".25"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.12"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundWellness"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundHealthLoss"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>           
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOneA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneA"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>           
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoC"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoA"/>             
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeC"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeA"/>   
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourD"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourC"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourC"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourA"/>   
+		</effect_group>	 	
+	</buff>
+	
+    <buff name="jz_BuffSevereWoundHealthLoss" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="15"/>
+		<effect_group>
+             <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffSevereWoundWellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="90"/>
+		<effect_group>
+          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffTendingThreeF" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingFDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+         <update_rate value="2"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".14"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.08"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$TendingTag" operation="set" value="1"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>  
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeF">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>            
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageThreeE">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageThreeE" remove_on_death="false" name_key="Dirty Severe Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageEDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="900"/><!--900-->
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".19"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.09"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group> 
+	</buff>
+	
+	<buff name="jz_BuffTendingThreeE" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingEDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="4"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="4"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+        
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeE"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeE">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageThreeD">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffGangreneWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageThreeD" remove_on_death="false" name_key="Dirty Severe Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageDDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".16"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.07"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="81"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingThreeD" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingDDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="6"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="6"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeD"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeD">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageThreeC">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageThreeC" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageCDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".14"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffTendingThreeC" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingCDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="8"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".08"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="8"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeC"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeC">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageThreeB">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageThreeB" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageBDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="2"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.05"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingThreeB" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingBDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="9"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".06"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
+        
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="9"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeB"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeB">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageThreeA">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageThreeA" remove_on_death="false" name_key="Dirty Small Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageADesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="3"/>
+		<duration value="900"/><!--900-->
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="41"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffTendingThreeA" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingADesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="10"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".04"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeA"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingThreeA">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+   <!-- JZMOD WOUND -->
+	<buff name="jz_BuffWound" remove_on_death="false" name_key="Wound" tooltip_key="Ouch! You've been wounded" description_key="jz_BuffWoundDesc" icon="ui_game_symbol_wound" >
+		<stack_type value="ignore"/>
+		<update_rate value="1"/>
+		<duration value="0"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".20"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.08"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundWellness"/>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOneA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneA"/>            
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoA"/>       
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeA"/>       
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourB"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourA"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourA"/>       
+		</effect_group>	
+	</buff>
+	
+    <buff name="jz_BuffWoundHealthLoss" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="20"/>
+		<effect_group>
+             <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffWoundWellness" hidden="true" remove_on_death="false">
+		<stack_type value="ignore"/>
+        <update_rate value="120"/>
+		<effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
+		</effect_group>	
+	</buff>
+    
+    <buff name="jz_BuffTendingTwoD" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingDDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="6"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="6"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$TendingTag" operation="set" value="1"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingTwoD">
+                <requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/>	</triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageTwoC">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageTwoC" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageCDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="1"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".14"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffTendingTwoC" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingCDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="8"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".08"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="8"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoC"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingTwoC">
+				<requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageTwoB">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffSevereWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffDirtyBandageTwoB" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageBDesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="2"/>
+		<duration value="900"/><!--900-->
+         <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.05"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="61"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+    
+    <buff name="jz_BuffTendingTwoB" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingBDesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="9"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".06"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="9"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoB"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingTwoB">
+				<requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+  			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageTwoA">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffDirtyBandageTwoA" remove_on_death="false" name_key="Dirty Small Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageADesc" icon="ui_game_symbol_dirtyBandage" >
+		<stack_type value="ignore"/>
+        <update_rate value="3"/>
+		<duration value="900"/><!--900-->
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="41"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
+		</effect_group>
+	</buff>
+	
+	<buff name="jz_BuffTendingTwoA" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingADesc" icon="ui_game_symbol_bandaged" >
+		<stack_type value="ignore"/>
+        <update_rate value="10"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
+        <effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".04"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoA"/>
+            
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingTwoA">
+				<requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>
+	</buff>    
+    <!---JZMOD SMALL WOUND-->
 	<buff name="jz_BuffSmallWound" remove_on_death="false" name_key="Small Wound" tooltip_key="Ouch! You've been wounded" description_key="jz_BuffSmallWoundDesc" icon="ui_game_symbol_smallWound" >
 		<stack_type value="ignore"/>
 		<update_rate value="2"/>
-		<duration value="0"/>
 		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".15"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
+            
             <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
 			
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSmallWoundWellness"/>
             <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSmallWoundHealthLoss"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
-		</effect_group>	
-        
-		<effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".15"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
 		</effect_group>		
 	</buff>
 	
@@ -8454,329 +9609,83 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>	
 	</buff>
     
-	<buff name="jz_BuffTendingOne" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingOneDesc" icon="ui_game_symbol_bandaged" >
+    <buff name="jz_BuffTendingOneB" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingBDesc" icon="ui_game_symbol_bandaged" >
 		<stack_type value="ignore"/>
-        <update_rate value="4"/><!--1800-->
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
+        <update_rate value="9"/>
+        <display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
 		<effect_group>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".06"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
+           
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="9"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+          
             <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyBandageOne"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="11">
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="11"/>
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="19"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".07"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
-		</effect_group>	
+
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$TendingTag" operation="set" value="1"/> 
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>	
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingOneB">
+				<requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="jz_BuffDirtyBandageOneA">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="subtract" value="10">
+                <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+		</effect_group>        
 	</buff>
 	
-	<buff name="jz_BuffDirtyBandageOne" remove_on_death="false" name_key="Dirty Small Wound Bandage" tooltip_key="Your Wound Smells" description_key="jz_BuffDirtyBandageOneDesc" icon="ui_game_symbol_dirtyBandage" >
+	<buff name="jz_BuffDirtyBandageOneA" remove_on_death="false" name_key="Dirty Small Wound Bandage" tooltip_key="Your Bandage is dirty" description_key="jz_BuffDirtyBandageADesc" icon="ui_game_symbol_dirtyBandage" >
 		<stack_type value="ignore"/>
         <update_rate value="3"/>
 		<duration value="900"/><!--900-->
         <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="20"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
             <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
 			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
-		</effect_group>	
-	</buff>
-	
-	<buff name="jz_BuffTendingTwo" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingTwoDesc" icon="ui_game_symbol_bandaged" >
-		<stack_type value="ignore"/>
-        <update_rate value="8"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-        <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="7"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".04"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
-		</effect_group>	
-	</buff>
-	<!-- JZMOD WOUND -->
-	<buff name="jz_BuffWound" remove_on_death="false" name_key="Wound" tooltip_key="Ouch! You've been wounded" description_key="jz_BuffWoundDesc" icon="ui_game_symbol_wound" >
-		<stack_type value="ignore"/>
-		<update_rate value="1"/>
-		<duration value="0"/>
-		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
-		</effect_group>	
-        
-		<effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".20"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.08"/>
-		</effect_group>		
-	</buff>
-	
-    <buff name="jz_BuffWoundHealthLoss" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-        <update_rate value="20"/>
-		<effect_group>
-             <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
-		</effect_group>	
-	</buff>
-    
-    <buff name="jz_BuffWoundWellness" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-        <update_rate value="120"/>
-		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-		</effect_group>	
-	</buff>
-    
-	<buff name="jz_BuffTendingThree" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingThreeDesc" icon="ui_game_symbol_bandaged" >
-		<stack_type value="ignore"/>
-        <update_rate value="2"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-        <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyBandageTwo"/>
-                        <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="20">
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="20"/>
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="29"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".1"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.04"/>
-		</effect_group>	
-	</buff>
-	
-	<buff name="jz_BuffDirtyBandageTwo" remove_on_death="false" name_key="Dirty Wound Bandage" tooltip_key="Your Wound Smells" description_key="jz_BuffDirtyBandageTwoDesc" icon="ui_game_symbol_dirtyBandage" >
-		<stack_type value="ignore"/>
-        <update_rate value="1"/>
-		<duration value="900"/><!--900-->
-         <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="30"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".15"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
-		</effect_group>	 
-	</buff>
-	
-	<buff name="jz_BuffTendingFour" remove_on_death="false" name_key="Bandaged Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingFourDesc" icon="ui_game_symbol_bandaged" >
-		<stack_type value="ignore"/>
-        <update_rate value="4"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-        <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="15"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".05"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.02"/>
-		</effect_group>	
-	</buff>
-	
-	<buff name="jz_BuffSevereWound" remove_on_death="false" name_key="Severe Wound" tooltip_key="You have gotten a severe wound" description_key="jz_BuffSevereWoundDesc" icon="ui_game_symbol_severeWound" >
-		<stack_type value="ignore"/>
-		<update_rate value="1"/>
-		<duration value="0"/>
-		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
-			
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffSevereWoundHealthLoss"/>
             
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThree"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFour"/>
-		</effect_group>	
-        
-		<effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".25"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.12"/>
-		</effect_group>		
-	</buff>
-	
-    <buff name="jz_BuffSevereWoundHealthLoss" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-        <update_rate value="15"/>
-		<effect_group>
-             <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
-		</effect_group>	
-	</buff>
-    
-    <buff name="jz_BuffSevereWoundWellness" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-        <update_rate value="90"/>
-		<effect_group>
-          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-		</effect_group>	
-	</buff>
-   
-	<buff name="jz_BuffTendingFive" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingFiveDesc" icon="ui_game_symbol_bandaged" >
-		<stack_type value="ignore"/>
-         <update_rate value="1"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-        <effect_group>
             <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyBandageThree"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffDirtyBandageTwo"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="30">
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="GT" value="30"/>
-                <requirement name="CVarCompare" cvar="$scratchCounter" operation="LTE" value="39"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="41"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$ResetTag" operation="set" value="1"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0"/>
 		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".12"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.06"/>
-		</effect_group>	
 	</buff>
 	
-	<buff name="jz_BuffDirtyBandageThree" remove_on_death="false" name_key="Dirty Severe Wound Bandage" tooltip_key="Your Wound Smells" description_key="jz_BuffDirtyBandageThreeDesc" icon="ui_game_symbol_dirtyBandage" >
-		<stack_type value="ignore"/>
-		<update_rate value="1"/>
-		<duration value="900"/><!--900-->
-         <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="2"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="40"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".19"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.09"/>
-		</effect_group>	 
-	</buff>
-	
-	<buff name="jz_BuffTendingSix" remove_on_death="false" name_key="Bandaged Severe Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingSixDesc" icon="ui_game_symbol_bandaged" >
-		<stack_type value="ignore"/>
-        <update_rate value="2"/>
-		<duration value="1800">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="1"/></duration>
-        <duration value="1440">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="2"/></duration>
-        <duration value="2160">
-            <requirement name="CVarCompare" cvar="$HealingBonus" operation="Equals" value="3"/></duration>
-        <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="25"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-		</effect_group>
-        <effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".05"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.03"/>
-		</effect_group>	
-	</buff>
-	
-	<buff name="jz_BuffGangreneWound" remove_on_death="false" name_key="Gangrene Wound" tooltip_key="Your wound has become Gangrene" description_key="jz_BuffGangreneWoundDesc" icon="ui_game_symbol_infectedWound" >
-        <stack_type value="ignore"/>
-        <update_rate value="1"/>
-		<duration value="0"/>
-		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="4"/>
-			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="4"/>
-			
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
-            
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBruised"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThree"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFour"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>		
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFive"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThree"/>
-			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingSix"/>	
-		</effect_group>	
-        
-		<effect_group>
-            <passive_effect name="HealthLoss" operation="perc_add" value=".30"/>
-			<passive_effect name="Mobility" operation="perc_subtract" value="0.15"/>
-		</effect_group>		
-	</buff>
-	
-    <buff name="jz_BuffGangreneWoundHealthLoss" hidden="true" remove_on_death="false">
+	<buff name="jz_BuffTendingOneA" remove_on_death="false" name_key="Bandaged Small Wound" tooltip_key="Thats better for now" description_key="jz_BuffTendingADesc" icon="ui_game_symbol_bandaged" >
 		<stack_type value="ignore"/>
         <update_rate value="10"/>
+		<display_value value=".TendingDurationDisplay"/><display_value_format value="time"/>
 		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStat" stat="health" operation="subtract" value="1"/>
+            <passive_effect name="HealthLoss" operation="perc_add" value=".04"/>
+			<passive_effect name="Mobility" operation="perc_subtract" value="0.01"/>
+            
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="@$TendingTime"/>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDuration" operation="subtract" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="@.TendingDuration"/>
+           
+           <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" operation="subtract" value="1"/>
+
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOneA"/>
+
+            <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="jz_BuffTendingOneA">
+				<requirement name="CVarCompare" cvar=".TendingDuration" operation="LTE" value="0"/></triggered_effect>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDurationDisplay" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".TendingDuration" operation="set" value="0"/>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="10">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$TendingTag" operation="set" value="0">
+                 <requirement name="!HasBuff" buff="jz_BuffWound"/></triggered_effect>
 		</effect_group>	
-	</buff>
-    
-    <buff name="jz_BuffGangreneWoundWellness" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-        <update_rate value="60"/>
-		<effect_group>
-          	<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-            <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$jz_WellnessLv" operation="subtract" value="1"/>
-		</effect_group>	
-	</buff>
+	</buff>    
+
  <!-- JZMOD PAIN -->
 	<buff name="jz_BuffThrobbingPain" remove_on_death="false" name_key="Throbbing Pain" tooltip_key="OOwww! It Hurts!" description_key="jz_BuffThrobbingPainDesc" icon="ui_game_symbol_pain" >
 		<stack_type value="ignore"/>
@@ -8836,29 +9745,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="1" effect_name="Blur"/>
 		</effect_group>
 	</buff>   
-    <!--JZMOD AMPUTATE-->
-	<buff name="jz_BuffAmputate" hidden="true" remove_on_death="false">
-		<stack_type value="ignore"/>
-		<duration value="2"/>
-		<effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyStat" stat="health" operation="subtract" value="30"/>
-            <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="player#painlg"/>            
-            
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="30"/>        
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWound"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundWellness"/>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffWoundSystem">
-                <requirement name="NotHasBuff" buff="jz_BuffWoundSystem"/></triggered_effect>
-                
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Dark" intensity=".8" fade=".5"/>
-			<triggered_effect trigger="onSelfBuffFinish" action="ModifyScreenEffect" effect_name="Dark" intensity="0" fade=".5"/> 
-            
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$amputationCounter" operation="add" value="1"/>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffNubbins">
-                <requirement name="CVarCompare" cvar="$amputationCounter" operation="GTE" value="1"/></triggered_effect>			
-		</effect_group>
-	</buff>   
+   
     <!--JZMOD NUBBINS-->
 	<buff name="jz_BuffNubbins" remove_on_death="false" name_key="Amputations" description_key="AmputationTrackerDesc" showonhud="false" icon="ui_game_symbol_character">
 		<stack_type value="ignore"/>
@@ -9737,7 +10624,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
         </effect_group> 
     </buff> 
     <!-- JZMOD FATIGUED -->
-    <buff name="jz_BuffFatigued" remove_on_death="false" name_key="Fatigued" tooltip_key="Your getting tired" description_key="jz_BuffFatiguedDesc" icon="ui_game_symbol_rifle" >
+    <buff name="jz_BuffFatigued" remove_on_death="false" name_key="Fatigued" tooltip_key="Your getting tired" description_key="jz_BuffFatiguedDesc" icon="Fatigued" >
 		<duration value="0"/>
 		<stack_type value="ignore"/>
         <effect_group>
@@ -9848,8 +10735,54 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$scratchCounter" operation="set" value="0"/>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$infectionCureCounter" operation="set" value="0"/>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="infectionCounter" operation="set" value="0"/>
-                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="amputationCounter" operation="set" value="0"/>
-                               
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$amputationCounter" operation="set" value="0"/>
+                 
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWound"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationHealthLoss"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWellness"/>   
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourG"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourF"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourF"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourE"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourE"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourD"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourD"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageFourA"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFourA"/>                      
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOneA"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOneA"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoD"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwoA"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwoA"/>     
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/> 
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/> 
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>                
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeF"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeE"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeE"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeD"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeD"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeC"/>           
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeC"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeB"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThreeA"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThreeA"/>      
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffNewbieCoat" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffBurnWound" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingBurnWound" />
@@ -9866,24 +10799,6 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGoredDirtyBandangeB" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGoredBandage" />
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGoredDirtyBandangeC" />         
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingOne"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingTwo"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWound"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundWellness"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSmallWoundHealthLoss"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageOne"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingThree"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFour"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWound"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundHealthLoss"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffWoundWellness"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageTwo"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingFive"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffTendingSix"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWound"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundHealthLoss"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSevereWoundWellness"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffDirtyBandageThree"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGash"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGashBandaged"/>
@@ -9906,9 +10821,6 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPainScreen"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPainScreenRestart"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThrobbingPain"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWound"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundHealthLoss"/>
-                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffGangreneWoundWellness"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionMain"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionGetsWorse"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInfectionAddCure"/>
@@ -10180,7 +11092,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffSLPt13Activate"/>   
         </effect_group> 
 	</buff>
-</set>    
+</set>     
 </configs>
 
 

@@ -2782,7 +2782,7 @@
 			<effect_description level="1" desc_key="jz_TraitWeakDesc" long_desc_key="jz_TraitWeakDesc"/>
 		</effect_group>
 	</perk>
-    <perk name="jz_TraitMasochist" parent="NegativeTraits" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Masochist" desc_key="jz_NegativeTraittMasochistDesc" icon="ui_game_symbol_near_death_trauma">
+    <perk name="jz_TraitMasochist" parent="NegativeTraits" min_level="0" max_level="1" base_skill_point_cost="0" name_key="Masochist" desc_key="jz_TraittMasochistDesc" icon="ui_game_symbol_near_death_trauma">
 		<!--1/2 Max Wellness / 1/2 wellness start -->
         <effect_group>
             <triggered_effect trigger="onSelfWalk" action="AddBuff" buff="jz_BuffMasochistActivate">
@@ -2790,7 +2790,7 @@
 				<requirement name="NotHasBuff" buff="jz_BuffMasochistActivate"/>
 			</triggered_effect>
             
-			<effect_description level="1" desc_key="jz_TraitWeakDesc" long_desc_key="jz_TraitWeakDesc"/>
+			<effect_description level="1" desc_key="jz_TraittMasochistDesc" long_desc_key="jz_TraittMasochistDesc"/>
 		</effect_group>
 	</perk>
     <!-- ******************************************************************  JZMOD SCHEMATICS  ******************************************************************************** -->

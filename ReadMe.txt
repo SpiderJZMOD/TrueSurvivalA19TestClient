@@ -1,6 +1,6 @@
 IP - 172.96.166.50
 Port. - 18733
-PW - spider99
+PW - spider999
 
 
 
@@ -17,9 +17,9 @@ Required SP/Coop Game Settings
 -Difficulty = Adventurer 
 -24Hr Cycle = 60-90min
 -Day light length = 18
--Zombie Day Speed = Walk
+-Zombie Day Speed = Jog
 -Zombie Night Speed = Run
--Zombie Feral Speed = Jog
+-Zombie Feral Speed = Sprint
 -Zombie Bloodmoon Speed = Nightmare
 -XP Multiplier = 75%
 -Loot Abundance = 100%

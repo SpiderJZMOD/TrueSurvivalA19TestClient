@@ -1244,10 +1244,9 @@ Mesh files no longer used:
 	</property>
 
 	<effect_group name="meleeWpnBladeT0BoneKnife"> 
-      
  <!--JZMOD TESTING       
          
-         <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="jz_BuffInfectionCatch"/> 
+         
         <triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="jz_BladeSkill" level="-1"/>    
          <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="food" operation="subtract" value="95"/> 
          <triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyStats" stat="water" operation="subtract" value="95"/> 
@@ -26632,7 +26631,7 @@ perkNightStalkerSilentNight
 		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>
 	<effect_group tiered="false">
-	<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
+        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="8"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="1"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Stamina" operation="subtract" value="16"/><display_value name="TSStaminaLoss" value="-16"/>
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3">
