@@ -455,17 +455,17 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 			-->
 
 			<!-- Being at low health increases the chance of getting hit by a critical effect -->
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.9"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.8"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.7"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.6"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.5"/></passive_effect>
-			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
+			<passive_effect name="BuffResistance" operation="base_add" value="-.04" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire">
 				<requirement name="StatComparePercModMaxToMax" stat="Health" operation="LT" value="0.4"/></passive_effect>
                      
 			<!-- Remove particle effect if not on fire, this is a backup removal for remote clients -->
@@ -2118,7 +2118,7 @@ onSelfDestroyedBlock && onSelfDamagedBlock were not yet
 	<buff name="triggerInfection" name_key="trigger" icon="ui_game_symbol_quest">
 		<duration value=".1"/>
 		<effect_group>
-			<passive_effect name="BuffResistance" operation="base_subtract" value="5" tags="buffInfectionCatch,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+			<passive_effect name="BuffResistance" operation="base_subtract" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInfectionCatch"/>
 		</effect_group>
 	</buff>
@@ -2510,7 +2510,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffInjuryAbrasion" name_key="buffInjuryAbrasionName" description_key="buffInjuryAbrasionDesc" tooltip_key="buffInjuryAbrasionTooltip" icon="ui_game_symbol_abrasion" icon_color="255,128,0">
-		<damage_type value="Bashing"/>
+		<!--<damage_type value="Bashing"/>JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".abrasionDurationDisplay"/><display_value_format value="time"/>
@@ -2557,7 +2557,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffInjuryAbrasionTreated" name_key="buffInjuryAbrasionTreatedName" description_key="buffInjuryAbrasionTreatedDesc" icon="ui_game_symbol_leg_treated" icon_color="255,128,0">
-		<damage_type value="Bashing"/>
+		<!--<damage_type value="Bashing"/>JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".abrasionDurationDisplay"/><display_value_format value="time"/>
@@ -2816,7 +2816,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffLegSprained" name_key="buffLegSprainedName" remove_on_death="false" description_key="buffLegSprainedDesc" tooltip_key="buffLegSprainedTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,128,0">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/>JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
@@ -2878,7 +2878,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 
 	<buff name="buffLegBroken" name_key="buffLegBrokenName" remove_on_death="false" description_key="buffLegBrokenDesc" tooltip_key="buffLegBrokenTooltip" icon="ui_game_symbol_brokenbone" icon_color="255,0,0">
 		<!-- Note: sprinting with a broken leg could randomly rangdoll the player -->
-		<damage_type value="break"/>
+		<!--<damage_type value="break"/> JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
@@ -2944,7 +2944,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffLegSplinted" name_key="buffLegSplintedName" remove_on_death="false" description_key="buffLegSplintedDesc" icon="ui_game_symbol_splint">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/> JZMOD TESTING -->
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
 
@@ -3006,7 +3006,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffLegCast" name_key="buffLegCastName" remove_on_death="false" description_key="buffLegCastDesc" icon="ui_game_symbol_splint">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/> JZMOD TESTING -->
 		<duration value="0"/>
 		<display_value value=".legHurtDurationDisplay"/><display_value_format value="time"/>
 
@@ -3108,7 +3108,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffArmSprained" name_key="buffArmSprainedName" remove_on_death="false" description_key="jz_buffArmSprainedDesc" tooltip_key="buffArmSprainedTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,128,0">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/> JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>
@@ -3168,7 +3168,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffArmBroken" name_key="buffArmBrokenName" remove_on_death="false" description_key="jz_buffArmBrokenDesc" tooltip_key="buffArmBrokenTooltip" icon="ui_game_symbol_broken_arm" icon_color="255,0,0">
-		<damage_type value="break"/>
+		<!--<damage_type value="break"/> JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>
@@ -3235,7 +3235,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffArmSplinted" name_key="buffArmSplintedName" remove_on_death="false" description_key="jz_buffArmSplintedDesc" tooltip_key="buffArmSplintedTooltip" icon="ui_game_symbol_splinted_arm">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/> JZMOD TESTING -->
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>
 
@@ -3296,7 +3296,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffArmCast" name_key="buffArmCastName" remove_on_death="false" description_key="jz_buffArmCastDesc" icon="ui_game_symbol_splinted_arm">
-		<damage_type value="sprain"/>
+		<!--<damage_type value="sprain"/> JZMOD TESTING -->
 		<duration value="0"/>
 		<display_value value=".armHurtDurationDisplay"/><display_value_format value="time"/>
 
@@ -3800,7 +3800,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
     
 	<buff name="buffInjuryConcussion" name_key="buffInjuryConcussionName" description_key="jz_buffInjuryConcussionDesc" tooltip_key="buffInjuryConcussionTooltip" icon="ui_game_symbol_concussion" icon_color="255,128,0">
-		<damage_type value="Bashing"/>
+		<!--<damage_type value="Bashing"/> JZMOD TESTING -->
 		<stack_type value="replace"/>
 		<duration value="0"/>
 		<display_value value=".concussionDurationDisplay"/><display_value_format value="time"/>
@@ -4603,7 +4603,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 	</buff>
 
 	<buff name="buffDysenteryMain" name_key="buff Dysentery Main" hidden="true" icon="ui_game_symbol_dysentery">
-		<damage_type value="Disease"/>
+		<!--<damage_type value="Disease"/>-->
 		<stack_type value="ignore"/>
 		<duration value="0"/>
 		<update_rate value="1"/>
@@ -4759,7 +4759,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffDysenteryCureDisplay" name_key="buffDysenteryCureDisplayName" description_key="buffDysenteryCureDisplayDesc" showonhud="false" icon="ui_game_symbol_pills">
+	<buff name="buffDysenteryCureDisplay" name_key="buffDysenteryCureDisplayName" description_key="buffDysenteryCureDisplayDesc" remove_on_death="false" showonhud="false" icon="ui_game_symbol_pills">
 		<duration value="0"/>
 		<update_rate value="1.7"/>
 		<display_value value=".dysenteryCureDisplayPerc"/><display_value_key value="{0:0.0}%"/>
@@ -4776,8 +4776,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffDysentery01Untreated" name_key="buffDysentery01UntreatedName" description_key="buffDysentery01UntreatedDesc" icon="ui_game_symbol_dysentery" icon_color="255,128,0">
-		<damage_type value="Disease"/>
+	<buff name="buffDysentery01Untreated" name_key="buffDysentery01UntreatedName" description_key="buffDysentery01UntreatedDesc" remove_on_death="false" icon="ui_game_symbol_dysentery" icon_color="255,128,0">
+		<!--<damage_type value="Disease"/>-->
 		<stack_type value="ignore"/>
 		<duration value="0"/>
 		<display_value value=".dysenteryDisplayPerc"/><display_value_key value="{0:0.0}%"/>
@@ -4787,8 +4787,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDysentery01GetBetter"/>
 		</effect_group>
 	</buff>
-	<buff name="buffDysentery01GetBetter" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" icon="ui_game_symbol_dysentery_better" icon_color="255,128,0">
-		<damage_type value="Disease"/>
+	<buff name="buffDysentery01GetBetter" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" remove_on_death="false" icon="ui_game_symbol_dysentery_better" icon_color="255,128,0">
+		<!--<damage_type value="Disease"/>-->
 		<stack_type value="ignore"/>
 		<duration value="0"/>
 		<display_value value=".dysenteryDisplayPerc"/><display_value_key value="{0:0.0}%"/>
@@ -4797,8 +4797,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffDysentery01UntreatedDiarrhea" name_key="buffDysentery01UntreatedName" description_key="buffDysentery01UntreatedDesc" icon="ui_game_symbol_dysentery" icon_color="255,128,0" icon_blink="true">
-		<damage_type value="Disease"/>
+	<buff name="buffDysentery01UntreatedDiarrhea" name_key="buffDysentery01UntreatedName" description_key="buffDysentery01UntreatedDesc" remove_on_death="false" icon="ui_game_symbol_dysentery" icon_color="255,128,0" icon_blink="true">
+		<!--<damage_type value="Disease"/>JZMOD TESTING -->
 		<stack_type value="ignore"/>
 		<duration value="5.5"/>
 		<display_value value=".dysenteryDisplayPerc"/><display_value_key value="{0:0.0}%"/>
@@ -4824,8 +4824,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		</effect_group>
 	</buff>
 
-	<buff name="buffDysentery01GetBetterDiarrhea" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" icon="ui_game_symbol_dysentery_better" icon_color="255,128,0" icon_blink="true">
-		<damage_type value="Disease"/>
+	<buff name="buffDysentery01GetBetterDiarrhea" name_key="buffDysentery01GetBetterName" description_key="buffDysentery01GetBetterDesc" remove_on_death="false" icon="ui_game_symbol_dysentery_better" icon_color="255,128,0" icon_blink="true">
+		<!--<damage_type value="Disease"/>JZMOD TESTING -->
 		<stack_type value="ignore"/>
 		<duration value="5.5"/>
 		<display_value value=".dysenteryDisplayPerc"/><display_value_key value="{0:0.0}%"/>
@@ -5214,6 +5214,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 			<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffStatusHungry01"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry02"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffHungry03Wellness"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusHungry03"/>
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="Player$Hungry" play_in_head="true"/>
 		</effect_group>
@@ -5298,6 +5299,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty02"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffStatusThirsty03"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThirsty03Wellness"/>
+            
 		</effect_group>
 		<effect_group>
 			<requirement name="StatComparePercCurrentToMax" stat="Water" operation="GT" value="0.52"/>
@@ -7250,6 +7253,7 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
 		<effect_group>
             <triggered_effect trigger="onSelfBuffStart" action="RemoveAllNegativeBuffs">
 				<requirement name="PlayerLevel" operation="LT" value="6"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar"  cvar="$scratchCounter" operation="add" value="5"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSprained">
 				<requirement name="PlayerLevel" operation="LT" value="11"/></triggered_effect>
 		<!--Health-->
@@ -8548,9 +8552,17 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
         <stack_type value="ignore"/>
         <duration value="0"/><!-- 0 -->
         <effect_group>
-            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="true" buff="jz_BuffThrobbingPain,jz_BuffLegSprainedTrigger,jz_BuffArmSprainedTrigger,jz_BuffGash" weights="30,25,25,20"/>       
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" fireOneBuff="true" buff="jz_BuffThrobbingPain,jz_BuffLegSprainedTrigger,jz_BuffArmSprainedTrigger,jz_BuffTriggerGash" weights="30,25,25,20"/>       
         </effect_group>
-    </buff>    
+    </buff> 
+    
+    <buff name="jz_BuffTriggerGash" hidden="true" >
+		<duration value=".1"/>
+		<effect_group>
+			<passive_effect name="BuffResistance" operation="base_subtract" value="5" tags="jz_BuffGash"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="jz_BuffGash"/>
+		</effect_group>
+	</buff>    
     
     <buff name="jz_BuffLegSprainedTrigger" name_key="buffLegSprainedFallTrigger"  icon="ui_game_symbol_critical" icon_color="255,0,0" hidden="true">
 		<stack_type value="ignore"/>

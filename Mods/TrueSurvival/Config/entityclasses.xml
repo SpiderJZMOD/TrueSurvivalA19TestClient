@@ -148,7 +148,7 @@
 		<!-- Cumulative critical hit chance -->
 
 		<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffCumChanceCH"/>
-		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
+		<passive_effect name="BuffResistance" operation="base_set" value="1" tags="jz_BuffGash,buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="-.1" tags="buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 
 		<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffPowerAttackStaminaStunt">
