@@ -18390,6 +18390,7 @@ perkNightStalkerSilentNight
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="MresourceCement"/>
 	<property name="Stacknumber" value="1000"/> <!-- STK resource -->
+    <property name="Weight" value="0"/>
 	<property name="EconomicValue" value="25"/>
 	<property name="EconomicBundleSize" value="50"/>
 	<property name="Group" value="Resources"/>
@@ -18401,7 +18402,7 @@ perkNightStalkerSilentNight
 	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 	<property name="Material" value="MresourceConcreteMix"/>
-	<property name="Weight" value="20"/>
+	<property name="Weight" value="0"/>
 	<property name="Stacknumber" value="1000"/> <!-- STK resource -->
 	<property name="EconomicValue" value="125"/>
 	<property name="EconomicBundleSize" value="50"/>

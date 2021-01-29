@@ -628,14 +628,14 @@
                 <passive_effect name="DismemberChance" operation="base_add" value="0,80" level="0,100" tags="arm,leg"/>
         </effect_group>
 	    <effect_group>
-            <requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>
+            <!--<requirement name="HoldingItemHasTags" tags="jz_ExposivesSkillTag"/>-->
 			<requirement name="ProgressionLevel" progression_name="jz_ExposivesSkill" operation="LT" value="100"/>
 			<requirement name="CVarCompare" cvar="$jz_ExposivesXP" operation="GTE" value="@$jz_ExposivesSkillNextLvTotal"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_ExposivesSkillLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="$jz_ExposivesSkillNextLvTotal" operation="add" value="@$jz_ExposivesSkillLvAdd"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="ModifySkillSDX, Mods" tag="jz_ExposivesSkill" operation="add" value="1"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="PlaySound"  sound="levelupplayer" play_in_head="true"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="ShowToolbeltMessage" message="You have leveled up your skill with Boom Boom!"/>
+				<triggered_effect trigger="onSelfWalk" action="ModifyCVar" cvar="$jz_ExposivesSkillLvAdd" operation="multiply" value="@$jz_SkillLvMult"/>
+				<triggered_effect trigger="onSelfWalk" action="ModifyCVar" cvar="$jz_ExposivesSkillNextLvTotal" operation="add" value="@$jz_ExposivesSkillLvAdd"/>
+				<triggered_effect trigger="onSelfWalk" action="ModifySkillSDX, Mods" tag="jz_ExposivesSkill" operation="add" value="1"/>
+				<triggered_effect trigger="onSelfWalk" action="PlaySound"  sound="levelupplayer" play_in_head="true"/>
+				<triggered_effect trigger="onSelfWalk" action="ShowToolbeltMessage" message="You have leveled up your skill with Boom Boom!"/>
 		</effect_group>
 		<effect_group>
 			<triggered_effect trigger="onPerkLevelChanged" action="ModifyCVar" cvar="$jz_ExposivesXP" operation="add" value="@$jz_ExposivesSkillLvAdd"/>

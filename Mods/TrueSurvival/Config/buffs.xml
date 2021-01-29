@@ -7254,6 +7254,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
             <triggered_effect trigger="onSelfBuffStart" action="RemoveAllNegativeBuffs">
 				<requirement name="PlayerLevel" operation="LT" value="6"/></triggered_effect>
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar"  cvar="$scratchCounter" operation="add" value="5"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffHungry03Wellness"/>
+            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThirsty03Wellness"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffLegSprained">
 				<requirement name="PlayerLevel" operation="LT" value="11"/></triggered_effect>
 		<!--Health-->
@@ -10749,6 +10751,8 @@ The abrasion healing rate is fastest with a first aid kit, then a medicated band
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="infectionCounter" operation="set" value="0"/>
                 <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$amputationCounter" operation="set" value="0"/>
                  
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffHungry03Wellness"/>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffThirsty03Wellness"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWound"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationHealthLoss"/>
                 <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="jz_BuffAmputationWellness"/>   
