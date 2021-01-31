@@ -13794,12 +13794,18 @@ perkNightStalkerSilentNight
 	<property name="DisplayType" value="TSFoWaStHeGrDy"/>
 	<property name="Meshfile" value="#Other/Items?Misc/parcelPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-	<property name="Material" value="Mgrain"/>
-	<property name="Weight" value="3"/>
+	<property name="Material" value="Morganic"/>
 	<property name="Stacknumber" value="125"/> <!-- STK resource -->
 	<property name="EconomicValue" value="0"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="CraftingIngredientTime" value="10"/>
+    <property name="Spoilable" value="true" />
+    <property name="ShowQuality" value="false"/>
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
+    <property name="TickPerLoss" value="250" />
+    <property name="SpoilageMax" value="1000" />
+    <property name="SpoilagePerTick" value="1" />
+    <property name="QualityTierColor" value="2" />
 	<property class="Action0">
 		<property name="Class" value="Eat"/>
 		<property name="Delay" value="1.0"/>
@@ -25845,6 +25851,13 @@ perkNightStalkerSilentNight
     <property name="DisplayType" value="TSFoWaStHeGrDy"/>
 	<property name="Group" value="food/Cooking" />
 	<property name="DescriptionKey" value="flourDesc" />
+    <property name="Spoilable" value="true" />
+    <property name="ShowQuality" value="false"/>
+    <property name="SpoiledItem" value="jz_SpoiledDrink" />
+    <property name="TickPerLoss" value="250" />
+    <property name="SpoilageMax" value="1000" />
+    <property name="SpoilagePerTick" value="1" />
+    <property name="QualityTierColor" value="2" />
     <property class="Action0">
 		<requirement name="!IsStatAtMax" stat="Food"/> 
 	</property>

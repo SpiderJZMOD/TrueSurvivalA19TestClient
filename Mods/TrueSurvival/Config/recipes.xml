@@ -3158,10 +3158,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceRockSmall" count="1"/>
 </recipe>
 
-<recipe name="jz_FoodFlour" count="1" craft_area="jz_StoneMill" craft_time="4" craft_exp_gain="5" >
-	<ingredient name="jz_FoodServingGrain" count="1" />
-</recipe>
-
 <recipe name="jz_BoneMeal" count="1" craft_area="jz_StoneMill" craft_time="4" craft_exp_gain="5" >
 	<ingredient name="resourceBone" count="3" />
 </recipe>
